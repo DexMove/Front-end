@@ -1,14 +1,17 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Header from "./componentes/Header";
+import Planos from "./componentes/pages/planos/Planos";
 import Produtos from "./componentes/pages/produtos/Produtos";
-import './App.css'
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Produtos />} />
+        <Route path="/planos" element={<Planos />} />
+        <Route path="/produtos" element={<Produtos />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 

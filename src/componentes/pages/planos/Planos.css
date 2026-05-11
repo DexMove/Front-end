@@ -1,0 +1,25 @@
+main{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-family: 'roboto', sans-serif;
+}
+#hero-planos{
+    position: relative;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    gap: 24px;
+    width: 100%;
+    height: 1500px;
+    background-image: url("../../../assets/Rectangle 140.png");
+    background-size: cover;
+    background-position: center;
+}
