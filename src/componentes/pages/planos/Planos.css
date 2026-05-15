@@ -1,25 +1,131 @@
-main{
-    width: 100vw;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    font-family: 'roboto', sans-serif;
-}
+
 #hero-planos{
     position: relative;
     flex-direction: column;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     margin: 0 auto;
     width: 100%;
-    gap: 24px;
-    width: 100%;
-    height: 1500px;
+    height: 1200px;
     background-image: url("../../../assets/Rectangle 140.png");
+    background-position:top;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.texto-hero{
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+}
+h1{
+    font-size: 64px;
+    font-weight: bolder;
+    padding-top: 50px;
+    padding-bottom: 120px;
+}
+h2{
+    position: relative;
+    font-size: 48px;
+    font-weight: normal;
+}
+
+.planos-botao{
+    position: relative;
+    color: black;
+    background-color: #FFA663;
+    width: 20%;
+    font-size: 35px;
+    border: 0.5px solid black;
+    border-radius: 20px;
+}
+.planos{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    height: 660px;
+
+}
+.movimento,
+.independencia,
+.autonomia{
+    position: relative;
+    width: 30%;
+    background-color: white;
+    height: 660px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    justify-content:first baseline;
+    flex-direction: column;
+    color: black;
+    box-shadow: 2px 2px 17px #3090A1;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+
+}
+.movimento,
+.autonomia{
+    height: 600px;
+    box-shadow: 2px 2px 17px #B9B6B6;
+}
+.recomendado{
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background-color: #3090A1;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.recomendado {
+    font-size: 28px;
+    font-weight: bolder;
+}
+.plano-h3{
+    font-size: 36px;
+    font-weight:normal;
+    width: 90%;
+    line-height: 35px;
+}
+.valor-p{
+    font-size: 32px;
+    font-weight: bold;
+}
+.planos button{
+    height: 60px;
+    width: 95%;
+    border-radius: 20px;
+    margin-top: 300px;
+    color: black;
+    font-size: 24px;
+    font-weight: bolder;
+}
+.movimento button{
+    background-color: #F3E396;
+}
+.independencia button{
+    background-color: #3090A1;
+    margin-top: 335px;
+}
+.autonomia button{
+    background-color: #FFA663 ;
+    margin-top: 335px;
+}
+.imagem{
+    background-color: white;
+    width: 100% ;
+    height: 200px;
+    float: left;
+    background-image: url("../../../assets/Group\ 433.png");
     background-size: cover;
-    background-position: center;
+    background-position:center;
+    background-repeat: no-repeat;
+    
 }

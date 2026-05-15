@@ -8,6 +8,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        
         <Route path="/planos" element={<Planos />} />
         <Route path="/produtos" element={<Produtos />} />
       </Routes>
