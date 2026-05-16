@@ -14,6 +14,34 @@ function Header() {
           <img src={logo} alt="logo" />
         </Link>
 
+        <nav className={`menu-links ${menuOpen ? 'show' : ''}`}>
+          <Link onClick={() => setMenuOpen(false)} to="/">
+            INÍCIO
+          </Link>
+          <Link onClick={() => setMenuOpen(false)} to="/sobre">
+            SOBRE NÓS
+          </Link>
+          <Link onClick={() => setMenuOpen(false)} to="/suporte">
+            SUPORTE
+          </Link>
+          <Link onClick={() => setMenuOpen(false)} to="/produtos">
+            PRODUTOS
+          </Link>
+          <Link onClick={() => setMenuOpen(false)} to="/planos">
+            VER PLANOS
+          </Link>
+          <Link onClick={() => setMenuOpen(false)} to="/entrar">
+            ENTRAR
+          </Link>
+          <Link
+            className="cadastro"
+            onClick={() => setMenuOpen(false)}
+            to="/cadastro"
+          >
+            CADASTRE-SE
+          </Link>
+        </nav>
+
         <button
           className="menu-button"
           type="button"
@@ -23,34 +51,6 @@ function Header() {
           <span />
           <span />
         </button>
-      </div>
-
-      <div className={`menu-links ${menuOpen ? 'show' : ''}`}>
-        <Link onClick={() => setMenuOpen(false)} to="/">
-          INÍCIO
-        </Link>
-        <Link onClick={() => setMenuOpen(false)} to="/sobre">
-          SOBRE NÓS
-        </Link>
-        <Link onClick={() => setMenuOpen(false)} to="/suporte">
-          SUPORTE
-        </Link>
-        <Link onClick={() => setMenuOpen(false)} to="/produtos">
-          PRODUTOS
-        </Link>
-        <Link onClick={() => setMenuOpen(false)} to="/planos">
-          VER PLANOS
-        </Link>
-        <Link onClick={() => setMenuOpen(false)} to="/entrar">
-          ENTRAR
-        </Link>
-        <Link
-          className="cadastro"
-          onClick={() => setMenuOpen(false)}
-          to="/cadastro"
-        >
-          CADASTRE-SE
-        </Link>
       </div>
     </div>
   );

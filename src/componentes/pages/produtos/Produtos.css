@@ -83,7 +83,8 @@ main{
     border-radius: 30px; 
 }
 .dupla_imagem img{
-    width: 85%;
+    width: 90%;
+    height: auto;
 }
 .maisvendido_p{
     position: relative;
@@ -137,7 +138,7 @@ main{
     font-weight: 500;
     text-align: justify;
     margin-top: 20px;
-    margin-left: 5%;
+    margin-left: 0;
     gap: 2%;
 }
 .preco span{
@@ -155,7 +156,8 @@ main{
     justify-content: center;
 }
 .direita_imagem img{
-    height: 590px;
+    width: auto;
+    height: 600px;
 }
 .direita_textos{
     margin-left: 7%;
@@ -197,7 +199,8 @@ main{
     justify-content: center;
 }
 .esquerda_imagem img{
-    height: 590px;
+    width: auto;
+    height: 600px;
 }
 .esquerda_textos{
     margin-left: 7%;
@@ -265,7 +268,9 @@ main{
     flex-direction: column;
 }
 .carregador_imagem img{
-    height: 590px;
+    width: 130%;
+    height: auto;
+    margin-left: 20%;
 }
 .carregador_textos{
     margin-left: 7%;
@@ -325,8 +330,248 @@ main{
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 16px;
 }
+.preco{
+    margin: 0;
+    flex: 1 1 auto;
+}
+
 .botao{
-    margin-top: 50px;
-    margin-left: 15%;
+    margin-top: 0;
+    margin-left: 0;
+    flex: 0 0 auto;
+}
+
+/* RESPONSIVE: tablet e mobile */
+@media (max-width: 1024px) {
+    .produtos{
+        font-size: 60px;
+        margin-bottom: 60px;
+        padding: 0 20px;
+    }
+
+    /* tablet: manter MoveHand Par lado-a-lado, demais empilhar */
+    .s1,
+    .s2 {
+        flex-wrap: wrap;
+        gap: 24px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #dupla {
+        width: 90%;
+        max-width: 540px;
+        height: auto;
+        padding: 24px 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    /* dupla empilhada no tablet: imagem e textos em 100% */
+    .dupla_imagem {
+        width: 100%;
+        height: auto;
+        padding: 12px 0;
+    }
+
+    .dupla_textos {
+        width: 100%;
+        margin-left: 0;
+        padding: 0;
+    }
+
+    #direita,
+    #esquerda,
+    #kit,
+    #carregador {
+        width: 100%;
+        max-width: 540px;
+        height: auto;
+        padding: 30px 20px;
+    }
+
+    #esquerda,
+    #carregador {
+        margin-left: 0;
+    }
+
+    .direita_imagem,
+    .esquerda_imagem,
+    .kit_imagem,
+    .carregador_imagem {
+        width: 100%;
+        height: auto;
+        min-height: 320px;
+        padding: 20px 0;
+    }
+  
+
+    .direita_textos,
+    .esquerda_textos,
+    .kit_textos,
+    .carregador_textos {
+        width: 100%;
+        margin-left: 0;
+        padding: 0;
+    }
+
+    .dupla_textos h2,
+    .direita_textos h2,
+    .esquerda_textos h2,
+    .kit_textos h2,
+    .carregador_textos h2 {
+        font-size: 32px;
+    }
+
+    .ortese,
+    .avaliacao,
+    .texto_dupla,
+    .texto_direita,
+    .texto_esquerda,
+    .texto_kit,
+    .texto_carregador,
+    .preco {
+        font-size: 18px;
+    }
+
+    .texto_dupla,
+    .texto_direita,
+    .texto_esquerda,
+    .texto_kit,
+    .texto_carregador {
+        width: 100%;
+    }
+
+    .compra {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .botao {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    #hero {
+        height: 260px;
+    }
+
+    /* mobile/tablet menor: empilhar o card 'dupla' também */
+    #dupla {
+        flex-direction: column;
+        padding: 20px;
+        width: 95%;
+    }
+
+    .dupla_imagem {
+        width: 100%;
+        min-height: 260px;
+        padding: 12px 0;
+    }
+
+    .dupla_textos {
+        width: 100%;
+        padding: 0;
+    }
+
+    .produtos{
+        font-size: 44px;
+        margin-bottom: 40px;
+        padding: 0 16px;
+    }
+
+    #dupla,
+    #direita,
+    #esquerda,
+    #kit,
+    #carregador {
+        border-radius: 24px;
+        padding: 24px 16px;
+    }
+
+    .dupla_imagem,
+    .direita_imagem,
+    .esquerda_imagem,
+    .kit_imagem,
+    .carregador_imagem {
+        min-height: 260px;
+    }
+
+    .dupla_textos h2,
+    .direita_textos h2,
+    .esquerda_textos h2,
+    .kit_textos h2,
+    .carregador_textos h2 {
+        font-size: 28px;
+    }
+
+    .ortese {
+        font-size: 20px;
+        margin-top: 30px;
+    }
+
+    .avaliacao,
+    .preco {
+        font-size: 16px;
+    }
+
+    .texto_dupla,
+    .texto_direita,
+    .texto_esquerda,
+    .texto_kit,
+    .texto_carregador {
+        font-size: 18px;
+    }
+
+    .botao {
+        margin-top: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .produtos{
+        font-size: 32px;
+        margin-bottom: 32px;
+    }
+
+    #dupla,
+    #direita,
+    #esquerda,
+    #kit,
+    #carregador {
+        width: 100%;
+        padding: 20px 14px;
+    }
+
+    .dupla_textos,
+    .direita_textos,
+    .esquerda_textos,
+    .kit_textos,
+    .carregador_textos {
+        padding: 0;
+    }
+
+    .ortese,
+    .avaliacao,
+    .preco,
+    .texto_dupla,
+    .texto_direita,
+    .texto_esquerda,
+    .texto_kit,
+    .texto_carregador {
+        font-size: 16px;
+    }
+
+    .botao {
+        margin-left: 0;
+        width: 100%;
+    }
 }

@@ -23,3 +23,28 @@
     color: black;
 }
 
+@media (max-width: 1024px) {
+  .botao-comprar {
+    height: 48px;
+    padding: 10px 14px;
+    font-size: 18px;
+    border-radius: 12px;
+    width: 100%;
+    justify-content: center;
+  }
+  .botao-comprar span {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .botao-comprar {
+    height: 46px;
+    padding: 8px 12px;
+    font-size: 16px;
+  }
+  .botao-comprar span {
+    font-size: 14px;
+  }
+}
+

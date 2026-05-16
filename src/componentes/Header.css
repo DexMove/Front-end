@@ -21,12 +21,12 @@
 
 .logo-link img {
   width: auto;
-  height: 48px;
+  height: 64px;
 }
 
 .menu-button {
+  visibility: hidden;
   display: none;
-  border: none;
   background: transparent;
   cursor: pointer;
   padding: 8px;
@@ -46,14 +46,10 @@
 }
 
 .menu-links {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  padding: 0 20px 12px;
   flex-wrap: wrap;
 }
 
@@ -71,7 +67,12 @@
   white-space: nowrap;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1064px) {
+  .menu-links {
+    flex-wrap: nowrap;
+    gap: 1rem;
+  }
+
   .menu-links a {
     font-size: 16px;
   }
@@ -79,24 +80,62 @@
   .cadastro {
     padding: 9px 14px;
   }
+  .menu-button {
+  visibility: hidden;
+}
+.logo-link img {
+  width: auto;
+  height: 60px;
+}
+}
+@media (max-width: 912px) {
+     .menu-links a {
+    font-size: 14px;
+  }
+
+  .cadastro {
+    padding: 9px 12px;
+  }
+  .logo-link img {
+  width: auto;
+  height: 56px;
+}
+}
+  @media (max-width: 830px) {
+.menu-links a {
+    font-size: 12px;
+  }
+
+  .cadastro {
+    padding: 9px 10px;
+  
+  }
+  .logo-link img {
+  width: auto;
+  height: 52px;
+}
 }
 
 @media (max-width: 768px) {
+  .header-row {
+    justify-content: space-between;
+    width: 90%;
+  }
+
   .menu-button {
     display: flex;
+    visibility: visible;
+    background: transparent;
   }
 
   .menu-links {
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
-    padding: 12px 20px 18px;
+    display:none;
   }
 
   .menu-links.show {
     display: flex;
+    flex-direction: column;
+    
   }
 
   .menu-links a {
