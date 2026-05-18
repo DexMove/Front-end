@@ -3,14 +3,9 @@ main{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: white;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    font-family: 'roboto', sans-serif;
-    box-sizing: border-box;
-    overflow-x: hidden;
+    background: #fff;
 }
+
 #hero-bloqueada{
     width: 90%;
     padding: 60px 20px;
@@ -23,12 +18,10 @@ main{
 }
 
 .onda-topo{
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
+    margin-top: 50px;
     width: 100%;
     height: auto;
-    z-index: 0;
 }
 
 .imagem-container{

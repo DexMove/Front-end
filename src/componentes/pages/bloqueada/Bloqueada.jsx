@@ -12,7 +12,6 @@ function Bloqueada(){
             <Header />
             <img src={onda1} alt="onda" className="onda-topo" />
             <section id="hero-bloqueada">
-                
                 <div className="imagem-container">
                     <img src={bloqueada} alt="área bloqueada" className="imagem-bloqueada" />
                     <div className="conteudo-bloqueado">
