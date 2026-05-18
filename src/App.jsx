@@ -1,18 +1,19 @@
-import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from "./Home/Home"
-import Detalhes from './Detalhes/Detalhes';
 
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./componentes/Header";
+import Planos from "./componentes/pages/planos/Planos";
+import Produtos from "./componentes/pages/produtos/Produtos";
 
 function App() {
-
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
-        < Route path='/' element={<Home />} />
-         < Route path='/detalhes' element={<Detalhes />} />
+        <Route path="/planos" element={<Planos />} />
+        <Route path="/produtos" element={<Produtos />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
+    
   );
 }
 
-export default App
+export default App;

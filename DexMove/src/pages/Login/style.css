@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&family=Roboto:wght@400;500&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---- PÁGINA ---- */
+.lc-page {
+  width: 100%;
+  height: 100%;
+  background: #F5F0E8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  padding: 2rem;
+}
+
+/* ---- CARD PRINCIPAL ---- */
+.lc-card {
+  display: flex;
+  width: 100%;
+  max-width: 760px;
+  min-height: 540px;
+  background: #F5F0E8;
+  gap: 1rem;
+}
+
+/* ---- LADO ESQUERDO: FORMULÁRIO ---- */
+.lc-form-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.5rem 2rem 2.5rem 1rem;
+}
+
+.lc-title {
+  font-family: 'roboto', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.4rem;
+}
+
+.lc-subtitle {
+  font-size: 0.82rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 1.4rem;
+}
+
+.lc-subtitle strong {
+  color: #1a1a1a;
+}
+
+/* ---- TOGGLE (Entrar / Cadastre-se) ---- */
+.lc-toggle {
+  display: flex;
+  background: #EDE8DE;
+  border-radius: 10px;
+  padding: 4px;
+  margin-bottom: 1.5rem;
+  gap: 4px;
+}
+
+.lc-tab {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.lc-tab.active {
+  background: #E8C96A;
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+/* ---- CAMPOS DO FORMULÁRIO ---- */
+.lc-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 1rem;
+}
+
+.lc-label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #444;
+}
+
+.lc-input-wrap {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1.5px solid #E0D9CC;
+  border-radius: 10px;
+  padding: 0 0.85rem;
+  gap: 8px;
+  transition: border 0.2s;
+}
+
+.lc-input-wrap:focus-within {
+  border-color: #E8C96A;
+}
+
+.lc-input-wrap svg {
+  flex-shrink: 0;
+  color: #aaa;
+}
+
+.lc-input-wrap input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0.65rem 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.85rem;
+  color: #1a1a1a;
+  background: transparent;
+}
+
+.lc-input-wrap input::placeholder {
+  color: #bbb;
+}
+
+.lc-eye-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #aaa;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* ---- BOTÃO PRINCIPAL ---- */
+.lc-submit {
+  width: 100%;
+  padding: 0.75rem;
+  background: #E8C96A;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  cursor: pointer;
+  margin-top: 0.4rem;
+  margin-bottom: 1rem;
+  transition: opacity 0.2s;
+}
+
+.lc-submit:hover {
+  opacity: 0.88;
+}
+
+/* ---- LINK DE ALTERNÂNCIA ---- */
+.lc-alt-link {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.lc-alt-link a {
+  color: #C8973A;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.lc-alt-link a:hover {
+  text-decoration: underline;
+}
+
+/* ---- DIVISOR "Ou continue com" ---- */
+.lc-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+  font-size: 0.78rem;
+  color: #aaa;
+}
+
+.lc-divider::before,
+.lc-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #D8D1C5;
+}
+
+/* ---- BOTÕES SOCIAL (Google / Apple) ---- */
+.lc-social-row {
+  display: flex;
+  gap: 10px;
+}
+
+.lc-social-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0.6rem;
+  background: #fff;
+  border: 1.5px solid #E0D9CC;
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.lc-social-btn:hover {
+  border-color: #C8973A;
+}
+
+/* ---- LADO DIREITO: IMAGEM ---- */
+.lc-img-side {
+  width: 42%;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.lc-img-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---- RESPONSIVO: esconde imagem no celular ---- */
+@media (max-width: 600px) {
+  .lc-img-side {
+    display: none;
+  }
+
+  .lc-form-side {
+    padding: 2rem 1rem;
+  }
+}
