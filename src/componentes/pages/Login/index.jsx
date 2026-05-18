@@ -1,6 +1,9 @@
 import './style.css';
 
 import { useState } from "react";
+import Header from "../../Header";
+import Footer from "../../Footer";
+
 
 
 // ---- ÍCONES ----
@@ -107,6 +110,9 @@ export default function LoginCadastro() {
   const isLogin = tab === "login"; // true = mostra login, false = mostra cadastro
 
   return (
+    <main>
+      <Header />
+    
     <div className="lc-page">
       <div className="lc-card">
 
@@ -308,5 +314,7 @@ export default function LoginCadastro() {
 
       </div>
     </div>
+    <Footer />
+    </main>
   );
 }

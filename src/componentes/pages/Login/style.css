@@ -5,7 +5,19 @@
   margin: 0;
   padding: 0;
 }
-
+main{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-family: 'roboto', sans-serif;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
 /* ---- PÁGINA ---- */
 .lc-page {
   width: 100%;

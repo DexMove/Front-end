@@ -1,8 +1,10 @@
 import { useState } from "react";
 import styles from "./suporte.module.css";
-import iconeNavegar from "../../../assets/img/icons8-navegar-60.png";
-import iconeSeta from "../../../assets/img/weui_arrow-filled.png";
-import imagemContato from "../../../assets/img/image_62.png";
+import iconeNavegar from "../../../assets/icons8-navegar-60.png";
+import iconeSeta from "../../../assets/weui_arrow-filled.png";
+import imagemContato from "../../../assets/image_62.png";
+import Header from "../../Header";
+import Footer from "../../Footer";
 
 function Suporte() { 
     const [faqAberto, setFaqAberto] = useState(null);
@@ -104,6 +106,7 @@ function Suporte() {
     return ( 
         <div className={styles.container}>
             <main>
+                <Header />
                 {/* SEÇÃO PRINCIPAL */}
                 <section className={styles.secaoPrincipal}>
                     <div className={styles.containerOndas}>
@@ -204,6 +207,7 @@ function Suporte() {
                         </div>
                     </div>
                 </section>
+                <Footer />
             </main>
         </div>
     );
