@@ -7,6 +7,7 @@ import Home from "./Home/Home";
 import Sobre from "./componentes/pages/sobre_nos/sobre_nos";
 import Suporte from "./componentes/pages/suporte/suporte";
 import Login from "./componentes/pages/Login/index";
+import Cadastro_fisioterapeuta from "./componentes/pages/cadastro-fisioterapeuta/Cadastro_fisioterapeuta";
 function App() {
   return (
     <BrowserRouter>
@@ -18,6 +19,7 @@ function App() {
         <Route path="/suporte" element={<Suporte />} />
         <Route path="/cadastro" element={<Login />} />
         <Route path="/cadastro" element={<Login />} />
+        <Route path="/cadastro_fisioterapeuta" element={<Cadastro_fisioterapeuta/>} />
       </Routes>
     </BrowserRouter>    
   );

@@ -1,14 +1,7 @@
 import './style.css';
-
 import { useState } from "react";
 import Header from "../../Header";
 import Footer from "../../Footer";
-
-
-
-// ---- ÍCONES ----
-// São pequenos desenhos SVG usados dentro dos inputs e botões
-
 const IconEmail = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <rect x="2" y="4" width="20" height="16" rx="2"/>
@@ -59,13 +52,8 @@ const AppleIcon = () => (
   </svg>
 );
 
-// ---- TROQUE AQUI PELA URL DA SUA IMAGEM ----
 const IMAGE_URL = "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&q=80";
 
-
-// ========================================
-// COMPONENTE PRINCIPAL
-// ========================================
 export default function LoginCadastro() {
 
   // Controla qual aba está ativa: "login" ou "cadastro"
