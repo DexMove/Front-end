@@ -17,8 +17,8 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/sobre" element={<Sobre />} />
         <Route path="/suporte" element={<Suporte />} />
-        <Route path="/cadastro" element={<Login />} />
-        <Route path="/cadastro" element={<Login />} />
+        <Route path="/entrar" element={<Login initialTab="login" />} />
+        <Route path="/cadastro" element={<Login initialTab="cadastro" />} />
         <Route path="/cadastro_fisioterapeuta" element={<Cadastro_fisioterapeuta/>} />
       </Routes>
     </BrowserRouter>    

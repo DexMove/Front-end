@@ -30,7 +30,7 @@ function Header() {
           <Link onClick={() => setMenuOpen(false)} to="/planos">
             VER PLANOS
           </Link>
-          <Link onClick={() => setMenuOpen(false)} to="/cadastro">
+          <Link onClick={() => setMenuOpen(false)} to="/entrar">
             ENTRAR
           </Link>
           <Link

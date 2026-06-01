@@ -54,10 +54,10 @@ const AppleIcon = () => (
 
 const IMAGE_URL = "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&q=80";
 
-export default function LoginCadastro() {
+export default function LoginCadastro({ initialTab = "login" }) {
 
   // Controla qual aba está ativa: "login" ou "cadastro"
-  const [tab, setTab] = useState("login");
+  const [tab, setTab] = useState(initialTab);
 
   // Controla se a senha está visível ou oculta
   const [showSenha, setShowSenha] = useState(false);
