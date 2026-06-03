@@ -6,7 +6,7 @@ const planos = [
   {
     className: "movimento",
     nome: "Plano Primeiro Movimento",
-    preco: "A partir de 700",
+    preco: "A partir de R$700,00",
     botao: "Inicie sua jornada",
     beneficios: [
       "Acesso a Movehand",
@@ -19,7 +19,7 @@ const planos = [
     className: "independencia",
     recomendado: true,
     nome: "Plano Independência",
-    preco: "R$ 897/mês",
+    preco: "R$ 00/mês",
     botao: "Assine agora",
     beneficios: [
       "Todos os benefícios anteriores",
@@ -31,7 +31,7 @@ const planos = [
   {
     className: "autonomia",
     nome: "Plano Autonomia",
-    preco: "R$ 390/mês",
+    preco: "R$ 00/mês",
     botao: "Atualize para",
     beneficios: [
       "Todos os benefícios do Primeiro Movimento",
@@ -73,7 +73,6 @@ function Planos() {
           ))}
         </div>
       </section>
-
       <Footer />
     </main>
   );
