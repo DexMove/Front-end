@@ -1,40 +1,82 @@
-import "./Planos.css"
-import Header from "../../Header"
-import Footer from "../../Footer"
+import "./Planos.css";
+import Header from "../../Header";
+import Footer from "../../Footer";
 
+const planos = [
+  {
+    className: "movimento",
+    nome: "Plano Primeiro Movimento",
+    preco: "A partir de 700",
+    botao: "Inicie sua jornada",
+    beneficios: [
+      "Acesso a Movehand",
+      "Uso da plataforma digital",
+      "Inteligência artificial para apoio no tratamento",
+      "Acompanhamento com fisioterapeuta externo",
+    ],
+  },
+  {
+    className: "independencia",
+    recomendado: true,
+    nome: "Plano Independência",
+    preco: "R$ 897/mês",
+    botao: "Assine agora",
+    beneficios: [
+      "Todos os benefícios anteriores",
+      "Acompanhamento com fisioterapeuta parceiro",
+      "Tratamento integral de todo o corpo",
+      "Par da Movehand já incluso",
+    ],
+  },
+  {
+    className: "autonomia",
+    nome: "Plano Autonomia",
+    preco: "R$ 390/mês",
+    botao: "Atualize para",
+    beneficios: [
+      "Todos os benefícios do Primeiro Movimento",
+      "Acompanhamento com fisioterapeuta parceiro",
+      "Par da Movehand já incluso",
+      "Tratamento focado na parte superior do corpo",
+    ],
+  },
+];
 
-function Planos(){
-    return(
-        <main>
-            <Header />
-            <section id="hero-planos">
-                <div className="texto-hero">
-                <h1>Encontre o plano ideal para você</h1>
-                <h2>Cada opção foi pensada para se adaptar às suas necessidades com tecnologia e conforto</h2></div>
-                <button className="planos-botao">Planos mensais</button>
-                <div className="planos">
-                <div className="movimento">
-                    <h3 className="plano-h3">Plano primeiro movimento</h3>
-                    <h3 className="valor-p">Gratuito</h3>
-                    <button>Inicie sua jornada</button>
-                </div>
-                
-                <div className="independencia">
-                    <p className="recomendado">Recomendado</p>
-                    <h3 className="plano-h3">Plano independência</h3>
-                    <h3 className="valor-p">R$250,00/mês</h3>
-                    <button>Assine agora</button>
-                </div>
-                <div className="autonomia">
-                    <h3 className="plano-h3">Plano autonomia</h3>
-                    <h3 className="valor-p">R$99,00/mês</h3>
-                    <button>Atualize para</button>
-                </div>
-                </div>
-            </section>
-            <article className="imagem"></article>
-            <Footer />
-        </main>
-    )
+function Planos() {
+  return (
+    <main>
+      <Header />
+      <section id="hero-planos">
+        <div className="texto-hero">
+          <h1>Encontre o plano ideal para você</h1>
+          <h2>
+            Cada opção foi pensada para se adaptar às suas necessidades com
+            tecnologia e conforto
+          </h2>
+        </div>
+
+        <button className="planos-botao">Planos mensais</button>
+
+        <div className="planos">
+          {planos.map((plano) => (
+            <div className={`plano-card ${plano.className}`} key={plano.nome}>
+              {plano.recomendado && <p className="recomendado">Recomendado</p>}
+              <h3 className="plano-h3">{plano.nome}</h3>
+              <h4 className="valor-p">{plano.preco}</h4>
+              <ul className="beneficios">
+                {plano.beneficios.map((beneficio) => (
+                  <li key={beneficio}>{beneficio}</li>
+                ))}
+              </ul>
+              <button>{plano.botao}</button>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <Footer />
+    </main>
+  );
 }
-export default Planos
+
+export default Planos;

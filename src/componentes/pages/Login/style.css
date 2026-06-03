@@ -28,6 +28,7 @@ main{
   justify-content: center;
   font-family: 'Roboto', sans-serif;
   padding: 2rem;
+  flex-direction: row;
 }
 
 /* ---- CARD PRINCIPAL ---- */
@@ -245,10 +246,14 @@ main{
 
 /* ---- LADO DIREITO: IMAGEM ---- */
 .lc-img-side {
-  width: 42%;
+  height:500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 16px;
   overflow: hidden;
   flex-shrink: 0;
+  margin: auto;
 }
 
 .lc-img-side img {

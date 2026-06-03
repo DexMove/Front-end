@@ -2,6 +2,7 @@ import './style.css';
 import { useState } from "react";
 import Header from "../../Header";
 import Footer from "../../Footer";
+import Cadastro from "../../../assets/cadastro.png"
 const IconEmail = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <rect x="2" y="4" width="20" height="16" rx="2"/>
@@ -297,7 +298,7 @@ export default function LoginCadastro({ initialTab = "login" }) {
 
         {/* ======== LADO DIREITO: IMAGEM ======== */}
         <div className="lc-img-side">
-          <img src={IMAGE_URL} alt="DexMove" />
+          <img src={Cadastro} alt="DexMove" />
         </div>
 
       </div>
