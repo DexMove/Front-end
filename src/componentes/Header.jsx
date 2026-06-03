@@ -15,7 +15,7 @@ function Header() {
         </Link>
 
         <nav className={`menu-links ${menuOpen ? 'show' : ''}`}>
-          <Link onClick={() => setMenuOpen(false)} to="/">
+          <Link onClick={() => setMenuOpen(false)} to="/home">
             INÍCIO
           </Link>
           <Link onClick={() => setMenuOpen(false)} to="/sobre">
@@ -55,5 +55,4 @@ function Header() {
     </div>
   );
 }
-
 export default Header;
