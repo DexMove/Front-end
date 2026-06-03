@@ -53,8 +53,6 @@ const AppleIcon = () => (
   </svg>
 );
 
-const IMAGE_URL = "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&q=80";
-
 export default function LoginCadastro({ initialTab = "login" }) {
 
   // Controla qual aba está ativa: "login" ou "cadastro"
@@ -298,7 +296,7 @@ export default function LoginCadastro({ initialTab = "login" }) {
 
         {/* ======== LADO DIREITO: IMAGEM ======== */}
         <div className="lc-img-side">
-          <img src={Cadastro} alt="DexMove" />
+          <img className="lc-cadastro-img" src={Cadastro} alt="DexMove" />
         </div>
 
       </div>

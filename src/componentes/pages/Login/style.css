@@ -35,10 +35,11 @@ main{
 .lc-card {
   display: flex;
   width: 100%;
-  max-width: 760px;
+  max-width: none;
   min-height: 540px;
   background: #F5F0E8;
   gap: 1rem;
+  justify-content: center;
 }
 
 /* ---- LADO ESQUERDO: FORMULÁRIO ---- */
@@ -246,21 +247,27 @@ main{
 
 /* ---- LADO DIREITO: IMAGEM ---- */
 .lc-img-side {
-  height:500px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 16px;
-  overflow: hidden;
+  overflow: visible;
   flex-shrink: 0;
   margin: auto;
 }
 
 .lc-img-side img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 592px;
+  height: 831px;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
   display: block;
+}
+
+.lc-cadastro-img {
+  width: 592px;
+  height: 831px;
 }
 
 /* ---- RESPONSIVO: esconde imagem no celular ---- */
