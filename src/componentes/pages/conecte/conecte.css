@@ -241,9 +241,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 22px;
   padding: 30px 96px;
   background: white;
+  width: 90%;
+  flex-direction: row;
 }
 
 .conecte-help > div {
@@ -254,7 +255,11 @@
   background: var(--teal);
   color: white;
 }
-
+.duvida{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 .conecte-help h2 {
   margin: 0 0 10px;
   color: white;

@@ -94,14 +94,17 @@ function Conecte() {
       </section>
 
       <section className="conecte-help">
-        <div>
+        <div className="duvida">
+            <div>
           <h2>Ainda tem duvidas?</h2>
           <p>Nossa equipe de suporte esta pronta para ajudar voce.</p>
-        </div>
-        <Link to="/suporte">
+          </div>
+          <Link to="/suporte">
           Falar com suporte
           <Headphones size={18} />
         </Link>
+        </div>
+        
       </section>
 
       < Footer />
