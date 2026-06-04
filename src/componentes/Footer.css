@@ -65,11 +65,6 @@
 }
 /* ── TABLET (até 1024px) ── */
 @media (max-width: 1024px) {
-<<<<<<< HEAD
-    
-=======
-   
->>>>>>> db68d87dce6acd11d1750db630425cfff758e8ed
 
     .footer-container {
         gap: 40px;
