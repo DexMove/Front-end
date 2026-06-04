@@ -10,6 +10,7 @@ import Login from "./componentes/pages/Login/index";
 import Cadastro_fisioterapeuta from "./componentes/pages/cadastro-fisioterapeuta/Cadastro_fisioterapeuta";
 import Bloqueada from "./componentes/pages/bloqueada/Bloqueada";
 import Conecte from "./componentes/pages/conecte/conecte";
+import Parametros from "./componentes/pages/parametros/parametros";
 function App() {
   return (
     <BrowserRouter>
@@ -24,6 +25,7 @@ function App() {
         <Route path="/cadastro_fisioterapeuta" element={<Cadastro_fisioterapeuta/>} />
         <Route path="/area-bloqueada" element={<Bloqueada />} />
         <Route path="/conecte" element={<Conecte />} />
+        <Route path="/parametros" element={<Parametros />} />
 
       </Routes>
     </BrowserRouter>    
