@@ -1,0 +1,392 @@
+.controle-page {
+  --teal: #076576;
+  --teal-dark: #064f5c;
+  --orange: #ffa45d;
+  --yellow: #f5e78b;
+  --ink: #111111;
+  --muted: #4f4f4f;
+  --line: #c9c1b6;
+  --paper: #fffaf2;
+  --success: #209b46;
+
+  width: 100%;
+  background: white;
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+}
+
+.controle-hero {
+  position: relative;
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.controle-hero img {
+  margin-top: 50px;
+  width: 100%;
+}
+
+.controle-heading {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.controle-heading h1 {
+  margin: 0 0 18px;
+  color: #050505;
+  font-size: 52px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.controle-heading p {
+  margin: 34px 0 0;
+  color: #0f0f0f;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.controle-device {
+  position: relative;
+  padding: 0 5vw 110px;
+  overflow: hidden;
+}
+
+.controle-device-label,
+.controle-shell {
+  position: relative;
+  z-index: 1;
+}
+
+.controle-device-label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 8px 0 46px;
+  color: #111;
+}
+
+.controle-device-label h2 {
+  margin: 0 0 7px;
+  color: #111;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.controle-device-label p {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.controle-shell {
+  width: 90vw;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.controle-status-row {
+  display: grid;
+  grid-template-columns: 1.25fr 0.8fr 1fr 42px;
+  align-items: center;
+  gap: 14px;
+  min-height: 86px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 250, 242, 0.96);
+  box-shadow: 0 7px 0 rgba(0, 0, 0, 0.06);
+}
+
+.controle-status-row article {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+
+.controle-status-row article + article {
+  padding-left: 16px;
+  border-left: 1px solid #e4dace;
+}
+
+.controle-status-row span,
+.controle-card h3,
+.controle-metrics span {
+  color: #111;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.controle-status-row strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--success);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.controle-status-row small {
+  color: #111;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.controle-status-row button {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #111;
+  cursor: pointer;
+}
+
+.controle-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.8fr 1fr;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.controle-card,
+.controle-progress {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 250, 242, 0.95);
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.06);
+}
+
+.controle-card {
+  padding: 16px 18px;
+}
+
+.controle-card h3 {
+  margin: 0 0 8px;
+}
+
+.controle-card strong {
+  display: block;
+  margin-bottom: 22px;
+  color: var(--success);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.controle-card p,
+.controle-card span,
+.controle-progress p {
+  margin: 0;
+  color: #111;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.controle-params p {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #ded3c6;
+}
+
+.controle-stack {
+  display: grid;
+  gap: 14px;
+}
+
+.controle-exercise,
+.controle-mode,
+.controle-ai {
+  min-height: 155px;
+}
+
+.controle-exercise button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 132px;
+  min-height: 38px;
+  border: 0;
+  border-radius: 5px;
+  background: var(--teal);
+  color: white;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.controle-mode div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--success);
+}
+
+.controle-mode svg {
+  color: var(--success);
+}
+
+.controle-ai {
+  text-align: center;
+}
+
+.controle-ai svg {
+  margin: 18px auto 12px;
+  color: #111;
+}
+
+.controle-ai p {
+  margin-bottom: 12px;
+}
+
+.controle-ai a {
+  color: var(--success);
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.controle-progress {
+  margin-top: 28px;
+  padding: 22px 24px 18px;
+}
+
+.controle-progress-heading h2 {
+  margin: 0 0 10px;
+  color: #111;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.controle-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.controle-metrics article {
+  display: grid;
+  gap: 6px;
+}
+
+.controle-metrics strong {
+  color: #111;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.controle-metrics small {
+  color: var(--success);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.controle-chart {
+  margin-top: 28px;
+}
+
+.controle-chart svg {
+  width: 100%;
+  height: 210px;
+  overflow: visible;
+}
+
+.controle-chart polyline {
+  fill: none;
+  stroke: var(--teal);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 6;
+}
+
+.controle-chart circle {
+  fill: var(--teal);
+  stroke: var(--teal);
+  stroke-width: 2;
+}
+
+.controle-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-top: 6px;
+  color: #111;
+  font-size: 11px;
+  font-weight: 800;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .controle-device {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  .controle-heading h1 {
+    font-size: 36px;
+  }
+
+  .controle-heading p {
+    font-size: 18px;
+  }
+
+  .controle-status-row,
+  .controle-grid,
+  .controle-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .controle-status-row article + article {
+    padding-left: 0;
+    padding-top: 12px;
+    border-left: 0;
+    border-top: 1px solid #e4dace;
+  }
+
+  .controle-status-row button {
+    justify-self: end;
+  }
+}
+
+@media (max-width: 560px) {
+  .controle-hero {
+    margin-top: 34px;
+  }
+
+  .controle-hero img {
+    margin-top: 34px;
+  }
+
+  .controle-device {
+    padding-top: 18px;
+    padding-bottom: 70px;
+  }
+
+  .controle-device-label {
+    margin-bottom: 28px;
+  }
+
+  .controle-status-row,
+  .controle-card,
+  .controle-progress {
+    padding: 16px;
+  }
+
+  .controle-metrics strong {
+    font-size: 24px;
+  }
+
+  .controle-chart svg {
+    height: 160px;
+  }
+}
