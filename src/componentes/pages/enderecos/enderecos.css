@@ -1,0 +1,131 @@
+.page.page-enderecos {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-bottom: 64px;
+}
+
+.page-topbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+}
+
+.account-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 30px 34px;
+  background: white;
+  border-radius: 24px;
+  border: 1px solid #dfe5e6;
+  margin-bottom: 28px;
+}
+
+.account-hero h1 {
+  margin: 0;
+  font-size: 3rem;
+  color: #0f4f58;
+}
+
+.account-hero p {
+  margin: 0;
+  color: #375c62;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.primary-button {
+  border: none;
+  border-radius: 999px;
+  padding: 14px 24px;
+  background: #f1e78f;
+  color: #1f453f;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.address-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.address-card {
+  padding: 22px 26px;
+  border: 1px solid #bcd2d1;
+  border-radius: 24px;
+  background: white;
+}
+
+.address-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+  color: #153b3d;
+}
+
+.address-card p {
+  margin: 6px 0;
+  color: #4d6462;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.address-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  color: #153b3d;
+}
+
+.address-card p {
+  margin: 4px 0;
+  color: #4d6462;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.address-card .badge-pill {
+  display: inline-flex;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #e9f5f4;
+  color: #12514f;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.address-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 0 24px 22px;
+}
+
+.address-actions button {
+  border: 1px solid #c7d6d4;
+  border-radius: 999px;
+  background: white;
+  color: #254442;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.address-actions button:hover {
+  background: #f7fdfc;
+}
+
+.section-heading {
+  padding: 22px 24px;
+}
+
+.section-heading h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+
+.section-heading span {
+  color: #617f7d;
+  font-size: 0.92rem;
+}

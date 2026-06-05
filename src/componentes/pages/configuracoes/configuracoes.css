@@ -1,0 +1,125 @@
+.page.page-configuracoes {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-bottom: 64px;
+}
+
+.page-topbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+}
+
+.account-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 30px 34px;
+  background: white;
+  border-radius: 24px;
+  border: 1px solid #dfe5e6;
+  margin-bottom: 28px;
+}
+
+.account-hero h1 {
+  margin: 0;
+  font-size: 3rem;
+  color: #0f4f58;
+}
+
+.account-hero p {
+  margin: 0;
+  color: #375c62;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.primary-button {
+  border: none;
+  border-radius: 999px;
+  padding: 14px 24px;
+  background: #f1e78f;
+  color: #1f453f;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.setting-card {
+  border-radius: 24px;
+  border: 1px solid #dfe5e6;
+  padding: 22px 24px;
+  background: white;
+  margin-bottom: 18px;
+}
+
+.setting-card + .setting-card {
+  margin-top: 18px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #153b3d;
+}
+
+.setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  border-top: 1px solid #eef2f1;
+  padding: 16px 0;
+}
+
+.setting-row:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.setting-row label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #354f52;
+  font-size: 0.95rem;
+}
+
+.setting-row strong {
+  display: block;
+  font-size: 1rem;
+  color: #1f3f40;
+}
+
+.setting-action {
+  border: 1px solid #acd2d1;
+  border-radius: 999px;
+  padding: 10px 20px;
+  background: white;
+  color: #13514f;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.setting-action:hover {
+  background: #f3fcfb;
+}
+
+.setting-label {
+  color: #4c6b69;
+  font-weight: 600;
+}
+
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #1a7a7a;
+}

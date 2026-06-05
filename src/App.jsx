@@ -12,6 +12,11 @@ import Bloqueada from "./componentes/pages/bloqueada/Bloqueada";
 import Conecte from "./componentes/pages/conecte/conecte";
 import Parametros from "./componentes/pages/parametros/parametros";
 import Controle from "./componentes/pages/controle/controle";
+import MeusPedidos from "./componentes/pages/pedidos/pedidos";
+import MeusEnderecos from "./componentes/pages/enderecos/enderecos";
+import MetodosPagamento from "./componentes/pages/metodos-pagamento/metodos-pagamento";
+import Configuracoes from "./componentes/pages/configuracoes/configuracoes";
+
 function App() {
   return (
     <BrowserRouter>
@@ -28,7 +33,10 @@ function App() {
         <Route path="/conecte" element={<Conecte />} />
         <Route path="/parametros" element={<Parametros />} />
         <Route path="/controle" element={<Controle />} />
-
+        <Route path="/meus-pedidos" element={<MeusPedidos />} />
+        <Route path="/meus-enderecos" element={<MeusEnderecos />} />
+        <Route path="/metodos-pagamento" element={<MetodosPagamento />} />
+        <Route path="/configuracoes" element={<Configuracoes />} />
       </Routes>
     </BrowserRouter>    
   );

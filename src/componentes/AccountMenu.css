@@ -1,0 +1,87 @@
+.account-menu-wrapper {
+  position: relative;
+  display: inline-flex;
+  justify-content: flex-end;
+}
+
+.account-menu-button {
+  min-width: 48px;
+  min-height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: #1a7a7a;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.account-menu-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 12px);
+  width: 240px;
+  background: white;
+  border-radius: 20px;
+  border: 1px solid #e3e6e2;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+  padding: 18px;
+  z-index: 20;
+}
+
+.account-menu-header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.account-menu-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #1a7a7a;
+  color: white;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+
+.account-menu-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1f3331;
+}
+
+.account-menu-email {
+  font-size: 0.8rem;
+  color: #7b8a84;
+}
+
+.account-menu-item {
+  display: block;
+  color: #24312d;
+  text-decoration: none;
+  padding: 11px 12px;
+  border-radius: 14px;
+  transition: background 0.2s ease;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.account-menu-item:hover {
+  background: #f4f7f4;
+}
+
+.account-menu-logout {
+  width: 100%;
+  border: none;
+  border-radius: 14px;
+  background: #fff4f4;
+  color: #c43939;
+  padding: 11px 12px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+}
