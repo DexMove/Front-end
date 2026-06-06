@@ -3,6 +3,8 @@ import Footer from "../../Footer";
 import AccountNav from "../account/AccountNav";
 import AccountMenu from "../../AccountMenu";
 import "./enderecos.css";
+import Onda from "../../../assets/onda fina.png";
+
 
 const addresses = [
   {
@@ -35,19 +37,13 @@ export default function MeusEnderecos() {
         </div>
 
         <section className="account-hero">
-          <div>
-            <p>Gerencie seus dados de entrega</p>
-            <h1>Meus endereços</h1>
-            <p>
-              Veja seus endereços salvos e mantenha seu processo de compra mais rápido.
-            </p>
-          </div>
-          <button className="primary-button" type="button">
-            + Novo endereço
-          </button>
+            <img src={Onda} alt="Onda fina" />
+            <h1 className="hero-badge">Meus endereços</h1>
+            <h2>Gerencie seus endereços de entrega</h2>
+            <button className="primary-button" type="button">
+              + Novo endereço
+            </button>
         </section>
-
-        <AccountNav />
 
         <section className="address-grid">
           {addresses.map((address) => (

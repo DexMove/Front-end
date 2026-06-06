@@ -1,40 +1,36 @@
-.page.page-enderecos {
-  max-width: 1040px;
-  margin: 0 auto;
-  padding-bottom: 64px;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-
+.account-page{
+  width: 100%;
+  margin: 0 auto;
+  background-color: white;
+}
 .page-topbar {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 24px;
 }
-
-.account-hero {
+.account-hero{
   display: flex;
-  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 24px;
   align-items: center;
-  gap: 18px;
-  padding: 30px 34px;
-  background: white;
-  border-radius: 24px;
-  border: 1px solid #dfe5e6;
-  margin-bottom: 28px;
+  justify-content: space-between;
+  flex-direction: column;
+  
 }
 
-.account-hero h1 {
-  margin: 0;
-  font-size: 3rem;
-  color: #0f4f58;
+.account-hero h2 {
+  color: #0f3f3b;
+  font-size: 1.5rem;
 }
 
-.account-hero p {
-  margin: 0;
-  color: #375c62;
-  font-size: 0.98rem;
-  line-height: 1.6;
+.account-hero img{
+  width: 100%;
 }
-
 .primary-button {
   border: none;
   border-radius: 999px;
@@ -128,4 +124,15 @@
 .section-heading span {
   color: #617f7d;
   font-size: 0.92rem;
+}
+
+/* Full-bleed hero igual à página de pedidos */
+.page-enderecos .account-hero:first-of-type {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 34px 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
 }

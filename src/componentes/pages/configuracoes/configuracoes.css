@@ -123,3 +123,14 @@ input[type="checkbox"] {
   height: 18px;
   accent-color: #1a7a7a;
 }
+
+/* Full-bleed hero igual à página de pedidos */
+.page-configuracoes .account-hero:first-of-type {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 34px 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
