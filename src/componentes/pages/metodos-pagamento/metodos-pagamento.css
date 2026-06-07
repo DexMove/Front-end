@@ -1,8 +1,3 @@
-*{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 .account-page{
   width: 100%;
   margin: 0 auto;
@@ -13,7 +8,6 @@
   justify-content: flex-end;
   margin-bottom: 24px;
 }
-
 .account-hero{
   display: flex;
   width: 100%;
@@ -23,22 +17,17 @@
   flex-direction: column;
   
 }
-.account-hero h1 {
-  margin: 0;
-  font-size: 3rem;
-  color: #0f4f58;
+.account-hero h1{
+  line-height: 1.4;
 }
-
 .account-hero h2 {
   color: #0f3f3b;
   font-size: 1.5rem;
-  margin-top: 1rem;
+  line-height: 1.4;
 }
-
 .account-hero img{
- height: 210px;
+  width: 100%;
 }
-
 .primary-button {
   border: none;
   border-radius: 999px;

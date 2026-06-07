@@ -3,6 +3,7 @@ import Footer from "../../Footer";
 import AccountNav from "../account/AccountNav";
 import AccountMenu from "../../AccountMenu";
 import "./configuracoes.css";
+import Onda from "../../../assets/onda fina.png";
 
 const personalInfo = [
   { label: "Nome completo", value: "Bruna Almeida" },
@@ -28,16 +29,13 @@ export default function Configuracoes() {
 
         <section className="account-hero">
           <div>
-            <p>Atualize suas preferências</p>
+            <img src={Onda} alt="" />
             <h1>Configurações</h1>
-            <p>
+            <h2>
               Ajuste preferências de conta, notificações e as informações de contato.
-            </p>
+            </h2>
           </div>
         </section>
-
-        <AccountNav />
-
         <section className="setting-card">
           <h2>Informações pessoais</h2>
           {personalInfo.map((item) => (
