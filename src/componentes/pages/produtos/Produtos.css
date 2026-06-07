@@ -581,3 +581,19 @@ main{
         width: 100%;
     }
 }
+
+/* Breakpoints: 600 / 430 */
+@media (max-width: 600px) {
+    .produtos { font-size: 44px; margin-bottom: 40px; padding: 0 16px; }
+    .dupla_imagem img,
+    .direita_imagem img,
+    .esquerda_imagem img { max-height: 360px; height: auto; }
+}
+
+@media (max-width: 430px) {
+    .produtos { font-size: 34px; margin-bottom: 32px; }
+    .dupla_imagem img,
+    .direita_imagem img,
+    .esquerda_imagem img { width: 100%; height: auto; }
+    #dupla, #direita, #esquerda, #kit, #carregador { width: 95%; padding: 16px; }
+}

@@ -140,3 +140,27 @@
   border-radius: 0;
   background: transparent;
 }
+
+/* Breakpoints: 1024 / 768 / 600 / 430 */
+@media (max-width: 1024px) {
+  .payment-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .payment-card { padding: 20px; }
+}
+
+@media (max-width: 768px) {
+  .payment-grid { grid-template-columns: 1fr; }
+  .payment-card { padding: 18px; }
+  .payment-header h3 { font-size: 1rem; }
+}
+
+@media (max-width: 600px) {
+  .account-hero h1 { font-size: 1.6rem; }
+  .payment-icon-wrapper { width: 48px; height: 48px; }
+  .payment-icon-wrapper svg { width: 40px; height: 40px; }
+}
+
+@media (max-width: 430px) {
+  .primary-button { padding: 10px 14px; }
+  .payment-card { padding: 12px; }
+  .address-actions button { padding: 8px 12px; font-size: 0.85rem; }
+}
