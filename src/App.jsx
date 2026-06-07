@@ -6,7 +6,8 @@ import Produtos from "./componentes/pages/produtos/Produtos";
 import Home from "./Home/Home";
 import Sobre from "./componentes/pages/sobre_nos/sobre_nos";
 import Suporte from "./componentes/pages/suporte/suporte";
-import Login from "./componentes/pages/Login/index";
+import Entrar from "./componentes/pages/Login/login";
+import Cadastro from "./componentes/pages/login/cadastro";
 import Cadastro_fisioterapeuta from "./componentes/pages/cadastro-fisioterapeuta/Cadastro_fisioterapeuta";
 import Bloqueada from "./componentes/pages/bloqueada/Bloqueada";
 import Conecte from "./componentes/pages/conecte/conecte";
@@ -16,6 +17,8 @@ import MeusPedidos from "./componentes/pages/pedidos/pedidos";
 import MeusEnderecos from "./componentes/pages/enderecos/enderecos";
 import MetodosPagamento from "./componentes/pages/metodos-pagamento/metodos-pagamento";
 import Configuracoes from "./componentes/pages/configuracoes/configuracoes";
+import BemVindo from "./componentes/pages/bem-vindo/bem-vindo";
+import CompletarPerfil from "./componentes/pages/complete-perfil/CompletarPerfil";
 
 function App() {
   return (
@@ -26,8 +29,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/sobre" element={<Sobre />} />
         <Route path="/suporte" element={<Suporte />} />
-        <Route path="/entrar" element={<Login initialTab="login" />} />
-        <Route path="/cadastro" element={<Login initialTab="cadastro" />} />
+        <Route path="/entrar" element={<Entrar />} />
         <Route path="/cadastro_fisioterapeuta" element={<Cadastro_fisioterapeuta/>} />
         <Route path="/area-bloqueada" element={<Bloqueada />} />
         <Route path="/conecte" element={<Conecte />} />
@@ -37,6 +39,9 @@ function App() {
         <Route path="/meus-enderecos" element={<MeusEnderecos />} />
         <Route path="/metodos-pagamento" element={<MetodosPagamento />} />
         <Route path="/configuracoes" element={<Configuracoes />} />
+        <Route path="/bem-vindo" element={<BemVindo />} />
+        <Route path="/cadastro" element={<Cadastro />} />
+        <Route path="/completar-perfil" element={<CompletarPerfil />} />
       </Routes>
     </BrowserRouter>    
   );

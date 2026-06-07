@@ -40,7 +40,7 @@ function Header() {
               SOBRE NÓS
             </Link>
 
-            <Link className="cadastro" onClick={() => setMenuOpen(false)} to="/cadastro">
+            <Link className="cadastro" onClick={() => setMenuOpen(false)} to="/bem-vindo">
               CADASTRE-SE
             </Link>
           </nav>
