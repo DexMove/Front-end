@@ -40,12 +40,17 @@
 .account-menu-avatar {
   width: 44px;
   height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
+  overflow: hidden;
   background: #1a7a7a;
   color: white;
   display: grid;
   place-items: center;
   font-weight: 700;
+  line-height: 1;
 }
 
 .account-menu-name {

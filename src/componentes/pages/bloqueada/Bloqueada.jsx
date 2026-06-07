@@ -1,15 +1,16 @@
 import "./Bloqueada.css"
-import Header from "../../Header"
+import Header2 from "../../Header2"
 import Footer from "../../Footer"
 import onda1 from "../../../assets/onda fina.png"
 import onda2 from "../../../assets/onda2.png"
 import bloqueada from "../../../assets/area bloqueada.png"
 import { Link } from "react-router-dom"
+import conecte from "../conecte/conecte.jsx"
 
 function Bloqueada(){
     return(
         <main>
-            <Header />
+            <Header2 />
             <img src={onda1} alt="onda" className="onda-topo" />
             <section id="hero-bloqueada">
                 <div className="imagem-container">
@@ -22,7 +23,8 @@ function Bloqueada(){
                         
                         <div className="botoes-bloqueada">
                             <button className="botao-comprar">🛒 Comprar órtese</button>
-                            <button className="botao-tenho">Já tenho o dispositivo</button>
+                            <button className="botao-tenho"><a href="../conecte">Já tenho o dispositivo</a>
+                                </button>
                         </div>
                     </div>
                 </div>

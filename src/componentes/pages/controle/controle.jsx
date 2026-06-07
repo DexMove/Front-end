@@ -7,7 +7,7 @@ import {
   RefreshCw,
   Signal,
 } from "lucide-react";
-import Header from "../../Header";
+import Header2 from "../../Header2";
 import Footer from "../../Footer";
 import Onda from "../../../assets/onda fina.png";
 import "./controle.css";
@@ -29,7 +29,7 @@ function Controle() {
 
   return (
     <main className="controle-page">
-      <Header />
+      <Header2 />
 
       <section className="controle-hero">
         <div className="controle-heading">

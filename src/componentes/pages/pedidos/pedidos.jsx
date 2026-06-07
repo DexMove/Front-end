@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./pedidos.css";
-import Header from "../../Header";
+import Header2 from "../../Header2";
 import Footer from "../../Footer";
 import AccountMenu from "../../AccountMenu";
 import Onda from "../../../assets/onda fina.png";
@@ -49,11 +49,8 @@ export default function MeusPedidos() {
 
   return (
     <main className="pedidos-page">
-      <Header />
+      <Header2 />
       <div className="pedidos-container">
-        <div className="pedidos-topbar">
-          <AccountMenu />
-        </div>
         <section className="pedidos-hero">
           <div className="hero-copy">
             <img src={Onda} alt="Onda fina" />

@@ -11,14 +11,14 @@ import {
 } from "lucide-react";
 import "./conecte.css";
 import movihand from "../../../assets/direita1.png";
-import Header from "../../Header";
+import Header2 from "../../Header2";
 import Footer from "../../Footer";
 import Onda from "../../../assets/onda fina.png"
 
 function Conecte() {
   return (
     <main className="conecte-page">
-      <Header />
+      <Header2 />
       <section className="conecte-hero">
         <div className="conecte-heading">
           <h1>Conecte sua MoveHand</h1>

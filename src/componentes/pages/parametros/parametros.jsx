@@ -8,7 +8,7 @@ import {
   Headphones,
   ShieldCheck,
 } from "lucide-react";
-import Header from "../../Header";
+import Header2 from "../../Header2";
 import Footer from "../../Footer";
 import movihand from "../../../assets/direita1.png";
 import Onda from "../../../assets/onda fina.png";
@@ -17,7 +17,7 @@ import "./parametros.css";
 function Parametros() {
   return (
     <main className="parametros-page">
-      <Header />
+      <Header2 />
 
       <section className="parametros-hero">
         <div className="parametros-heading">

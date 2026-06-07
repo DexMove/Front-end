@@ -1,7 +1,5 @@
-import Header from "../../Header";
+import Header2 from "../../Header2";
 import Footer from "../../Footer";
-import AccountNav from "../account/AccountNav";
-import AccountMenu from "../../AccountMenu";
 import "./enderecos.css";
 import Onda from "../../../assets/onda fina.png";
 
@@ -29,13 +27,9 @@ const addresses = [
 export default function MeusEnderecos() {
   return (
     <main className="account-page">
-      <Header />
+      <Header2 />
 
       <div className="page page-enderecos">
-        <div className="page-topbar">
-          <AccountMenu />
-        </div>
-
         <section className="account-hero">
             <img src={Onda} alt="Onda fina" />
             <h1 className="hero-badge">Meus endereços</h1>

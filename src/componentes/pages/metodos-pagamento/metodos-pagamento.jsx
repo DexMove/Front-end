@@ -1,4 +1,4 @@
-import Header from "../../Header";
+import Header2 from "../../Header2";
 import Footer from "../../Footer";
 import AccountNav from "../account/AccountNav";
 import AccountMenu from "../../AccountMenu";
@@ -46,11 +46,8 @@ const paymentMethods = [
 export default function MetodosPagamento() {
   return (
     <main className="account-page">
-      <Header />
+      <Header2 />
       <div className="page page-pagamentos">
-        <div className="page-topbar">
-          <AccountMenu />
-        </div>
         <section className="account-hero">
           <div>
             <img src={Onda} alt="Onda fina" />

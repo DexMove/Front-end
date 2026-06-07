@@ -189,6 +189,12 @@
     flex-direction: column;
   }
 
+  /* Quando o menu mobile está aberto, esconder apenas o avatar/AccountMenu
+     para evitar que ele apareça dentro do painel do menu. */
+  .menu-links.show ~ .header-actions .account-menu-wrapper {
+    display: none;
+  }
+
   .menu-links a {
     width: 100%;
     font-size: 16px;

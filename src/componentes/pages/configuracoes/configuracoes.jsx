@@ -1,7 +1,6 @@
-import Header from "../../Header";
+import Header2 from "../../Header2";
 import Footer from "../../Footer";
 import AccountNav from "../account/AccountNav";
-import AccountMenu from "../../AccountMenu";
 import "./configuracoes.css";
 import Onda from "../../../assets/onda fina.png";
 
@@ -20,13 +19,9 @@ const notificationSettings = [
 export default function Configuracoes() {
   return (
     <main className="account-page">
-      <Header />
+      <Header2 />
 
       <div className="page page-configuracoes">
-        <div className="page-topbar">
-          <AccountMenu />
-        </div>
-
         <section className="account-hero">
           <div>
             <img src={Onda} alt="" />
