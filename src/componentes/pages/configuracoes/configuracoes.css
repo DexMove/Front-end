@@ -13,17 +13,24 @@
   flex-direction: column;
   
 }
-.account-hero h1{
+.config-title {
+  line-height: 1.4;
+  font-size: 60px;
+  font-weight: 700;
+  color:#0B5C6A;
+}
+.config-subtitle {
+  color: #0B5C6A;
+  font-size: 32px;
   line-height: 1.4;
 }
-.account-hero h2 {
-  color: #0f3f3b;
-  font-size: 1.5rem;
-  line-height: 1.4;
-}
-.account-hero img{
+.hero-wave {
   width: 100%;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
+
 .account-hero p {
   margin: 0;
   color: #375c62;
@@ -48,7 +55,11 @@
   background: white;
   margin-bottom: 18px;
 }
-
+.setting-card h2 {
+  font-size: 24px;
+  color: #153b3d;
+  font-weight: 700;
+}
 .setting-card + .setting-card {
   margin-top: 18px;
 }
@@ -135,21 +146,29 @@ input[type="checkbox"] {
   .page-configuracoes { padding: 0 20px; }
   .setting-card { padding: 20px; }
   .setting-row { gap: 14px; }
+  .config-title { font-size: 56px; }
+  .config-subtitle { font-size: 28px; width: 90%; text-align: center; margin: 0 auto; }
 }
 
 @media (max-width: 768px) {
   .setting-row { flex-direction: column; align-items: flex-start; gap: 10px; padding: 12px 0; }
   .setting-card { padding: 18px; }
   .section-heading h2 { font-size: 1rem; }
+  .config-title { font-size: 48px; }
+  .config-subtitle { font-size: 24px; }
 }
 
 @media (max-width: 600px) {
   .setting-row label { font-size: 0.92rem; }
   .setting-row strong { font-size: 0.95rem; }
   .setting-action { padding: 8px 16px; }
+  .config-title { font-size: 32px; }
+  .config-subtitle { font-size: 20px; }
 }
 
 @media (max-width: 430px) {
   .setting-row { padding: 10px 0; }
   .setting-action { padding: 8px 12px; font-size: 0.9rem; }
+  .config-title { font-size: 28px; }
+  .config-subtitle { font-size: 18px; }
 }

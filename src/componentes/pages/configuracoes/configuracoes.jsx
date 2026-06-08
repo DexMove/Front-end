@@ -1,6 +1,5 @@
 import Header2 from "../../Header2";
 import Footer from "../../Footer";
-import AccountNav from "../account/AccountNav";
 import "./configuracoes.css";
 import Onda from "../../../assets/onda fina.png";
 
@@ -20,13 +19,13 @@ export default function Configuracoes() {
   return (
     <main className="account-page">
       <Header2 />
-
+      <img className="hero-wave" src={Onda} alt="" />
       <div className="page page-configuracoes">
         <section className="account-hero">
           <div>
-            <img src={Onda} alt="" />
-            <h1>Configurações</h1>
-            <h2>
+            
+            <h1 className="config-title">Configurações</h1>
+            <h2 className="config-subtitle">
               Ajuste preferências de conta, notificações e as informações de contato.
             </h2>
           </div>

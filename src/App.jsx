@@ -9,10 +9,7 @@ import Suporte from "./componentes/pages/suporte/suporte";
 import Entrar from "./componentes/pages/Login/login";
 import Cadastro from "./componentes/pages/login/cadastro";
 import Cadastro_fisioterapeuta from "./componentes/pages/cadastro-fisioterapeuta/Cadastro_fisioterapeuta";
-import Bloqueada from "./componentes/pages/bloqueada/Bloqueada";
 import Conecte from "./componentes/pages/conecte/conecte";
-import Parametros from "./componentes/pages/parametros/parametros";
-import Controle from "./componentes/pages/controle/controle";
 import MeusPedidos from "./componentes/pages/pedidos/pedidos";
 import MeusEnderecos from "./componentes/pages/enderecos/enderecos";
 import MetodosPagamento from "./componentes/pages/metodos-pagamento/metodos-pagamento";
@@ -34,10 +31,7 @@ function App() {
         <Route path="/suporte" element={<Suporte />} />
         <Route path="/entrar" element={<Entrar />} />
         <Route path="/cadastro_fisioterapeuta" element={<Cadastro_fisioterapeuta/>} />
-        <Route path="/area-bloqueada" element={<Bloqueada />} />
         <Route path="/conecte" element={<Conecte />} />
-        <Route path="/parametros" element={<Parametros />} />
-        <Route path="/controle" element={<Controle />} />
         <Route path="/meus-pedidos" element={<MeusPedidos />} />
         <Route path="/meus-enderecos" element={<MeusEnderecos />} />
         <Route path="/metodos-pagamento" element={<MetodosPagamento />} />

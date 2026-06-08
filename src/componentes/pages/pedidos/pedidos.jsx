@@ -50,10 +50,12 @@ export default function MeusPedidos() {
   return (
     <main className="pedidos-page">
       <Header2 />
+      <img src={Onda} alt="Onda fina" />
       <div className="pedidos-container">
+
         <section className="pedidos-hero">
           <div className="hero-copy">
-            <img src={Onda} alt="Onda fina" />
+            
             <h1 className="hero-badge">Meus pedidos</h1>
             <h2>Acompanhe o status de seus pedidos</h2>
             

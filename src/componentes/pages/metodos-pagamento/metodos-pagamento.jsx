@@ -1,6 +1,5 @@
 import Header2 from "../../Header2";
 import Footer from "../../Footer";
-import AccountNav from "../account/AccountNav";
 import AccountMenu from "../../AccountMenu";
 import "./metodos-pagamento.css";
 import Onda from "../../../assets/onda fina.png";
@@ -47,12 +46,12 @@ export default function MetodosPagamento() {
   return (
     <main className="account-page">
       <Header2 />
+      <img className="hero-wave" src={Onda} alt="Onda fina" />
       <div className="page page-pagamentos">
         <section className="account-hero">
           <div>
-            <img src={Onda} alt="Onda fina" />
-            <h1>Métodos de pagamento</h1>
-            <h2>Gerencie seus métodos de pagamento cadastrados
+            <h1 className="pagamento-title">Métodos de pagamento</h1>
+            <h2 className="pagamento-subtitle">Gerencie seus métodos de pagamento cadastrados
             </h2>
           </div>
           <button className="primary-button" type="button">
