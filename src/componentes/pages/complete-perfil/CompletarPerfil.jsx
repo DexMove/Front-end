@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./CompletarPerfil.css";
 import Header from "../../Header";
 import Footer from "../../Footer";
+import {Link} from "react-router-dom";
 
 export default function CompletarPerfil() {
   const [quemUsa, setQuemUsa] = useState("eu");
@@ -157,7 +158,7 @@ export default function CompletarPerfil() {
               </div>
             )}
 
-            <button type="submit" className="cp-submit">Salva perfil</button>
+            <Link to="/minha-conta" className="cp-submit">Salva perfil</Link>
           </form>
         </div>
       </div>

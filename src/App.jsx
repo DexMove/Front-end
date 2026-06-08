@@ -19,6 +19,9 @@ import MetodosPagamento from "./componentes/pages/metodos-pagamento/metodos-paga
 import Configuracoes from "./componentes/pages/configuracoes/configuracoes";
 import BemVindo from "./componentes/pages/bem-vindo/bem-vindo";
 import CompletarPerfil from "./componentes/pages/complete-perfil/CompletarPerfil";
+import MinhaConta from "./componentes/pages/minha-conta/MinhaConta";
+import EditarInformacoes from "./componentes/pages/editar-informacoes/EditarInformacoes";
+import EditarPaciente from "./componentes/pages/editar-paciente/EditarPaciente";
 
 function App() {
   return (
@@ -42,6 +45,9 @@ function App() {
         <Route path="/bem-vindo" element={<BemVindo />} />
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/completar-perfil" element={<CompletarPerfil />} />
+        <Route path="/minha-conta" element={<MinhaConta />} />
+        <Route path="/editar-informacoes" element={<EditarInformacoes />} />
+        <Route path="/editar-paciente" element={<EditarPaciente />} />
       </Routes>
     </BrowserRouter>    
   );

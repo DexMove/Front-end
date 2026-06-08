@@ -20,10 +20,13 @@ export default function AccountMenu() {
           <div className="account-menu-header">
             <div className="account-menu-avatar">CS</div>
             <div>
-              <div className="account-menu-name">Camila Souza</div>
-              <div className="account-menu-email">camila.souza@gmail.com</div>
+              <div className="account-menu-name">Camila Souza
+              </div>
             </div>
           </div>
+          <Link to="/minha-conta" className="account-menu-item" onClick={() => setOpen(false)}>
+            Minha conta
+          </Link>
           <Link to="/meus-pedidos" className="account-menu-item" onClick={() => setOpen(false)}>
             Meus pedidos
           </Link>
