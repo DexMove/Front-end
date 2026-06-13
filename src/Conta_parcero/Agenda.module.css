@@ -1,0 +1,218 @@
+.pagina {
+  max-width: 700px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-bottom: 4rem;
+}
+
+/* Header */
+.cabecalho {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.titulo {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.5px;
+}
+
+.subtitulo {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 15px;
+  color: #666666;
+  margin: 0;
+}
+
+/* Tab Navigation */
+.tabsContainer {
+  display: flex;
+  gap: 2.5rem;
+  border-bottom: 2px solid #E5E4E7;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  justify-content: flex-start;
+}
+
+.tabBtn {
+  background: none;
+  border: none;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #888888;
+  cursor: pointer;
+  padding: 4px 0;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.tabBtn:hover {
+  color: #0C5A67;
+}
+
+.activeTab {
+  color: #0C5A67;
+  font-weight: 700;
+}
+
+.activeTab::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #0C5A67;
+  border-radius: 2px;
+}
+
+/* List of appointments */
+.agendaLista {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.appointmentCard {
+  background-color: #FFFBF5;
+  border: 1px solid rgba(239, 163, 92, 0.15);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.01);
+}
+
+.appointmentCard:hover {
+  background-color: rgba(239, 163, 92, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(239, 163, 92, 0.08);
+}
+
+.cardLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+}
+
+.datetime {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333333;
+}
+
+.patientName {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 2px 0;
+}
+
+.description {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  color: #666666;
+  font-weight: 400;
+}
+
+.cardRight {
+  display: flex;
+  align-items: center;
+}
+
+/* Badges */
+.statusBadge {
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.confirmado {
+  background-color: #E2F5E9;
+  color: #1E7E45;
+  border: 1px solid #B8EBD0;
+}
+
+.concluido {
+  background-color: #E6F0FA;
+  color: #2B6CB0;
+  border: 1px solid #BEE3F8;
+}
+
+.cancelado {
+  background-color: #FDE8E8;
+  color: #C81E1E;
+  border: 1px solid #F8B4B4;
+}
+
+/* Action button at the bottom */
+.footerAction {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.btnAgendaCompleta {
+  background-color: #FFFBF5;
+  color: #333333;
+  border: 1px solid rgba(239, 163, 92, 0.3);
+  border-radius: 30px;
+  padding: 12px 32px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+}
+
+.btnAgendaCompleta:hover {
+  background-color: #FEF6EB;
+  border-color: rgba(239, 163, 92, 0.6);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .pagina {
+    padding: 0 1rem;
+    gap: 1.5rem;
+  }
+
+  .tabsContainer {
+    gap: 1.5rem;
+    justify-content: space-around;
+  }
+
+  .tabBtn {
+    font-size: 18px;
+  }
+
+  .appointmentCard {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 1.2rem;
+  }
+
+  .cardRight {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}

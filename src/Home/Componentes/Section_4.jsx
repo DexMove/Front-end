@@ -5,21 +5,17 @@ import vector57 from '../../assets/imag/Vector57.png';
 
 function Section_4() {
     return (
-        <section className={styles.section4} style={{ backgroundImage: `url(${vector57})` }}>
-
-
-            <div className={styles.div1}>
-                <img src={ortese} alt="Ortese" className={styles.ortese} />
-            </div>
-
-            <div className={styles.div2}>
-                <h2>Como a nossa órtese pode ajudar?</h2>
-                <p>
-                    A órtese realiza movimentos automáticos de abrir e fechar a mão guiada por um
-                    fisioterapeuta especializado, promovendo estímulo contínuo de forma segura e confortável.
-                    Cada sessão é ajustável, respeitando o ritmo e a necessidade de cada paciente.
-                </p>
-            </div>
+        <section className={styles.section4}>
+          <h2>Sobre o nosso produto.</h2>
+            <p>Transforme seu dia a dia em conforto e movimento</p>
+         <button className={styles.comprar4}>comprar</button>
+        <div className={styles.caixa7}>
+        </div>
+            <div className={styles.grupo}>
+                <div className={styles.caixa2}></div>
+                <div className={styles.caixa2}></div>
+                <div className={styles.caixa2}></div>
+        </div>
 
             
 

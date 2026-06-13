@@ -17,8 +17,17 @@ function Header() {
           </ul>
 <Link to="/detalhes">
 <button className={Style.button}>detales</button>
-</Link>
 
+</Link>
+<Link to="/par">
+<button className={Style.button}>par</button>
+</Link>
+<Link to="/mao-esquerda">
+<button className={Style.button}>mao esquerda</button>
+</Link>
+<Link to="/conta_parcero">
+<button className={Style.button}>Conta_fisio</button>
+</Link>
           <button className={Style.button}>Cadastre-Se</button>
         </nav>
       

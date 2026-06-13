@@ -1,0 +1,247 @@
+.pagina {
+  max-width: 700px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-bottom: 4rem;
+}
+
+/* Header */
+.cabecalho {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.titulo {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.5px;
+}
+
+.subtitulo {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 15px;
+  color: #666666;
+  margin: 0;
+}
+
+/* Profile Box */
+.perfilBox {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 0.5rem;
+}
+
+.avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.perfilInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nome {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin: 0;
+}
+
+.cargo {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  color: #666666;
+  margin: 0;
+}
+
+.btnEditar {
+  background-color: #F2DF92;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.btnEditar:hover {
+  background-color: #e5cb6e;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* Info Box / Key-Value Pairs */
+.infoBox {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.infoLinha {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.label {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.valor {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 20px;
+  color: #333333;
+  font-weight: 500;
+}
+
+/* Upcoming Appointments Box */
+.agendaBox {
+  background-color: #FFFBF5;
+  border: 1px solid rgba(239, 163, 92, 0.15);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  margin-top: 1.5rem;
+}
+
+.agendaHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.agendaTitulo {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.agendaLink {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  color: #666666;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.agendaLink:hover {
+  color: #000000;
+  text-decoration: underline;
+}
+
+.agendaLista {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.agendaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.agendaItem:hover {
+  background-color: rgba(239, 163, 92, 0.06);
+  transform: translateX(4px);
+}
+
+.itemMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.agendaNome {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.agendaData {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  color: #333333;
+  font-weight: 500;
+}
+
+.agendaDesc {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px;
+  color: #666666;
+  font-weight: 400;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .pagina {
+    padding: 0 1rem;
+    gap: 1.5rem;
+  }
+
+  .perfilBox {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .btnEditar {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+
+  .infoLinha {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 0.8rem;
+  }
+
+  .valor {
+    text-align: left;
+    font-size: 18px;
+  }
+
+  .label {
+    font-size: 16px;
+  }
+
+  .agendaHeader {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+}

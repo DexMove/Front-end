@@ -1,17 +1,16 @@
-import styles from '../CSS/Section_11.module.css'
-import vector20 from '../../assets/imag/Vector20.svg'
-import vector21 from '../../assets/imag/Vector21.svg'
-import carregador from '../../assets/imag/carregador.png'
-import orteses from '../../assets/imag/image48.png'
-import orteses1 from '../../assets/imag/image47.png'
-import par from '../../assets/imag/par.png'
-import truck from '../../assets/imag/Truck.png'
-import refresh from '../../assets/imag/Refresh.png'
-import atend from '../../assets/imag/atend.png'
-
 import { useNavigate } from 'react-router-dom';
+import styles from '../css.con/Mao_4.module.css';
+import vector20 from '../../assets/imag/Vector20.svg';
+import vector21 from '../../assets/imag/Vector21.svg';
+import carregador from '../../assets/imag/carregador.png';
+import orteset from '../../assets/imag/orteset.png';
+import orteses1 from '../../assets/imag/image47.png';
+import par from '../../assets/imag/par.png';
+import truck from '../../assets/imag/Truck.png';
+import refresh from '../../assets/imag/Refresh.png';
+import atend from '../../assets/imag/atend.png';
 
-function Section_11() {
+function Mao_4() {
     const navigate = useNavigate();
     return (
         <section className={styles.section11}>
@@ -29,10 +28,10 @@ function Section_11() {
                     </button>
                 </div>
                 <div className={styles.card3}>
-                    <img src={orteses} alt="orteses" className={styles.orteses} />
-                    <h3>Órteses Dexmove mão esquerda.</h3>
+                    <img src={orteset} alt="orteses" className={styles.orteses} />
+                    <h3>Órteses Dexmove mão direita.</h3>
                     <p>R$00000,00</p>
-                    <button className={styles.Comprarb} onClick={() => navigate('/mao-esquerda')}>
+                    <button className={styles.Comprarb} onClick={() => navigate('/detalhes')}>
                         Comprar
                     </button>
                 </div>
@@ -65,4 +64,4 @@ function Section_11() {
         </section>
     )
 }
-export default Section_11
+export default Mao_4

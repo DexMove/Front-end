@@ -35,18 +35,8 @@
     width: 150%;
     height: 650px;
     bottom: -15px;
-    left: -20;
+    left: -20px;
     z-index: -2;
-}
-
-.cards {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 2rem;
-    width: 100%;
-    z-index: 3;
 }
 
 .section5 h2 {
@@ -59,7 +49,7 @@
     z-index: 3;
 }
 
-.section5,p {
+.subtitulo {
     position: relative;
     font-size: 16px;
     color: #444;
@@ -67,72 +57,98 @@
     z-index: 3;
 }
 
-.card {
-    background-color: #ffffff;
-    border-radius: 16px;
-    width: 250px;
-    height: 300px;
-    padding: 1rem;
-    box-sizing: border-box;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+.cards {
+    position: relative;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 3rem;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    z-index: 3;
+    margin-top: 2rem;
 }
 
-.card h3 {
+.cardFlip {
+    width: 250px;
+    height: 300px;
+    perspective: 1000px;
+    cursor: pointer;
+}
 
+.cardInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+}
+
+.cardFlip:hover .cardInner {
+    transform: rotateY(180deg);
+}
+
+.cardFrente,
+.cardVerso {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.cardFrente {
+    background-color: #FDF5D3;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cardFrente h3 {
     font-size: 1rem;
     font-weight: bold;
     color: #1a3a5c;
-    margin-bottom: 0.5rem;
+    text-align: center;
+    width: 100%;
+    margin: 0;
 }
 
-/* Responsividade */
+.icone {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.cardVerso {
+    background-color: #e8c84a;
+    transform: rotateY(180deg);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cardVerso p {
+    font-size: 14px;
+    color: #2a2000;
+    text-align: center;
+    line-height: 1.6;
+    margin: 0;
+}
+
 @media (max-width: 1024px) {
-    .section5 {
-        padding: 2rem 1rem;
-    }
-    .section5 h2 {
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
-    }
-    .cards {
-        flex-wrap: wrap;
-        gap: 1.5rem;
-    }
-    .card {
-        width: 45%;
-        height: auto;
-        margin-top: 1rem;
-    }
+    .section5 { padding: 2rem 1rem; }
+    .section5 h2 { font-size: 1.5rem; margin-bottom: 1.5rem; }
+    .cards { flex-wrap: wrap; gap: 1.5rem; }
+    .cardFlip { width: 45%; height: 280px; }
 }
 
 @media (max-width: 768px) {
-    .section5 {
-        padding: 1.5rem 1rem;
-    }
-    .section5 h2 {
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
-    }
-    .cards {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    .card {
-        width: 100%;
-        height: auto;
-        margin-top: 0.5rem;
-    }
-    .card h3 {
-        font-size: 0.9rem;
-    }
-    .vector10, .vector11, .vector12 {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-    }
+    .section5 { padding: 1.5rem 1rem; }
+    .section5 h2 { font-size: 1.2rem; margin-bottom: 1rem; }
+    .cards { flex-direction: column; gap: 1rem; align-items: center; }
+    .cardFlip { width: 100%; height: 260px; }
+    .cardFrente h3 { font-size: 0.9rem; }
+    .vector10, .vector11, .vector12 { height: 100%; width: 100%; }
 }
-    

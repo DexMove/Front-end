@@ -1,11 +1,12 @@
 import styles from '../css/Section_1.module.css';
-import onda from '../../assets/imag/Ellipse32.svg';
-import ortese from '../../assets/imag/ortese1.png';
+import onda from '../../assets/imag/Ellipse321.svg';
+
 function Section_1() {
   return (
     <section className={styles.section1}>
         <div className={styles.div1}>
-      <h1>Recupere a autonomia  e o bem-estar no conforto de casa. </h1>
+        <h1>Recupere a autonomia  e o  bem-estar no conforto de casa. </h1>
+        
       <p>MOVEHAND: Um aliado contínuo para reduzir a rigidez muscular.</p>
       <div className={styles.botoins}>
         <button className={styles.button}>Cadastre-se gratuitamente.</button>
@@ -14,7 +15,7 @@ function Section_1() {
       </div>
          <div className={styles.div2}>
             <img src={onda} alt="Onda"className={styles.onda1} />
-            <img src={ortese} alt="Ortese1" className={styles.mao1} />
+            {/*<img src={ortese} alt="Ortese1" className={styles.mao1} />*/}
 
         </div>
     </section>
