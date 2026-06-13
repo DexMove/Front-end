@@ -6,14 +6,19 @@ import Produtos from "./componentes/pages/produtos/Produtos";
 import Home from "./Home/Home";
 import Sobre from "./componentes/pages/sobre_nos/sobre_nos";
 import Suporte from "./componentes/pages/suporte/suporte";
+import Assistencia_ortese from "./componentes/pages/assistiencia_ortese/Assistencia_ortese";
 import Login from "./componentes/pages/Login/index";
 import Cadastro_fisioterapeuta from "./componentes/pages/cadastro-fisioterapeuta/Cadastro_fisioterapeuta";
+import { Navigate } from "react-router-dom";
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/planos" element={<Planos />} />
         <Route path="/produtos" element={<Produtos />} />
+        <Route path="/assistencia_ortese" element={<Assistencia_ortese />} />
+        <Route path="/assistiencia_ortese" element={<Assistencia_ortese />} />
         <Route path="/home" element={<Home />} />
         <Route path="/sobre" element={<Sobre />} />
         <Route path="/suporte" element={<Suporte />} />
