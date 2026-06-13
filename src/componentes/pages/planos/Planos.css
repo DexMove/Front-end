@@ -185,3 +185,32 @@
     min-height: 0;
   }
 }
+
+/* Breakpoints: 1024 / 768 / 600 / 430 */
+@media (max-width: 1024px) {
+  #hero-planos { padding-inline: 20px; }
+  .texto-hero h1 { font-size: 48px; }
+  .texto-hero h2 { font-size: 26px; }
+  .planos { width: 100%; gap: 24px; }
+  .plano-card { width: 320px; }
+}
+
+@media (max-width: 768px) {
+  .texto-hero h1 { font-size: 36px; }
+  .texto-hero h2 { font-size: 22px; }
+  .planos { flex-direction: column; }
+  .plano-card { width: 100%; max-width: 420px; }
+}
+
+@media (max-width: 600px) {
+  .texto-hero h1 { font-size: 32px; }
+  .valor-p { font-size: 24px; }
+  .plano-card { padding: 20px; }
+}
+
+@media (max-width: 430px) {
+  .texto-hero h1 { font-size: 28px; }
+  .texto-hero h2 { font-size: 18px; }
+  .planos { gap: 16px; }
+  .plano-card { padding: 16px; }
+}

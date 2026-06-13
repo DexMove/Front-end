@@ -1,45 +1,51 @@
 import { useState } from "react";
-import "../Login/style.css"
+import "../Login/style.css";
 import "./cadastro_fisioterapeuta.css";
 import Header from "../../Header";
 import Footer from "../../Footer";
-import Fisioterapeuta from "../../../assets/fisioterapeuta.png"
+import Fisioterapeuta from "../../../assets/fisioterapeuta.png";
 
 const IconEmail = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="2" y="4" width="20" height="16" rx="2"/>
-    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+    <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
   </svg>
 );
-
 const IconLock = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
   </svg>
 );
-
 const IconUser = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-    <circle cx="12" cy="7" r="4"/>
+    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
   </svg>
 );
-
+const IconPhone = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.07 3.4 2 2 0 0 1 3 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+  </svg>
+);
+const IconClinic = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+  </svg>
+);
+const IconId = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+  </svg>
+);
 const IconEye = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-    <circle cx="12" cy="12" r="3"/>
+    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
   </svg>
 );
-
 const IconEyeOff = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
     <line x1="1" y1="1" x2="23" y2="23"/>
   </svg>
 );
-
 const GoogleIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24">
     <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -48,7 +54,6 @@ const GoogleIcon = () => (
     <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
   </svg>
 );
-
 const AppleIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
     <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
@@ -57,226 +62,193 @@ const AppleIcon = () => (
 
 export default function Cadastro_fisioterapeuta() {
   const [tab, setTab] = useState("cadastro");
-  const isCadastro = tab === "cadastro";
-
   const [showSenha, setShowSenha] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
+  const [termos, setTermos] = useState(false);
 
   const [cadastroData, setCadastroData] = useState({
-    nome: "",
-    email: "",
-    senha: "",
-    confirma: "",
+    nome: "", sobrenome: "", email: "", senha: "", confirma: "",
+    crefito: "", especialidade: "", clinica: "", telefone: "",
   });
 
-  const [form, setForm] = useState({
-    especialidade: "",
-    crefito: "",
-    anoFormacao: "",
-    experiencia: "",
-    modalidades: [],
-  });
-
-  function handleChange(e) {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  }
-
-  function toggleModalidade(id) {
-    setForm(function(prev) {
-      const jatem = prev.modalidades.includes(id);
-      return {
-        ...prev,
-        modalidades: jatem
-          ? prev.modalidades.filter(function(m) { return m !== id; })
-          : [...prev.modalidades, id],
-      };
-    });
-  }
-
-  function handleCadastroSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
     if (cadastroData.senha !== cadastroData.confirma) {
       alert("As senhas não coincidem!");
       return;
     }
-    console.log("Dados de cadastro:", cadastroData);
+    console.log("Dados:", cadastroData);
   }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    console.log(form);
-  }
-
-  const modalidades = [
-    { id: "presencial", label: "Atendimento presencial" },
-    { id: "domiciliar", label: "Atendimento domiciliar" },
-    { id: "online", label: "Atendimento online" },
-  ];
 
   return (
     <main>
-      <Header/>
-      <section className="container">
-        <div className="form-container">
-          <h2 className="form-title">
-            {isCadastro ? "Crie sua conta" : "Dados profissionais"}
-          </h2>
-          <div className="lc-toggle">
-            <button
-              type="button"
-              className={`lc-tab ${isCadastro ? "active" : ""}`}
-              onClick={() => setTab("cadastro")}
-            >
-              Cadastre-se
+      <Header />
+      <section className="cf-page">
+        <div className="cf-left">
+
+          <h1 className="cf-title">Cadastro profissional</h1>
+          <p className="cf-subtitle">Cadastro exclusivo para fisioterapeutas parceiros.</p>
+
+          <div className="lc-toggle cf-toggle">
+            <button type="button" className={`lc-tab ${tab === "entrar" ? "active" : ""}`} onClick={() => setTab("entrar")}>
+              <a href="/entrar">Entrar</a>
             </button>
-            <button
-              type="button"
-              className={`lc-tab ${!isCadastro ? "active" : ""}`}
-              onClick={() => setTab("profissional")}
-            >
-              Dados profissionais
+            <button type="button" className={`lc-tab ${tab === "cadastro" ? "active" : ""}`} onClick={() => setTab("cadastro")}>
+              Cadastre-se
             </button>
           </div>
 
-          {isCadastro && (
-            <form onSubmit={handleCadastroSubmit}>
+          <form onSubmit={handleSubmit}>
+            {/* Nome + Sobrenome */}
+            <div className="cf-row">
               <div className="lc-field">
-                <label className="lc-label">Nome completo</label>
+                <label className="lc-label">Nome</label>
                 <div className="lc-input-wrap">
                   <IconUser />
-                  <input
-                    type="text"
-                    placeholder="Seu nome completo"
+                  <input type="text" placeholder="Insira seu nome"
                     value={cadastroData.nome}
                     onChange={(e) => setCadastroData({ ...cadastroData, nome: e.target.value })}
-                    required
-                  />
+                    required />
                 </div>
               </div>
-
               <div className="lc-field">
-                <label className="lc-label">E-mail</label>
+                <label className="lc-label">Sobrenome</label>
                 <div className="lc-input-wrap">
-                  <IconEmail />
-                  <input
-                    type="email"
-                    placeholder="seuemail@gmail.com"
-                    value={cadastroData.email}
-                    onChange={(e) => setCadastroData({ ...cadastroData, email: e.target.value })}
-                    required
-                  />
+                  <IconUser />
+                  <input type="text" placeholder="Insira seu sobrenome"
+                    value={cadastroData.sobrenome}
+                    onChange={(e) => setCadastroData({ ...cadastroData, sobrenome: e.target.value })}
+                    required />
                 </div>
               </div>
+            </div>
 
-              <div className="lc-field">
-                <label className="lc-label">Senha</label>
-                <div className="lc-input-wrap">
-                  <IconLock />
-                  <input
-                    type={showSenha ? "text" : "password"}
-                    placeholder="Mínimo 8 caracteres"
-                    value={cadastroData.senha}
-                    onChange={(e) => setCadastroData({ ...cadastroData, senha: e.target.value })}
-                    minLength={8}
-                    required
-                  />
-                  <button
-                    type="button"
-                    className="lc-eye-btn"
-                    onClick={() => setShowSenha(!showSenha)}
-                  >
-                    {showSenha ? <IconEyeOff /> : <IconEye />}
-                  </button>
-                </div>
+            {/* E-mail */}
+            <div className="lc-field">
+              <label className="lc-label">E-mail</label>
+              <div className="lc-input-wrap">
+                <IconEmail />
+                <input type="email" placeholder="seuemail@gmail.com"
+                  value={cadastroData.email}
+                  onChange={(e) => setCadastroData({ ...cadastroData, email: e.target.value })}
+                  required />
               </div>
+            </div>
 
-              <div className="lc-field">
-                <label className="lc-label">Confirmar senha</label>
-                <div className="lc-input-wrap">
-                  <IconLock />
-                  <input
-                    type={showConfirm ? "text" : "password"}
-                    placeholder="Repita a senha"
-                    value={cadastroData.confirma}
-                    onChange={(e) => setCadastroData({ ...cadastroData, confirma: e.target.value })}
-                    required
-                  />
-                  <button
-                    type="button"
-                    className="lc-eye-btn"
-                    onClick={() => setShowConfirm(!showConfirm)}
-                  >
-                    {showConfirm ? <IconEyeOff /> : <IconEye />}
-                  </button>
-                </div>
-              </div>
-
-              <button type="submit" className="lc-submit">Criar conta</button>
-
-              <div className="lc-divider">Ou continue com</div>
-
-              <div className="lc-social-row">
-                <button type="button" className="lc-social-btn">
-                  <GoogleIcon /> Continuar com Google
-                </button>
-                <button type="button" className="lc-social-btn">
-                  <AppleIcon /> Continuar com Apple
+            {/* Senha */}
+            <div className="lc-field">
+              <label className="lc-label">Senha</label>
+              <div className="lc-input-wrap">
+                <IconLock />
+                <input type={showSenha ? "text" : "password"} placeholder="Mínimo 8 caracteres"
+                  value={cadastroData.senha}
+                  onChange={(e) => setCadastroData({ ...cadastroData, senha: e.target.value })}
+                  minLength={8} required />
+                <button type="button" className="lc-eye-btn" onClick={() => setShowSenha(!showSenha)}>
+                  {showSenha ? <IconEyeOff /> : <IconEye />}
                 </button>
               </div>
-            </form>
-          )}
+            </div>
 
-          {!isCadastro && (
-            <form onSubmit={handleSubmit}>
-              <label className="form-label">Especialidade</label>
-              <select name="especialidade" value={form.especialidade} onChange={handleChange} className="form-input">
-                <option className="selecione" value="selecione">Selecione...</option>
-                <option>Ortopedia e traumatologia</option>
-                <option>Neurologia</option>
-                <option>Cardiorrespiratória</option>
-                <option>Geriatria</option>
-                <option>Pediatria</option>
-                <option>Esportiva</option>
-                <option>Dermatofuncional</option>
-                <option>Saúde da mulher</option>
-                <option>Outra</option>
-              </select>
+            {/* Confirmar senha */}
+            <div className="lc-field">
+              <label className="lc-label">Confirme sua senha</label>
+              <div className="lc-input-wrap">
+                <IconLock />
+                <input type={showConfirm ? "text" : "password"} placeholder="Repita sua senha"
+                  value={cadastroData.confirma}
+                  onChange={(e) => setCadastroData({ ...cadastroData, confirma: e.target.value })}
+                  required />
+                <button type="button" className="lc-eye-btn" onClick={() => setShowConfirm(!showConfirm)}>
+                  {showConfirm ? <IconEyeOff /> : <IconEye />}
+                </button>
+              </div>
+            </div>
 
-              <label className="form-label">CREFITO</label>
-              <input name="crefito" value={form.crefito} onChange={handleChange} placeholder="Ex: 3-123456-F" className="form-input" />
+            {/* Dados profissionais */}
+            <p className="cf-section-title">Dados profissionais</p>
 
-              <label className="form-label">Ano de formação</label>
-              <input name="anoFormacao" type="number" value={form.anoFormacao} onChange={handleChange} placeholder="Ex: 2015" className="form-input" />
+            {/* CREFITO + Especialidade */}
+            <div className="cf-row">
+              <div className="lc-field">
+                <label className="lc-label">Número CREFITO</label>
+                <div className="lc-input-wrap">
+                  <IconId />
+                  <input type="text" placeholder="Ex:123456-4"
+                    value={cadastroData.crefito}
+                    onChange={(e) => setCadastroData({ ...cadastroData, crefito: e.target.value })} />
+                </div>
+              </div>
+              <div className="lc-field">
+                <label className="lc-label">Especialidade</label>
+                <div className="lc-input-wrap lc-input-wrap--select">
+                  <select
+                    value={cadastroData.especialidade}
+                    onChange={(e) => setCadastroData({ ...cadastroData, especialidade: e.target.value })}>
+                    <option value="">Selecione</option>
+                    <option>Ortopedia e traumatologia</option>
+                    <option>Neurologia</option>
+                    <option>Cardiorrespiratória</option>
+                    <option>Geriatria</option>
+                    <option>Pediatria</option>
+                    <option>Esportiva</option>
+                    <option>Dermatofuncional</option>
+                    <option>Saúde da mulher</option>
+                    <option>Outra</option>
+                  </select>
+                </div>
+              </div>
+            </div>
 
-              <label className="form-label">Experiência profissional</label>
-              <select name="experiencia" value={form.experiencia} onChange={handleChange} className="form-input">
-                <option className="selecione" value="selecione">Selecione...</option>
-                <option>Menos de 1 ano</option>
-                <option>1 a 3 anos</option>
-                <option>3 a 5 anos</option>
-                <option>5 a 10 anos</option>
-                <option>Mais de 10 anos</option>
-              </select>
+            {/* Clínica */}
+            <div className="lc-field">
+              <label className="lc-label">Clínica ou local de atendimento</label>
+              <div className="lc-input-wrap">
+                <IconClinic />
+                <input type="text" placeholder="Nome da clínica ou local"
+                  value={cadastroData.clinica}
+                  onChange={(e) => setCadastroData({ ...cadastroData, clinica: e.target.value })} />
+              </div>
+            </div>
 
-              <label className="form-label">Modalidade de atendimento</label>
-              {modalidades.map(function({ id, label }) {
-                return (
-                  <label key={id} className="form-checkbox-label">
-                    <input
-                      type="checkbox"
-                      checked={form.modalidades.includes(id)}
-                      onChange={function() { toggleModalidade(id); }}
-                    />
-                    {label}
-                  </label>
-                );
-              })}
+            {/* Telefone */}
+            <div className="lc-field">
+              <label className="lc-label">Telefone</label>
+              <div className="lc-input-wrap">
+                <IconPhone />
+                <input type="tel" placeholder="(00) 00000-0000"
+                  value={cadastroData.telefone}
+                  onChange={(e) => setCadastroData({ ...cadastroData, telefone: e.target.value })} />
+              </div>
+            </div>
 
-              <button type="submit" className="form-btn">Finalizar cadastro</button>
-            </form>
-          )}
+            {/* Termos */}
+            <label className="cf-checkbox">
+              <input type="checkbox" checked={termos} onChange={() => setTermos(!termos)} required />
+              <span>
+                Li e concordo com os <a href="/termos" className="cf-link">Termos de Consentimento e Tratamento de Dados</a> conforme a LGPD.
+              </span>
+            </label>
+
+            <button type="submit" className="lc-submit cf-submit">Criar minha conta</button>
+
+            <div className="lc-divider">Ou continue com</div>
+
+            <div className="lc-social-row">
+              <button type="button" className="lc-social-btn">
+                <GoogleIcon /> Continuar com Google
+              </button>
+              <button type="button" className="lc-social-btn">
+                <AppleIcon /> Continuar com Apple
+              </button>
+            </div>
+          </form>
         </div>
-        <div className="img"><img src={Fisioterapeuta} alt="" /></div>
+
+        {/* Imagem lateral */}
+        <div className="cf-img">
+          <img src={Fisioterapeuta} alt="Fisioterapeutas" />
+        </div>
       </section>
       <Footer />
     </main>
