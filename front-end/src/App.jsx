@@ -1,14 +1,16 @@
-import { useState } from 'react';
-import './App.css';
-// Chamando o componente que você criou:
-import Suporte from './componentes/pages/suporte/suporte.jsx';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import DexMovePage from "./componentes/pages/sobre_nos/sobre_nos";
+import Suporte from "./componentes/pages/suporte/suporte";
 
 function App() {
   return (
-    <div className="App">
-      {/* Aqui a página de suporte é renderizada na tela */}
-      <Suporte />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<DexMovePage />} />
+        <Route path="/suporte" element={<Suporte />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
