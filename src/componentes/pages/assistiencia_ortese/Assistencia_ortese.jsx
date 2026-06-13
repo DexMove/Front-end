@@ -12,7 +12,7 @@ import {
   Send,
   ShieldAlert,
 } from "lucide-react";
-import Header from "../../Header";
+import Header2 from "../../Header2";
 import Footer from "../../Footer";
 import ortese from "../../../assets/imag/Orteseaberta.png";
 import ondaTeal from "../../../assets/imag/Vector1.svg";
@@ -31,7 +31,7 @@ function Assistencia_ortese() {
 
   return (
     <div className="assistencia-page">
-      <Header />
+      <Header2 />
 
       <main className="assistencia-main">
         <section className="hero-area">

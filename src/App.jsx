@@ -20,16 +20,15 @@ import MinhaConta from "./componentes/pages/minha-conta/MinhaConta";
 import EditarInformacoes from "./componentes/pages/editar-informacoes/EditarInformacoes";
 import EditarPaciente from "./componentes/pages/editar-paciente/EditarPaciente";
 import MinhaConta2 from "./componentes/pages/minha-conta2/MinhaConta2"
+import Assistencia_ortese from "./componentes/pages/assistiencia_ortese/Assistencia_ortese"
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/planos" element={<Planos />} />
         <Route path="/produtos" element={<Produtos />} />
         <Route path="/assistencia_ortese" element={<Assistencia_ortese />} />
-        <Route path="/assistiencia_ortese" element={<Assistencia_ortese />} />
         <Route path="/home" element={<Home />} />
         <Route path="/sobre" element={<Sobre />} />
         <Route path="/suporte" element={<Suporte />} />
