@@ -132,9 +132,9 @@ input[type="checkbox"] {
 }
 
 .page-configuracoes .account-hero:first-of-type {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
   padding: 34px 0;
   border: none;
   border-radius: 0;

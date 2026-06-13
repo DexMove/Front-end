@@ -16,19 +16,19 @@ function Footer() {
         <div className="footer-col">
           <h3>Links Rápidos</h3>
 
-          <a href="">Sobre nós</a>
-          <a href="">Nossa Órtese</a>
-          <a href="">Depoimentos</a>
-          <a href="">Contato</a>
+          <a href="/sobre">Sobre nós</a>
+          <a href="/assistencia_ortese">Nossa Órtese</a>
+          <a href="/home">Depoimentos</a>
+          <a href="/suporte">Contato</a>
         </div>
 
         <div className="footer-col">
           <h3>Suporte</h3>
 
-          <a href="">FAC</a>
-          <a href="">Como Usar</a>
-          <a href="">Garantia</a>
-          <a href="">Política de Privacidade</a>
+          <a href="/suporte">FAQ</a>
+          <a href="/suporte">Como Usar</a>
+          <a href="/suporte">Garantia</a>
+          <a href="/suporte">Política de Privacidade</a>
         </div>
 
         <div className="footer-col">
