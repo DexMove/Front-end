@@ -14,7 +14,6 @@ import {
 } from "lucide-react";
 import Header from "../../Header";
 import Footer from "../../Footer";
-import BotaoComprar from "../../BotaoComprar";
 import ortese from "../../../assets/imag/Orteseaberta.png";
 import ondaTeal from "../../../assets/imag/Vector1.svg";
 import ondaYellow from "../../../assets/imag/Vector.svg";
@@ -55,7 +54,6 @@ function Assistencia_ortese() {
                 execução com mais segurança.
               </p>
               <div className="hero-card-actions">
-                <BotaoComprar />
                 <button className="secondary-action" type="button">
                   <Link2 size={18} />
                   Ver orientações
@@ -204,7 +202,6 @@ function Assistencia_ortese() {
                 Use o mesmo fluxo de compra da plataforma para garantir orientação e suporte durante a decisão.
               </p>
             </div>
-            <BotaoComprar />
           </article>
         </section>
 

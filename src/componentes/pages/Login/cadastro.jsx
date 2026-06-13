@@ -2,7 +2,9 @@ import './style.css';
 import { useState } from "react";
 import Header from "../../Header";
 import Footer from "../../Footer";
-import Cadastro from "../../../assets/cadastro.png"
+import CadastroImg from "../../../assets/cadastro.png"
+import { Link } from "react-router-dom";
+
 const IconEmail = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <rect x="2" y="4" width="20" height="16" rx="2"/>
@@ -53,37 +55,11 @@ const AppleIcon = () => (
   </svg>
 );
 
-export default function LoginCadastro({ initialTab = "login" }) {
-
-  // Controla qual aba está ativa: "login" ou "cadastro"
-  const [tab, setTab] = useState(initialTab);
-
-  // Controla se a senha está visível ou oculta
+export default function Cadastro() {
   const [showSenha, setShowSenha] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
+  const [cadastroData, setCadastroData] = useState({ nome: "", email: "", senha: "", confirma: "" });
 
-  // Dados do formulário de login
-  const [loginData, setLoginData] = useState({
-    email: "",
-    senha: "",
-  });
-
-  // Dados do formulário de cadastro
-  const [cadastroData, setCadastroData] = useState({
-    nome: "",
-    email: "",
-    senha: "",
-    confirma: "",
-  });
-
-  // Quando o usuário clica em "Entrar"
-  const handleLoginSubmit = (e) => {
-    e.preventDefault(); // impede a página de recarregar
-    console.log("Dados de login:", loginData);
-    // TODO: conectar com sua API aqui
-  };
-
-  // Quando o usuário clica em "Criar conta"
   const handleCadastroSubmit = (e) => {
     e.preventDefault();
     if (cadastroData.senha !== cadastroData.confirma) {
@@ -94,110 +70,24 @@ export default function LoginCadastro({ initialTab = "login" }) {
     // TODO: conectar com sua API aqui
   };
 
-  const isLogin = tab === "login"; // true = mostra login, false = mostra cadastro
-
   return (
     <main>
       <Header />
-    
-    <div className="lc-page">
-      <div className="lc-card">
+      <div className="lc-page">
+        <div className="lc-card">
 
-        {/* ======== LADO ESQUERDO: FORMULÁRIO ======== */}
-        <div className="lc-form-side">
+          <div className="lc-form-side">
+            <h1 className="lc-title">Crie sua conta</h1>
+            <p className="lc-subtitle">
+              Cadastre-se e comece sua jornada com a <strong>DexMove</strong>
+            </p>
 
-          {/* Título e subtítulo mudam conforme a aba */}
-          <h1 className="lc-title">
-            {isLogin ? "Bem-vindo de volta!" : "Crie sua conta"}
-          </h1>
-          <p className="lc-subtitle">
-            {isLogin
-              ? <>Entre para continuar acompanhando sua jornada com a <strong>DexMove</strong></>
-              : <>Cadastre-se e comece sua jornada com a <strong>DexMove</strong></>
-            }
-          </p>
+            <div className="lc-toggle">
+              <a href="/entrar" className="lc-tab">Entrar</a>
+              <button className="lc-tab active">Cadastre-se</button>
+            </div>
 
-          {/* Toggle: Entrar / Cadastre-se */}
-          <div className="lc-toggle">
-            <button
-              className={`lc-tab ${isLogin ? "active" : ""}`}
-              onClick={() => setTab("login")}
-            >
-              Entrar
-            </button>
-            <button
-              className={`lc-tab ${!isLogin ? "active" : ""}`}
-              onClick={() => setTab("cadastro")}
-            >
-              Cadastre-se
-            </button>
-          </div>
-
-          {/* ---- FORMULÁRIO DE LOGIN ---- */}
-          {isLogin && (
-            <form onSubmit={handleLoginSubmit}>
-
-              <div className="lc-field">
-                <label className="lc-label">E-mail</label>
-                <div className="lc-input-wrap">
-                  <IconEmail />
-                  <input
-                    type="email"
-                    placeholder="seuemail@gmail.com"
-                    value={loginData.email}
-                    onChange={(e) => setLoginData({ ...loginData, email: e.target.value })}
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="lc-field">
-                <label className="lc-label">Senha</label>
-                <div className="lc-input-wrap">
-                  <IconLock />
-                  <input
-                    type={showSenha ? "text" : "password"}
-                    placeholder="Mínimo 8 caracteres"
-                    value={loginData.senha}
-                    onChange={(e) => setLoginData({ ...loginData, senha: e.target.value })}
-                    required
-                  />
-                  {/* Botão do olhinho para mostrar/esconder senha */}
-                  <button
-                    type="button"
-                    className="lc-eye-btn"
-                    onClick={() => setShowSenha(!showSenha)}
-                  >
-                    {showSenha ? <IconEyeOff /> : <IconEye />}
-                  </button>
-                </div>
-              </div>
-
-              <button type="submit" className="lc-submit">Entrar</button>
-
-              <div className="lc-alt-link">
-                Não tem uma conta?{" "}
-                <a onClick={() => setTab("cadastro")}>Cadastre-se</a>
-              </div>
-
-              <div className="lc-divider">Ou continue com</div>
-
-              <div className="lc-social-row">
-                <button type="button" className="lc-social-btn">
-                  <GoogleIcon /> Continuar com Google
-                </button>
-                <button type="button" className="lc-social-btn">
-                  <AppleIcon /> Continuar com Apple
-                </button>
-              </div>
-
-            </form>
-          )}
-
-          {/* ---- FORMULÁRIO DE CADASTRO ---- */}
-          {!isLogin && (
             <form onSubmit={handleCadastroSubmit}>
-
               <div className="lc-field">
                 <label className="lc-label">Nome completo</label>
                 <div className="lc-input-wrap">
@@ -238,11 +128,7 @@ export default function LoginCadastro({ initialTab = "login" }) {
                     minLength={8}
                     required
                   />
-                  <button
-                    type="button"
-                    className="lc-eye-btn"
-                    onClick={() => setShowSenha(!showSenha)}
-                  >
+                  <button type="button" className="lc-eye-btn" onClick={() => setShowSenha(!showSenha)}>
                     {showSenha ? <IconEyeOff /> : <IconEye />}
                   </button>
                 </div>
@@ -259,21 +145,18 @@ export default function LoginCadastro({ initialTab = "login" }) {
                     onChange={(e) => setCadastroData({ ...cadastroData, confirma: e.target.value })}
                     required
                   />
-                  <button
-                    type="button"
-                    className="lc-eye-btn"
-                    onClick={() => setShowConfirm(!showConfirm)}
-                  >
+                  <button type="button" className="lc-eye-btn" onClick={() => setShowConfirm(!showConfirm)}>
                     {showConfirm ? <IconEyeOff /> : <IconEye />}
                   </button>
                 </div>
               </div>
 
-              <button type="submit" className="lc-submit">Criar conta</button>
-
+             
+                <Link to="/completar-perfil" className="lc-submit">
+                  Criar conta</Link>
               <div className="lc-alt-link">
                 Já tem uma conta?{" "}
-                <a onClick={() => setTab("login")}>Entrar</a>
+                <a href="/entrar">Entrar</a>
               </div>
 
               <div className="lc-divider">Ou continue com</div>
@@ -286,22 +169,16 @@ export default function LoginCadastro({ initialTab = "login" }) {
                   <AppleIcon /> Continuar com Apple
                 </button>
               </div>
-
             </form>
-          )}
+          </div>
+
+          <div className="lc-img-side">
+            <img className="lc-cadastro-img" src={CadastroImg} alt="DexMove" />
+          </div>
 
         </div>
-        {/* ======== FIM DO FORMULÁRIO ======== */}
-
-
-        {/* ======== LADO DIREITO: IMAGEM ======== */}
-        <div className="lc-img-side">
-          <img className="lc-cadastro-img" src={Cadastro} alt="DexMove" />
-        </div>
-
       </div>
-    </div>
-    <Footer />
+      <Footer />
     </main>
   );
 }

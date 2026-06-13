@@ -2,8 +2,9 @@ import './Header.css';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
+import Menu from "./AccountMenu";
 
-function Header() {
+function Header2() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -14,7 +15,6 @@ function Header() {
           <Link to="/" className="logo-link">
             <img src={logo} alt="logo" />
           </Link>
-
           <nav className={`menu-links ${menuOpen ? 'show' : ''}`}>
             <Link onClick={() => setMenuOpen(false)} to="/home">
               INÍCIO
@@ -29,9 +29,8 @@ function Header() {
               VER PLANOS
             </Link>
             <Link onClick={() => setMenuOpen(false)} to="/entrar">
-              ENTRAR
+              MOVEHAND
             </Link>
-
             {/* Visível só no mobile */}
             <Link className="mobile-only" onClick={() => setMenuOpen(false)} to="/suporte">
               SUPORTE
@@ -40,9 +39,7 @@ function Header() {
               SOBRE NÓS
             </Link>
 
-            <Link className="cadastro" onClick={() => setMenuOpen(false)} to="/bem-vindo">
-              CADASTRE-SE
-            </Link>
+            
           </nav>
 
           <div className="header-actions">
@@ -60,6 +57,8 @@ function Header() {
                 <rect x="13" y="13" width="8" height="8" rx="1.5" />
               </svg>
             </button>
+
+            <Menu />
 
             {/* Hamburguer — mobile */}
             <button
@@ -103,4 +102,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default Header2;

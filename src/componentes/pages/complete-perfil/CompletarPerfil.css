@@ -1,0 +1,293 @@
+/* ── Página ── */
+.cp-page {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  background: #F5F0E8;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 48px 5% 64px;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* ── Card central ── */
+.cp-card {
+  width: 100%;
+  max-width: 600px;
+  background: #F5F0E8;
+}
+
+/* ── Cabeçalho ── */
+.cp-header {
+  margin-bottom: 28px;
+}
+
+.cp-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a6e6e;
+  margin-bottom: 6px;
+}
+
+.cp-subtitle {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* ── Título de seção ── */
+.cp-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ── Grid de campos ── */
+.cp-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 4px;
+}
+
+.cp-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 14px;
+  min-width: 0;
+}
+
+.cp-field--full {
+  flex: unset;
+  width: 100%;
+}
+
+/* ── Label ── */
+.cp-label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #444;
+}
+
+/* ── Input ── */
+.cp-input {
+  width: 100%;
+  padding: 0.6rem 0.85rem;
+  border: 1.5px solid #E0D9CC;
+  border-radius: 8px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.85rem;
+  color: #1a1a1a;
+  background: #fff;
+  box-sizing: border-box;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.cp-input:focus {
+  border-color: #E8C96A;
+}
+
+.cp-input::placeholder {
+  color: #bbb;
+}
+
+/* Input escuro (dentro do card do responsável) */
+.cp-input--dark {
+  background: #c8c8c8;
+  border-color: #b0b0b0;
+  color: #333;
+}
+
+.cp-input--dark:focus {
+  border-color: #E8C96A;
+}
+
+/* ── Select ── */
+.cp-select-wrap {
+  position: relative;
+}
+
+.cp-select {
+  width: 100%;
+  padding: 0.6rem 2rem 0.6rem 0.85rem;
+  border: 1.5px solid #E0D9CC;
+  border-radius: 8px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.85rem;
+  color: #888;
+  background: #fff;
+  box-sizing: border-box;
+  outline: none;
+  appearance: auto;
+  cursor: pointer;
+  transition: border 0.2s;
+}
+
+.cp-select:focus {
+  border-color: #E8C96A;
+}
+
+/* ── Radio buttons ── */
+.cp-radio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: #1a1a1a;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.cp-radio input[type="radio"] {
+  display: none;
+}
+
+.cp-radio-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  background: #fff;
+  flex-shrink: 0;
+  transition: border-color 0.2s, background 0.2s;
+  position: relative;
+}
+
+.cp-radio input[type="radio"]:checked + .cp-radio-dot {
+  border-color: #1a6e6e;
+  background: #1a6e6e;
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+/* ── Card do responsável ── */
+.cp-responsavel {
+  background: #fff;
+  border: 1.5px solid #1a6e6e;
+  border-radius: 12px;
+  padding: 18px 20px 8px;
+  margin-bottom: 20px;
+}
+
+.cp-responsavel-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1a6e6e;
+  margin-bottom: 14px;
+}
+
+/* ── Botão salvar ── */
+.cp-submit {
+  width: 100%;
+  padding: 0.9rem;
+  background: #E8C96A;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: opacity 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.cp-submit:hover {
+  opacity: 0.88;
+}
+
+/* ── Responsividade ── */
+
+/* 1024px */
+@media (max-width: 1024px) {
+  .cp-page {
+    padding: 40px 6% 56px;
+  }
+
+  .cp-card {
+    max-width: 560px;
+  }
+}
+
+/* 780px */
+@media (max-width: 780px) {
+  .cp-page {
+    padding: 32px 5% 48px;
+  }
+
+  .cp-card {
+    max-width: 100%;
+  }
+
+  .cp-title {
+    font-size: 1.35rem;
+  }
+}
+
+/* 600px */
+@media (max-width: 600px) {
+  .cp-page {
+    padding: 24px 4% 40px;
+  }
+
+  .cp-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .cp-section-title {
+    font-size: 1rem;
+  }
+
+  .cp-submit {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+}
+
+/* 430px */
+@media (max-width: 430px) {
+  .cp-page {
+    padding: 20px 4% 36px;
+  }
+
+  .cp-title {
+    font-size: 1.2rem;
+  }
+
+  .cp-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .cp-section-title {
+    font-size: 0.95rem;
+  }
+
+  .cp-label {
+    font-size: 0.74rem;
+  }
+
+  .cp-input,
+  .cp-select {
+    font-size: 0.82rem;
+    padding: 0.55rem 0.75rem;
+  }
+
+  .cp-radio {
+    font-size: 0.8rem;
+  }
+
+  .cp-submit {
+    font-size: 0.95rem;
+  }
+
+  .cp-responsavel {
+    padding: 14px 14px 4px;
+  }
+}
