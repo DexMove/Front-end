@@ -25,8 +25,11 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/planos" element={<Planos />} />
         <Route path="/produtos" element={<Produtos />} />
+        <Route path="/assistencia_ortese" element={<Assistencia_ortese />} />
+        <Route path="/assistiencia_ortese" element={<Assistencia_ortese />} />
         <Route path="/home" element={<Home />} />
         <Route path="/sobre" element={<Sobre />} />
         <Route path="/suporte" element={<Suporte />} />
