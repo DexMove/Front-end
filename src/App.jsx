@@ -19,6 +19,7 @@ import CompletarPerfil from "./componentes/pages/complete-perfil/CompletarPerfil
 import MinhaConta from "./componentes/pages/minha-conta/MinhaConta";
 import EditarInformacoes from "./componentes/pages/editar-informacoes/EditarInformacoes";
 import EditarPaciente from "./componentes/pages/editar-paciente/EditarPaciente";
+import MinhaConta2 from "./componentes/pages/minha-conta2/MinhaConta2"
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
         <Route path="/minha-conta" element={<MinhaConta />} />
         <Route path="/editar-informacoes" element={<EditarInformacoes />} />
         <Route path="/editar-paciente" element={<EditarPaciente />} />
+        <Route path="/minha-conta2" element={<MinhaConta2 />} />
       </Routes>
     </BrowserRouter>    
   );

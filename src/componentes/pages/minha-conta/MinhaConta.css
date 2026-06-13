@@ -1,7 +1,7 @@
 .mc-page {
   width: 100%;
   min-height: calc(100vh - 80px);
-  background:#F8F4EE;
+  background: white;
   display: flex;
   justify-content: center;
   padding: 48px 5% 64px;
@@ -27,16 +27,16 @@
   margin-bottom: 28px;
 }
 
-/* ── Cards ── */
 .mc-card {
-  background: #0B5C6A;
+  background: #f8f4ec;
+  border: 1px solid #e2ddd5;
   border-radius: 16px;
   padding: 20px 24px;
   margin-bottom: 20px;
 }
 
 .mc-card--patient {
-  background: #0B5C6A;
+  background: #f8f4ec;
 }
 
 .mc-card-header {
@@ -51,7 +51,7 @@
 .mc-card-label {
   font-size: 0.8rem;
   font-weight: 600;
-  color: #a0c4c4;
+  color: #076576;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -62,10 +62,10 @@
   gap: 6px;
   font-size: 0.78rem;
   font-weight: 600;
-  color: #E8C96A;
+  color: #111;
   text-decoration: none;
-  background: rgba(232, 201, 106, 0.1);
-  border: 1px solid rgba(232, 201, 106, 0.3);
+  background: #f5e17a;
+  border: 1px solid rgba(245, 162, 85, 0.5);
   border-radius: 20px;
   padding: 5px 12px;
   transition: background 0.2s;
@@ -73,7 +73,7 @@
 }
 
 .mc-edit-btn:hover {
-  background: rgba(232, 201, 106, 0.2);
+  background: #f5d67a;
 }
 
 /* Infos do responsável */
@@ -88,11 +88,11 @@
   align-items: center;
   gap: 10px;
   font-size: 0.88rem;
-  color: #d0e8e8;
+  color: #111;
 }
 
 .mc-info-row svg {
-  color: #a0c4c4;
+  color: #076576;
   flex-shrink: 0;
 }
 
@@ -107,18 +107,18 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: #0d2b2b;
+  background: #e6f4f6;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  color: #a0c4c4;
+  color: #076576;
 }
 
 .mc-patient-name {
   font-size: 1rem;
   font-weight: 700;
-  color: #fff;
+  color: #111;
   margin-bottom: 12px;
 }
 
@@ -136,7 +136,7 @@
 
 .mc-patient-key {
   font-size: 0.72rem;
-  color: #a0c4c4;
+  color: #555;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.4px;
@@ -144,7 +144,7 @@
 
 .mc-patient-val {
   font-size: 0.85rem;
-  color: #d0e8e8;
+  color: #111;
   font-weight: 500;
 }
 

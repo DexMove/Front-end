@@ -67,7 +67,7 @@ export default function MinhaConta() {
             <div className="mc-card-header">
               <span className="mc-card-label">Paciente sob sua responsabilidade</span>
               <Link to="/editar-paciente" className="mc-edit-btn">
-                <IconEdit /> Editar os dados da conta
+                <IconEdit /> Editar dados do paciente
               </Link>
             </div>
             <div className="mc-patient-body">
