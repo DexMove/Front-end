@@ -1,9 +1,11 @@
 import React from 'react';
 import './controle.css';
-import MoviHand from '../img/Movi-Hand.png'
-
+import MoviHand from '../../../assets/image_62.png'
+import Header2 from '../../Header2';
+import Footer from '../../Footer';
 function Controle() {
   return (
+    
     <div>
       <img src={MoviHand} alt="Órtese" />
     </div>
@@ -40,6 +42,8 @@ const BrainIcon = () => (
 
 const DexMovePage = () => {
   return (
+    <main>
+      <Header2 />
     <div className="dexmove-container">
       {/* Cabeçalho */}
       <header className="header">
@@ -200,6 +204,8 @@ const DexMovePage = () => {
         </div>
       </footer>
     </div>
+    <Footer />
+    </main>
   );
 };
 

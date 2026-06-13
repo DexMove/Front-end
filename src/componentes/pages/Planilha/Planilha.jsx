@@ -10,7 +10,8 @@ import {
 } from 'react-icons/fi';
 import { MdOutlineBackHand } from 'react-icons/md';
 import { AiOutlineRobot } from 'react-icons/ai';
-
+import Header2 from '../../Header2';
+import Footer from '../../Footer';
 const Planilha = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const fileInputRef = useRef(null);
@@ -38,6 +39,7 @@ const Planilha = () => {
 
   return (
     <main className="planilha-container">
+      <Header2 />
       {/* Seção Superior */}
       <section className="header-content">
         <h1>Conecte sua MoveHand</h1>
@@ -207,6 +209,7 @@ const Planilha = () => {
           <FiHeadphones className="support-icon" />
         </button>
       </div>
+      <Footer />
     </main>
   );
 };

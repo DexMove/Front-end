@@ -1,21 +1,21 @@
 import { useState } from "react";
 import styles from "./sobre_nos.module.css";
 
-import equipe1 from "../../../assets/img/image_62.png";
-import equipe2 from "../../../assets/img/image_62.png";
-import equipe3 from "../../../assets/img/image_62.png";
-import equipe4 from "../../../assets/img/image_62.png";
-import equipe5 from "../../../assets/img/image_62.png";
-import equipe6 from "../../../assets/img/image_62.png";
-import logoSenac from "../../../assets/img/image_62.png";
-import logoProa from "../../../assets/img/image_62.png";
-import logoPorto from "../../../assets/img/image_62.png";
-import imagemEquipe from "../../../assets/img/equipe.png";
-import imagemDex from "../../../assets/img/dexy.png";
-import iconeMissao from "../../../assets/img/missao.png";
-import iconeVisao from "../../../assets/img/visao.png";
-import iconeValores from "../../../assets/img/valores.png";
-import videoDexMove from "../../../assets/img/dexmove.mp4";
+import equipe1 from "../../../assets/image_62.png";
+import equipe2 from "../../../assets/image_62.png";
+import equipe3 from "../../../assets/image_62.png";
+import equipe4 from "../../../assets/image_62.png";
+import equipe5 from "../../../assets/image_62.png";
+import equipe6 from "../../../assets/image_62.png";
+import logoSenac from "../../../assets/image_62.png";
+import logoProa from "../../../assets/image_62.png";
+import logoPorto from "../../../assets/image_62.png";
+import imagemEquipe from "../../../assets/equipe.png";
+import imagemDex from "../../../assets/dexy.png";
+import iconeMissao from "../../../assets/missao.png";
+import iconeVisao from "../../../assets/visao.png";
+import iconeValores from "../../../assets/valores.png";
+import videoDexMove from "../../../assets/dexmove.mp4";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";

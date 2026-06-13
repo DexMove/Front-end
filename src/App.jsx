@@ -21,6 +21,9 @@ import EditarInformacoes from "./componentes/pages/editar-informacoes/EditarInfo
 import EditarPaciente from "./componentes/pages/editar-paciente/EditarPaciente";
 import MinhaConta2 from "./componentes/pages/minha-conta2/MinhaConta2"
 import Assistencia_ortese from "./componentes/pages/assistiencia_ortese/Assistencia_ortese"
+import Planilha from "./componentes/pages/Planilha/Planilha"
+import Controle from "./componentes/pages/controle/controle"
+import Fisioterapeutas from "./componentes/pages/fisioterapeutas/fisioterapeutas"
 
 function App() {
   return (
@@ -46,6 +49,9 @@ function App() {
         <Route path="/editar-informacoes" element={<EditarInformacoes />} />
         <Route path="/editar-paciente" element={<EditarPaciente />} />
         <Route path="/minha-conta2" element={<MinhaConta2 />} />
+        <Route path="/controle" element={<Controle />} />
+        <Route path="/planilha" element={<Planilha />} />
+        <Route path="/fisioterapeutas" element={<Fisioterapeutas />} />
       </Routes>
     </BrowserRouter>    
   );

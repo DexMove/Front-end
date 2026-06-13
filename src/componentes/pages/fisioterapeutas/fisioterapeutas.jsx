@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import "./Fisioterapeutas.css";
-
-import fisioterapeuta1 from "../../img/image_62.png";
-import fisioterapeuta2 from "../../img/image_62.png";
-import fisioterapeuta3 from "../../img/image_62.png";
-import fisioterapeuta4 from "../../img/image_62.png";
+import Footer from "../../Footer";
+import Header from "../../Header";
+import fisioterapeuta1 from "../../../assets/image_62.png";
+import fisioterapeuta2 from "../../../assets/image_62.png";
+import fisioterapeuta3 from "../../../assets/image_62.png";
+import fisioterapeuta4 from "../../../assets/image_62.png";
 
 export default function Fisioterapeutas() {
   const [modalAberto, setModalAberto] = useState(false);
@@ -107,6 +108,8 @@ export default function Fisioterapeutas() {
  };
 
   return (
+    <main>
+      <Header />
     <section className="paginaFisio">
 
               {/* Onda atrás dos cards */}
@@ -324,6 +327,8 @@ export default function Fisioterapeutas() {
         </svg>
       </div>
     </section>
+    <Footer />
+    </main>
   );
 
 }
