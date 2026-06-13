@@ -1,0 +1,150 @@
+.section7 {
+    position: relative;
+    width: 100%;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-top: 3rem;
+}
+.vector13 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: -150px;
+    left: 0px;
+    z-index: -1;
+}
+
+.vector14 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: -100px;
+    left: 0px;
+    z-index: -2;
+}
+
+.vector15{
+    position: absolute;
+    width: 150%;
+    height: 650px;
+    bottom: -75px;
+    left: -20;
+    z-index: -3;
+}
+
+.section7 h2 {
+    font-size: 2rem;
+    color: #0B5C6A;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.contend {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.formi {
+    background-color: #ffffff;
+    border-radius: 16px;
+    width: 50%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.formi label {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+    color: #333;
+}
+
+.formi input {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+.formi textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 0.8rem 1rem;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.formi button {
+    align-self: center;
+    padding: 0.8rem 2rem;
+    background-color: #E8C96A;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .section7 {
+        padding: 2rem 1rem;
+    }
+    .section7 h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    .formi {
+        width: 70%;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .section7 {
+        padding: 1.5rem 1rem;
+    }
+    .section7 h2 {
+        font-size: 1.2rem;
+    }
+    .contend {
+        margin-top: 1rem;
+    }
+    .formi {
+        width: 100%;
+        padding: 1rem;
+    }
+    .formi label {
+        font-size: 0.85rem;
+    }
+    .formi input {
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    .formi textarea {
+        height: 80px;
+        font-size: 0.9rem;
+    }
+    .formi button {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    .vector13, .vector14, .vector15 {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+}

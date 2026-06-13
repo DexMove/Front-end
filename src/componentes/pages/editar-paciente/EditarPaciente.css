@@ -1,0 +1,159 @@
+.ep-page {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  background: #F5F0E8;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 48px 5% 64px;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+.ep-card {
+  width: 100%;
+  max-width: 580px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 36px 40px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+}
+
+.ep-header { margin-bottom: 28px; }
+
+.ep-title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #1a6e6e;
+  margin-bottom: 4px;
+}
+
+.ep-subtitle {
+  font-size: 0.83rem;
+  color: #888;
+}
+
+/* Grid */
+.ep-row {
+  display: flex;
+  gap: 16px;
+}
+
+.ep-row .ep-field { flex: 1; min-width: 0; }
+
+.ep-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 16px;
+}
+
+.ep-field--full { width: 100%; }
+
+.ep-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.ep-input {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 1.5px solid #E0D9CC;
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.85rem;
+  color: #1a1a1a;
+  background: #F5F0E8;
+  box-sizing: border-box;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.ep-input:focus { border-color: #E8C96A; }
+.ep-input::placeholder { color: #bbb; }
+
+.ep-select-wrap { position: relative; }
+
+.ep-select {
+  width: 100%;
+  padding: 0.65rem 2rem 0.65rem 0.85rem;
+  border: 1.5px solid #E0D9CC;
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.85rem;
+  color: #1a1a1a;
+  background: #F5F0E8;
+  box-sizing: border-box;
+  outline: none;
+  appearance: auto;
+  cursor: pointer;
+  transition: border 0.2s;
+}
+
+.ep-select:focus { border-color: #E8C96A; }
+
+/* Ações */
+.ep-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.ep-btn-cancel {
+  flex: 1;
+  padding: 0.75rem;
+  background: transparent;
+  border: 1.5px solid #E0D9CC;
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #888;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.ep-btn-cancel:hover { border-color: #aaa; color: #555; }
+
+.ep-btn-save {
+  flex: 2;
+  padding: 0.75rem;
+  background: #E8C96A;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.ep-btn-save:hover { opacity: 0.88; }
+
+/* ── Responsividade ── */
+@media (max-width: 1024px) {
+  .ep-page { padding: 40px 5% 56px; }
+}
+
+@media (max-width: 780px) {
+  .ep-page { padding: 32px 4% 48px; }
+  .ep-card { max-width: 100%; }
+}
+
+@media (max-width: 600px) {
+  .ep-page { padding: 24px 4% 40px; }
+  .ep-card { padding: 28px 24px; border-radius: 16px; }
+  .ep-row { flex-direction: column; gap: 0; }
+  .ep-title { font-size: 1.25rem; }
+  .ep-actions { flex-direction: column; }
+  .ep-btn-cancel, .ep-btn-save { flex: unset; }
+}
+
+@media (max-width: 430px) {
+  .ep-page { padding: 16px 4% 32px; }
+  .ep-card { padding: 22px 16px; border-radius: 12px; }
+  .ep-title { font-size: 1.1rem; }
+  .ep-input, .ep-select { font-size: 0.82rem; }
+}

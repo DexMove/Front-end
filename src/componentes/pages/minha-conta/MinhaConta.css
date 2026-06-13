@@ -1,0 +1,175 @@
+.mc-page {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  background: white;
+  display: flex;
+  justify-content: center;
+  padding: 48px 5% 64px;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+.mc-container {
+  width: 100%;
+  max-width: 680px;
+}
+
+.mc-page-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #0B5C6A;
+  margin-bottom: 4px;
+}
+
+.mc-page-sub {
+  font-size: 1.25rem;
+  color: #0B5C6A;
+  margin-bottom: 28px;
+}
+
+.mc-card {
+  background: #f8f4ec;
+  border: 1px solid #e2ddd5;
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+
+.mc-card--patient {
+  background: #f8f4ec;
+}
+
+.mc-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.mc-card-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #076576;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mc-edit-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #111;
+  text-decoration: none;
+  background: #f5e17a;
+  border: 1px solid rgba(245, 162, 85, 0.5);
+  border-radius: 20px;
+  padding: 5px 12px;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.mc-edit-btn:hover {
+  background: #f5d67a;
+}
+
+/* Infos do responsável */
+.mc-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mc-info-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: #111;
+}
+
+.mc-info-row svg {
+  color: #076576;
+  flex-shrink: 0;
+}
+
+/* Paciente */
+.mc-patient-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.mc-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #e6f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #076576;
+}
+
+.mc-patient-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 12px;
+}
+
+.mc-patient-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 24px;
+}
+
+.mc-patient-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mc-patient-key {
+  font-size: 0.72rem;
+  color: #555;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.mc-patient-val {
+  font-size: 0.85rem;
+  color: #111;
+  font-weight: 500;
+}
+
+/* ── Responsividade ── */
+@media (max-width: 1024px) {
+  .mc-page { padding: 40px 5% 56px; }
+}
+
+@media (max-width: 780px) {
+  .mc-page { padding: 32px 4% 48px; }
+  .mc-container { max-width: 100%; }
+}
+
+@media (max-width: 600px) {
+  .mc-page { padding: 24px 4% 40px; }
+  .mc-card { padding: 16px 18px; }
+  .mc-patient-body { flex-direction: column; align-items: center; }
+  .mc-patient-name { text-align: center; }
+  .mc-patient-grid { grid-template-columns: 1fr 1fr; }
+  .mc-page-title { font-size: 1.35rem; }
+}
+
+@media (max-width: 430px) {
+  .mc-page { padding: 20px 4% 36px; }
+  .mc-patient-grid { grid-template-columns: 1fr; }
+  .mc-card-header { flex-direction: column; align-items: flex-start; }
+  .mc-page-title { font-size: 1.2rem; }
+}
