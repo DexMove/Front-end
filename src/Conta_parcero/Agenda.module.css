@@ -32,7 +32,8 @@
 /* Tab Navigation */
 .tabsContainer {
   display: flex;
-  gap: 2.5rem;
+  flex-wrap: wrap;
+  gap: 1.25rem;
   border-bottom: 2px solid #E5E4E7;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
@@ -50,6 +51,7 @@
   padding: 4px 0;
   transition: all 0.2s ease;
   position: relative;
+  white-space: nowrap;
 }
 
 .tabBtn:hover {
@@ -196,8 +198,8 @@
   }
 
   .tabsContainer {
-    gap: 1.5rem;
-    justify-content: space-around;
+    gap: 1rem;
+    justify-content: space-between;
   }
 
   .tabBtn {
@@ -206,13 +208,62 @@
 
   .appointmentCard {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 12px;
     padding: 1.2rem;
   }
 
   .cardRight {
     width: 100%;
-    justify-content: flex-end;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .pagina {
+    padding: 0 0.75rem;
+  }
+
+  .titulo {
+    font-size: 26px;
+  }
+
+  .subtitulo {
+    font-size: 14px;
+  }
+
+  .tabsContainer {
+    gap: 0.75rem;
+  }
+
+  .tabBtn {
+    font-size: 16px;
+    padding: 4px 0;
+  }
+
+  .appointmentCard {
+    padding: 1rem;
+  }
+
+  .patientName {
+    font-size: 20px;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+
+  .statusBadge {
+    padding: 5px 12px;
+    font-size: 12px;
+  }
+
+  .footerAction {
+    justify-content: stretch;
+  }
+
+  .btnAgendaCompleta {
+    width: 100%;
+    padding: 14px 18px;
   }
 }
