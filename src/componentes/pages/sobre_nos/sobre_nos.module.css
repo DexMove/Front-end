@@ -1,0 +1,714 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ========== SEÇÃO 1: VÍDEO ========== */
+.secaoVideo {
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  max-height: 750px;
+  overflow: hidden;
+  position: relative;
+}
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.videoBg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.videoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.videoConteudo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+  width: 90%;
+  max-width: 800px;
+}
+
+.videoConteudo h1 {
+  font-size: 64px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.videoConteudo p {
+  font-size: 24px;
+  opacity: 0.95;
+}
+
+/* ========== SEÇÃO 2: ONDAS ========== */
+.secaoOndas {
+  position: relative;
+  width: 100%;
+  min-height: 750px;
+  display: flex;
+  align-items: center;
+}
+
+.containerOndas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.containerOndas svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.conteudoOndas {
+  position: relative;
+  z-index: 2;
+  max-width: 1300px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  padding: 80px 0;
+}
+
+.textoOndas {
+  flex: 1;
+  color: white;
+  margin-left: 85px;
+  margin-top: -200px;
+}
+
+.textoOndas h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.textoOndas p {
+  font-size: 30px;
+  line-height: 1.6;
+}
+
+.imagemOndas {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -200px;
+}
+
+.imagemEquipe {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 30px;
+  object-fit: cover;
+}
+
+.ondaDexy {
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  line-height: 0;
+  right: 0;
+}
+
+.ondaDexy svg {
+  width: 100%;
+  height: 250px;
+  display: block;
+}
+
+/* ========== SEÇÃO 3: CHATBOT DEXY ========== */
+.secaoDexy {
+  margin-top: -100px;
+  padding: 80px 5%;
+  color: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+.dexyContainer {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.dexyTexto {
+  flex: 1;
+}
+
+.dexyTexto h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #0b5c6a;
+}
+
+.dexyDestaque {
+  color: #ffb366;
+}
+
+.dexyTexto p {
+  font-size: 30px;
+  line-height: 1.6;
+  margin-bottom: 35px;
+  opacity: 0.95;
+}
+
+.dexyFeatures {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+}
+
+.featureIcon {
+  font-size: 24px;
+}
+
+.feature span:last-child {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.dexyImagem {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagemDex {
+  max-width: 450px;
+  width: 100%;
+  height: auto;
+}
+
+/* ========== SEÇÃO 4: MVV ========== */
+.secaoMVV {
+  background-color: #f9f9f9;
+  padding: 80px 5%;
+  text-align: center;
+}
+
+.secaoMVV h2 {
+  font-size: 36px;
+  color: #0b5c6a;
+  margin-bottom: 50px;
+}
+
+.mvvGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mvvCard {
+  flex: 1;
+  min-width: 280px;
+  background: white;
+  padding: 40px 25px;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.mvvCard:hover {
+  transform: translateY(-8px);
+}
+
+.mvvIcon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.mvvCard h3 {
+  font-size: 24px;
+  color: #0b5c6a;
+  margin-bottom: 15px;
+}
+
+.mvvCard p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.mvvImage {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ========== SEÇÃO 5: EQUIPE ========== */
+.secaoEquipe {
+  padding: 80px 5%;
+  text-align: center;
+  background-color: #fff;
+}
+
+.secaoEquipe h2 {
+  font-size: 36px;
+  color: #0b5c6a;
+  margin-bottom: 10px;
+}
+
+.secaoEquipe > p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 50px;
+}
+
+.equipeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-items: center;
+  align-items: center;
+}
+
+.cardEquipe {
+  min-width: 250px;
+  max-width: 300px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.fotoContainer {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto 15px;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.fotoEquipe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.overlayEquipe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(11, 92, 106, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  padding: 20px;
+  text-align: center;
+}
+
+.overlayEquipe p {
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.bioEquipe {
+  color: #f3e396;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.cardEquipe:hover .overlayEquipe {
+  opacity: 1;
+}
+
+.cardEquipe:hover .fotoEquipe {
+  transform: scale(1.05);
+}
+
+.nomeEquipe {
+  font-size: 20px;
+  color: #0b5c6a;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.ondaEquipe {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  line-height: 0;
+  margin-top: 80px;
+  position: relative;
+  left: 0;
+  right: 0;
+}
+
+.ondaEquipe svg {
+  width: 100%;
+  height: 220px;
+  display: block;
+}
+
+/* ========== SEÇÃO 6: APOIADORES ========== */
+.secaoApoiadores {
+  background-color: #f9f9f9;
+  padding: 60px 5%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.secaoApoiadores h2 {
+  font-size: 36px;
+  color: #0b5c6a;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.carrosselApoiadores {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+.cardApoiador img {
+  width: 450px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Swiper Styles */
+:global(.swiper-wrapper) {
+  align-items: center;
+}
+
+:global(.swiper-slide) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+:global(.swiper-button-next),
+:global(.swiper-button-prev) {
+  color: #0b5c6a;
+}
+
+:global(.swiper-button-next:hover),
+:global(.swiper-button-prev:hover) {
+  color: #ffb366;
+}
+
+:global(.swiper-pagination-bullet) {
+  background-color: #ccc;
+  opacity: 1;
+}
+
+:global(.swiper-pagination-bullet-active) {
+  background-color: #0b5c6a;
+}
+
+/* ========== RESPONSIVIDADE ========== */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .conteudoOndas {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .textoOndas {
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  .imagemOndas {
+    margin-top: 0;
+  }
+
+  .textoOndas h2 {
+    font-size: 32px;
+  }
+
+  .textoOndas p {
+    font-size: 20px;
+  }
+
+  .imagemEquipe {
+    max-width: 400px;
+  }
+
+  .dexyContainer {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .dexyTexto h2 {
+    font-size: 32px;
+  }
+
+  .dexyTexto p {
+    font-size: 22px;
+  }
+
+  .dexyFeatures {
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .feature span:last-child {
+    font-size: 20px;
+  }
+
+  .imagemDex {
+    max-width: 350px;
+  }
+
+  .equipeGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .cardApoiador img {
+    width: 300px;
+  }
+}
+
+/* Mobile (até 768px) */
+@media (max-width: 768px) {
+  .secaoVideo {
+    height: 70vh;
+    min-height: 500px;
+  }
+
+  .videoConteudo h1 {
+    font-size: 36px;
+  }
+
+  .videoConteudo p {
+    font-size: 18px;
+  }
+
+  .textoOndas h2 {
+    font-size: 28px;
+  }
+
+  .textoOndas p {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .imagemEquipe {
+    max-width: 280px;
+  }
+
+  .secaoDexy {
+    margin-top: -50px;
+    padding: 60px 5%;
+  }
+
+  .dexyTexto h2 {
+    font-size: 24px;
+  }
+
+  .dexyTexto p {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 25px;
+  }
+
+  .feature {
+    padding: 8px 16px;
+  }
+
+  .featureIcon {
+    font-size: 20px;
+  }
+
+  .feature span:last-child {
+    font-size: 16px;
+  }
+
+  .imagemDex {
+    max-width: 250px;
+  }
+
+  .secaoMVV h2,
+  .secaoEquipe h2,
+  .secaoApoiadores h2 {
+    font-size: 28px;
+  }
+
+  .mvvGrid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mvvImage {
+    width: 120px;
+    height: 120px;
+  }
+
+  .equipeGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .fotoContainer {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .cardEquipe {
+    min-width: auto;
+    max-width: 100%;
+  }
+
+  .nomeEquipe {
+    font-size: 18px;
+  }
+
+  .cardApoiador img {
+    width: 200px;
+  }
+
+  :global(.swiper-button-next),
+  :global(.swiper-button-prev) {
+    display: none;
+  }
+}
+
+/* Mobile pequeno (até 480px) */
+@media (max-width: 480px) {
+  .videoConteudo h1 {
+    font-size: 28px;
+  }
+
+  .equipeGrid {
+    grid-template-columns: 1fr; /* 1 coluna apenas em telas muito pequenas */
+    gap: 30px;
+  }
+  
+  .fotoContainer {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  .videoConteudo p {
+    font-size: 14px;
+  }
+
+  .textoOndas h2 {
+    font-size: 24px;
+  }
+
+  .textoOndas p {
+    font-size: 14px;
+  }
+
+  .dexyTexto h2 {
+    font-size: 20px;
+  }
+
+  .dexyTexto p {
+    font-size: 14px;
+  }
+
+  .feature span:last-child {
+    font-size: 14px;
+  }
+
+  .imagemDex {
+    max-width: 200px;
+  }
+
+  .secaoMVV h2,
+  .secaoEquipe h2,
+  .secaoApoiadores h2 {
+    font-size: 24px;
+  }
+
+  .mvvImage {
+    width: 100px;
+    height: 100px;
+  }
+
+  .mvvCard h3 {
+    font-size: 20px;
+  }
+
+  .mvvCard p {
+    font-size: 14px;
+  }
+
+  .fotoContainer {
+    width: 200px;
+    height: 200px;
+  }
+
+  .nomeEquipe {
+    font-size: 18px;
+  }
+
+  .cardApoiador img {
+    width: 150px;
+  }
+}

@@ -11,7 +11,6 @@ import Dupla from "../../../assets/dupla.png"
 import Direita from "../../../assets/direita1.png"
 import Esquerda from "../../../assets/esquerda.png"
 import Carregador from "../../../assets/carregador.png"
-
 function Produtos(){
     return(
     <main>
@@ -36,7 +35,6 @@ function Produtos(){
                         <span>R$ 000</span> <br />
                         ou 12x de R$ 000</p>
                         <span className="botao"> <BotaoComprar /> </span>
-                        
                         </div>
                     </div>
             </div>

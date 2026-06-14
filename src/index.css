@@ -107,3 +107,61 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body, #root {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: white;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.5;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+main {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    background: white;
+}
+
+img,
+picture,
+svg,
+video,
+canvas {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+    min-width: 0;
+}
+
+section,
+article,
+nav,
+header,
+footer,
+aside {
+    width: 100%;
+    box-sizing: border-box;
+}
+

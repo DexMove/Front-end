@@ -1,0 +1,272 @@
+/* Configurações Gerais */
+.planilha-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 0;
+  background-color: #F5F5F5;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 35px; /* Espaçamento entre seções ligeiramente maior */
+}
+
+/* Centralizador de conteúdo */
+.header-content,
+.planilha-id,
+.main-card,
+.info-cards-grid,
+.support-banner {
+  width: 92%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Seção Superior */
+.header-content {
+  text-align: center;
+  max-width: 800px;
+}
+
+.header-content h1 {
+  font-size: clamp(26px, 4vw, 36px);
+  font-weight: 700;
+  color: #1E1E1E;
+  margin-bottom: 10px;
+}
+
+.header-content p {
+  font-size: 18px;
+  color: #333;
+}
+
+.top-wave {
+  width: 100%;
+  height: 120px; /* Altura reduzida - ajuste conforme desejar */
+  overflow: hidden;
+  margin-top: -20px; /* Remove espaçamento superior */
+}
+
+.top-wave svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Identificação MoveHand */
+.planilha-id {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  max-width: 900px; /* Alinhado com a largura do card principal */
+}
+
+.hand-icon {
+  font-size: 30px;
+  color: #333;
+}
+
+.id-text {
+  display: flex;
+  flex-direction: column; /* Faz um ficar embaixo do outro */
+  gap: 4px;               /* Ajuste este valor para aumentar ou diminuir o espaço entre as linhas */
+  text-align: left;       /* Garante que o texto alinhe à esquerda */
+}
+
+.id-text strong {
+  font-size: 16px;
+  color: #1E1E1E;
+  font-weight: 700;
+}
+
+.id-text span {
+  font-size: 13px;
+  color: #666;
+}
+
+/* Card Principal - Expandido para preencher mais a tela */
+.main-card {
+  background-color: #F7F1EC;
+  border-radius: 28px;
+  padding: clamp(25px, 5vw, 50px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 900px; /* Aumentado de 700px para 900px */
+}
+
+.upload-section h2 {
+  font-size: 22px;
+  color: #1E1E1E;
+  text-align: center;
+}
+
+/* Área de Upload - Borda Sólida Corrigida */
+.upload-area {
+  background-color: #FFFFFF;
+  border: 2px solid #0B5C6A; /* VOLTOU PARA SÓLIDO */
+  border-radius: 20px;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 30px;
+  transition: all 0.3s ease;
+}
+
+.upload-area:hover {
+  background-color: #f4fbfc;
+  transform: scale(1.01);
+}
+
+.cloud-icon {
+  font-size: 50px;
+  color: #0B5C6A;
+  margin-bottom: 15px;
+}
+
+/* Status e Aviso */
+.status-card, .info-box {
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  padding: 25px;
+  border: 1px solid rgba(11, 92, 106, 0.15);
+}
+
+.info-box {
+  text-align: center;
+}
+
+.status-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.status-header h3 {
+  font-size: 18px;
+  color: #0B5C6A;
+  margin: 0;
+}
+
+/* Botão Principal */
+.btn-submit {
+  background-color: #0B5C6A;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 14px;
+  height: 64px;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  max-width: 450px; /* Botão centralizado e com largura controlada */
+  margin: 0 auto;
+}
+
+.btn-submit:hover {
+  background-color: #084a55;
+  box-shadow: 0 5px 15px rgba(11, 92, 106, 0.3);
+}
+
+/* Cards Informativos - Grid mais larga */
+.info-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  max-width: 1100px; /* Aumentado para preencher mais a tela */
+}
+
+.info-card {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-icon {
+  font-size: 35px;
+  color: #0B5C6A;
+  margin-bottom: 15px;
+}
+
+/* Bloco de Suporte - Mais largo e elegante */
+.support-banner {
+  background-color: #0B5C6A;
+  border-radius: 20px;
+  padding: 35px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin-bottom: 50px;
+  gap: 30px;
+}
+
+.support-text h5 {
+  color: #FFFFFF;
+  font-size: 22px;
+  margin: 0 0 8px 0;
+}
+
+.support-text p {
+  color: rgba(255,255,255,0.9);
+  font-size: 16px;
+}
+
+.btn-support {
+  background-color: #F7E38B;
+  color: #1E1E1E;
+  border: none;
+  border-radius: 12px;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-support:hover {
+  background-color: #f5d961;
+  transform: scale(1.05);
+}
+
+/* --- AJUSTES DE RESPONSIVIDADE --- */
+
+@media (max-width: 850px) {
+  .support-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+  }
+  
+  .info-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-card {
+    padding: 20px;
+  }
+  .header-content h1 {
+    font-size: 24px;
+  }
+}
