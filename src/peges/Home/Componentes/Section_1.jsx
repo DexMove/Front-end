@@ -1,5 +1,6 @@
 import styles from '../css/Section_1.module.css';
-import onda from '../../assets/imag/Ellipse321.svg';
+import onda from '../../../assets/imag/Ellipse321.svg';
+import ortese from '../../../assets/imag/home.png';
 
 function Section_1() {
   return (
@@ -15,7 +16,7 @@ function Section_1() {
       </div>
          <div className={styles.div2}>
             <img src={onda} alt="Onda"className={styles.onda1} />
-            {/*<img src={ortese} alt="Ortese1" className={styles.mao1} />*/}
+            <img src={ortese} alt="Ortese1" className={styles.mao1} />
 
         </div>
     </section>

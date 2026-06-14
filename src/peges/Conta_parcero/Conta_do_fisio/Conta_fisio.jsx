@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Layout from '../Layout';
 import styles from '../css.fisio/Conta_fisio.module.css';
-import avatar from '../../assets/imag/fisio2.png';
+import avatar from '../../../assets/imag/fisio2.png';
 
 function Conta_fisio() {
   const navigate = useNavigate();

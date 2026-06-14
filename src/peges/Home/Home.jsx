@@ -8,7 +8,7 @@ import Section_5 from "./Componentes/Section_5";
 import Section_6 from "./Componentes/Section_6";
 import Section_7 from "./Componentes/Section_7";
 import SectionFisio from "./Componentes/SectionFisio";
-import  styles from'./Home.module.css'
+import styles from './Home.module.css'
 
 function Home() {
   return (

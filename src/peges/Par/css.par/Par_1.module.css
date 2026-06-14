@@ -1,4 +1,3 @@
-
 .section9 {
     position: relative;
     width: 100%;
@@ -10,9 +9,8 @@
     align-items: center;
     padding: 50px 100px;
     justify-content: center;
-    overflow-x:clip;
+    overflow-x: clip;
     font-size: 1rem;
-
 }
 
 .vector16 {
@@ -44,6 +42,7 @@
     z-index: -3;
     margin-top: 900px;
 }
+
 .cards2 {
     position: relative;
     display: flex;
@@ -55,34 +54,80 @@
     z-index: 1;
 }
 
-.card2 {
+.cardFlip {
     background-color: #f5e9a0;
     border-radius: 16px;
     width: 200px;
     padding: 1rem;
     box-sizing: border-box;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 250px;
+    height: 260px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.cardInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+}
+
+.cardFlip:hover .cardInner {
+    transform: rotateY(180deg);
+}
+
+.cardFrente,
+.cardVerso {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    backface-visibility: hidden;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-top: 250px;
+    justify-content: flex-start;
 }
 
-.card2 img {
+.cardFrente {
+    background-color: #f5e9a0;
+}
+
+.cardFrente img {
     width: 100%;
-    height: 180px;
+    height: 140px;
     object-fit: cover;
     border-radius: 12px;
     margin-bottom: 1rem;
 }
 
-.card2 h3 {
+.cardFrente h3 {
     font-size: 1rem;
     font-weight: bold;
     color: #1a3a5c;
-    margin-bottom: 0.5rem;
     text-align: center;
     width: 100%;
+}
+
+.cardVerso {
+    background-color: #e8c84a;
+    border-radius: 12px;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.cardVerso p {
+    font-size: 14px;
+    color: #2a2000;
+    text-align: center;
+    line-height: 1.6;
+    margin: 0;
 }
 
 /* Responsividade */

@@ -1,6 +1,5 @@
 import styles from '../css/Section_4.module.css';
-import ortese from '../../assets/imag/ortese2.png';
-import vector57 from '../../assets/imag/Vector57.png';
+import vector57 from '../../../assets/imag/Vector57.png';
 
 
 function Section_4() {

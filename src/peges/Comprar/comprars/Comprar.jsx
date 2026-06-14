@@ -13,12 +13,12 @@ import {
   QrCode,
   FileText
 } from "lucide-react";
-import Header from "../../componentes/Header";
-import Footer from "../../componentes/Footer";
+import Header from "../../../componentes/Header";
+import Footer from "../../../componentes/Footer";
 import styles from '../Css.css/Comprar.module.css';
 
 // Usando imagens do projeto para o resumo do pedido
-import orteset from '../../assets/imag/orteset.png';
+import orteset from '../../../assets/imag/orteset.png';
 
 function Comprar() {
   const navigate = useNavigate();

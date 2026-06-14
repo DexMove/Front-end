@@ -1,8 +1,8 @@
 import styles from '../css.con/Mao_3.module.css';
-import vector19 from '../../assets/imag/Vector19.svg';
-import ajuste from '../../assets/imag/ajuste.png';
-import pena from '../../assets/imag/pena.png';
-import coração from '../../assets/imag/coracao.png';
+import vector19 from '../../../assets/imag/Vector19.svg';
+import ajuste from '../../../assets/imag/ajuste.png';
+import pena from '../../../assets/imag/pena.png';
+import coração from '../../../assets/imag/coracao.png';
 
 function Mao_3() {
     return (

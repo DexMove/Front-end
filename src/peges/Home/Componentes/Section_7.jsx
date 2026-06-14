@@ -1,14 +1,14 @@
 import styles from '../css/Section_7.module.css'
-import vector13 from '../../assets/imag/Vector13.svg';
-import vector14 from '../../assets/imag/Vector14.svg';
-import vector15 from '../../assets/imag/Vector15.svg';
+import vector13 from '../../../assets/imag/Vector13.svg';
+import vector14 from '../../../assets/imag/Vector14.svg';
+import vector15 from '../../../assets/imag/Vector15.svg';
 
 function Section_7() {
     return (
         <section className={styles.section7}>
             <img src={vector13} alt={vector13} className={styles.vector13} />
-            <img src={vector14} alt={vector13} className={styles.vector14} />
-            <img src={vector15} alt={vector13} className={styles.vector15} />
+            <img src={vector14} alt={vector14} className={styles.vector14} />
+            <img src={vector15} alt={vector15} className={styles.vector15} />
             <h2>Entre em contato</h2>
             <p>Estamos aqui para ajudar. Preencha o formulário e entraremos em contato em breve. </p>
             <div className={styles.contend}>

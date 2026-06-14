@@ -1,5 +1,5 @@
 import styles from '../css/SectionFisio.module.css';
-import fisioterapeuta from '../../assets/imag/fisio2.png';
+import fisioterapeuta from '../../../assets/imag/fisio2.png';
 
 function SectionFisio() {
   return (

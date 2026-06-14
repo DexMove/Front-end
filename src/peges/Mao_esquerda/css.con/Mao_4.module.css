@@ -39,94 +39,76 @@
     z-index: -1;
     margin-top: 600px;
 }
+.titulo {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+}
 
-.cards3 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 2rem;
-    width: 100%;
-    z-index: 1;
-    align-items: flex-start;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 3rem;
 }
 
 .card3 {
-    background-color: #0B5C6A;  
-    border-radius: 16px;
-    width: 220px;
-    padding: 1rem;
-    box-sizing: border-box;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    min-height: 280px;          
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
 }
 
-.card3 img {
-    width: 100%;
-    height: 180px;
-    object-fit: contain;
-    border-radius: 12px;
-    margin-bottom: 0.5rem;
-    background-color: transparent; 
+.cardImg {
+  background-color: #0B5C6A;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.card3 h3 {
-    font-size: 0.85rem;
-    font-weight: bold;
-    color: #ffffff;             
-    margin-bottom: 0.3rem;
-    width: 100%;
+.cardImg img {
+  max-height: 220px;
+  max-width: 100%;
+  object-fit: contain;
 }
 
-.card3 p {
-    font-size: 0.85rem;
-    color: #ffffff;             
-    margin-bottom: 0.5rem;
+.cardBody {
+  padding: 16px 18px;
 }
 
-.Comprarb {
-    padding: 0.4rem 1.5rem;
-    background-color: #f5e9a0;  
-    color: #111;               
-    border: none;
-    border-radius: 8px;
-    font-size: 0.85rem;
-    font-weight: bold;
-    cursor: pointer;
-    align-self: flex-end;       
-    margin-top: auto;           
+.nome {
+  font-size: 14px;
+  color: #555555;
+  margin-bottom: 8px;
+  line-height: 1.4;
 }
 
-.beneficios1 {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 4rem;
-    width: 100%;
-    margin-top: 1rem;
-    padding: 1rem 0;
+.preco {
+  font-size: 18px;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-bottom: 12px;
 }
 
-.beneficio1 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
+.btnComprar {
+  display: block;
+  width: 100%;
+  background: #e8c84a;
+  color: #2a2000;
+  border: none;
+  border-radius: 20px;
+  padding: 12px 0;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.5px;
 }
 
-.beneficio1 img {
-    width: 45px;
-    height: 45px;
-}
-
-.beneficio1 h3 {
-    font-size: 0.95rem;
-    font-weight: bold;
-    color: #111;
-    line-height: 1.4;
+.btnComprar:hover {
+  background: #d4b43a;
 }
 
 /* Responsividade */

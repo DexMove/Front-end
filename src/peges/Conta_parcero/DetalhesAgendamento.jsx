@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Calendar, User, Phone, Cake } from 'lucide-react';
 import Layout from './Layout';
 import styles from './DetalhesAgendamento.module.css';
-import patientAvatar from '../assets/imag/menino1.png';
+import patientAvatar from '../../assets/imag/menino1.png';
 
 function DetalhesAgendamento() {
   const navigate = useNavigate();

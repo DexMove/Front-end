@@ -1,10 +1,10 @@
 import styles from '../css/Section_2.module.css';
-import vector16 from'../../assets/imag/Vector16.svg'
-import vector17 from '../../assets/imag/Vector17.svg'
-import vector18 from '../../assets/imag/Vector18.svg'
-import menina2 from '../../assets/imag/menina2.png';
-import Ortese from '../../assets/imag/Orteseaberta.png';
-import menina1 from '../../assets/imag/menina1.png';
+import vector16 from'../../../assets/imag/Vector16.svg'
+import vector17 from '../../../assets/imag/Vector17.svg'
+import vector18 from '../../../assets/imag/Vector18.svg'
+import menina2 from '../../../assets/imag/menina2.png';
+import Ortese from '../../../assets/imag/Orteseaberta.png';
+import menina1 from '../../../assets/imag/menina1.png';
 
 
 function Section_2() {

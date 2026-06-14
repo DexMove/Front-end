@@ -1,11 +1,11 @@
 import styles from '../CSS/Section_9.module.css';
-import vector16 from '../../assets/imag/Vector16.svg';
-import vector17 from '..//../assets/imag/Vector17.svg';
-import vector18 from '../../assets/imag/Vector18.svg';
-import iconedt from '../../assets/imag/iconedt.png';
-import iconedt1 from '../../assets/imag/iconedt1.png';
-import iconedt2 from '../../assets/imag/iconedt2.png';
-import iconedt3 from '../../assets/imag/iconedt3.png';
+import vector16 from '../../../assets/imag/Vector16.svg';
+import vector17 from '../../../assets/imag/Vector17.svg';
+import vector18 from '../../../assets/imag/Vector18.svg';
+import iconedt from '../../../assets/imag/iconedt.png';
+import iconedt1 from '../../../assets/imag/iconedt1.png';
+import iconedt2 from '../../../assets/imag/iconedt2.png';
+import iconedt3 from '../../../assets/imag/iconedt3.png';
 
 const cardsData = [
   {

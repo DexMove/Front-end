@@ -1,10 +1,10 @@
 import styles from '../css/Section_5.module.css';
-import vector12 from '../../assets/imag/Vector12.svg';
-import vector11 from '../../assets/imag/Vector11.svg';
-import vector10 from '../../assets/imag/Vector10.svg';
-import livro from '../../assets/imag/livro.png';
-import circolo from '../../assets/imag/circolo.png';
-import grafico from '../../assets/imag/grafimao.png';
+import vector12 from '../../../assets/imag/Vector12.svg';
+import vector11 from '../../../assets/imag/Vector11.svg';
+import vector10 from '../../../assets/imag/Vector10.svg';
+import livro from '../../../assets/imag/livro.png';
+import circolo from '../../../assets/imag/circolo.png';
+import grafico from '../../../assets/imag/grafimao.png';
 
 const cardsData = [
   {

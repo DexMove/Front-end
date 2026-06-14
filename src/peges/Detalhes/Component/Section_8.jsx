@@ -1,15 +1,15 @@
 import { useNavigate } from 'react-router-dom';
 import { Ruler } from 'lucide-react';
 import styles from '../CSS/Section_8.module.css';
-import ortesem1 from '../../assets/imag/ortesem1.png';
-import ortesem2 from '../../assets/imag/ortesem2.png';
-import ortesem3 from '../../assets/imag/ortesem3.png';
-import ortesem4 from '../../assets/imag/ortesem4.png';
-import orteset from '../../assets/imag/orteset.png';
-import celular from '../../assets/imag/celular.png';
-import bateria from '../../assets/imag/bateria.png';
-import bluet from '../../assets/imag/bluet.png';
-import mao from '../../assets/imag/mao.png';
+import ortesem1 from '../../../assets/imag/ortesem1.png';
+import ortesem2 from '../../../assets/imag/ortesem2.png';
+import ortesem3 from '../../../assets/imag/ortesem3.png';
+import ortesem4 from '../../../assets/imag/ortesem4.png';
+import ortese from '../../../assets/imag/2ortese.png';
+import celular from '../../../assets/imag/celular.png';
+import bateria from '../../../assets/imag/bateria.png';
+import bluet from '../../../assets/imag/bluet.png';
+import mao from '../../../assets/imag/mao.png';
 
 
 function Section_8() {
@@ -28,7 +28,7 @@ function Section_8() {
 
 
                 <div className={styles.imagemPrincipal}>
-                    <img src={orteset} alt="Órtese principal" />
+                    <img src={ortese} alt="Órtese principal" />
                 </div>
 
             </div>
