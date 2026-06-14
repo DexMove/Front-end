@@ -2,14 +2,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./componentes/Header";
 import Planos from "./componentes/pages/planos/Planos";
 import Produtos from "./componentes/pages/produtos/Produtos";
-import Home from './peges/Home/Home';
-import Detalhes from './peges/Detalhes/Detalhes';
-import Comprar from './peges/Comprar/comprars/Comprar';
-import MaoEsquerda from './peges/Mao_esquerda/MaoEsquerda';
-import ParPage from './peges/Par/ParPage';
-import Conta_parcero from "./peges/Conta_parcero/Conta_parcero";
-import Agenda from "./peges/Conta_parcero/Agenda";
-import DetalhesAgendamento from "./peges/Conta_parcero/DetalhesAgendamento";
+import Home from './peges1/Home/Home';
+import Detalhes from './peges1/Detalhes/Detalhes';
+import Comprar from './peges1/Comprar/comprars/Comprar';
+import MaoEsquerda from './peges1/Mao_esquerda/MaoEsquerda';
+import ParPage from './peges1/Par/ParPage';
+import Conta_parcero from "./peges1/Conta_parcero/Conta_parcero";
+import Agenda from "./peges1/Conta_parcero/Agenda";
+import DetalhesAgendamento from "./peges1/Conta_parcero/DetalhesAgendamento";
 
 function App() {
   return (
