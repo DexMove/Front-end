@@ -1,0 +1,230 @@
+.appContainer {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+
+.sidebar {
+  width: 250px;
+  background-color: #0C5A67;
+  color: #ffffff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.sidebarContent {
+  padding: 2.5rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+
+.logoSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.logoIcon {
+  width: 28px;
+  height: 28px;
+  color: #ffffff;
+}
+
+.logoText {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.navLink:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.activeLink {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.activeLink::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 15%;
+  height: 70%;
+  width: 4px;
+  background-color: #F2DF92;
+  border-radius: 0 4px 4px 0;
+}
+
+
+.sidebarWave {
+  position: absolute;
+  top: 0;
+  left: 99%; 
+  bottom: 0;
+  width: 50px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+
+.mainContent {
+  flex: 1;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+
+.contentWrapper {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+  padding: 3.5rem 5rem 3.5rem 7rem; 
+  box-sizing: border-box;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+
+.topWave {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.bottomWave {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 160px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+@media (max-width: 1024px) {
+  .appContainer {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+  }
+
+  .sidebarWave {
+    display: none;
+  }
+
+  .sidebarContent {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .logoSection {
+    gap: 10px;
+  }
+
+  .logoText {
+    font-size: 20px;
+  }
+
+  .navigation {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .navLink {
+    flex: 1 1 30%;
+    justify-content: center;
+    padding: 10px 12px;
+    min-width: 120px;
+  }
+
+  .navLink::before {
+    display: none;
+  }
+
+  .contentWrapper {
+    padding: 2rem;
+    height: auto;
+    overflow-y: visible;
+  }
+
+  .topWave,
+  .bottomWave {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebarContent {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .logoText {
+    font-size: 18px;
+  }
+
+  .navigation {
+    gap: 0.5rem;
+  }
+
+  .navLink {
+    font-size: 14px;
+    padding: 10px 10px;
+  }
+
+  .contentWrapper {
+    padding: 1.2rem;
+  }
+}
