@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./Fisioterapeutas.css";
+import "./fisioterapeutas.css";
 import Footer from "../../Footer";
 import fisioterapeuta1 from "../../../assets/image_62.png";
 import fisioterapeuta2 from "../../../assets/image_62.png";
