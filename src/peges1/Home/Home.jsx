@@ -21,7 +21,9 @@ function Home() {
       <SectionFisio />
       <Section_6 />
       <Section_7 />
+      <Footer />
     </div>
+    
   );
 }
 
