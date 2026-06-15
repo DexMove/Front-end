@@ -16,7 +16,9 @@
 }
 
 .badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   align-self: flex-start;
   background: #ffffff;
   border: 1px solid #d0d0d0;
@@ -24,6 +26,12 @@
   padding: 6px 14px;
   font-size: 13px;
   color: #555555;
+}
+
+.badgeIcon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
 
 .titulo {
@@ -63,7 +71,9 @@
 }
 
 .icone {
-  font-size: 40px;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
 }
 
 .card strong {

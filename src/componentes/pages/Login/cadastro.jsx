@@ -150,8 +150,8 @@ export default function Cadastro() {
               </div>
 
              
-                <Link to="/completar-perfil" className="lc-submit">
-                  Criar conta</Link>
+                <Link to="/complete-perfil" className="lc-submit">
+                  Próximo</Link>
               <div className="lc-alt-link">
                 Já tem uma conta?{" "}
                 <a href="/entrar">Entrar</a>

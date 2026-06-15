@@ -31,6 +31,7 @@ import ContaParcero from "./peges1/Conta_parcero/Conta_parcero";
 import Agenda from "./peges1/Conta_parcero/Agenda";
 import DetalhesAgendamento from "./peges1/Conta_parcero/DetalhesAgendamento";
 import ContaFisio from "./peges1/Conta_parcero/Conta_do_fisio/Conta_fisio";
+import MaoDireita from "./peges1/Detalhes/Detalhes"
 
 function App() {
   return (
@@ -57,7 +58,7 @@ function App() {
         <Route path="/pedidos" element={<Pedidos />} />
         <Route path="/planilha" element={<Planilha />} />
         <Route path="/assistencia-ortese" element={<AssistenciaOrtese />} />
-        <Route path="/sobre-nos" element={<SobreNos />} />
+        <Route path="/sobre" element={<SobreNos />} />
         <Route path="/suporte" element={<Suporte />} />
         <Route path="/detalhes" element={<Detalhes />} />
         <Route path="/comprar" element={<Comprar />} />
@@ -67,6 +68,7 @@ function App() {
         <Route path="/agenda" element={<Agenda />} />
         <Route path="/detalhes-agendamento" element={<DetalhesAgendamento />} />
         <Route path="/conta-fisio" element={<ContaFisio />} />
+        <Route path="/mao-direita" element={<MaoDireita />} />
       </Routes>
     </BrowserRouter>
   );
