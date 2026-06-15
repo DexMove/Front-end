@@ -3,6 +3,7 @@ import "../Login/style.css";
 import "./cadastro_fisioterapeuta.css";
 import Footer from "../../Footer";
 import Fisioterapeuta from "../../../assets/fisioterapeuta.png";
+import Header from '../../Header';
 
 const IconEmail = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -81,6 +82,7 @@ export default function Cadastro_fisioterapeuta() {
 
   return (
     <main>
+      <Header />
       <section className="cf-page">
         <div className="cf-left">
 

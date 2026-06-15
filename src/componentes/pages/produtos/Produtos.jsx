@@ -10,9 +10,11 @@ import Dupla from "../../../assets/dupla.png"
 import Direita from "../../../assets/direita1.png"
 import Esquerda from "../../../assets/esquerda.png"
 import Carregador from "../../../assets/carregador.png"
+import Header from '../../Header';
 function Produtos(){
     return(
     <main>
+        <Header />
         <section id="hero">
         </section>
         <article id='article'>

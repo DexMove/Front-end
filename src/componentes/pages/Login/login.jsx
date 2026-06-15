@@ -2,6 +2,7 @@ import './style.css';
 import { useState } from "react";
 import Footer from "../../Footer";
 import Cadastro from "../../../assets/cadastro.png"
+import Header from '../../Header';
 
 const IconEmail = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -58,6 +59,7 @@ export default function Login() {
 
   return (
     <main>
+      <Header />
       <div className="lc-page">
         <div className="lc-card">
           <div className="lc-form-side">

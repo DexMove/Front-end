@@ -32,12 +32,14 @@ import Agenda from "./peges1/Conta_parcero/Agenda";
 import DetalhesAgendamento from "./peges1/Conta_parcero/DetalhesAgendamento";
 import ContaFisio from "./peges1/Conta_parcero/Conta_do_fisio/Conta_fisio";
 import MaoDireita from "./peges1/Detalhes/Detalhes"
+import Bloqueada from "./componentes/pages/bloqueada/bloqueada";
 
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+      
       <Routes>
+        <Route path="/header" element={<Header />} />
         <Route path="/" element={<Home />} />
         <Route path="/bem-vindo" element={<BemVindo />} />
         <Route path="/entrar" element={<Login />} />
@@ -52,7 +54,7 @@ function App() {
         <Route path="/editar-paciente" element={<EditarPaciente />} />
         <Route path="/enderecos" element={<Enderecos />} />
         <Route path="/fisioterapeutas" element={<Fisioterapeutas />} />
-        <Route path="/metodos-pagamento" element={<MetodosPagamento />} />
+        <Route path="/pagamento" element={<MetodosPagamento />} />
         <Route path="/minha-conta" element={<MinhaConta />} />
         <Route path="/minha-conta2" element={<MinhaConta2 />} />
         <Route path="/pedidos" element={<Pedidos />} />
@@ -69,6 +71,8 @@ function App() {
         <Route path="/detalhes-agendamento" element={<DetalhesAgendamento />} />
         <Route path="/conta-fisio" element={<ContaFisio />} />
         <Route path="/mao-direita" element={<MaoDireita />} />
+        <Route path="/bloqueada" element={<Bloqueada />} />
+
       </Routes>
     </BrowserRouter>
   );

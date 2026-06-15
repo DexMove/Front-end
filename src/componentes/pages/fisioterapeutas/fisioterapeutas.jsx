@@ -5,7 +5,7 @@ import fisioterapeuta1 from "../../../assets/image_62.png";
 import fisioterapeuta2 from "../../../assets/image_62.png";
 import fisioterapeuta3 from "../../../assets/image_62.png";
 import fisioterapeuta4 from "../../../assets/image_62.png";
-
+import Header from '../../Header';
 export default function Fisioterapeutas() {
   const [modalAberto, setModalAberto] = useState(false);
   const [fisioSelecionado, setFisioSelecionado] = useState(null);
@@ -108,6 +108,7 @@ export default function Fisioterapeutas() {
 
   return (
     <main>
+      <Header />
     <section className="paginaFisio">
 
               {/* Onda atrás dos cards */}

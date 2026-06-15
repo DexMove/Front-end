@@ -22,6 +22,7 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Header from '../../Header';
 
 function SobreNos() {
   // Time de membros
@@ -74,6 +75,7 @@ function SobreNos() {
 
   return (
     <div className={styles.container}>
+      <Header />
       {/* ========== SEÇÃO 1: VÍDEO NO TOPO ========== */}
       <section className={styles.secaoVideo}>
         <div className={styles.videoWrapper}>

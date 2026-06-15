@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./CompletarPerfil.css";
 import Footer from "../../Footer";
 import {Link} from "react-router-dom";
-
+import Header from '../../Header';
 export default function CompletarPerfil() {
   const [quemUsa, setQuemUsa] = useState("eu");
   const [form, setForm] = useState({
@@ -29,6 +29,7 @@ export default function CompletarPerfil() {
 
   return (
     <main>
+      <Header />
       <div className="cp-page">
         <div className="cp-card">
 

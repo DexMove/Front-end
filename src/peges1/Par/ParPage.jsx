@@ -1,4 +1,4 @@
-import Header2 from "../Detalhes/Component/Header2";
+import Header from "../../componentes/Header";
 import Par from "./Par1/Par";
 import Par_1 from "./Par1/Par_1";
 import Par_2 from "./Par1/Par_2";

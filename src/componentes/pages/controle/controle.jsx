@@ -3,6 +3,7 @@ import './controle.css';
 import MoviHand from '../../../assets/image_62.png'
 import Header2 from '../../Header2';
 import Footer from '../../Footer';
+import { Link } from 'react-router-dom';
 function Controle() {
   return (
     
@@ -185,9 +186,12 @@ const DexMovePage = () => {
               <p>Recomendações do fisioterapeuta e orientação da órtese com base nos dados coletados.</p>
             </div>
           </div>
+          <Link to="/assistencia-ortese">
           <button className="btn-ai-action">
             Ver análise da IA
           </button>
+          </Link>
+
         </div>
       </section>
 

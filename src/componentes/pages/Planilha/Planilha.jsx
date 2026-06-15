@@ -12,6 +12,8 @@ import { MdOutlineBackHand } from 'react-icons/md';
 import { AiOutlineRobot } from 'react-icons/ai';
 import Header2 from '../../Header2';
 import Footer from '../../Footer';
+import { Link } from "react-router-dom"
+
 const Planilha = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const fileInputRef = useRef(null);
@@ -29,6 +31,7 @@ const Planilha = () => {
   };
 
   const handleSubmit = () => {
+    navigate("/controle");
     if (!selectedFile) {
       alert('Por favor, selecione uma planilha antes de enviar.');
       return;
@@ -152,6 +155,7 @@ const Planilha = () => {
         </div>
 
         {/* Botão Principal */}
+        <Link to="/controle" className='btn-icon'>
         <button
           className="btn-submit"
           onClick={handleSubmit}
@@ -159,6 +163,7 @@ const Planilha = () => {
           <FiUpload className="btn-icon" />
           Enviar planilha para análise.
         </button>
+       </Link>
       </div>
 
       {/* Cards Informativos */}

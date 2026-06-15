@@ -1,5 +1,6 @@
 import "./Planos.css";
 import Footer from "../../Footer";
+import Header from '../../Header';
 
 const planos = [
   {
@@ -44,6 +45,7 @@ const planos = [
 function Planos() {
   return (
     <main>
+      <Header />
       <section id="hero-planos">
         <div className="texto-hero">
           <h1>Encontre o plano ideal para você</h1>

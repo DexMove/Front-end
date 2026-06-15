@@ -27,13 +27,13 @@ export default function AccountMenu() {
           <Link to="/minha-conta" className="account-menu-item" onClick={() => setOpen(false)}>
             Minha conta
           </Link>
-          <Link to="/meus-pedidos" className="account-menu-item" onClick={() => setOpen(false)}>
+          <Link to="/pedidos" className="account-menu-item" onClick={() => setOpen(false)}>
             Meus pedidos
           </Link>
-          <Link to="/meus-enderecos" className="account-menu-item" onClick={() => setOpen(false)}>
+          <Link to="/enderecos" className="account-menu-item" onClick={() => setOpen(false)}>
             Endereços
           </Link>
-          <Link to="/metodos-pagamento" className="account-menu-item" onClick={() => setOpen(false)}>
+          <Link to="/pagamento" className="account-menu-item" onClick={() => setOpen(false)}>
             Métodos de pagamento
           </Link>
           <Link to="/configuracoes" className="account-menu-item" onClick={() => setOpen(false)}>

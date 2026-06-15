@@ -1,4 +1,4 @@
-import Header2 from "../Detalhes/Component/Header2";
+import Header from "../../componentes/Header";
 import Mao_1 from "./Mao_Esquerda/Mao_1";
 import Mao_2 from "./Mao_Esquerda/Mao_2";
 import Mao_3 from "./Mao_Esquerda/Mao_3";

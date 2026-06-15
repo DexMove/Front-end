@@ -28,7 +28,7 @@ function Header2() {
             <Link onClick={() => setMenuOpen(false)} to="/planos">
               VER PLANOS
             </Link>
-            <Link onClick={() => setMenuOpen(false)} to="/assistencia_ortese">
+            <Link onClick={() => setMenuOpen(false)} to="/bloqueada">
               MOVEHAND
             </Link>
             {/* Visível só no mobile */}
