@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "../Login/style.css";
 import "./cadastro_fisioterapeuta.css";
-import Header from "../../Header";
 import Footer from "../../Footer";
 import Fisioterapeuta from "../../../assets/fisioterapeuta.png";
 
@@ -82,7 +81,6 @@ export default function Cadastro_fisioterapeuta() {
 
   return (
     <main>
-      <Header />
       <section className="cf-page">
         <div className="cf-left">
 

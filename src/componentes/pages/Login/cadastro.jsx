@@ -1,6 +1,5 @@
 import './style.css';
 import { useState } from "react";
-import Header from "../../Header";
 import Footer from "../../Footer";
 import CadastroImg from "../../../assets/cadastro.png"
 import { Link } from "react-router-dom";
@@ -72,7 +71,6 @@ export default function Cadastro() {
 
   return (
     <main>
-      <Header />
       <div className="lc-page">
         <div className="lc-card">
 

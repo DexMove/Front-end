@@ -13,7 +13,6 @@ import {
   QrCode,
   FileText
 } from "lucide-react";
-import Header from "../../../componentes/Header";
 import Footer from "../../../componentes/Footer";
 import styles from '../Css.css/Comprar.module.css';
 
@@ -85,7 +84,6 @@ function Comprar() {
 
   return (
     <div className={styles.paginaWrapper}>
-      <Header />
       
       {/* Elementos visuais de ondas ao fundo */}
       <div className={styles.backgroundWaves}>

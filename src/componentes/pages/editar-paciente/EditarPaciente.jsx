@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./EditarPaciente.css";
-import Header from "../../Header";
 import Footer from "../../Footer";
 import { useNavigate } from "react-router-dom";
 
@@ -27,7 +26,6 @@ export default function EditarPaciente() {
 
   return (
     <main>
-      <Header />
       <div className="ep-page">
         <div className="ep-card">
 

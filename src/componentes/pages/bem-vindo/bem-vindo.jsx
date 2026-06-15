@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../../Header';
 import Footer from '../../Footer';
 import Rectangle145 from '../../../assets/Rectangle 145.png';
 import './bem-vindo.css';
@@ -16,7 +15,6 @@ function BemVindo() {
 
   return (
     <main className="welcome-page">
-      <Header />
       <div className="welcome-container">
         <div className="welcome-content">
           <h1>Bem-vindo à Dexmove</h1>

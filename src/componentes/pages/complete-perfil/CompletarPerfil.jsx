@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./CompletarPerfil.css";
-import Header from "../../Header";
 import Footer from "../../Footer";
 import {Link} from "react-router-dom";
 
@@ -30,7 +29,6 @@ export default function CompletarPerfil() {
 
   return (
     <main>
-      <Header />
       <div className="cp-page">
         <div className="cp-card">
 

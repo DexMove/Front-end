@@ -2,29 +2,71 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./componentes/Header";
 import Planos from "./componentes/pages/planos/Planos";
 import Produtos from "./componentes/pages/produtos/Produtos";
-import Home from './peges1/Home/Home';
-import Detalhes from './peges1/Detalhes/Detalhes';
-import Comprar from './peges1/Comprar/comprars/Comprar';
-import MaoEsquerda from './peges1/Mao_esquerda/MaoEsquerda';
-import ParPage from './peges1/Par/ParPage';
-import Conta_parcero from "./peges1/Conta_parcero/Conta_parcero";
+import BemVindo from "./componentes/pages/bem-vindo/bem-vindo";
+import CadastroFisioterapeuta from "./componentes/pages/cadastro-fisioterapeuta/Cadastro_fisioterapeuta";
+import CompletarPerfil from "./componentes/pages/complete-perfil/CompletarPerfil";
+import Conecte from "./componentes/pages/conecte/conecte";
+import Configuracoes from "./componentes/pages/configuracoes/configuracoes";
+import Controle from "./componentes/pages/controle/controle";
+import EditarInformacoes from "./componentes/pages/editar-informacoes/EditarInformacoes";
+import EditarPaciente from "./componentes/pages/editar-paciente/EditarPaciente";
+import Enderecos from "./componentes/pages/enderecos/enderecos";
+import Fisioterapeutas from "./componentes/pages/fisioterapeutas/fisioterapeutas";
+import Login from "./componentes/pages/Login/login";
+import Cadastro from "./componentes/pages/Login/cadastro";
+import MetodosPagamento from "./componentes/pages/metodos-pagamento/metodos-pagamento";
+import MinhaConta from "./componentes/pages/minha-conta/MinhaConta";
+import MinhaConta2 from "./componentes/pages/minha-conta2/MinhaConta2";
+import Pedidos from "./componentes/pages/pedidos/pedidos";
+import Planilha from "./componentes/pages/Planilha/Planilha";
+import AssistenciaOrtese from "./componentes/pages/assistiencia_ortese/Assistencia_ortese";
+import SobreNos from "./componentes/pages/sobre_nos/sobre_nos";
+import Suporte from "./componentes/pages/suporte/suporte";
+import Home from "./peges1/Home/Home";
+import Detalhes from "./peges1/Detalhes/Detalhes";
+import Comprar from "./peges1/Comprar/comprars/Comprar";
+import MaoEsquerda from "./peges1/Mao_esquerda/MaoEsquerda";
+import ParPage from "./peges1/Par/ParPage";
+import ContaParcero from "./peges1/Conta_parcero/Conta_parcero";
 import Agenda from "./peges1/Conta_parcero/Agenda";
 import DetalhesAgendamento from "./peges1/Conta_parcero/DetalhesAgendamento";
+import ContaFisio from "./peges1/Conta_parcero/Conta_do_fisio/Conta_fisio";
 
 function App() {
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/bem-vindo" element={<BemVindo />} />
+        <Route path="/entrar" element={<Login />} />
+        <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/planos" element={<Planos />} />
         <Route path="/produtos" element={<Produtos />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/complete-perfil" element={<CompletarPerfil />} />
+        <Route path="/conecte" element={<Conecte />} />
+        <Route path="/configuracoes" element={<Configuracoes />} />
+        <Route path="/controle" element={<Controle />} />
+        <Route path="/editar-informacoes" element={<EditarInformacoes />} />
+        <Route path="/editar-paciente" element={<EditarPaciente />} />
+        <Route path="/enderecos" element={<Enderecos />} />
+        <Route path="/fisioterapeutas" element={<Fisioterapeutas />} />
+        <Route path="/metodos-pagamento" element={<MetodosPagamento />} />
+        <Route path="/minha-conta" element={<MinhaConta />} />
+        <Route path="/minha-conta2" element={<MinhaConta2 />} />
+        <Route path="/pedidos" element={<Pedidos />} />
+        <Route path="/planilha" element={<Planilha />} />
+        <Route path="/assistencia-ortese" element={<AssistenciaOrtese />} />
+        <Route path="/sobre-nos" element={<SobreNos />} />
+        <Route path="/suporte" element={<Suporte />} />
         <Route path="/detalhes" element={<Detalhes />} />
         <Route path="/comprar" element={<Comprar />} />
         <Route path="/mao-esquerda" element={<MaoEsquerda />} />
         <Route path="/par" element={<ParPage />} />
-        <Route path="/conta_parcero" element={<Conta_parcero />} />
+        <Route path="/conta-parcero" element={<ContaParcero />} />
         <Route path="/agenda" element={<Agenda />} />
         <Route path="/detalhes-agendamento" element={<DetalhesAgendamento />} />
+        <Route path="/conta-fisio" element={<ContaFisio />} />
       </Routes>
     </BrowserRouter>
   );

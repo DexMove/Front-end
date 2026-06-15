@@ -1,6 +1,5 @@
 import './style.css';
 import { useState } from "react";
-import Header from "../../Header";
 import Footer from "../../Footer";
 import Cadastro from "../../../assets/cadastro.png"
 
@@ -59,7 +58,6 @@ export default function Login() {
 
   return (
     <main>
-      <Header />
       <div className="lc-page">
         <div className="lc-card">
           <div className="lc-form-side">

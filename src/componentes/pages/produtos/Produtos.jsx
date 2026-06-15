@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import './Produtos.css';
 import BotaoComprar from "../../BotaoComprar";
-import Header from "../../Header";
 import Footer from "../../Footer";
 import logo from "../../../assets/logo.png"
 import Ondafina from "../../../assets/onda fina.png";
@@ -14,7 +13,6 @@ import Carregador from "../../../assets/carregador.png"
 function Produtos(){
     return(
     <main>
-        <Header />
         <section id="hero">
         </section>
         <article id='article'>

@@ -3,7 +3,6 @@ import styles from "./suporte.module.css";
 import iconeNavegar from "../../../assets/icons8-navegar-60.png";
 import iconeSeta from "../../../assets/weui_arrow-filled.png";
 import imagemContato from "../../../assets/image_62.png";
-import Header from "../../Header";
 import Footer from "../../Footer";
 
 function Suporte() { 
@@ -106,7 +105,6 @@ function Suporte() {
     return ( 
         <div className={styles.container}>
             <main>
-                <Header />
                 {/* SEÇÃO PRINCIPAL */}
                 <section className={styles.secaoPrincipal}>
                     <div className={styles.containerOndas}>

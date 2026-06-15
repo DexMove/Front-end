@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Fisioterapeutas.css";
 import Footer from "../../Footer";
-import Header from "../../Header";
 import fisioterapeuta1 from "../../../assets/image_62.png";
 import fisioterapeuta2 from "../../../assets/image_62.png";
 import fisioterapeuta3 from "../../../assets/image_62.png";
@@ -109,7 +108,6 @@ export default function Fisioterapeutas() {
 
   return (
     <main>
-      <Header />
     <section className="paginaFisio">
 
               {/* Onda atrás dos cards */}
