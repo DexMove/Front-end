@@ -1,4 +1,4 @@
-import styles from '../css.Par/Par_2.module.css';
+import styles from '../css.par/Par_2.module.css';
 import vector19 from '../../../assets/imag/Vector19.svg';
 import ajuste from '../../../assets/imag/ajuste.png';
 import pena from '../../../assets/imag/pena.png';
