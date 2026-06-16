@@ -177,25 +177,17 @@
 /* Seção de contato */
 
 .secaoContato {
-    position: relative;   /* Importante: cria o contexto para as ondas */
+    position: relative;
     width: 100%;
-    min-height: 700px;
-    padding: 100px 40px;
-    background-color: #fff;
-    overflow: hidden;     /* Garante que a onda não escape do limite */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
 }
 
 /* ONDAS DE FUNDO */
 .containerOndasInferior {
     position: absolute;
-    top: -80px;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;           /* Camada de baixo */
 }
 
 .containerOndasInferior svg {
@@ -207,14 +199,14 @@
 /* CONTEÚDO (IMAGEM + CARD) */
 .containerContato {
     position: relative;
-    z-index: 2;           /* Camada de cima (sobre as ondas) */
-    display: flex;
-    gap: 80px;
+    z-index: 2;
     max-width: 1300px;
     margin: 0 auto;
+    padding: 60px 20px;
+    display: flex;
+    gap: 80px;
     align-items: center;
     justify-content: center;
-    width: 100%;
 }
 
 .imagemContato {
@@ -232,10 +224,10 @@
 /* CARD DO FORMULÁRIO */
 .cardContato {
     flex: 0 0 auto;
-    width: 500px;
+    width: 400px;
     background-color: #ffffff; /* Fundo sólido para leitura */
     border-radius: 15px;
-    padding: 35px;
+    padding: 15px;
     border: 1px solid #f0f0f0;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.12);
     display: flex;
@@ -332,7 +324,7 @@
     }
     .secaoPrincipal, .secaoContato {
         height: auto;
-        padding: 60px 20px;
+        padding: 40px 16px;
     }
 }
 
@@ -342,7 +334,7 @@
     }
     .centralAjuda {
         padding: 40px 14px 20px;
-        margin-top: -80px;
+        margin-top: -180px;
     }
     .conteudoPrincipal {
         font-size: 20px;
@@ -353,7 +345,8 @@
     }
     .containerContato {
         padding: 0 12px;
-        gap: 30px;
+        gap: 20px;
+        flex-wrap: wrap;
     }
     .cardContato {
         padding: 22px 16px;
@@ -373,4 +366,7 @@
         max-width: 100%;
         height: auto;
     }
+    /* Em telas pequenas, priorizar o formulário: minimizar/ocultar imagem */
+    .imagemContato { display: none; }
+    .cardContato { width: 100%; max-width: none; }
 }
