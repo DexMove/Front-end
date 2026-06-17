@@ -32,8 +32,8 @@ function Produtos(){
                         <p className="texto_dupla">Nossa órtese mais completa. Estimulação elétrica funcional integrada, 5 níveis de intensidade, bateria de 6h e controle total pelo aplicativo. Indicada para paralisia cerebral.</p>
                         <div className="compra">
                         <p className="preco">A partir de <br />
-                        <span>R$ 000</span> <br />
-                        ou 12x de R$ 000</p>
+                        <span>R$ 1400,00</span> <br />
+                        ou 12x de R$ 120,00</p>
 
                         <Link to="/par"><span className="botao"> <BotaoComprar /> </span></Link>
                         </div>
@@ -50,8 +50,8 @@ function Produtos(){
                         <p className="avaliacao"><span>★★★★★</span>4.9 (128 avaliações)</p>
                         <p className="texto_direita">A versão padrão da MoveHand, desenvolvida para a mão direita. Tecnologia robótica completa para reabilitação contínua em casa.</p>
                         <p className="preco">A partir de <br />
-                        <span>R$ 000</span> <br />
-                        ou 12x de R$ 000</p>
+                        <span>R$700,00</span> <br />
+                        ou 12x de R$60,00</p>
                         <Link to="/mao-direita"><span className="botao"> <BotaoComprar /> </span></Link>
                         </div>
             </div>
@@ -65,8 +65,8 @@ function Produtos(){
                         <p className="avaliacao"><span>★★★★★</span>4.9 (128 avaliações)</p>
                         <p className="texto_esquerda">A versão padrão da MoveHand, desenvolvida para a mão esquerda. Tecnologia robótica completa para reabilitação contínua em casa.</p>
                         <p className="preco">A partir de <br />
-                        <span>R$ 000</span> <br />
-                        ou 12x de R$ 000</p>
+                        <span>R$700,00</span> <br />
+                        ou 12x de R$60,00</p>
                         <Link to="/mao-esquerda"><span className="botao"> <BotaoComprar /> </span></Link>
                         </div>
             </div>

@@ -47,7 +47,7 @@ main{
 #dupla{
     width: 70%;
     margin: 0 auto;
-    height: 500px;
+    height: 510px;
     border: 0.5px solid #0B5C6A;
     border-radius: 30px;
     flex-direction: row;
@@ -133,6 +133,7 @@ main{
     text-align: justify;
     margin-top: 15px; 
     width: 90%;
+    margin-bottom: 10px;
 }
 .preco{
     font-size: 20px;
@@ -189,6 +190,7 @@ main{
     text-align: justify;
     margin-top: 15px; 
     width: 90%;
+    margin-bottom: 10px;
 }
 .esquerda_imagem{
     width: 100%;
@@ -221,6 +223,7 @@ main{
     text-align: justify;
     margin-top: 15px; 
     width: 90%;
+    margin-bottom: 10px;
 }
 .s2{
     flex-direction: row;
@@ -291,6 +294,7 @@ main{
     text-align: justify;
     margin-top: 15px; 
     width: 90%;
+    margin-bottom: 10px;
 }
 .kit_imagem{
     width: 100%;
@@ -302,10 +306,12 @@ main{
     align-items:center;
     justify-content: center;
     flex-direction: column;
+    
 }
+
 .dup{
     height: 380px;
-    margin-top: 10px;
+    margin-top: 50px;
 }
 .car{
     height: 300px;
@@ -327,6 +333,7 @@ main{
     text-align: justify;
     margin-top: 15px; 
     width: 90%;
+    margin-bottom: 10px;
 }
 .compra{
     display: flex;
@@ -355,7 +362,6 @@ main{
         padding: 0 20px;
     }
 
-    /* tablet: manter MoveHand Par lado-a-lado, demais empilhar */
     .s1,
     .s2 {
         flex-wrap: wrap;
@@ -375,7 +381,6 @@ main{
         gap: 20px;
     }
 
-    /* dupla empilhada no tablet: imagem e textos em 100% */
     .dupla_imagem {
         width: 100%;
         height: auto;
@@ -469,7 +474,6 @@ main{
         height: 260px;
     }
 
-    /* mobile/tablet menor: empilhar o card 'dupla' também */
     #dupla {
         flex-direction: column;
         padding: 20px;
@@ -582,7 +586,6 @@ main{
     }
 }
 
-/* Breakpoints: 600 / 430 */
 @media (max-width: 600px) {
     .produtos { font-size: 44px; margin-bottom: 40px; padding: 0 16px; }
     .dupla_imagem img,
