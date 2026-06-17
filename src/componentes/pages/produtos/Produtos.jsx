@@ -11,6 +11,7 @@ import Direita from "../../../assets/direita1.png"
 import Esquerda from "../../../assets/esquerda.png"
 import Carregador from "../../../assets/carregador.png"
 import Header from '../../Header';
+import maozinha from "../../../assets/maozinha.png"
 function Produtos(){
     return(
     <main>

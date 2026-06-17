@@ -58,20 +58,30 @@ function Planos() {
         <button className="planos-botao">Planos mensais</button>
 
         <div className="planos">
-          {planos.map((plano) => (
-            <div className={`plano-card ${plano.className}`} key={plano.nome}>
-              {plano.recomendado && <p className="recomendado">Recomendado</p>}
-              <h3 className="plano-h3">{plano.nome}</h3>
-              <h4 className="valor-p">{plano.preco}</h4>
-              <ul className="beneficios">
-                {plano.beneficios.map((beneficio) => (
-                  <li key={beneficio}>{beneficio}</li>
-                ))}
-              </ul>
-              <button>{plano.botao}</button>
-            </div>
-          ))}
-        </div>
+  {planos.map((plano) => (
+    <div className={`plano-card ${plano.className}`} key={plano.nome}>
+      {plano.recomendado && <p className="recomendado">Recomendado</p>}
+      <h3 className="plano-h3">{plano.nome}</h3>
+      <h4 className="valor-p">{plano.preco}</h4>
+
+      <ul className="beneficios">
+        {plano.beneficios.map((beneficio) => (
+          <li key={beneficio}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 640 640">
+	<path d="M0 0h640v640H0z" fill="none" />
+	<path fill="#0b6d78" d="M352 96c0-17.7-14.3-32-32-32s-32 14.3-32 32v208c0 8.8-7.2 16-16 16s-16-7.2-16-16V128c0-17.7-14.3-32-32-32s-32 14.3-32 32v272c0 1.5 0 3.1.1 4.6L131.6 347c-16-15.2-41.3-14.6-56.6 1.4s-14.6 41.3 1.4 56.6l112.4 107c43.1 41.1 100.4 64 160 64H368c97.2 0 176-78.8 176-176V192c0-17.7-14.3-32-32-32s-32 14.3-32 32v112c0 8.8-7.2 16-16 16s-16-7.2-16-16V128c0-17.7-14.3-32-32-32s-32 14.3-32 32v176c0 8.8-7.2 16-16 16s-16-7.2-16-16z" />
+</svg>
+
+
+            {beneficio}
+          </li>
+        ))}
+      </ul>
+
+      <button>{plano.botao}</button>
+    </div>
+  ))}
+</div>
       </section>
       <Footer />
     </main>

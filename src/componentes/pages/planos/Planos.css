@@ -81,13 +81,15 @@
 }
 
 .recomendado {
-  width: calc(100% + 60px);
-  margin: 0 0 28px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
   padding: 17px 0;
-  background-color: #43bbcf;
+  background-color: #0b6d78;
   border-radius: 9px;
   font-size: 21px;
   font-weight: 500;
+  color: white;
 }
 
 .plano-h3 {
@@ -119,19 +121,9 @@
 .beneficios li {
   position: relative;
   padding-left: 28px;
-  font-size: 15px;
+  font-size: 20px;
   line-height: 1.15;
-  font-weight: 700;
-}
-
-.beneficios li::before {
-  content: "✓";
-  position: absolute;
-  top: -1px;
-  left: 0;
-  color: #0b6d78;
-  font-size: 19px;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .plano-card button {
@@ -152,7 +144,8 @@
 }
 
 .independencia button {
-  background-color: #43bbcf;
+  background-color: #0b6d78;
+  color: white;
 }
 
 .autonomia button {
@@ -186,7 +179,6 @@
   }
 }
 
-/* Breakpoints: 1024 / 768 / 600 / 430 */
 @media (max-width: 1024px) {
   #hero-planos { padding-inline: 20px; }
   .texto-hero h1 { font-size: 48px; }
