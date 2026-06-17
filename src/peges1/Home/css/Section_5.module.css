@@ -42,7 +42,7 @@
 .section5 h2 {
     position: relative;
     font-size: 2rem;
-    color: #1a3a5c;
+    color: #0B5C6A;
     text-align: center;
     margin-bottom: 2rem;
     font-weight: bold;
@@ -51,7 +51,7 @@
 
 .subtitulo {
     position: relative;
-    font-size: 16px;
+    font-size: 1.2rem;
     color: #444;
     margin-top: 1rem;
     z-index: 3;
@@ -108,9 +108,9 @@
 }
 
 .cardFrente h3 {
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: bold;
-    color: #1a3a5c;
+    color: #0B5C6A;
     text-align: center;
     width: 100%;
     margin: 0;
@@ -124,13 +124,13 @@
 }
 
 .cardVerso {
-    background-color: #e8c84a;
+    background-color: #FDF5D3;
     transform: rotateY(180deg);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .cardVerso p {
-    font-size: 14px;
+    font-size: 1.2rem;
     color: #2a2000;
     text-align: center;
     line-height: 1.6;
