@@ -9,7 +9,9 @@
 .secaoPrincipal {
     position: relative;
     width: 100%;
-    height: 600px; 
+    min-height: 600px;
+    height: auto;
+    padding-bottom: 40px;
 }
 
 .containerOndas {
@@ -31,16 +33,28 @@
     position: relative;
     z-index: 2;
     text-align: center;
-    padding-top: 50px;
+    padding: 70px 20px 20px;
     color: white;
-    font-size: 30px;
-    line-height: .9;
+    font-size: 28px;
+    line-height: 1.1;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.conteudoPrincipal h1 {
+    font-size: 3rem;
+    line-height: 1.05;
+    margin: 0 auto;
+    max-width: 860px;
 }
 
 .conteudoPrincipal p {
-    font-size: 30px;
+    font-size: 1.2rem;
     margin-top: 25px;
     color: white;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .btnSuporte {
@@ -180,20 +194,26 @@
     position: relative;
     width: 100%;
     overflow: hidden;
+    background-color: transparent;
+    /* Removemos qualquer padding superior para eliminar a tira verde */
+    padding: 0; 
 }
 
 /* ONDAS DE FUNDO */
 .containerOndasInferior {
     position: absolute;
-    inset: 0;
+    top: 0; /* Garante que comece no topo exato */
+    left: 0;
     width: 100%;
     height: 100%;
+    z-index: 1;
 }
 
 .containerOndasInferior svg {
     width: 100%;
     height: 100%;
     display: block;
+    object-fit: cover; /* Garante que o fundo preencha sem deixar espaços */
 }
 
 /* CONTEÚDO (IMAGEM + CARD) */
@@ -202,151 +222,231 @@
     z-index: 2;
     max-width: 1300px;
     margin: 0 auto;
-    padding: 60px 20px;
+    padding: 190px 20px 80px; 
+    
     display: flex;
-    gap: 80px;
+    gap: 60px;
     align-items: center;
     justify-content: center;
 }
 
-.imagemContato {
-    flex: 1.4;
-    display: flex;
-    justify-content: center;
-}
 
-.imagemContato img {
-    width: 100%;
-    max-width: 700px;
-    border-radius: 15px;
-}
-
-/* CARD DO FORMULÁRIO */
 .cardContato {
     flex: 0 0 auto;
-    width: 400px;
-    background-color: #ffffff; /* Fundo sólido para leitura */
-    border-radius: 15px;
-    padding: 15px;
-    border: 1px solid #f0f0f0;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.12);
+    width: 480px; 
+    background-color: #ffffff;
+    border-radius: 25px;
+    padding: 40px; 
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Garante que a imagem acompanhe o alinhamento */
+.imagemContato img {
+    width: 100%;
+    max-width: 700px; /* Tamanho proporcional ao card */
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+/* CARD DO FORMULÁRIO - Mais largo e menos alto */
+.conteudoContato {
+    flex: 1.2; /* Dá um pouco mais de peso para o card ocupar espaço lateral */
+    max-width: 550px; /* Aumentado para ficar mais largo */
+}
+
+.cardContato {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 20px;
+    /* Padding generoso nas laterais e menor no topo/base para reduzir a altura */
+    padding: 35px 45px; 
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
 }
 
 .cardContato h3 {
-    font-size: 30px;
+    font-size: 28px;
     color: #0b5c6a;
-    margin-bottom: 8px;
+    margin-bottom: 8px; /* Margem curta para reduzir altura */
     letter-spacing: -0.5px;
+    font-weight: 800;
+    line-height: 1.2;
 }
 
 .cardContato p {
-    font-size: 20px;
-    color: #6c757d;
-    margin-bottom: 20px;
-    line-height: 1.5;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 25px; /* Espaço antes do form */
+    line-height: 1.4;
 }
 
 /* FORMULÁRIO */
 .formularioSuporte {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 15px; /* Gap reduzido para o card não esticar muito para baixo */
 }
 
 .campoEntrada, .campoMensagem {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
 }
 
 .campoEntrada label, .campoMensagem label {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
-    color: #1e1e1e;
+    color: #333;
     text-transform: uppercase;
-    margin-left: 4px;
-    font-family: verdana, sans-serif;
 }
 
 .campoEntrada input, .campoMensagem textarea {
     padding: 12px 16px;
-    border: 2px solid #f3f3f3;
-    border-radius: 12px;
+    border: 1px solid #eee;
+    border-radius: 10px;
     font-size: 14px;
     background-color: #f9f9f9;
-    transition: all 0.3s ease;
+    width: 100%;
 }
 
-.campoEntrada input:focus, .campoMensagem textarea:focus {
-    outline: none;
-    background-color: #fff;
-    border-color: #ffb366;
-    box-shadow: 0 0 0 4px rgba(255, 179, 102, 0.1);
+/* --- NOVO: EFEITO LARANJA AO CLICAR --- */
+.campoEntrada input:focus, 
+.campoMensagem textarea:focus {
+    outline: none;           
+    border-color: #ffb366;   
+    background-color: #fff;  
+
+}
+
+/* Textarea com altura controlada para o card não ficar muito alto */
+.campoMensagem textarea {
+    min-height: 90px; 
+    resize: none;
 }
 
 .btnEnviar {
     background-color: #F3E396;
-    color: #111111;
-    padding: 16px 20px;
+    color: #111;
+    padding: 15px;
     border: none;
-    border-radius: 18px;
+    border-radius: 14px;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 16px;
     cursor: pointer;
     margin-top: 10px;
     transition: all 0.3s ease;
 }
 
 .btnEnviar:hover {
-    background-color: #ffb366;
+    background-color: #e5d385;
     transform: translateY(-2px);
 }
 
+
 /* RESPONSIVIDADE */
+@media (max-width: 1200px) {
+    .secaoPrincipal {
+        min-height: 520px;
+    }
+    .conteudoPrincipal {
+        padding: 60px 18px 18px;
+        font-size: 26px;
+    }
+    .conteudoPrincipal h1 {
+        font-size: 2.6rem;
+    }
+    .containerContato {
+        gap: 30px;
+        padding: 160px 20px 70px;
+    }
+    .cardContato {
+        width: 420px;
+    }
+}
+
 @media (max-width: 1024px) {
-    .containerContato { gap: 30px; }
-    .cardContato { width: 450px; }
+    .containerContato { gap: 26px; }
+    .cardContato { width: 420px; }
+    .centralAjuda {
+        padding: 70px 18px 30px;
+        margin-top: -110px;
+    }
+}
+
+@media (max-width: 900px) {
+    .centralAjuda h2 {
+        font-size: 2.4rem;
+    }
+    .centralAjuda p {
+        font-size: 1.05rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .itemFaq {
+        font-size: 18px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    .cardInterno {
+        padding: 14px 14px;
+    }
 }
 
 @media (max-width: 768px) {
     .containerContato {
         flex-direction: column;
         gap: 40px;
+        padding: 90px 18px 50px;
     }
     .imagemContato img {
-        max-width: 90%;
+        max-width: 100%;
     }
     .cardContato {
         width: 100%;
-        max-width: 500px;
+        max-width: 520px;
     }
     .secaoPrincipal, .secaoContato {
         height: auto;
         padding: 40px 16px;
     }
+    .conteudoPrincipal {
+        font-size: 22px;
+        padding-top: 40px;
+    }
+    .conteudoPrincipal h1 {
+        font-size: 2.2rem;
+    }
+    .conteudoPrincipal p {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 600px) {
     .secaoPrincipal {
-        padding: 50px 16px;
+        padding: 40px 14px;
     }
     .centralAjuda {
-        padding: 40px 14px 20px;
-        margin-top: -180px;
+        padding: 34px 14px 18px;
+        margin-top: -160px;
     }
     .conteudoPrincipal {
-        font-size: 20px;
-        padding-top: 28px;
+        font-size: 18px;
+        padding-top: 24px;
+    }
+    .conteudoPrincipal h1 {
+        font-size: 1.9rem;
     }
     .conteudoPrincipal p {
-        font-size: 18px;
+        font-size: 0.95rem;
     }
     .containerContato {
         padding: 0 12px;
         gap: 20px;
-        flex-wrap: wrap;
     }
     .cardContato {
         padding: 22px 16px;
@@ -366,7 +466,6 @@
         max-width: 100%;
         height: auto;
     }
-    /* Em telas pequenas, priorizar o formulário: minimizar/ocultar imagem */
     .imagemContato { display: none; }
     .cardContato { width: 100%; max-width: none; }
 }
