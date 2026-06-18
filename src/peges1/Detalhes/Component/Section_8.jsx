@@ -26,7 +26,6 @@ function Section_8() {
                     <div className={styles.caixa}><img src={ortesem4} alt="ortesem4" /></div>
                 </div>
 
-
                 <div className={styles.imagemPrincipal}>
                     <img src={ortese} alt="Órtese principal" />
                 </div>

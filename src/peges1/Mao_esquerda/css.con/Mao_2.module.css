@@ -113,7 +113,7 @@
 }
 
 .cardVerso {
-    background-color: #e8c84a;
+    background-color: #f5e9a0;
     border-radius: 12px;
     transform: rotateY(180deg);
     display: flex;

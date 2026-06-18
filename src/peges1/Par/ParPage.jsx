@@ -7,7 +7,7 @@ import Par_3 from "./Par1/Par_3";
 function ParPage() {
   return (
     <>
-      <Header2 />
+      <Header />
       <Par />
       <Par_1 />
       <Par_2 />

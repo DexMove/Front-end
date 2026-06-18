@@ -7,7 +7,7 @@ import Mao_4 from "./Mao_Esquerda/Mao_4";
 function MaoEsquerda() {
   return (
     <>
-      <Header2 />
+      <Header />
       <Mao_1 />
       <Mao_2 />
       <Mao_3 />
