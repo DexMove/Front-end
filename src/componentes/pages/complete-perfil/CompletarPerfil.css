@@ -2,7 +2,6 @@
 .cp-page {
   width: 100%;
   min-height: calc(100vh - 80px);
-  background: #F5F0E8;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -13,9 +12,7 @@
 
 /* ── Card central ── */
 .cp-card {
-  width: 100%;
-  max-width: 600px;
-  background: #F5F0E8;
+  width: 80%;
 }
 
 /* ── Cabeçalho ── */
@@ -24,21 +21,24 @@
 }
 
 .cp-title {
-  font-size: 1.5rem;
+  font-size: 3rem;
   font-weight: 700;
   color: #1a6e6e;
   margin-bottom: 6px;
+  text-align: center;
 }
 
 .cp-subtitle {
-  font-size: 0.85rem;
-  color: #555;
+  font-size: 1.8rem;
+  color: black;
   line-height: 1.5;
+  text-align: center;
+  width: 100%;
 }
 
 /* ── Título de seção ── */
 .cp-section-title {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #1a1a1a;
   text-align: center;
@@ -68,9 +68,9 @@
 
 /* ── Label ── */
 .cp-label {
-  font-size: 0.78rem;
+  font-size: 1.2rem;
   font-weight: 500;
-  color: #444;
+  color: #1a1a1a;
 }
 
 /* ── Input ── */
@@ -80,7 +80,7 @@
   border: 1.5px solid #E0D9CC;
   border-radius: 8px;
   font-family: 'Roboto', sans-serif;
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: #1a1a1a;
   background: #fff;
   box-sizing: border-box;
@@ -93,7 +93,7 @@
 }
 
 .cp-input::placeholder {
-  color: #bbb;
+  color: #444;
 }
 
 /* Input escuro (dentro do card do responsável) */
@@ -118,8 +118,8 @@
   border: 1.5px solid #E0D9CC;
   border-radius: 8px;
   font-family: 'Roboto', sans-serif;
-  font-size: 0.85rem;
-  color: #888;
+  font-size: 1rem;
+  color: #444;
   background: #fff;
   box-sizing: border-box;
   outline: none;
@@ -137,7 +137,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: #1a1a1a;
   font-weight: 600;
   cursor: pointer;
@@ -175,7 +175,7 @@
 }
 
 .cp-responsavel-title {
-  font-size: 0.82rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #1a6e6e;
   margin-bottom: 14px;

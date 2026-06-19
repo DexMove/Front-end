@@ -157,7 +157,7 @@ export default function CompletarPerfil() {
               </div>
             )}
 
-            <Link to="/minha-conta" className="cp-submit">Salva perfil</Link>
+            <Link to="/minha-conta" className="cp-submit">Salvar perfil</Link>
           </form>
         </div>
       </div>

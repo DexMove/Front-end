@@ -110,21 +110,21 @@ export default function Login() {
                 <a href="/bem-vindo">Cadastre-se</a>
               </div>
 
-              <div className="lc-divider">Ou continue com</div>
+              <div className="lc-divider">ou continue com</div>
 
               <div className="lc-social-row">
                 <button type="button" className="lc-social-btn">
-                  <GoogleIcon /> Continuar com Google
+                  <GoogleIcon /> Google
                 </button>
                 <button type="button" className="lc-social-btn">
-                  <AppleIcon /> Continuar com Apple
+                  <AppleIcon /> Apple
                 </button>
               </div>
             </form>
           </div>
 
           <div className="lc-img-side">
-            <img className="lc-cadastro-img" src={Cadastro} alt="DexMove" />
+            <img src={Cadastro} alt="DexMove" />
           </div>
 
         </div>
