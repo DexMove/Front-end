@@ -50,7 +50,7 @@ const Planilha = () => {
       </section>
 
       {/* Ondas Decorativas */}
-        <div className="top-wave">
+        <div className="onda_topo">
           <svg
             viewBox="0 0 1440 450"
             preserveAspectRatio="none"
