@@ -158,15 +158,23 @@ body {
 
 .status-header {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 0;
+}
+
+.status-header svg, 
+.status-header i {
+  margin-top: 4px;
+  flex-shrink: 0; /* Impede o ícone de amassar */
 }
 
 .status-header h3 {
   font-size: 18px;
   color: #0B5C6A;
   margin: 0;
+  min-width: 120px;    /* Garante um espaço fixo para o rótulo */
+  line-height: 1.3;
 }
 
 /* Botão Principal */
