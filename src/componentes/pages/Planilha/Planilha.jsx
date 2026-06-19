@@ -131,12 +131,11 @@ const Planilha = () => {
         {/* Status da Análise */}
         <div className="status-card">
           <div className="status-header">
-            <FiCheckCircle className="check-icon" />
             <h3>Status de análise</h3>
           </div>
 
           <div className="status-body">
-            <strong>Documentos aguardando análise.</strong>
+            <p>Documentos aguardando análise.</p>
 
             <p>
               Nossa equipe especializada avaliará os dados enviados
