@@ -53,7 +53,7 @@
 }
 .section2 h2 {
     font-size: 2rem;
-    color: #1a3a5c;
+    color: #0B5C6A;
     text-align: center;
     margin-bottom: 2rem;
     font-weight: bold;
@@ -80,14 +80,14 @@
 }
 
 .card h3 {
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: bold;
-    color: #1a3a5c;
+    color: #0B5C6A;
     margin-bottom: 0.5rem;
 }
 
 .card p {
-    font-size: 0.9rem;
+    font-size: 1.25rem;
     color: #555555;
     line-height: 1.5;
 }
@@ -130,10 +130,10 @@
         height: auto;
     }
     .card h3 {
-        font-size: 0.9rem;
+        font-size: 1.25rem;
     }
     .card p {
-        font-size: 0.8rem;
+        font-size: 1.25rem;
     }
     .vector16,.vector17,.vector18{
         height: 100%;
