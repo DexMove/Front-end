@@ -72,6 +72,8 @@ function App() {
         <Route path="/conta-fisio" element={<ContaFisio />} />
         <Route path="/mao-direita" element={<MaoDireita />} />
         <Route path="/bloqueada" element={<Bloqueada />} />
+        <Route path="/cadastro-fisioterapeuta" element={<CadastroFisioterapeuta />} />
+
 
       </Routes>
     </BrowserRouter>

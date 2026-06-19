@@ -34,8 +34,8 @@
 }
 
 .welcome-subtitle {
-  font-size: 18px;
-  color: #4f4f4f;
+  font-size: 28px;
+  color: #1a1a1a;
   margin: 0;
   font-weight: 400;
 }
@@ -73,9 +73,8 @@
 }
 
 .option-icon {
-  font-size: 40px;
-  min-width: 60px;
-  height: 60px;
+  min-width: 70px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,15 +87,15 @@
 }
 
 .option-text h3 {
-  font-size: 16px;
+  font-size: 24px;
   font-weight: 700;
   color: #0b5c6a;
   margin: 0 0 4px 0;
 }
 
 .option-text p {
-  font-size: 14px;
-  color: #666;
+  font-size: 18px;
+  color: #1a1a1a;
   margin: 0;
 }
 
