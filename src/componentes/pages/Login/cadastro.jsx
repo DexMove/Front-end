@@ -88,19 +88,28 @@ export default function Cadastro() {
             </div>
 
             <form onSubmit={handleCadastroSubmit}>
+              <div className="cf-row">
               <div className="lc-field">
-                <label className="lc-label">Nome completo</label>
+                <label className="lc-label">Nome</label>
                 <div className="lc-input-wrap">
                   <IconUser />
-                  <input
-                    type="text"
-                    placeholder="Seu nome completo"
+                  <input type="text" placeholder="Insira seu nome"
                     value={cadastroData.nome}
                     onChange={(e) => setCadastroData({ ...cadastroData, nome: e.target.value })}
-                    required
-                  />
+                    required />
                 </div>
               </div>
+              <div className="lc-field">
+                <label className="lc-label">Sobrenome</label>
+                <div className="lc-input-wrap">
+                  <IconUser />
+                  <input type="text" placeholder="Insira seu sobrenome"
+                    value={cadastroData.sobrenome}
+                    onChange={(e) => setCadastroData({ ...cadastroData, sobrenome: e.target.value })}
+                    required />
+                </div>
+              </div>
+            </div>
 
               <div className="lc-field">
                 <label className="lc-label">E-mail</label>
@@ -151,29 +160,30 @@ export default function Cadastro() {
                 </div>
               </div>
 
-             
-                <Link to="/complete-perfil" className="lc-submit">
-                  Próximo</Link>
+              <Link to="/complete-perfil" className="lc-submit">
+                Próximo
+              </Link>
+
               <div className="lc-alt-link">
                 Já tem uma conta?{" "}
                 <a href="/entrar">Entrar</a>
               </div>
 
-              <div className="lc-divider">Ou continue com</div>
+              <div className="lc-divider">ou continue com</div>
 
               <div className="lc-social-row">
                 <button type="button" className="lc-social-btn">
-                  <GoogleIcon /> Continuar com Google
+                  <GoogleIcon /> Google
                 </button>
                 <button type="button" className="lc-social-btn">
-                  <AppleIcon /> Continuar com Apple
+                  <AppleIcon /> Apple
                 </button>
               </div>
             </form>
           </div>
 
           <div className="lc-img-side">
-            <img className="lc-cadastro-img" src={CadastroImg} alt="DexMove" />
+            <img src={CadastroImg} alt="DexMove" />
           </div>
 
         </div>

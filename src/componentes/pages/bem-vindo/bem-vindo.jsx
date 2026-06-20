@@ -4,13 +4,15 @@ import Footer from '../../Footer';
 import Rectangle145 from '../../../assets/Rectangle 145.png';
 import './bem-vindo.css';
 import Header from '../../Header';
+import FisioIcon from "../../../assets/doctor.svg"
+import PacienteIcon from "../../../assets/people.svg"
 
 function BemVindo() {
   const [selectedType, setSelectedType] = useState(null);
 
   const getNavigationLink = () => {
     if (selectedType === 'patient') return '/cadastro';
-    if (selectedType === 'therapist') return '/cadastro_fisioterapeuta';
+    if (selectedType === 'therapist') return '/cadastro-fisioterapeuta';
     return '#';
   };
 
@@ -29,7 +31,7 @@ function BemVindo() {
               onClick={() => setSelectedType('patient')}
               type="button"
             >
-              <div className="option-icon patient-icon">👤</div>
+              <div className="option-icon patient-icon"><img src={PacienteIcon} alt="" /></div>
               <div className="option-text">
                 <h3>Paciente</h3>
                 <p>Utilizarei a órtese Dexmove para minha reabilitação</p>
@@ -42,7 +44,7 @@ function BemVindo() {
               onClick={() => setSelectedType('therapist')}
               type="button"
             >
-              <div className="option-icon therapist-icon">👨‍⚕️</div>
+              <div className="option-icon therapist-icon"><img src={FisioIcon} alt="" /></div>
               <div className="option-text">
                 <h3>Fisioterapeuta</h3>
                 <p>Sou profissional e desejo acompanhar pacientes</p>

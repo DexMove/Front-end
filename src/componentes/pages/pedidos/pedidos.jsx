@@ -17,7 +17,7 @@ const orders = [
     product: "MoveHand mão direita",
     details: "Tam: M · Quantidade: 1",
     date: "20/06/2026",
-    total: "R$ 2.497,00",
+    total: "R$ 700,00",
     progress: "18%",
     steps: [
       { label: "Pedido confirmado", date: "20/06/2026", state: "active" },
@@ -33,7 +33,7 @@ const orders = [
     product: "MoveHand mão direita",
     details: "Tam: M · Quantidade: 1",
     date: "18/06/2026",
-    total: "R$ 2.497,00",
+    total: "R$ 700,00",
     progress: "52%",
     steps: [
       { label: "Pedido confirmado", date: "18/06/2026", state: "done" },
@@ -54,10 +54,10 @@ export default function MeusPedidos() {
       <div className="pedidos-container">
 
         <section className="pedidos-hero">
-          <div className="hero-copy">
+          <div className="hero-pedidos">
             
-            <h1 className="hero-badge">Meus pedidos</h1>
-            <h2>Acompanhe o status de seus pedidos</h2>
+            <h1 className="pedidos-title">Meus pedidos</h1>
+            <h2 className="pedidos-sub">Acompanhe o status de seus pedidos</h2>
             
           </div>
 

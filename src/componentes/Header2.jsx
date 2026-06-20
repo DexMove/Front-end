@@ -16,7 +16,7 @@ function Header2() {
             <img src={logo} alt="logo" />
           </Link>
           <nav className={`menu-links ${menuOpen ? 'show' : ''}`}>
-            <Link onClick={() => setMenuOpen(false)} to="/home">
+            <Link onClick={() => setMenuOpen(false)} to="/">
               INÍCIO
             </Link>
             <Link onClick={() => setMenuOpen(false)} to="/fisioterapeutas">
