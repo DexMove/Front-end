@@ -12,6 +12,7 @@ import Esquerda from "../../../assets/esquerda.png"
 import Carregador from "../../../assets/carregador.png"
 import Header from '../../Header';
 import maozinha from "../../../assets/maozinha.png"
+import Wave from "../../Wave"
 function Produtos(){
     return(
     <main>
@@ -106,6 +107,7 @@ function Produtos(){
                 </div>
             </div>
         </article>
+        <Wave />
         <Footer />
     </main>
     )

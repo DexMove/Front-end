@@ -12,7 +12,7 @@ function BemVindo() {
 
   const getNavigationLink = () => {
     if (selectedType === 'patient') return '/cadastro';
-    if (selectedType === 'therapist') return '/cadastro_fisioterapeuta';
+    if (selectedType === 'therapist') return '/cadastro-fisioterapeuta';
     return '#';
   };
 

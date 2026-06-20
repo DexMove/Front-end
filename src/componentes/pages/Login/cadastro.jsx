@@ -88,19 +88,28 @@ export default function Cadastro() {
             </div>
 
             <form onSubmit={handleCadastroSubmit}>
+              <div className="cf-row">
               <div className="lc-field">
-                <label className="lc-label">Nome completo</label>
+                <label className="lc-label">Nome</label>
                 <div className="lc-input-wrap">
                   <IconUser />
-                  <input
-                    type="text"
-                    placeholder="Seu nome completo"
+                  <input type="text" placeholder="Insira seu nome"
                     value={cadastroData.nome}
                     onChange={(e) => setCadastroData({ ...cadastroData, nome: e.target.value })}
-                    required
-                  />
+                    required />
                 </div>
               </div>
+              <div className="lc-field">
+                <label className="lc-label">Sobrenome</label>
+                <div className="lc-input-wrap">
+                  <IconUser />
+                  <input type="text" placeholder="Insira seu sobrenome"
+                    value={cadastroData.sobrenome}
+                    onChange={(e) => setCadastroData({ ...cadastroData, sobrenome: e.target.value })}
+                    required />
+                </div>
+              </div>
+            </div>
 
               <div className="lc-field">
                 <label className="lc-label">E-mail</label>

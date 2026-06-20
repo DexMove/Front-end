@@ -8,6 +8,7 @@
   justify-content: center;
   gap: 5%;
   box-sizing: border-box;
+  padding: 40px 5% 56px;
 }
 
 /* ── Coluna esquerda (formulário) ── */
@@ -29,29 +30,118 @@
   margin-bottom: 0;
 }
 
-/* Toggle */
+/* ── Toggle Entrar / Cadastre-se ── */
 .cf-toggle {
+  display: flex;
+  background: #fff;
+  border: 1.5px solid #E0D9CC;
+  border-radius: 12px;
+  padding: 4px;
+  gap: 4px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-/* Linha com dois campos lado a lado */
+.cf-tab {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 0.6rem;
+  border-radius: 9px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #555;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.cf-tab.active {
+  background: #1a6e6e;
+  color: #fff;
+}
+
+.cf-tab a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ── Linha com dois campos lado a lado ── */
 .cf-row {
   display: flex;
   gap: 12px;
 }
 
-.cf-row .lc-field {
+.cf-row .cf-field {
   flex: 1;
   min-width: 0;
 }
 
-/* Select dentro do lc-input-wrap */
-.lc-input-wrap--select {
-  padding: 0 0.85rem 0 0.5rem;
+/* ── Campos ── */
+.cf-field {
+  margin-bottom: 16px;
 }
 
-.lc-input-wrap--select select {
+.cf-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+}
+
+.cf-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border: 1.5px solid #E0D9CC;
+  border-radius: 30px;
+  padding: 0.65rem 1rem;
+  transition: border 0.2s;
+}
+
+.cf-input-wrap:focus-within {
+  border-color: #E8C96A;
+}
+
+.cf-input-wrap svg {
+  flex-shrink: 0;
+  color: #1a6e6e;
+}
+
+.cf-input-wrap input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+  color: #1a1a1a;
+  min-width: 0;
+}
+
+.cf-input-wrap input::placeholder {
+  color: #999;
+}
+
+.cf-eye-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #777;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+/* Select dentro do cf-input-wrap */
+.cf-input-wrap--select {
+  padding: 0 0.85rem 0 1rem;
+}
+
+.cf-input-wrap--select select {
   flex: 1;
   border: none;
   outline: none;
@@ -62,9 +152,27 @@
   background: transparent;
   cursor: pointer;
   appearance: auto;
+  min-width: 0;
 }
 
-/* Título de seção "Dados profissionais" */
+/* Textarea dentro do cf-input-wrap */
+.cf-input-wrap--textarea {
+  align-items: flex-start;
+  padding-top: 0.75rem;
+}
+
+.cf-input-wrap--textarea textarea {
+  flex: 1;
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.85rem;
+  color: #1a1a1a;
+  background: transparent;
+}
+
+/* Título de seção "Qual a forma de atendimento?" */
 .cf-section-title {
   font-family: 'Roboto', sans-serif;
   font-size: 0.95rem;
@@ -73,7 +181,39 @@
   margin: 16px 0 12px;
 }
 
-/* Checkbox de termos */
+/* ── Radio — forma de atendimento ── */
+.cf-radio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.cf-radio input[type="radio"] {
+  display: none;
+}
+
+.cf-radio-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  background: #fff;
+  flex-shrink: 0;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.cf-radio input[type="radio"]:checked + .cf-radio-dot {
+  border-color: #1a6e6e;
+  background: #1a6e6e;
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+/* ── Checkbox de termos ── */
 .cf-checkbox {
   display: flex;
   align-items: flex-start;
@@ -99,7 +239,21 @@
   text-decoration: underline;
 }
 
-/* Botão principal */
+/* ── Botão principal ── */
+.cf-btn {
+  width: 100%;
+  padding: 0.85rem;
+  border: none;
+  border-radius: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: opacity 0.2s, background 0.2s, color 0.2s;
+  letter-spacing: 0.3px;
+}
+
 .cf-submit {
   background: #d4d4d4;
   color: #555;
@@ -111,24 +265,73 @@
   opacity: 1;
 }
 
+/* ── Divider "Ou continue com" ── */
+.cf-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #999;
+  margin: 20px 0;
+}
+
+.cf-divider::before,
+.cf-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #ddd;
+}
+
+.cf-divider::before { margin-right: 10px; }
+.cf-divider::after { margin-left: 10px; }
+
+/* ── Botões sociais ── */
+.cf-social-row {
+  display: flex;
+  gap: 12px;
+}
+
+.cf-social-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0.7rem;
+  border: 1.5px solid #E0D9CC;
+  border-radius: 30px;
+  background: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: border 0.2s;
+}
+
+.cf-social-btn:hover {
+  border-color: #1a6e6e;
+}
+
 /* ── Imagem lateral ── */
 .cf-img {
+  flex-shrink: 0;
   display: flex;
-  align-items: flex-start;
   width: 40%;
-  margin: auto 0 ;
+  margin-left: 15%;
 }
 
 .cf-img img {
   width: 100%;
   object-fit: cover;
-  border-radius: 24px;
+  border-radius: 16px;
   display: block;
 }
-a{
-  color:#555;
-  text-decoration:none;
 
+.cf-page a {
+  color: #555;
+  text-decoration: none;
 }
 
 /* ── Responsividade ── */
@@ -184,7 +387,7 @@ a{
     gap: 0;
   }
 
-  .lc-social-row {
+  .cf-social-row {
     flex-direction: column;
   }
 }
@@ -203,17 +406,17 @@ a{
     font-size: 0.82rem;
   }
 
-  .lc-toggle {
+  .cf-toggle {
     margin-top: 16px;
   }
 
-  .lc-tab {
+  .cf-tab {
     font-size: 0.8rem;
     padding: 0.45rem;
   }
 
-  .lc-input-wrap input,
-  .lc-input-wrap--select select {
+  .cf-input-wrap input,
+  .cf-input-wrap--select select {
     font-size: 0.82rem;
   }
 
@@ -221,7 +424,7 @@ a{
     font-size: 0.74rem;
   }
 
-  .lc-social-btn {
+  .cf-social-btn {
     font-size: 0.75rem;
     padding: 0.55rem;
   }

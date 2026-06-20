@@ -30,7 +30,7 @@
 }
 
 .mc-card {
-  background: #f2f1f0;
+  background: #fffbf4;
   border: 1px solid #e2ddd5;
   border-radius: 16px;
   padding: 20px 24px;
@@ -38,7 +38,7 @@
 }
 
 .mc-card--patient {
-  background: #f2f1f0;
+  background: #fffbf4;
 }
 
 .mc-card-header {

@@ -33,7 +33,8 @@ import DetalhesAgendamento from "./peges1/Conta_parcero/DetalhesAgendamento";
 import ContaFisio from "./peges1/Conta_parcero/Conta_do_fisio/Conta_fisio";
 import MaoDireita from "./peges1/Detalhes/Detalhes"
 import Bloqueada from "./componentes/pages/bloqueada/bloqueada";
-
+import Wave from "./componentes/Wave"
+import DadosProfissionais from "./componentes/pages/cadastro-fisioterapeuta/Dados_profissionais"
 function App() {
   return (
     <BrowserRouter>
@@ -73,6 +74,8 @@ function App() {
         <Route path="/mao-direita" element={<MaoDireita />} />
         <Route path="/bloqueada" element={<Bloqueada />} />
         <Route path="/cadastro-fisioterapeuta" element={<CadastroFisioterapeuta />} />
+        <Route path="/wave" element={<Wave />} />
+        <Route path="/dados-profissionais" element={<DadosProfissionais />} />
 
 
       </Routes>

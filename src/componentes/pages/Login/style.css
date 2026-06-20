@@ -28,25 +28,24 @@ main{
 
 .lc-card {
   display: flex;
-  width: 100%;
-  max-width: 1040px;
-  min-height: 480px;
+  width: 90%;
   gap: 3rem;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  margin: auto;
 }
 
 /* ---- LADO ESQUERDO: FORMULÁRIO ---- */
 .lc-form-side {
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
+  width: 50%;
+  margin: 0 ;
   display: flex;
   flex-direction: column;
+  
 }
 
 .lc-title {
-  font-size: clamp(1.6rem, 1.3rem + 1vw, 2rem);
+  font-size: 3rem;
   font-weight: 700;
   color: #1a1a1a;
   line-height: 1.2;
@@ -54,16 +53,16 @@ main{
 }
 
 .lc-subtitle {
-  font-size: 0.95rem;
+  font-size: 1.4rem;
   font-weight: 400;
-  color: #6b6b6b;
+  color: #333;
   line-height: 1.5;
   margin-bottom: 1.75rem;
 }
 
 .lc-subtitle strong {
   color: #1a1a1a;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 /* ---- TOGGLE (Entrar / Cadastre-se) ---- */
@@ -79,11 +78,10 @@ main{
   border: none;
   background: transparent;
   border-bottom: 2px solid transparent;
-  margin-bottom: -1.5px;
   font-family: 'Roboto', sans-serif;
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   font-weight: 500;
-  color: #999;
+  color: #333;
   text-decoration: none;
   cursor: pointer;
   transition: color 0.2s, border-color 0.2s;
@@ -104,15 +102,14 @@ main{
 }
 
 .lc-label {
-  font-size: 0.85rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 600;
   color: #1a1a1a;
 }
 
 .lc-input-wrap {
   display: flex;
   align-items: center;
-  background: #fff;
   border: 1.5px solid #E0D9CC;
   border-radius: 8px;
   padding: 0 0.85rem;
@@ -127,29 +124,27 @@ main{
 
 .lc-input-wrap svg {
   flex-shrink: 0;
-  color: #999;
+  color: #555;
 }
 
 .lc-input-wrap input {
   flex: 1;
-  min-width: 0;
   border: none;
   outline: none;
   padding: 0.6rem 0;
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #1a1a1a;
-  background: transparent;
 }
 
 .lc-input-wrap input::placeholder {
-  color: #aaa;
+  color: #555;
 }
 
 .lc-eye-btn {
   background: none;
   border: none;
   cursor: pointer;
-  color: #999;
+  color: #555;
   padding: 0;
   display: flex;
   align-items: center;
@@ -162,12 +157,12 @@ main{
   min-width: 180px;
   text-align: center;
   text-decoration: none;
-  padding: 0.7rem 2.25rem;
+  padding: 0.5rem 2.25rem;
   background: #E8C96A;
   border: none;
   border-radius: 8px;
   font-family: 'Roboto', sans-serif;
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: #1a1a1a;
   cursor: pointer;
@@ -182,15 +177,15 @@ main{
 /* ---- LINK DE ALTERNÂNCIA ---- */
 .lc-alt-link {
   text-align: center;
-  font-size: 0.9rem;
-  color: #888;
+  font-size: 1rem;
+  color: #666;
   margin-bottom: 1.5rem;
 }
 
 .lc-alt-link a {
   color: #C8973A;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
 }
 
@@ -200,11 +195,11 @@ main{
 
 /* ---- DIVISOR "ou continue com" ---- */
 .lc-divider {
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #aaa;
+  color: #888;
   text-align: center;
   margin-bottom: 0.9rem;
 }
@@ -243,11 +238,11 @@ main{
 .lc-img-side {
   flex-shrink: 0;
   display: flex;
+  width: 40%;
 }
 
 .lc-img-side img {
-  width: 380px;
-  height: 560px;
+  width: 100%;
   object-fit: cover;
   border-radius: 16px;
   display: block;

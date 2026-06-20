@@ -97,8 +97,9 @@
 }
 
 /* Input escuro (dentro do card do responsável) */
+/* Input escuro (dentro do card do responsável) */
 .cp-input--dark {
-  background: #c8c8c8;
+  background: #fffbf4;
   border-color: #b0b0b0;
   color: #333;
 }
@@ -107,6 +108,15 @@
   border-color: #E8C96A;
 }
 
+.cp-select.cp-select--dark {
+  background: #fffbf4;
+  border-color: #b0b0b0;
+  color: #333;
+}
+
+.cp-select.cp-select--dark:focus {
+  border-color: #E8C96A;
+}
 /* ── Select ── */
 .cp-select-wrap {
   position: relative;
