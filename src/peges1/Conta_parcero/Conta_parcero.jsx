@@ -5,7 +5,9 @@ function Conta_parcero() {
     return (
         <>
             <Conta_fisio />
+          
         </>
     )
 }
 export default Conta_parcero;
+    

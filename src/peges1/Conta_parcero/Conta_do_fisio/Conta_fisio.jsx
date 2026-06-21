@@ -8,7 +8,7 @@ function Conta_fisio() {
   const navigate = useNavigate();
 
   const handleEditInfo = () => {
-    alert("Funcionalidade de edição de informações profissionais em desenvolvimento!");
+    navigate('/editar-perfil');
   };
 
   const handleGoToAgenda = () => {
@@ -18,6 +18,7 @@ function Conta_fisio() {
   const handleGoToDetails = () => {
     navigate('/detalhes-agendamento');
   };
+
 
   return (
     <Layout>
