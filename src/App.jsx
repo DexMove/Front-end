@@ -37,6 +37,8 @@ import Wave from "./componentes/Wave"
 import DadosProfissionais from "./componentes/pages/cadastro-fisioterapeuta/DadosProfissionais"
 import EditarInformacoes2 from "./componentes/pages/editar-informacoes/editar-informações2";
 import EditarPaciente2 from "./componentes/pages/editar-paciente/Editar-paciente2";
+import EditarFisio from "./peges1/Conta_parcero/EditarPerfilFisio"
+import Termos from "./componentes/pages/termos/Termos"
 function App() {
   return (
     <BrowserRouter>
@@ -83,6 +85,7 @@ function App() {
         <Route path="/wave" element={<Wave />} />
         <Route path="/dados-profissionais" element={<DadosProfissionais />} />
         <Route path="/termos" element={<Termos />} />
+        <Route path="/editar-perfil" element={<EditarFisio />} />
 
       </Routes>
     </BrowserRouter>
