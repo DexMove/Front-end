@@ -11,20 +11,6 @@ export default function MeusEnderecos() {
       <section className="account-hero-enderecos">
         <div className="hero-content-enderecos">         
           <div className="hero-title-container">
-            <svg 
-              className="pin-icon" 
-              width="40" 
-              height="40" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2.5" 
-              strokeLinecap="round" 
-              strokeLinejoin="round"
-            >
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-              <circle cx="12" cy="10" r="3" />
-            </svg>
             <h1>Meus endereços</h1>
           </div>
           <h2>Gerencie seus endereços de entrega</h2>

@@ -20,7 +20,7 @@
   color:#0B5C6A;
 }
 .config-subtitle {
-  color: #0B5C6A;
+  color: #1a1a1a;
   font-size: 32px;
   line-height: 1.4;
 }
@@ -54,6 +54,8 @@
   padding: 22px 24px;
   background: white;
   margin-bottom: 18px;
+  width: 90%;
+  margin: 0 auto;
 }
 .setting-card h2 {
   font-size: 24px;

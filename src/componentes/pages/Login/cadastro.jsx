@@ -56,6 +56,7 @@ const AppleIcon = () => (
 );
 
 export default function Cadastro() {
+  const [termos, setTermos] = useState(false);
   const [showSenha, setShowSenha] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [cadastroData, setCadastroData] = useState({ nome: "", email: "", senha: "", confirma: "" });
@@ -159,6 +160,12 @@ export default function Cadastro() {
                   </button>
                 </div>
               </div>
+              <label className="cf-checkbox">
+              <input type="checkbox" checked={termos} onChange={() => setTermos(!termos)} required />
+              <span>
+                Li e concordo com os <a href="/termos" className="cf-link">Termos de Consentimento e Tratamento de Dados</a> conforme a LGPD.
+              </span>
+            </label>
 
               <Link to="/complete-perfil" className="lc-submit">
                 Próximo

@@ -1,12 +1,14 @@
 import "./Wave.css";
+import Laranja from "../assets/Vector-laranja.png";
+import Amarelo from "../assets/Vector-amarelo.png";
+import Verde from "../assets/Vector-verde.png";
 
 function Wave() {
   return (
     <div className="wave-container">
-      <div className="ocean">
-        <div className="wave"></div>
-        <div className="wave"></div>
-      </div>
+      <img src={Verde} alt="" className="wave-layer wave-verde" />
+      <img src={Amarelo} alt="" className="wave-layer wave-amarelo" />
+      <img src={Laranja} alt="" className="wave-layer wave-laranja" />
     </div>
   );
 }

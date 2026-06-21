@@ -74,12 +74,15 @@ function App() {
         <Route path="/conta_parcero" element={<ContaParcero />} />
         <Route path="/agenda" element={<Agenda />} />
         <Route path="/detalhes-agendamento" element={<DetalhesAgendamento />} />
+        <Route path="/agenda" element={<Agenda />} />
+        <Route path="/editar-perfil" element={<EditarFisio />} />
         <Route path="/conta-fisio" element={<ContaFisio />} />
         <Route path="/mao-direita" element={<MaoDireita />} />
         <Route path="/bloqueada" element={<Bloqueada />} />
         <Route path="/cadastro-fisioterapeuta" element={<CadastroFisioterapeuta />} />
         <Route path="/wave" element={<Wave />} />
         <Route path="/dados-profissionais" element={<DadosProfissionais />} />
+        <Route path="/termos" element={<Termos />} />
 
       </Routes>
     </BrowserRouter>

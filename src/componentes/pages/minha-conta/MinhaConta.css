@@ -173,5 +173,6 @@
   .mc-page { padding: 20px 4% 36px; }
   .mc-patient-grid { grid-template-columns: 1fr; }
   .mc-card-header { flex-direction: column; align-items: flex-start; }
-  .mc-page-title { font-size: 1.2rem; }
+  .mc-page-title { font-size: 1.5rem; }
+   .mc-page-sub{font-size: 1.2rem;}
 }

@@ -266,7 +266,7 @@ main{
   }
 
   .lc-form-side {
-    max-width: 440px;
+    width: 95%;
   }
 }
 
