@@ -34,14 +34,9 @@ import ContaFisio from "./peges1/Conta_parcero/Conta_do_fisio/Conta_fisio";
 import MaoDireita from "./peges1/Detalhes/Detalhes"
 import Bloqueada from "./componentes/pages/bloqueada/bloqueada";
 import Wave from "./componentes/Wave"
-<<<<<<< HEAD
 import DadosProfissionais from "./componentes/pages/cadastro-fisioterapeuta/DadosProfissionais"
 import EditarInformacoes2 from "./componentes/pages/editar-informacoes/editar-informações2";
 import EditarPaciente2 from "./componentes/pages/editar-paciente/Editar-paciente2";
-=======
-import DadosProfissionais from "./componentes/pages/cadastro-fisioterapeuta/Dados_profissionais"
-import EditarPerfilFisio from "./peges1/Conta_parcero/EditarPerfilFisio";
->>>>>>> c4f755c48f5a92ba71db757d249762f43668a16c
 function App() {
   return (
     <BrowserRouter>
@@ -60,12 +55,8 @@ function App() {
         <Route path="/controle" element={<Controle />} />
         <Route path="/editar-informacoes" element={<EditarInformacoes />} />
         <Route path="/editar-paciente" element={<EditarPaciente />} />
-<<<<<<< HEAD
         <Route path="/editar-informacoes2" element={<EditarInformacoes2 />} />
         <Route path="/editar-paciente2" element={<EditarPaciente2 />} />
-=======
-        <Route path="/editar-perfil" element={<EditarPerfilFisio />} />
->>>>>>> c4f755c48f5a92ba71db757d249762f43668a16c
         <Route path="/enderecos" element={<Enderecos />} />
         <Route path="/fisioterapeutas" element={<Fisioterapeutas />} />
         <Route path="/pagamento" element={<MetodosPagamento />} />
