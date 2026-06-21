@@ -35,6 +35,7 @@ import MaoDireita from "./peges1/Detalhes/Detalhes"
 import Bloqueada from "./componentes/pages/bloqueada/bloqueada";
 import Wave from "./componentes/Wave"
 import DadosProfissionais from "./componentes/pages/cadastro-fisioterapeuta/Dados_profissionais"
+import EditarPerfilFisio from "./peges1/Conta_parcero/EditarPerfilFisio";
 function App() {
   return (
     <BrowserRouter>
@@ -53,6 +54,7 @@ function App() {
         <Route path="/controle" element={<Controle />} />
         <Route path="/editar-informacoes" element={<EditarInformacoes />} />
         <Route path="/editar-paciente" element={<EditarPaciente />} />
+        <Route path="/editar-perfil" element={<EditarPerfilFisio />} />
         <Route path="/enderecos" element={<Enderecos />} />
         <Route path="/fisioterapeutas" element={<Fisioterapeutas />} />
         <Route path="/pagamento" element={<MetodosPagamento />} />
@@ -67,7 +69,7 @@ function App() {
         <Route path="/comprar" element={<Comprar />} />
         <Route path="/mao-esquerda" element={<MaoEsquerda />} />
         <Route path="/par" element={<ParPage />} />
-        <Route path="/conta-parcero" element={<ContaParcero />} />
+        <Route path="/conta_parcero" element={<ContaParcero />} />
         <Route path="/agenda" element={<Agenda />} />
         <Route path="/detalhes-agendamento" element={<DetalhesAgendamento />} />
         <Route path="/conta-fisio" element={<ContaFisio />} />

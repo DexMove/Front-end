@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { 
-  User, 
-  MapPin, 
-  CreditCard, 
-  CheckCircle, 
-  ArrowLeft, 
-  Loader2, 
-  ShieldCheck, 
+import {
+  User,
+  MapPin,
+  CreditCard,
+  CheckCircle,
+  ArrowLeft,
+  Loader2,
+  ShieldCheck,
   ShoppingBag,
   Sparkles,
   QrCode,
@@ -15,15 +15,15 @@ import {
 } from "lucide-react";
 import Footer from "../../../componentes/Footer";
 import styles from '../Css.css/Comprar.module.css';
-
+ 
 // Usando imagens do projeto para o resumo do pedido
 import orteset from '../../../assets/imag/orteset.png';
-
+ 
 function Comprar() {
   const navigate = useNavigate();
   const [etapa, setEtapa] = useState(1);
   const [metodoPagamento, setMetodoPagamento] = useState("cartao"); // "cartao", "pix", "boleto"
-  
+ 
   // Form States
   const [dados, setDados] = useState({
     nome: "",
@@ -43,7 +43,7 @@ function Comprar() {
     cartaoCvv: "",
     parcelas: "1"
   });
-
+ 
   // Simulando progresso automático do processamento (Etapa 4 -> 5)
   useEffect(() => {
     if (etapa === 4) {
@@ -53,11 +53,11 @@ function Comprar() {
       return () => clearTimeout(timer);
     }
   }, [etapa]);
-
+ 
   const handleChange = (e) => {
     setDados({ ...dados, [e.target.name]: e.target.value });
   };
-
+ 
   const handlesNext = (e) => {
     e.preventDefault();
     if (etapa < 3) {
@@ -66,7 +66,7 @@ function Comprar() {
       setEtapa(4); // Vai para o processamento
     }
   };
-
+ 
   const handleBack = () => {
     if (etapa > 1 && etapa < 4) {
       setEtapa(etapa - 1);
@@ -74,23 +74,23 @@ function Comprar() {
       navigate(-1);
     }
   };
-
+ 
   const stepsList = [
     { id: 1, label: "Dados pessoais", icon: <User size={18} /> },
     { id: 2, label: "Endereço", icon: <MapPin size={18} /> },
     { id: 3, label: "Pagamento", icon: <CreditCard size={18} /> },
     { id: 4, label: "Confirmação", icon: <CheckCircle size={18} /> }
   ];
-
+ 
   return (
     <div className={styles.paginaWrapper}>
-      
-      {/* Elementos visuais de ondas ao fundo */}
-      <div className={styles.backgroundWaves}>
-        <div className={styles.wave1}></div>
-        <div className={styles.wave2}></div>
-      </div>
-
+ 
+      {/* Top Wave */}
+      <svg viewBox="0 0 1000 150" preserveAspectRatio="none" className={styles.topWave}>
+        <path d="M0,40 Q250,120 500,80 T1000,100 L1000,0 L0,0 Z" fill="#f6d04c" opacity="0.5" />
+        <path d="M0,0 L1000,0 L1000,80 Q750,60 500,100 T0,20 Z" fill="#0a5c61" opacity="0.07" />
+      </svg>
+ 
       <main className={styles.conteudoPrincipal}>
         {etapa <= 3 && (
           <div className={styles.cabecalhoCheckout}>
@@ -98,7 +98,7 @@ function Comprar() {
             <p>Preencha seus dados para continuar</p>
           </div>
         )}
-
+ 
         {/* Barra de etapas (só aparece nas etapas de preenchimento 1 a 3) */}
         {etapa <= 3 && (
           <div className={styles.etapasBarra}>
@@ -121,11 +121,11 @@ function Comprar() {
             })}
           </div>
         )}
-
+ 
         <div className={styles.checkoutLayoutGrid}>
           {/* LADO ESQUERDO: Formulários ou Telas de Status */}
           <div className={`${styles.cardPainelEsquerdo} ${etapa >= 4 ? styles.cardCentralizado : ""}`}>
-            
+ 
             {/* ETAPA 1: Dados Pessoais */}
             {etapa === 1 && (
               <form onSubmit={handlesNext} className={styles.formSection}>
@@ -133,50 +133,50 @@ function Comprar() {
                 <div className={styles.formGridDuplo}>
                   <div className={styles.campoForm}>
                     <label>Nome completo</label>
-                    <input 
+                    <input
                       required
-                      type="text" 
+                      type="text"
                       name="nome"
                       value={dados.nome}
                       onChange={handleChange}
-                      placeholder="Digite seu nome completo" 
+                      placeholder="Digite seu nome completo"
                     />
                   </div>
                   <div className={styles.campoForm}>
                     <label>Email</label>
-                    <input 
+                    <input
                       required
-                      type="email" 
+                      type="email"
                       name="email"
                       value={dados.email}
                       onChange={handleChange}
-                      placeholder="Digite seu e-mail" 
+                      placeholder="Digite seu e-mail"
                     />
                   </div>
                   <div className={styles.campoForm}>
                     <label>Telefone</label>
-                    <input 
+                    <input
                       required
-                      type="text" 
+                      type="text"
                       name="telefone"
                       value={dados.telefone}
                       onChange={handleChange}
-                      placeholder="(00) 90000-0000" 
+                      placeholder="(00) 90000-0000"
                     />
                   </div>
                   <div className={styles.campoForm}>
                     <label>CPF</label>
-                    <input 
+                    <input
                       required
-                      type="text" 
+                      type="text"
                       name="cpf"
                       value={dados.cpf}
                       onChange={handleChange}
-                      placeholder="000.000.000-00" 
+                      placeholder="000.000.000-00"
                     />
                   </div>
                 </div>
-                
+ 
                 <div className={styles.botoesAcoes}>
                   <button type="button" className={styles.btnVoltar} onClick={handleBack}>
                     <ArrowLeft size={16} /> VOLTAR
@@ -187,7 +187,7 @@ function Comprar() {
                 </div>
               </form>
             )}
-
+ 
             {/* ETAPA 2: Endereço de Entrega */}
             {etapa === 2 && (
               <form onSubmit={handlesNext} className={styles.formSection}>
@@ -195,82 +195,82 @@ function Comprar() {
                 <div className={styles.formGridDuplo}>
                   <div className={styles.campoForm}>
                     <label>CEP</label>
-                    <input 
+                    <input
                       required
-                      type="text" 
+                      type="text"
                       name="cep"
                       value={dados.cep}
                       onChange={handleChange}
-                      placeholder="00000-000" 
+                      placeholder="00000-000"
                     />
                   </div>
                   <div className={styles.campoForm}>
                     <label>Endereço (Rua/Avenida)</label>
-                    <input 
+                    <input
                       required
-                      type="text" 
+                      type="text"
                       name="endereco"
                       value={dados.endereco}
                       onChange={handleChange}
-                      placeholder="Digite seu endereço" 
+                      placeholder="Digite seu endereço"
                     />
                   </div>
                   <div className={styles.campoForm}>
                     <label>Número</label>
-                    <input 
+                    <input
                       required
-                      type="text" 
+                      type="text"
                       name="numero"
                       value={dados.numero}
                       onChange={handleChange}
-                      placeholder="Nº" 
+                      placeholder="Nº"
                     />
                   </div>
                   <div className={styles.campoForm}>
                     <label>Complemento</label>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       name="complemento"
                       value={dados.complemento}
                       onChange={handleChange}
-                      placeholder="Apto, Bloco, etc." 
+                      placeholder="Apto, Bloco, etc."
                     />
                   </div>
                   <div className={styles.campoForm}>
                     <label>Bairro</label>
-                    <input 
+                    <input
                       required
-                      type="text" 
+                      type="text"
                       name="bairro"
                       value={dados.bairro}
                       onChange={handleChange}
-                      placeholder="Digite seu bairro" 
+                      placeholder="Digite seu bairro"
                     />
                   </div>
                   <div className={styles.campoForm}>
                     <label>Cidade</label>
-                    <input 
+                    <input
                       required
-                      type="text" 
+                      type="text"
                       name="cidade"
                       value={dados.cidade}
                       onChange={handleChange}
-                      placeholder="Digite sua cidade" 
+                      placeholder="Digite sua cidade"
                     />
                   </div>
                   <div className={styles.campoForm}>
                     <label>Estado</label>
-                    <input 
+                    <input
                       required
-                      type="text" 
+                      type="text"
                       name="estado"
                       value={dados.estado}
                       onChange={handleChange}
-                      placeholder="Estado" 
+                      placeholder="Estado"
                     />
                   </div>
                 </div>
-
+ 
                 <div className={styles.botoesAcoes}>
                   <button type="button" className={styles.btnVoltar} onClick={handleBack}>
                     <ArrowLeft size={16} /> VOLTAR
@@ -281,15 +281,15 @@ function Comprar() {
                 </div>
               </form>
             )}
-
+ 
             {/* ETAPA 3: Forma de Pagamento */}
             {etapa === 3 && (
               <form onSubmit={handlesNext} className={styles.formSection}>
                 <h2 className={styles.tituloSecao}>Forma de pagamento</h2>
-                
+ 
                 {/* Abas/Opções de Pagamento */}
                 <div className={styles.metodosPagamentoAbas}>
-                  <button 
+                  <button
                     type="button"
                     className={`${styles.abaMetodo} ${metodoPagamento === "cartao" ? styles.abaMetodoAtiva : ""}`}
                     onClick={() => setMetodoPagamento("cartao")}
@@ -297,8 +297,8 @@ function Comprar() {
                     <CreditCard size={18} />
                     <span>Cartão de crédito</span>
                   </button>
-                  
-                  <button 
+ 
+                  <button
                     type="button"
                     className={`${styles.abaMetodo} ${metodoPagamento === "pix" ? styles.abaMetodoAtiva : ""}`}
                     onClick={() => setMetodoPagamento("pix")}
@@ -306,8 +306,8 @@ function Comprar() {
                     <QrCode size={18} />
                     <span>Pix</span>
                   </button>
-                  
-                  <button 
+ 
+                  <button
                     type="button"
                     className={`${styles.abaMetodo} ${metodoPagamento === "boleto" ? styles.abaMetodoAtiva : ""}`}
                     onClick={() => setMetodoPagamento("boleto")}
@@ -316,57 +316,57 @@ function Comprar() {
                     <span>Boleto bancário</span>
                   </button>
                 </div>
-
+ 
                 {/* Conteúdo dinâmico dependendo do método */}
                 {metodoPagamento === "cartao" && (
                   <div className={styles.formGridDuplo}>
                     <div className={`${styles.campoForm} ${styles.campoFormCheio}`}>
                       <label>Número do cartão</label>
-                      <input 
+                      <input
                         required
-                        type="text" 
+                        type="text"
                         name="cartaoNumero"
                         value={dados.cartaoNumero}
                         onChange={handleChange}
-                        placeholder="0000 0000 0000 0000" 
+                        placeholder="0000 0000 0000 0000"
                       />
                     </div>
                     <div className={`${styles.campoForm} ${styles.campoFormCheio}`}>
                       <label>Nome no cartão</label>
-                      <input 
+                      <input
                         required
-                        type="text" 
+                        type="text"
                         name="cartaoNome"
                         value={dados.cartaoNome}
                         onChange={handleChange}
-                        placeholder="Nome como está no cartão" 
+                        placeholder="Nome como está no cartão"
                       />
                     </div>
                     <div className={styles.campoForm}>
                       <label>Validade</label>
-                      <input 
+                      <input
                         required
-                        type="text" 
+                        type="text"
                         name="cartaoValidade"
                         value={dados.cartaoValidade}
                         onChange={handleChange}
-                        placeholder="MM/AA" 
+                        placeholder="MM/AA"
                       />
                     </div>
                     <div className={styles.campoForm}>
                       <label>Código de segurança</label>
-                      <input 
+                      <input
                         required
-                        type="text" 
+                        type="text"
                         name="cartaoCvv"
                         value={dados.cartaoCvv}
                         onChange={handleChange}
-                        placeholder="CVV" 
+                        placeholder="CVV"
                       />
                     </div>
                     <div className={`${styles.campoForm} ${styles.campoFormCheio}`}>
                       <label>Parcelas</label>
-                      <select 
+                      <select
                         name="parcelas"
                         value={dados.parcelas}
                         onChange={handleChange}
@@ -382,7 +382,7 @@ function Comprar() {
                     </div>
                   </div>
                 )}
-
+ 
                 {metodoPagamento === "pix" && (
                   <div className={styles.infoPagamentoAlternativo}>
                     <div className={styles.badgeSeguroMetodo}>Aprovação imediata</div>
@@ -390,7 +390,7 @@ function Comprar() {
                     <p>O código Pix será gerado após finalizar o pedido. Você poderá pagar escaneando o QR Code ou copiando o código "Pix Copia e Cola".</p>
                   </div>
                 )}
-
+ 
                 {metodoPagamento === "boleto" && (
                   <div className={styles.infoPagamentoAlternativo}>
                     <div className={styles.badgeSeguroMetodo}>Aprovação em 1 dia útil</div>
@@ -398,7 +398,7 @@ function Comprar() {
                     <p>O boleto bancário será gerado após a confirmação do pedido. Você poderá imprimir ou pagar diretamente com o código de barras no seu internet banking.</p>
                   </div>
                 )}
-
+ 
                 <div className={styles.botoesAcoes}>
                   <button type="button" className={styles.btnVoltar} onClick={handleBack}>
                     <ArrowLeft size={16} /> VOLTAR
@@ -409,7 +409,7 @@ function Comprar() {
                 </div>
               </form>
             )}
-
+ 
             {/* ETAPA 4: Processando o Pedido */}
             {etapa === 4 && (
               <div className={styles.telaStatusProcessando}>
@@ -419,14 +419,14 @@ function Comprar() {
                 </div>
                 <h2>Processando seu pedido...</h2>
                 <p>Aguarde, estamos processando sua compra de forma segura.</p>
-                
+ 
                 <div className={styles.caixaSegurancaAmbiente}>
                   <ShieldCheck size={20} />
                   <span>Ambiente 100% seguro. Suas informações estão criptografadas.</span>
                 </div>
               </div>
             )}
-
+ 
             {/* ETAPA 5: Sucesso no Pedido */}
             {etapa === 5 && (
               <div className={styles.telaStatusSucesso}>
@@ -436,7 +436,7 @@ function Comprar() {
                 <h2>Pedido realizado com sucesso!</h2>
                 <p className={styles.sucessoTxtSub}>Obrigado por comprar na DexMove.</p>
                 <p className={styles.sucessoMensagem}>Você acaba de dar um passo muito importante para melhorar sua qualidade de vida.</p>
-                
+ 
                 <div className={styles.botoesSucesso}>
                   <button onClick={() => navigate("/")} className={styles.btnAcompanhar}>
                     Acompanhar pedido
@@ -447,14 +447,14 @@ function Comprar() {
                 </div>
               </div>
             )}
-
+ 
           </div>
-
+ 
           {/* LADO DIREITO: Resumo do Pedido (só aparece nas etapas 1 a 3) */}
           {etapa <= 3 && (
             <div className={styles.cardResumoPedido}>
               <h3>Resumo do pedido</h3>
-              
+ 
               <div className={styles.itemResumoFlex}>
                 <div className={styles.itemResumoImagemBox}>
                   <img src={orteset} alt="Órtese MoveHand" />
@@ -468,9 +468,9 @@ function Comprar() {
                   R$ 5.000,00
                 </div>
               </div>
-
+ 
               <div className={styles.divisorResumo}></div>
-
+ 
               <div className={styles.detalhesLinhasValores}>
                 <div className={styles.linhaValorFila}>
                   <span>Subtotal</span>
@@ -486,7 +486,7 @@ function Comprar() {
                   <span>R$ 5.000,00</span>
                 </div>
               </div>
-
+ 
               <div className={styles.compraSeguraSeloLateral}>
                 <ShieldCheck size={16} />
                 <span>Compra 100% segura e garantida</span>
@@ -495,10 +495,16 @@ function Comprar() {
           )}
         </div>
       </main>
-
+ 
+      {/* Wave divider antes do Footer */}
+      <svg viewBox="0 0 1000 150" preserveAspectRatio="none" className={styles.bottomWaveDivider}>
+        <path d="M0,150 L0,100 Q250,40 500,80 T1000,60 L1000,150 Z" fill="#0a5c61" />
+        <path d="M0,150 L0,110 Q300,150 600,100 T1000,90 L1000,150 Z" fill="#f6d04c" opacity="0.4" />
+      </svg>
+ 
       <Footer />
     </div>
   );
 }
-
+ 
 export default Comprar;
