@@ -19,7 +19,8 @@ const planos = [
     className: "independencia",
     recomendado: true,
     nome: "Plano Independência",
-    preco: "R$ 00/mês",
+    preco1:"Primeiro mês: R$ 1.649,00 ",
+    preco2: "Após o primeiro mês: R$ 249,00/mês",      
     botao: "Assine agora",
     beneficios: [
       "Todos os benefícios anteriores",
@@ -31,7 +32,8 @@ const planos = [
   {
     className: "autonomia",
     nome: "Plano Autonomia",
-    preco: "R$ 00/mês",
+    preco1: "Primeiro mês: R$ 1.549,00",
+    preco2: "Após o primeiro mês: R$ 149,00/mês",
     botao: "Atualize para",
     beneficios: [
       "Todos os benefícios do Primeiro Movimento",
@@ -62,7 +64,9 @@ function Planos() {
     <div className={`plano-card ${plano.className}`} key={plano.nome}>
       {plano.recomendado && <p className="recomendado">Recomendado</p>}
       <h3 className="plano-h3">{plano.nome}</h3>
+      <h4 className="valor-p">{plano.preco1}</h4>
       <h4 className="valor-p">{plano.preco}</h4>
+      <h4 className="valor-p2">{plano.preco2}</h4>
 
       <ul className="beneficios">
         {plano.beneficios.map((beneficio) => (

@@ -151,7 +151,7 @@
 }
 
 .pedidos-container {
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -408,19 +408,19 @@
   .order-thumb { width: 84px; height: 84px; }
   .card-top { padding: 14px; }
   .order-card { padding: 18px; }
-  .hero-copy h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); }
+  .pedidos-title { font-size: clamp(1.8rem, 4vw, 2.4rem); }
 }
 
 @media (max-width: 600px) {
-  .hero-copy h1 { font-size: 2rem; }
-  .hero-copy h2 { font-size: 1.1rem; }
+  .pedidos-title { font-size: 2rem; }
+ .pedidos-sub { font-size: 1.1rem; }
   .order-thumb { width: 72px; height: 72px; }
   .order-card { padding: 14px; }
 }
 
 @media (max-width: 430px) {
   .pedidos-topbar { padding: 0 12px; }
-  .hero-copy h1 { font-size: 1.6rem; }
+  .pedidos-title { font-size: 1.6rem; }
   .order-card { padding: 12px; }
   .order-thumb { width: 56px; height: 56px; }
   .tab-button { padding: 8px 12px; font-size: 0.82rem; }
