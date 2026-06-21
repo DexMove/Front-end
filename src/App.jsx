@@ -16,7 +16,7 @@ import Login from "./componentes/pages/Login/login";
 import Cadastro from "./componentes/pages/Login/cadastro";
 import MetodosPagamento from "./componentes/pages/metodos-pagamento/metodos-pagamento";
 import MinhaConta from "./componentes/pages/minha-conta/MinhaConta";
-import MinhaConta2 from "./componentes/pages/minha-conta2/MinhaConta2";
+import MinhaConta2 from "./componentes/pages/minha-conta/MinhaConta2";
 import Pedidos from "./componentes/pages/pedidos/pedidos";
 import Planilha from "./componentes/pages/Planilha/Planilha";
 import AssistenciaOrtese from "./componentes/pages/assistiencia_ortese/Assistencia_ortese";
@@ -34,7 +34,9 @@ import ContaFisio from "./peges1/Conta_parcero/Conta_do_fisio/Conta_fisio";
 import MaoDireita from "./peges1/Detalhes/Detalhes"
 import Bloqueada from "./componentes/pages/bloqueada/bloqueada";
 import Wave from "./componentes/Wave"
-import DadosProfissionais from "./componentes/pages/cadastro-fisioterapeuta/Dados_profissionais"
+import DadosProfissionais from "./componentes/pages/cadastro-fisioterapeuta/DadosProfissionais"
+import EditarInformacoes2 from "./componentes/pages/editar-informacoes/editar-informações2";
+import EditarPaciente2 from "./componentes/pages/editar-paciente/Editar-paciente2";
 function App() {
   return (
     <BrowserRouter>
@@ -53,6 +55,8 @@ function App() {
         <Route path="/controle" element={<Controle />} />
         <Route path="/editar-informacoes" element={<EditarInformacoes />} />
         <Route path="/editar-paciente" element={<EditarPaciente />} />
+        <Route path="/editar-informacoes2" element={<EditarInformacoes2 />} />
+        <Route path="/editar-paciente2" element={<EditarPaciente2 />} />
         <Route path="/enderecos" element={<Enderecos />} />
         <Route path="/fisioterapeutas" element={<Fisioterapeutas />} />
         <Route path="/pagamento" element={<MetodosPagamento />} />
@@ -76,7 +80,6 @@ function App() {
         <Route path="/cadastro-fisioterapeuta" element={<CadastroFisioterapeuta />} />
         <Route path="/wave" element={<Wave />} />
         <Route path="/dados-profissionais" element={<DadosProfissionais />} />
-
 
       </Routes>
     </BrowserRouter>

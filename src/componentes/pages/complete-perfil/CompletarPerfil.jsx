@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./CompletarPerfil.css";
 import Footer from "../../Footer";
-import {Link} from "react-router-dom";
 import Header from '../../Header';
+
 export default function CompletarPerfil() {
+  const navigate = useNavigate();
   const [quemUsa, setQuemUsa] = useState("eu");
   const [form, setForm] = useState({
     idade: "",
@@ -25,6 +27,12 @@ export default function CompletarPerfil() {
   function handleSubmit(e) {
     e.preventDefault();
     console.log({ ...form, quemUsa });
+
+    if (quemUsa === "eu") {
+      navigate("/minha-conta2");
+    } else {
+      navigate("/minha-conta");
+    }
   }
 
   return (
@@ -127,47 +135,47 @@ export default function CompletarPerfil() {
 
             {/* Dados do responsável — aparece se "outro" */}
             {quemUsa === "outro" && (
-  <div className="cp-responsavel">
-    <p className="cp-responsavel-title">Dados do responsável</p>
-    <div className="cp-row">
-      <div className="cp-field">
-        <label className="cp-label">Nome da responsável</label>
-        <input className="cp-input cp-input--dark" name="nomeResponsavel" type="text"
-          value={form.nomeResponsavel} onChange={handleChange} required />
-      </div>
-      <div className="cp-field">
-        <label className="cp-label">Parentesco</label>
-        <div className="cp-select-wrap">
-          <select className="cp-select cp-select--dark" name="parentesco" value={form.parentesco} onChange={handleChange} required>
-            <option value="">Selecione</option>
-            <option>Pai</option>
-            <option>Mãe</option>
-            <option>Cônjuge</option>
-            <option>Irmão/Irmã</option>
-            <option>Filho/Filha</option>
-            <option>Tutor Legal</option>
-            <option>Outro</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div className="cp-row">
-      <div className="cp-field">
-        <label className="cp-label">Telefone</label>
-        <input className="cp-input cp-input--dark" name="telefone" type="tel"
-          placeholder="(00) 00000-0000"
-          value={form.telefone} onChange={handleChange} required />
-      </div>
-      <div className="cp-field">
-        <label className="cp-label">E-mail</label>
-        <input className="cp-input cp-input--dark" name="email" type="email"
-          value={form.email} onChange={handleChange} required />
-      </div>
-    </div>
-  </div>
-)}
+              <div className="cp-responsavel">
+                <p className="cp-responsavel-title">Dados do responsável</p>
+                <div className="cp-row">
+                  <div className="cp-field">
+                    <label className="cp-label">Nome da responsável</label>
+                    <input className="cp-input cp-input--dark" name="nomeResponsavel" type="text"
+                      value={form.nomeResponsavel} onChange={handleChange} required />
+                  </div>
+                  <div className="cp-field">
+                    <label className="cp-label">Parentesco</label>
+                    <div className="cp-select-wrap">
+                      <select className="cp-select cp-select--dark" name="parentesco" value={form.parentesco} onChange={handleChange} required>
+                        <option value="">Selecione</option>
+                        <option>Pai</option>
+                        <option>Mãe</option>
+                        <option>Cônjuge</option>
+                        <option>Irmão/Irmã</option>
+                        <option>Filho/Filha</option>
+                        <option>Tutor Legal</option>
+                        <option>Outro</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div className="cp-row">
+                  <div className="cp-field">
+                    <label className="cp-label">Telefone</label>
+                    <input className="cp-input cp-input--dark" name="telefone" type="tel"
+                      placeholder="(00) 00000-0000"
+                      value={form.telefone} onChange={handleChange} required />
+                  </div>
+                  <div className="cp-field">
+                    <label className="cp-label">E-mail</label>
+                    <input className="cp-input cp-input--dark" name="email" type="email"
+                      value={form.email} onChange={handleChange} required />
+                  </div>
+                </div>
+              </div>
+            )}
 
-            <Link to="/minha-conta" className="cp-submit">Salvar perfil</Link>
+            <button type="submit" className="cp-submit">Salvar perfil</button>
           </form>
         </div>
       </div>

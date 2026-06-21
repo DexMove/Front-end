@@ -22,7 +22,7 @@ export default function EditarPaciente() {
   function handleSubmit(e) {
     e.preventDefault();
     console.log("Paciente atualizado:", form);
-    navigate("/minha-conta");
+    navigate("/minha-conta2");
   }
 
   return (
@@ -32,8 +32,8 @@ export default function EditarPaciente() {
         <div className="ep-card">
 
           <div className="ep-header">
-            <h1 className="ep-title">Editar dados clínicos</h1>
-            <p className="ep-subtitle">Altere as informações clínicas do paciente</p>
+            <h1 className="ep-title">Editar seus dados clínicos</h1>
+            <p className="ep-subtitle">Altere suas informações clínicas </p>
           </div>
 
           <form onSubmit={handleSubmit}>
@@ -94,7 +94,7 @@ export default function EditarPaciente() {
             </div>
 
             <div className="ep-actions">
-              <button type="button" className="ep-btn-cancel" onClick={() => navigate("/minha-conta")}>
+              <button type="button" className="ep-btn-cancel" onClick={() => navigate("/minha-conta2")}>
                 Cancelar
               </button>
               <button type="submit" className="ep-btn-save">

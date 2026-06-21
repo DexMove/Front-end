@@ -32,7 +32,7 @@ const IconAbout = () => (
   </svg>
 );
 
-export default function Dados() {
+export default function DadosProfissionais() {
   const navigate = useNavigate();
   const location = useLocation();
   const [termos, setTermos] = useState(false);
@@ -45,7 +45,7 @@ export default function Dados() {
     e.preventDefault();
     const dadosCompletos = { ...location.state, ...dados };
     console.log("Cadastro completo:", dadosCompletos);
-    navigate("/minha-conta");
+    navigate("/conta-fisio");
   }
 
   return (
