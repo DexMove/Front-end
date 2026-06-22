@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import { Ruler } from 'lucide-react';
 import styles from '../CSS/Section_8.module.css';
-import ortesem1 from '../../../assets/imag/ortesem1.png';
-import ortesem2 from '../../../assets/imag/ortesem2.png';
-import ortesem3 from '../../../assets/imag/ortesem3.png';
+import ortesem1 from '../../../assets/imag/ortesen1.png';
+import ortesem2 from '../../../assets/imag/ortesen2.png';
+import ortesem3 from '../../../assets/imag/ortesen3.png';
 import ortesem4 from '../../../assets/imag/ortesem4.png';
 import ortese from '../../../assets/imag/2ortese.png';
 import celular from '../../../assets/imag/celular.png';

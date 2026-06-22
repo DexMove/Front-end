@@ -15,6 +15,7 @@ import { useNavigate } from 'react-router-dom';
 function Section_11() {
     const navigate = useNavigate();
     return (
+        <>
         <section className={styles.section11}>
             <img src={vector20} alt="vector20" className={styles.vector20} />
             <img src={vector21} alt="vector21" className={styles.vector21} />
@@ -59,7 +60,8 @@ function Section_11() {
 
             </div>
         </section>
-          
+        <Footer />
+          </>
     )
 }
 export default Section_11
