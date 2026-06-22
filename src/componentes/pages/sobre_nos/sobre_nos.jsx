@@ -1,12 +1,13 @@
 import { useState } from "react";
 import styles from "./sobre_nos.module.css";
 
-import equipe1 from "../../../assets/image_62.png";
-import equipe2 from "../../../assets/image_62.png";
-import equipe3 from "../../../assets/image_62.png";
-import equipe4 from "../../../assets/image_62.png";
-import equipe5 from "../../../assets/image_62.png";
-import equipe6 from "../../../assets/image_62.png";
+// Importação das imagens
+import equipe1 from "../../../assets/Thalyson.png";
+import equipe2 from "../../../assets/Vitoria.png";
+import equipe3 from "../../../assets/Christian.png";
+import equipe4 from "../../../assets/Amanda.png";
+import equipe5 from "../../../assets/Melissa.png";
+import equipe6 from "../../../assets/Luiz.png";
 import logoSenac from "../../../assets/image_62.png";
 import logoProa from "../../../assets/image_62.png";
 import logoPorto from "../../../assets/image_62.png";
@@ -14,6 +15,7 @@ import iconeMissao from "../../../assets/missao.png";
 import iconeVisao from "../../../assets/visao.png";
 import iconeValores from "../../../assets/valores.png";
 import videoDexMove from "../../../assets/dexmove.mp4";
+import Footer from '../../Footer';
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
@@ -23,13 +25,14 @@ import "swiper/css/pagination";
 import Header from '../../Header';
 
 function SobreNos() {
+  // CORREÇÃO: Atribuindo cada imagem importada ao seu respectivo membro
   const equipe = [
-    { id: 1, nome: "Dra. Ana Beatriz", cargo: "CEO & Fundadora", imagem: equipe1 },
-    { id: 2, nome: "Dr. Carlos Mendes", cargo: "CTO & Inovação", imagem: equipe2 },
-    { id: 3, nome: "Ma. Fernanda Lima", cargo: "Head de Reabilitação", imagem: equipe3 },
-    { id: 4, nome: "Dr. Ricardo Souza", cargo: "Engenheiro Chefe", imagem: equipe1 },
-    { id: 5, nome: "Dra. Patrícia Oliveira", cargo: "Fisioterapeuta Líder", imagem: equipe2 },
-    { id: 6, nome: "Me. Lucas Santos", cargo: "Desenvolvedor Sênior", imagem: equipe3 },
+    { id: 1, nome: "Thalyson Silva", cargo: "CEO & Fundadora", imagem: equipe1 },
+    { id: 2, nome: "Vitoria Rocha", cargo: "CTO & Inovação", imagem: equipe2 },
+    { id: 3, nome: "Christian Lima", cargo: "Head de Reabilitação", imagem: equipe3 },
+    { id: 4, nome: "Amanda Souza", cargo: "Engenheira Chefe", imagem: equipe4 },
+    { id: 5, nome: "Melissa Oliveira", cargo: "Fisioterapeuta Líder", imagem: equipe5 },
+    { id: 6, nome: "Luiz Santos", cargo: "Desenvolvedor Sênior", imagem: equipe6 },
   ];
 
   const apoiadores = [
@@ -59,7 +62,7 @@ function SobreNos() {
         </div>
       </section>
 
-      {/* ========== SEÇÃO 2: TEXTO CENTRALIZADO (Sem imagem) ========== */}
+      {/* ========== SEÇÃO 2: TEXTO CENTRALIZADO ========== */}
       <section className={styles.secaoOndas}>
         <div className={styles.containerOndas}>
           <svg viewBox="0 0 1440 500" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -81,7 +84,7 @@ function SobreNos() {
         </div>
       </section>
 
-      {/* ========== SEÇÃO 3: CHATBOT DEXY (Com Vídeo) ========== */}
+      {/* ========== SEÇÃO 3: CHATBOT DEXY (Com Vídeo de altura menor) ========== */}
       <section className={styles.secaoDexy}>
         <div className={styles.dexyContainer}>
           <div className={styles.dexyTexto}>
@@ -110,7 +113,6 @@ function SobreNos() {
             </div>
           </div>
           <div className={styles.dexyImagem}>
-            {/* Substituído imagem por vídeo */}
             <video autoPlay loop muted playsInline className={styles.videoDexy}>
               <source src={videoDexMove} type="video/mp4" />
               Seu navegador não suporta vídeos.
@@ -197,6 +199,7 @@ function SobreNos() {
           ))}
         </Swiper>
       </section>
+      <Footer/>
     </div>
   );
 }
