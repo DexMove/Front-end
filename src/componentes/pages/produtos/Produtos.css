@@ -12,6 +12,7 @@ main{
     font-family: 'roboto', sans-serif;
     box-sizing: border-box;
     overflow-x: hidden;
+    
 }
 #hero{
     position: relative;
@@ -352,6 +353,7 @@ main{
     margin-top: 0;
     margin-left: 0;
     flex: 0 0 auto;
+    
 }
 
 /* RESPONSIVE: tablet e mobile */
