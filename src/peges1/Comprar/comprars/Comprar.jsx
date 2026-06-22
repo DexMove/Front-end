@@ -15,15 +15,18 @@ import {
 } from "lucide-react";
 import Footer from "../../../componentes/Footer";
 import styles from '../Css.css/Comprar.module.css';
- 
+import vector22 from '../../../assets/imag/Vector22.svg';
+import vector23 from '../../../assets/imag/Vector23.svg';
+import vector24 from '../../../assets/imag/Vector24.svg';
+import vector25 from '../../../assets/imag/Vector25.svg';
 // Usando imagens do projeto para o resumo do pedido
-import orteset from '../../../assets/imag/orteset.png';
- 
+import orteset from '../../../assets/imag/2ortese.png';
+
 function Comprar() {
   const navigate = useNavigate();
   const [etapa, setEtapa] = useState(1);
   const [metodoPagamento, setMetodoPagamento] = useState("cartao"); // "cartao", "pix", "boleto"
- 
+
   // Form States
   const [dados, setDados] = useState({
     nome: "",
@@ -43,7 +46,7 @@ function Comprar() {
     cartaoCvv: "",
     parcelas: "1"
   });
- 
+
   // Simulando progresso automático do processamento (Etapa 4 -> 5)
   useEffect(() => {
     if (etapa === 4) {
@@ -53,11 +56,11 @@ function Comprar() {
       return () => clearTimeout(timer);
     }
   }, [etapa]);
- 
+
   const handleChange = (e) => {
     setDados({ ...dados, [e.target.name]: e.target.value });
   };
- 
+
   const handlesNext = (e) => {
     e.preventDefault();
     if (etapa < 3) {
@@ -66,7 +69,7 @@ function Comprar() {
       setEtapa(4); // Vai para o processamento
     }
   };
- 
+
   const handleBack = () => {
     if (etapa > 1 && etapa < 4) {
       setEtapa(etapa - 1);
@@ -74,31 +77,40 @@ function Comprar() {
       navigate(-1);
     }
   };
- 
+
   const stepsList = [
     { id: 1, label: "Dados pessoais", icon: <User size={18} /> },
     { id: 2, label: "Endereço", icon: <MapPin size={18} /> },
     { id: 3, label: "Pagamento", icon: <CreditCard size={18} /> },
     { id: 4, label: "Confirmação", icon: <CheckCircle size={18} /> }
   ];
- 
+
   return (
+
     <div className={styles.paginaWrapper}>
- 
-      {/* Top Wave */}
-      <svg viewBox="0 0 1000 150" preserveAspectRatio="none" className={styles.topWave}>
-        <path d="M0,40 Q250,120 500,80 T1000,100 L1000,0 L0,0 Z" fill="#f6d04c" opacity="0.5" />
-        <path d="M0,0 L1000,0 L1000,80 Q750,60 500,100 T0,20 Z" fill="#0a5c61" opacity="0.07" />
-      </svg>
- 
-      <main className={styles.conteudoPrincipal}>
-        {etapa <= 3 && (
-          <div className={styles.cabecalhoCheckout}>
-            <h1>Finalizar compra</h1>
-            <p>Preencha seus dados para continuar</p>
-          </div>
-        )}
- 
+
+    {/* Top Wave */}
+    <svg
+      viewBox="0 0 1000 150"
+      preserveAspectRatio="none"
+      className={styles.topWave}
+    >
+      ...
+    </svg>
+
+    <main className={styles.conteudoPrincipal}>
+
+      <img src={vector22} alt="" className={styles.vector22} />
+      <img src={vector23} alt="" className={styles.vector23} />
+      <img src={vector24} alt="" className={styles.vector24} />
+      <img src={vector25} alt="" className={styles.vector25} />
+
+      {etapa <= 3 && (
+        <div className={styles.cabecalhoCheckout}>
+          <h1>Finalizar compra</h1>
+          <p>Preencha seus dados para continuar</p>
+        </div>
+      )}
         {/* Barra de etapas (só aparece nas etapas de preenchimento 1 a 3) */}
         {etapa <= 3 && (
           <div className={styles.etapasBarra}>
@@ -121,11 +133,11 @@ function Comprar() {
             })}
           </div>
         )}
- 
+
         <div className={styles.checkoutLayoutGrid}>
           {/* LADO ESQUERDO: Formulários ou Telas de Status */}
           <div className={`${styles.cardPainelEsquerdo} ${etapa >= 4 ? styles.cardCentralizado : ""}`}>
- 
+
             {/* ETAPA 1: Dados Pessoais */}
             {etapa === 1 && (
               <form onSubmit={handlesNext} className={styles.formSection}>
@@ -176,7 +188,7 @@ function Comprar() {
                     />
                   </div>
                 </div>
- 
+
                 <div className={styles.botoesAcoes}>
                   <button type="button" className={styles.btnVoltar} onClick={handleBack}>
                     <ArrowLeft size={16} /> VOLTAR
@@ -187,7 +199,7 @@ function Comprar() {
                 </div>
               </form>
             )}
- 
+
             {/* ETAPA 2: Endereço de Entrega */}
             {etapa === 2 && (
               <form onSubmit={handlesNext} className={styles.formSection}>
@@ -270,7 +282,7 @@ function Comprar() {
                     />
                   </div>
                 </div>
- 
+
                 <div className={styles.botoesAcoes}>
                   <button type="button" className={styles.btnVoltar} onClick={handleBack}>
                     <ArrowLeft size={16} /> VOLTAR
@@ -281,12 +293,12 @@ function Comprar() {
                 </div>
               </form>
             )}
- 
+
             {/* ETAPA 3: Forma de Pagamento */}
             {etapa === 3 && (
               <form onSubmit={handlesNext} className={styles.formSection}>
                 <h2 className={styles.tituloSecao}>Forma de pagamento</h2>
- 
+
                 {/* Abas/Opções de Pagamento */}
                 <div className={styles.metodosPagamentoAbas}>
                   <button
@@ -297,7 +309,7 @@ function Comprar() {
                     <CreditCard size={18} />
                     <span>Cartão de crédito</span>
                   </button>
- 
+
                   <button
                     type="button"
                     className={`${styles.abaMetodo} ${metodoPagamento === "pix" ? styles.abaMetodoAtiva : ""}`}
@@ -306,7 +318,7 @@ function Comprar() {
                     <QrCode size={18} />
                     <span>Pix</span>
                   </button>
- 
+
                   <button
                     type="button"
                     className={`${styles.abaMetodo} ${metodoPagamento === "boleto" ? styles.abaMetodoAtiva : ""}`}
@@ -316,7 +328,7 @@ function Comprar() {
                     <span>Boleto bancário</span>
                   </button>
                 </div>
- 
+
                 {/* Conteúdo dinâmico dependendo do método */}
                 {metodoPagamento === "cartao" && (
                   <div className={styles.formGridDuplo}>
@@ -382,7 +394,7 @@ function Comprar() {
                     </div>
                   </div>
                 )}
- 
+
                 {metodoPagamento === "pix" && (
                   <div className={styles.infoPagamentoAlternativo}>
                     <div className={styles.badgeSeguroMetodo}>Aprovação imediata</div>
@@ -390,7 +402,7 @@ function Comprar() {
                     <p>O código Pix será gerado após finalizar o pedido. Você poderá pagar escaneando o QR Code ou copiando o código "Pix Copia e Cola".</p>
                   </div>
                 )}
- 
+
                 {metodoPagamento === "boleto" && (
                   <div className={styles.infoPagamentoAlternativo}>
                     <div className={styles.badgeSeguroMetodo}>Aprovação em 1 dia útil</div>
@@ -398,7 +410,7 @@ function Comprar() {
                     <p>O boleto bancário será gerado após a confirmação do pedido. Você poderá imprimir ou pagar diretamente com o código de barras no seu internet banking.</p>
                   </div>
                 )}
- 
+
                 <div className={styles.botoesAcoes}>
                   <button type="button" className={styles.btnVoltar} onClick={handleBack}>
                     <ArrowLeft size={16} /> VOLTAR
@@ -409,7 +421,7 @@ function Comprar() {
                 </div>
               </form>
             )}
- 
+
             {/* ETAPA 4: Processando o Pedido */}
             {etapa === 4 && (
               <div className={styles.telaStatusProcessando}>
@@ -419,14 +431,14 @@ function Comprar() {
                 </div>
                 <h2>Processando seu pedido...</h2>
                 <p>Aguarde, estamos processando sua compra de forma segura.</p>
- 
+
                 <div className={styles.caixaSegurancaAmbiente}>
                   <ShieldCheck size={20} />
                   <span>Ambiente 100% seguro. Suas informações estão criptografadas.</span>
                 </div>
               </div>
             )}
- 
+
             {/* ETAPA 5: Sucesso no Pedido */}
             {etapa === 5 && (
               <div className={styles.telaStatusSucesso}>
@@ -436,7 +448,7 @@ function Comprar() {
                 <h2>Pedido realizado com sucesso!</h2>
                 <p className={styles.sucessoTxtSub}>Obrigado por comprar na DexMove.</p>
                 <p className={styles.sucessoMensagem}>Você acaba de dar um passo muito importante para melhorar sua qualidade de vida.</p>
- 
+
                 <div className={styles.botoesSucesso}>
                   <button onClick={() => navigate("/")} className={styles.btnAcompanhar}>
                     Acompanhar pedido
@@ -447,14 +459,14 @@ function Comprar() {
                 </div>
               </div>
             )}
- 
+
           </div>
- 
+
           {/* LADO DIREITO: Resumo do Pedido (só aparece nas etapas 1 a 3) */}
           {etapa <= 3 && (
             <div className={styles.cardResumoPedido}>
               <h3>Resumo do pedido</h3>
- 
+
               <div className={styles.itemResumoFlex}>
                 <div className={styles.itemResumoImagemBox}>
                   <img src={orteset} alt="Órtese MoveHand" />
@@ -468,9 +480,9 @@ function Comprar() {
                   R$ 5.000,00
                 </div>
               </div>
- 
+
               <div className={styles.divisorResumo}></div>
- 
+
               <div className={styles.detalhesLinhasValores}>
                 <div className={styles.linhaValorFila}>
                   <span>Subtotal</span>
@@ -486,7 +498,7 @@ function Comprar() {
                   <span>R$ 5.000,00</span>
                 </div>
               </div>
- 
+
               <div className={styles.compraSeguraSeloLateral}>
                 <ShieldCheck size={16} />
                 <span>Compra 100% segura e garantida</span>
@@ -495,16 +507,17 @@ function Comprar() {
           )}
         </div>
       </main>
- 
+
       {/* Wave divider antes do Footer */}
       <svg viewBox="0 0 1000 150" preserveAspectRatio="none" className={styles.bottomWaveDivider}>
         <path d="M0,150 L0,100 Q250,40 500,80 T1000,60 L1000,150 Z" fill="#0a5c61" />
         <path d="M0,150 L0,110 Q300,150 600,100 T1000,90 L1000,150 Z" fill="#f6d04c" opacity="0.4" />
       </svg>
- 
+
       <Footer />
+    
     </div>
   );
 }
- 
+
 export default Comprar;

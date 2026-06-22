@@ -4,6 +4,9 @@ import { Calendar, User, Phone, Cake } from 'lucide-react';
 import Layout from './Layout';
 import styles from './DetalhesAgendamento.module.css';
 import patientAvatar from '../../assets/imag/menino1.png';
+import vector16 from '../../assets/imag/Vector16.svg';
+import vector17 from '../../assets/imag/Vector17.svg';
+import vector18 from '../../assets/imag/Vector18.svg';
 
 function DetalhesAgendamento() {
   const navigate = useNavigate();
@@ -19,6 +22,9 @@ function DetalhesAgendamento() {
   return (
     <Layout>
       <div className={styles.pagina}>
+        <img src={vector16} alt="vector16" className={styles.vector16} />
+        <img src={vector17} alt="vector17" className={styles.vector17} />
+        <img src={vector18} alt="vector18" className={styles.vector18} />
         {/* Header */}
         <div className={styles.cabecalho}>
           <h1 className={styles.titulo}>Detalhes do agendamento</h1>

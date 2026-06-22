@@ -1,102 +1,122 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import Layout from '../Layout';
-import styles from '../css.fisio/Conta_fisio.module.css';
-import avatar from '../../../assets/imag/fisio2.png';
-
-function Conta_fisio() {
+import { useNavigate } from "react-router-dom";
+import Layout from "../Layout";
+import styles from "../css.fisio/Conta_fisio.module.css";
+import avatar from "../../../assets/imag/fisio2.png";
+import vector16 from '../../../assets/imag/Vector16.svg';
+import vector17 from '../../../assets/imag/Vector17.svg';
+import vector18 from '../../../assets/imag/Vector18.svg';
+import onda1 from '../../../assets/imag/Group274.svg';
+ 
+const IconEdit = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+  </svg>
+);
+ 
+export default function ContaFisio() {
   const navigate = useNavigate();
-
-  const handleEditInfo = () => {
-    navigate('/editar-perfil');
-  };
-
-  const handleGoToAgenda = () => {
-    navigate('/agenda');
-  };
-
-  const handleGoToDetails = () => {
-    navigate('/detalhes-agendamento');
-  };
-
-
+ 
+  const handleEditInfo = () => navigate("/editar-perfil");
+  const handleGoToAgenda = () => navigate("/agenda");
+  const handleGoToDetails = () => navigate("/detalhes-agendamento");
+ 
   return (
     <Layout>
-      <div className={styles.pagina}>
-        {/* Header */}
-        <div className={styles.cabecalho}>
-          <h1 className={styles.titulo}>Minha conta</h1>
-          <p className={styles.subtitulo}>Aqui estão suas informações profissionais</p>
-        </div>
-
-        {/* Profile Card */}
-        <div className={styles.perfilBox}>
-          <img src={avatar} alt="Avatar Lucas Pereira" className={styles.avatar} />
-          <div className={styles.perfilInfo}>
-            <h2 className={styles.nome}>Lucas Pereira</h2>
-            <p className={styles.cargo}>Fisioterapeuta</p>
-          </div>
-          <button className={styles.btnEditar} onClick={handleEditInfo}>
-            Editar informação
-          </button>
-        </div>
-
-        {/* Professional Info Grid */}
-        <div className={styles.infoBox}>
-          <div className={styles.infoLinha}>
-            <span className={styles.label}>E-mail</span>
-            <span className={styles.valor}>lucas.pereira@email.com</span>
-          </div>
-          <div className={styles.infoLinha}>
-            <span className={styles.label}>Telefone</span>
-            <span className={styles.valor}>(11) 98765-4321</span>
-          </div>
-          <div className={styles.infoLinha}>
-            <span className={styles.label}>CREFITO</span>
-            <span className={styles.valor}>123456-f</span>
-          </div>
-          <div className={styles.infoLinha}>
-            <span className={styles.label}>Especialidade</span>
-            <span className={styles.valor}>fisioterapia neurológica</span>
-          </div>
-          <div className={styles.infoLinha}>
-            <span className={styles.label}>Clínica/local</span>
-            <span className={styles.valor}>Clínica Movimento - SP</span>
-          </div>
-        </div>
-
-        {/* Upcoming Appointments Box */}
-        <div className={styles.agendaBox}>
-          <div className={styles.agendaHeader}>
-            <span className={styles.agendaTitulo}>Próximos agendamentos</span>
-            <span className={styles.agendaLink} onClick={handleGoToAgenda}>
-              Ver agenda completa.
-            </span>
-          </div>
-
-          <div className={styles.agendaLista}>
-            {/* Appointment 1 */}
-            <div className={styles.agendaItem} onClick={handleGoToDetails}>
-              <div className={styles.itemMeta}>
-                <span className={styles.agendaNome}>Gabriel Souza</span>
-                <span className={styles.agendaData}>21/05/2026 - 14:00</span>
-              </div>
-              <div className={styles.agendaDesc}>Avaliação inicial - Dexmove</div>
+      <div className={styles["cf-page"]}>
+        <img src={vector16} alt="vector16" className={styles.vector16} />
+        <img src={vector17} alt="vector17" className={styles.vector17} />
+        <img src={vector18} alt="vector18" className={styles.vector18} />
+        <img src={onda1} alt="onda1" className={styles.onda1} />
+        
+        <div className={styles["cf-container"]}>
+ 
+          <h1 className={styles["cf-page-title"]}>Minha conta</h1>
+          <p className={styles["cf-page-sub"]}>Aqui estão suas informações profissionais</p>
+ 
+          {/* Card de perfil + dados profissionais */}
+          <div className={styles["cf-card"]}>
+            <div className={styles["cf-card-header"]}>
+              <span className={styles["cf-card-label"]}>Dados profissionais</span>
+              <button className={styles["cf-edit-btn"]} onClick={handleEditInfo}>
+                <IconEdit /> Editar informação
+              </button>
             </div>
-
-            {/* Appointment 2 */}
-            <div className={styles.agendaItem} onClick={handleGoToAgenda}>
-              <div className={styles.itemMeta}>
-                <span className={styles.agendaNome}>Mariana Silva</span>
-                <span className={styles.agendaData}>21/05/2026 - 16:30</span>
+ 
+            <div className={styles["cf-profile-row"]}>
+              <img src={avatar} alt="Avatar Lucas Pereira" className={styles["cf-avatar"]} />
+              <div className={styles["cf-profile-info"]}>
+                <p className={styles["cf-name"]}>Lucas Pereira</p>
+                <p className={styles["cf-role"]}>Fisioterapeuta</p>
               </div>
-              <div className={styles.agendaDesc}>Sessão de acompanhamento</div>
+            </div>
+ 
+            <div className={styles["cf-info-grid"]}>
+              <div className={styles["cf-info-item"]}>
+                <span className={styles["cf-info-key"]}>E-mail</span>
+                <span className={styles["cf-info-val"]}>lucas.pereira@email.com</span>
+              </div>
+              <div className={styles["cf-info-item"]}>
+                <span className={styles["cf-info-key"]}>Telefone</span>
+                <span className={styles["cf-info-val"]}>(11) 98765-4321</span>
+              </div>
+              <div className={styles["cf-info-item"]}>
+                <span className={styles["cf-info-key"]}>CREFITO</span>
+                <span className={styles["cf-info-val"]}>123456-F</span>
+              </div>
+              <div className={styles["cf-info-item"]}>
+                <span className={styles["cf-info-key"]}>Especialidade</span>
+                <span className={styles["cf-info-val"]}>Fisioterapia Neurológica</span>
+              </div>
+              <div className={styles["cf-info-item"]}>
+                <span className={styles["cf-info-key"]}>Cidade</span>
+                <span className={styles["cf-info-val"]}>São Paulo</span>
+              </div>
+              <div className={styles["cf-info-item"]}>
+                <span className={styles["cf-info-key"]}>Estado</span>
+                <span className={styles["cf-info-val"]}>SP</span>
+              </div>
+              <div className={`${styles["cf-info-item"]} ${styles["cf-info-item--full"]}`}>
+                <span className={styles["cf-info-key"]}>Clínica/local</span>
+                <span className={styles["cf-info-val"]}>Clínica Movimento - SP</span>
+              </div>
+              <div className={`${styles["cf-info-item"]} ${styles["cf-info-item--full"]}`}>
+                <span className={styles["cf-info-key"]}>Biografia</span>
+                <span className={styles["cf-info-val"]}>Fisioterapeuta com 10 anos de experiência em reabilitação neurológica.</span>
+              </div>
             </div>
           </div>
+ 
+          {/* Card de próximos agendamentos */}
+          <div className={styles["cf-card"]}>
+            <div className={styles["cf-card-header"]}>
+              <span className={styles["cf-card-label"]}>Próximos agendamentos</span>
+              <span className={styles["cf-agenda-link"]} onClick={handleGoToAgenda}>
+                Ver agenda completa
+              </span>
+            </div>
+ 
+            <div className={styles["cf-agenda-list"]}>
+              <div className={styles["cf-agenda-item"]} onClick={handleGoToDetails}>
+                <div className={styles["cf-item-meta"]}>
+                  <span className={styles["cf-agenda-name"]}>Gabriel Souza</span>
+                  <span className={styles["cf-agenda-date"]}>21/05/2026 - 14:00</span>
+                </div>
+                <div className={styles["cf-agenda-desc"]}>Avaliação inicial - Dexmove</div>
+              </div>
+ 
+              <div className={styles["cf-agenda-item"]} onClick={handleGoToAgenda}>
+                <div className={styles["cf-item-meta"]}>
+                  <span className={styles["cf-agenda-name"]}>Mariana Silva</span>
+                  <span className={styles["cf-agenda-date"]}>21/05/2026 - 16:30</span>
+                </div>
+                <div className={styles["cf-agenda-desc"]}>Sessão de acompanhamento</div>
+              </div>
+            </div>
+          </div>
+ 
         </div>
       </div>
     </Layout>
   );
 }
-
-export default Conta_fisio;

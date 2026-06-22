@@ -2,9 +2,14 @@
     width: 100%;
     background-color: #0B5C6A;
     padding: 60px 80px 30px;
+    position: relative;
+    z-index: 10;
+    overflow: visible;
     color: white;
     font-family: 'Montserrat', sans-serif;
 }
+
+.footer-container { position: relative; z-index: 2; }
 
 .footer-container{
     display: flex;

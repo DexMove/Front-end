@@ -1,247 +1,273 @@
-.pagina {
-  max-width: 700px;
+.cf-page {
   width: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  padding: clamp(20px, 3.5vw, 36px) 4% clamp(20px, 4.5vw, 36px);
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ondas de fundo */
+
+.vector16 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 280px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 1rem;
+}
+
+.vector17 {
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    bottom: 440px;
+    left: 0px;
+    z-index: 0;
+    margin-top: 600px;
+}
+
+.vector18 {
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    bottom: 430px;
+    left: 0px;
+    z-index: 0;
+    margin-top: 900px;
+}
+.onda1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: -200px;
+    left: 0px;
+    z-index: 1;
+}
+
+.cf-container {
+  width: 100%;
+  max-width: 720px;
+  position: relative;
+  z-index: 1;
+}
+ 
+.cf-grid {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
-  padding-bottom: 4rem;
-}
-
-/* Header */
-.cabecalho {
-  text-align: center;
-  margin-top: 1rem;
-}
-
-.titulo {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 32px;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin: 0 0 6px 0;
-  letter-spacing: -0.5px;
-}
-
-.subtitulo {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 15px;
-  color: #666666;
-  margin: 0;
-}
-
-/* Profile Box */
-.perfilBox {
-  display: flex;
-  align-items: center;
   gap: 24px;
-  margin-top: 0.5rem;
 }
-
-.avatar {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-.perfilInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.nome {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 26px;
+ 
+.cf-page-title {
+  font-size: clamp(2.8rem, 4vw, 5rem);
   font-weight: 700;
-  color: #2c2c2c;
-  margin: 0;
+  color: #0B5C6A;
+  margin-bottom: 8px;
+  text-align: center;
 }
-
-.cargo {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 16px;
-  color: #666666;
-  margin: 0;
-}
-
-.btnEditar {
-  background-color: #F2DF92;
+ 
+.cf-page-sub {
+  font-size: clamp(1.7rem, 2vw, 2.8rem);
   color: #1a1a1a;
-  border: none;
-  border-radius: 10px;
-  padding: 10px 20px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  margin-left: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
-  transition: all 0.2s ease;
+  margin-bottom: clamp(24px, 3vw, 40px);
+  text-align: center;
 }
-
-.btnEditar:hover {
-  background-color: #e5cb6e;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
-}
-
-/* Info Box / Key-Value Pairs */
-.infoBox {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 1rem;
-}
-
-.infoLinha {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 0;
-}
-
-.label {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  color: #1a1a1a;
-}
-
-.valor {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 20px;
-  color: #333333;
-  font-weight: 500;
-}
-
-/* Upcoming Appointments Box */
-.agendaBox {
-  background-color: #FFFBF5;
-  border: 1px solid rgba(239, 163, 92, 0.15);
+ 
+.cf-card {
+  background: #fffbf4;
+  border: 1px solid #e2ddd5;
   border-radius: 16px;
-  padding: 1.5rem 2rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-  margin-top: 1.5rem;
+  padding: clamp(30px, 4vw, 56px) clamp(24px, 4vw, 52px);
+  box-sizing: border-box;
 }
 
-.agendaHeader {
+/* Espaçamento entre cards (dados profissionais e próximos agendamentos) */
+.cf-card + .cf-card {
+  margin-top: clamp(18px, 3vw, 36px);
+}
+ 
+.cf-card-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding-bottom: 0.8rem;
-  margin-bottom: 1rem;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 8px;
 }
-
-.agendaTitulo {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 15px;
+ 
+.cf-card-label {
+  font-size: 1px;
   font-weight: 700;
-  color: #000000;
+  color: #076576;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
-
-.agendaLink {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 14px;
+ 
+.cf-edit-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111;
+  text-decoration: none;
+  background: #f5e17a;
+  border: 1px solid rgba(245, 162, 85, 0.5);
+  border-radius: 20px;
+  padding: 7px 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+ 
+.cf-edit-btn:hover {
+  background: #f5d67a;
+}
+ 
+.cf-agenda-link {
+  font-size: 1.25rem;
   color: #666666;
   font-weight: 500;
   cursor: pointer;
   transition: color 0.2s ease;
 }
-
-.agendaLink:hover {
-  color: #000000;
+ 
+.cf-agenda-link:hover {
+  color: #076576;
   text-decoration: underline;
 }
-
-.agendaLista {
+ 
+/* Perfil (avatar + nome + cargo) */
+.cf-profile-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 3vw, 32px);
+  margin-bottom: 28px;
+}
+ 
+.cf-avatar {
+  width: clamp(90px, 10vw, 120px);
+  height: clamp(90px, 10vw, 120px);
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+}
+ 
+.cf-profile-info {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 4px;
 }
-
-.agendaItem {
+ 
+.cf-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+ 
+.cf-role {
+  font-size: 1.25rem;
+  color: #666;
+  margin: 0;
+}
+ 
+/* Grid de dados profissionais */
+.cf-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 28px;
+}
+ 
+.cf-info-item--full {
+  grid-column: span 2;
+}
+ 
+.cf-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+ 
+.cf-info-key {
+  font-size: 1.25rem;
+  color: #333;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+ 
+.cf-info-val {
+  font-size: 1.25rem;
+  color: #111;
+  font-weight: 500;
+}
+ 
+/* Lista de próximos agendamentos */
+.cf-agenda-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+ 
+.cf-agenda-item {
   display: flex;
   flex-direction: column;
   gap: 4px;
   cursor: pointer;
-  padding: 8px;
-  border-radius: 8px;
+  padding: 12px 14px;
+  border-radius: 10px;
   transition: all 0.2s ease;
 }
-
-.agendaItem:hover {
-  background-color: rgba(239, 163, 92, 0.06);
+ 
+.cf-agenda-item:hover {
+  background-color: rgba(11, 92, 106, 0.06);
   transform: translateX(4px);
 }
-
-.itemMeta {
+ 
+.cf-item-meta {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-.agendaNome {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 15px;
-  font-weight: 600;
-  color: #000000;
+.cf-card-label {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #076576;
+  text-transform: uppercase;
 }
-
-.agendaData {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 14px;
-  color: #333333;
+ 
+.cf-agenda-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111;
+}
+ 
+.cf-agenda-date {
+  font-size: 1.25rem;
+  color: #333;
   font-weight: 500;
 }
-
-.agendaDesc {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 13px;
-  color: #666666;
-  font-weight: 400;
+ 
+.cf-agenda-desc {
+  font-size: 1.25rem;
+  color: #666;
 }
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .pagina {
-    padding: 0 1rem;
-    gap: 1.5rem;
-  }
-
-  .perfilBox {
-    flex-direction: column;
-    text-align: center;
-    gap: 12px;
-  }
-
-  .btnEditar {
-    margin-left: 0;
-    margin-top: 8px;
-  }
-
-  .infoLinha {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-    border-bottom: 1px solid #f0f0f0;
-    padding-bottom: 0.8rem;
-  }
-
-  .valor {
-    text-align: left;
-    font-size: 18px;
-  }
-
-  .label {
-    font-size: 16px;
-  }
-
-  .agendaHeader {
-    flex-direction: column;
-    gap: 8px;
-    align-items: flex-start;
-  }
+ 
+/* ── Responsividade ── */
+@media (max-width: 600px) {
+  .cf-profile-row { flex-direction: column; align-items: center; text-align: center; }
+  .cf-info-grid { grid-template-columns: 1fr; }
+  .cf-info-item--full { grid-column: span 1; }
+  .cf-item-meta { flex-direction: column; align-items: flex-start; gap: 2px; }
+}
+ 
+@media (max-width: 430px) {
+  .cf-card-header { flex-direction: column; align-items: flex-start; }
 }
