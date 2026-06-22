@@ -137,7 +137,7 @@ export default function CompletarPerfil() {
             {quemUsa === "outro" && (
               <div className="cp-responsavel">
                 <p className="cp-responsavel-title">Dados do responsável</p>
-                <div className="cp-row">
+               
                   <div className="cp-field">
                     <label className="cp-label">Nome da responsável</label>
                     <input className="cp-input cp-input--dark" name="nomeResponsavel" type="text"
@@ -158,14 +158,9 @@ export default function CompletarPerfil() {
                       </select>
                     </div>
                   </div>
-                </div>
+            
                 <div className="cp-row">
-                  <div className="cp-field">
-                    <label className="cp-label">Telefone</label>
-                    <input className="cp-input cp-input--dark" name="telefone" type="tel"
-                      placeholder="(00) 00000-0000"
-                      value={form.telefone} onChange={handleChange} required />
-                  </div>
+                  
                   <div className="cp-field">
                     <label className="cp-label">E-mail</label>
                     <input className="cp-input cp-input--dark" name="email" type="email"
