@@ -61,7 +61,7 @@
 }
 
 .plano-card {
-  width: 330px;
+  width: 50%;
   min-height: 470px;
   padding: 36px 30px 26px;
   background-color: white;
@@ -101,12 +101,13 @@
 }
 
 .valor-p {
-  margin: 0 0 24px;
-  font-size: 30px;
+  font-size: 24px;
   line-height: 1.1;
-  font-weight: 800;
+  font-weight: 700;
 }
-
+.valor-p2{
+  margin-bottom: 24px;
+}
 .beneficios {
   display: flex;
   flex-direction: column;

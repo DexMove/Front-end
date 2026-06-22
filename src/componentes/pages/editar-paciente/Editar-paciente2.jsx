@@ -4,7 +4,7 @@ import Footer from "../../Footer";
 import { useNavigate } from "react-router-dom";
 import Header from '../../Header';
 
-export default function EditarPaciente() {
+export default function EditarPaciente2() {
   const navigate = useNavigate();
   const [form, setForm] = useState({
     nomePaciente: "Gabriel Souza",
@@ -13,6 +13,7 @@ export default function EditarPaciente() {
     peso: "72",
     diagnostico: "AVC",
     grauDificuldade: "Moderado",
+    objetivo: "Recuperar movimentos finos da mão",
   });
 
   function handleChange(e) {
@@ -89,6 +90,19 @@ export default function EditarPaciente() {
                   <option>Leve</option>
                   <option>Moderado</option>
                   <option>Grave</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="ep-field ep-field--full">
+              <label className="ep-label">Principal objetivo da reabilitação</label>
+              <div className="ep-select-wrap">
+                <select className="ep-select" name="objetivo" value={form.objetivo} onChange={handleChange}>
+                  <option>Recuperar movimentos finos da mão</option>
+                  <option>Reduzir espasticidade</option>
+                  <option>Aumentar amplitude de movimento</option>
+                  <option>Fortalecimento muscular</option>
+                  <option>Outro</option>
                 </select>
               </div>
             </div>

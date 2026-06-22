@@ -88,7 +88,26 @@
   display: block;
 }
 
-.conteudoOndas {
+.containerTextoDestaque {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.textoOndasCentralizado {
+  color: white;
+  text-align: center;
+  max-width: 900px;
+  width: 100%;
+}
+
+.textoOndas {
   position: relative;
   z-index: 2;
   max-width: 1300px;
@@ -96,42 +115,34 @@
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center; /* ALTERADO: de space-between para center */
   gap: 60px;
   padding: 80px 0;
 }
 
 .textoOndas {
-  flex: 1;
+  flex: none; /* ALTERADO: de 1 para none para respeitar o max-width */
+  width: 100%;
+  max-width: 900px; /* ADICIONADO: para o texto não ficar largo demais ao centralizar */
   color: white;
-  margin-left: 85px;
+  margin-left: 0; /* ALTERADO: removido os 85px */
   margin-top: -200px;
+  text-align: center; /* ADICIONADO: centraliza o texto */
 }
 
 .textoOndas h2 {
-  font-size: 42px;
+  font-size: 56px; /* ALTERADO: aumentado de 42px */
   margin-bottom: 20px;
 }
 
 .textoOndas p {
-  font-size: 30px;
+  font-size: 32px; /* ALTERADO: aumentado de 30px */
   line-height: 1.6;
 }
 
+/* Mantido para não quebrar caso ainda existam referências, mas sem uso no novo layout */
 .imagemOndas {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: -200px;
-}
-
-.imagemEquipe {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  border-radius: 30px;
-  object-fit: cover;
+  display: none; 
 }
 
 .ondaDexy {
@@ -220,6 +231,15 @@
   align-items: center;
 }
 
+/* ADICIONADO: Estilo para o vídeo da Dexy com altura menor */
+.videoDexy {
+  max-width: 450px;
+  width: 100%;
+  height: 300px; /* Altura reduzida conforme pedido */
+  object-fit: cover;
+  border-radius: 30px;
+}
+
 .imagemDex {
   max-width: 450px;
   width: 100%;
@@ -260,11 +280,6 @@
 
 .mvvCard:hover {
   transform: translateY(-8px);
-}
-
-.mvvIcon {
-  font-size: 48px;
-  margin-bottom: 20px;
 }
 
 .mvvCard h3 {
@@ -358,25 +373,8 @@
   text-align: center;
 }
 
-.overlayEquipe p {
-  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-
-.bioEquipe {
-  color: #f3e396;
-  font-size: 14px;
-  font-weight: normal;
-}
-
 .cardEquipe:hover .overlayEquipe {
   opacity: 1;
-}
-
-.cardEquipe:hover .fotoEquipe {
-  transform: scale(1.05);
 }
 
 .nomeEquipe {
@@ -462,7 +460,6 @@
 
 /* ========== RESPONSIVIDADE ========== */
 
-/* Tablet (768px - 1024px) */
 @media (max-width: 1024px) {
   .conteudoOndas {
     flex-direction: column;
@@ -475,20 +472,12 @@
     margin-top: 0;
   }
 
-  .imagemOndas {
-    margin-top: 0;
-  }
-
   .textoOndas h2 {
     font-size: 32px;
   }
 
   .textoOndas p {
     font-size: 20px;
-  }
-
-  .imagemEquipe {
-    max-width: 400px;
   }
 
   .dexyContainer {
@@ -516,8 +505,9 @@
     font-size: 20px;
   }
 
-  .imagemDex {
+  .videoDexy {
     max-width: 350px;
+    height: 250px;
   }
 
   .equipeGrid {
@@ -530,7 +520,6 @@
   }
 }
 
-/* Mobile (até 768px) */
 @media (max-width: 768px) {
   .secaoVideo {
     height: 70vh;
@@ -552,10 +541,6 @@
   .textoOndas p {
     font-size: 16px;
     line-height: 1.4;
-  }
-
-  .imagemEquipe {
-    max-width: 280px;
   }
 
   .secaoDexy {
@@ -585,8 +570,9 @@
     font-size: 16px;
   }
 
-  .imagemDex {
+  .videoDexy {
     max-width: 250px;
+    height: 200px;
   }
 
   .secaoMVV h2,
@@ -636,14 +622,13 @@
   }
 }
 
-/* Mobile pequeno (até 480px) */
 @media (max-width: 480px) {
   .videoConteudo h1 {
     font-size: 28px;
   }
 
   .equipeGrid {
-    grid-template-columns: 1fr; /* 1 coluna apenas em telas muito pequenas */
+    grid-template-columns: 1fr;
     gap: 30px;
   }
   
@@ -676,8 +661,9 @@
     font-size: 14px;
   }
 
-  .imagemDex {
+  .videoDexy {
     max-width: 200px;
+    height: 180px;
   }
 
   .secaoMVV h2,
