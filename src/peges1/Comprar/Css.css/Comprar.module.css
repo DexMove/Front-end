@@ -1,14 +1,51 @@
-paginaWrapper {
+.paginaWrapper {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   background-color: #faf9f6;
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
+.vector22,
+.vector23,
+.vector24,
+.vector25 {
+    position: absolute;
+    width: 100%;
+    left: -5px;
+    pointer-events: none;
+    z-index: -1;
+}
+.vector22 {
+    height: 90%;
+    bottom: 80px;
+    top: 110px;
+    
+}
+
+.vector23 {
+    height: 90%;
+    bottom: 0px;
+    z-index: -1;
+    top: 150px;
+}
+
+.vector24 {
+    height: 90%;
+    bottom: 110px;
+    z-index: -2;
+    top: 50px;
+}
+
+.vector25 {
+    height: 90%;
+    bottom: 90px;
+    z-index: -2;
+    top: 90px;
+}
  
-/* Onda do topo, atrás do cabeçalho */
+
 .topWave {
   position: absolute;
   top: 0;
@@ -19,12 +56,11 @@ paginaWrapper {
   pointer-events: none;
 }
  
-/* Onda divisora antes do Footer */
 .bottomWaveDivider {
   display: block;
   width: 100%;
   height: 90px;
-  margin-bottom: -1px; /* fecha o gap com o footer */
+  margin-bottom: -1px; 
   position: relative;
   z-index: 1;
 }

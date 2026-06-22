@@ -1,10 +1,11 @@
 .pagina {
-  max-width: 700px;
+  max-width: min(96vw, 1180px);
   width: 100%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding-bottom: 4rem;
+  gap: 1.8rem;
+  padding: 0 1.5rem 2rem;
 }
 
 /* Header */
@@ -24,7 +25,7 @@
 
 .subtitulo {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 15px;
+  font-size: 1.25rem;
   color: #666666;
   margin: 0;
 }
@@ -38,13 +39,14 @@
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
   justify-content: flex-start;
+  width: 100%;
 }
 
 .tabBtn {
   background: none;
   border: none;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
   color: #888888;
   cursor: pointer;
@@ -92,6 +94,7 @@
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.01);
+  width: 100%;
 }
 
 .appointmentCard:hover {
@@ -109,14 +112,14 @@
 
 .datetime {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 15px;
+  font-size: 1.25rem;
   font-weight: 600;
   color: #333333;
 }
 
 .patientName {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 22px;
+  font-size: 1.25rem;
   font-weight: 700;
   color: #1a1a1a;
   margin: 2px 0;
@@ -124,7 +127,7 @@
 
 .description {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 14px;
+  font-size: 1.25rem;
   color: #666666;
   font-weight: 400;
 }
@@ -139,7 +142,7 @@
   padding: 6px 16px;
   border-radius: 20px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 13px;
+  font-size: 1.25rem;
   font-weight: 600;
   text-align: center;
 }
@@ -167,6 +170,7 @@
   display: flex;
   justify-content: center;
   margin-top: 1.5rem;
+  width: 100%;
 }
 
 .btnAgendaCompleta {
@@ -176,7 +180,7 @@
   border-radius: 30px;
   padding: 12px 32px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 15px;
+  font-size: 1.25rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -203,7 +207,7 @@
   }
 
   .tabBtn {
-    font-size: 18px;
+    font-size: 1.25rem;
   }
 
   .appointmentCard {

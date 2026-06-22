@@ -3,6 +3,8 @@ function Footer() {
   return (
     <footer className="footer">
 
+      {/* waves removed per request */}
+
       <div className="footer-container">
 
         <div className="footer-col" id='dexmove'>
