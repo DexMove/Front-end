@@ -9,7 +9,7 @@ import Onda2 from "../../../assets/onda2.png";
 import Dupla from "../../../assets/dupla.png"
 import Direita from "../../../assets/direita1.png"
 import Esquerda from "../../../assets/esquerda.png"
-import Carregador from "../../../assets/carregador.png"
+import Acessorio from "../../../assets/acessorio.png"
 import Header from '../../Header';
 import maozinha from "../../../assets/maozinha.png"
 import Wave from "../../Wave"
@@ -83,13 +83,13 @@ function Produtos(){
                 <div id="kit">
                     <div className="kit_imagem">
                     <img className="dup" src={Dupla}  />
-                    <img className="car" src={Carregador} />
+                    <img className="car" src={Acessorio} />
                 </div>
                 <div className="kit_textos">
                         <p className="ortese">Kit</p>
                         <h2>MoveHand <br />+ acessório</h2>
                         <p className="avaliacao"><span>★★★★★</span>4.9 (128 avaliações)</p>
-                        <p className="texto_kit">MoveHand Pro + carregador de 30W compatível com todos os modelos MoveHand. Carga completa em menos de 90 minutos.</p>
+                        <p className="texto_kit">MoveHand Par + Separador funcional para posicionamento dos dedos. Facilita a colocação da órtese, mantendo os dedos suavemente separados de forma confortável e segura.</p>
                         <p className="preco">A partir de <br />
                         <span>R$ 000</span> <br />
                         ou 12x de R$ 000</p>
@@ -98,13 +98,13 @@ function Produtos(){
                 </div>
                 <div id="carregador">
                     <div className="carregador_imagem">
-                    <img src={Carregador} />
+                    <img src={Acessorio} />
                 </div>
                 <div className="carregador_textos">
                         <p className="ortese">Acessório</p>
-                        <h2>Carregador USB-C</h2>
+                        <h2>Separador de dedos</h2>
                         <p className="avaliacao"><span>★★★★★</span>4.9 (128 avaliações)</p>
-                        <p className="texto_carregador">Carregador de 30W compatível com todos os modelos MoveHand. <br /> Carga completa em menos de 90 minutos.</p>
+                        <p className="texto_carregador">Separador funcional para posicionamento dos dedos. Facilita a colocação da órtese, mantendo os dedos suavemente separados de forma confortável e segura.</p>
                         <p className="preco">A partir de <br />
                         <span>R$ 000</span> <br />
                         ou 12x de R$ 000</p>
