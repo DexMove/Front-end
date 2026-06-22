@@ -10,26 +10,37 @@ import celular from '../../../assets/imag/celular.png';
 import bateria from '../../../assets/imag/bateria.png';
 import bluet from '../../../assets/imag/bluet.png';
 import mao from '../../../assets/imag/mao.png';
+import { useState } from 'react';
 
+const imagens = [
+  ortesem1,
+  ortesem2,
+  ortesem3,
+  ortesem4,
+];
 
 function Section_8() {
     const navigate = useNavigate();
+    const [imagemSelecionada, setImagemSelecionada] = useState(ortese);
     return (
         <section className={styles.section8}>
 
             <div className={styles.esquerda}>
-
                 <div className={styles.orteses}>
-                    <div className={styles.caixa}><img src={ortesem1} alt="ortesem1" /></div>
-                    <div className={styles.caixa}><img src={ortesem2} alt="ortesem2" /></div>
-                    <div className={styles.caixa}><img src={ortesem3} alt="ortesem3" /></div>
-                    <div className={styles.caixa}><img src={ortesem4} alt="ortesem4" /></div>
+                    {imagens.map((img, index) => (
+                        <div
+                            key={index}
+                            className={`${styles.caixa} ${imagemSelecionada === img ? styles.ativa : ''}`}
+                            onClick={() => setImagemSelecionada(img)}
+                        >
+                            <img src={img} alt={`Imagem ${index + 1}`} />
+                        </div>
+                    ))}
                 </div>
 
                 <div className={styles.imagemPrincipal}>
-                    <img src={ortese} alt="Órtese principal" />
+                    <img src={imagemSelecionada} alt="Órtese principal" />
                 </div>
-
             </div>
 
             <div className={styles.info}>

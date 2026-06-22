@@ -5,6 +5,35 @@
   flex-direction: column;
   gap: 2rem;
   padding-bottom: 4rem;
+  position: relative;
+}
+
+/* Background vectors (positioned and kept behind content) */
+.vector16,
+.vector17,
+.vector18 {
+  position: absolute;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.85;
+  z-index: 0;
+}
+
+.vector16 {
+  bottom: 220px;
+  width: clamp(200px, 30vw, 500px);
+}
+
+.vector17 {
+  bottom: 360px;
+  right: -60px;
+  width: clamp(180px, 25vw, 450px);
+}
+
+.vector18 {
+  bottom: 0;
+  left: 10%;
+  width: clamp(150px, 20vw, 380px);
 }
 
 /* Header */

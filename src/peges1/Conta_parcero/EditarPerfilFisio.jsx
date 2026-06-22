@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Layout from './Layout';
-import styles from './EditarPerfilFisio.module.css';
+import styles from './EditarPerfilFisio.module.css';;
+import onda1 from '../../assets/imag/Group274.svg';
 
 function EditarPerfilFisio() {
   const [dados, setDados] = useState({
@@ -29,6 +30,8 @@ function EditarPerfilFisio() {
  return (
   <Layout>
     <div className={styles.pagina}>
+        <img src={onda1} alt="onda1" className={styles.onda1} />
+
       <div className={styles.card}>
         <div className={styles.header}>
           <h1 className={styles.titulo}>Editar Perfil</h1>

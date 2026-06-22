@@ -20,7 +20,7 @@ import vector23 from '../../../assets/imag/Vector23.svg';
 import vector24 from '../../../assets/imag/Vector24.svg';
 import vector25 from '../../../assets/imag/Vector25.svg';
 // Usando imagens do projeto para o resumo do pedido
-import orteset from '../../../assets/imag/orteset.png';
+import orteset from '../../../assets/imag/2ortese.png';
 
 function Comprar() {
   const navigate = useNavigate();

@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Layout from './Layout';
 import styles from './Agenda.module.css';
+import vector16 from '../../assets/imag/Vector16.svg';
+import vector17 from '../../assets/imag/Vector17.svg';
+import vector18 from '../../assets/imag/Vector18.svg';
+import onda1 from '../../assets/imag/Group274.svg';
 
 function Agenda() {
   const navigate = useNavigate();
@@ -81,6 +85,11 @@ function Agenda() {
   return (
     <Layout>
       <div className={styles.pagina}>
+        <img src={vector16} alt="vector16" className={styles.vector16} />
+                <img src={vector17} alt="vector17" className={styles.vector17} />
+                <img src={vector18} alt="vector18" className={styles.vector18} />
+                <img src={onda1} alt="onda1" className={styles.onda1} />
+                
         {/* Header */}
         <div className={styles.cabecalho}>
           <h1 className={styles.titulo}>Agenda</h1>

@@ -3,6 +3,7 @@
     background-color: #0B5C6A;
     padding: 60px 80px 30px;
     position: relative;
+    z-index: 10;
     overflow: visible;
     color: white;
     font-family: 'Montserrat', sans-serif;
