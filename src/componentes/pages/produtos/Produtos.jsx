@@ -13,18 +13,24 @@ import Carregador from "../../../assets/carregador.png"
 import Header from '../../Header';
 import maozinha from "../../../assets/maozinha.png"
 import Wave from "../../Wave"
+import MaoBanner from "../../../assets/mao-banner.png"
 function Produtos(){
     return(
     <main>
         <Header />
-        <section id="hero">
-        </section>
+    <section className="mh-hero">
+      <div className="mh-hero-content">
+        <img src={MaoBanner} alt="Órtese MoveHand" className="mh-hero-image" />
+        <div className="mh-hero-text">
+          <h1>MOVEHAND</h1>
+          <h2>Tecnologia que transforma<br />dificuldades em possibilidades</h2>
+        </div>
+      </div>
+    </section>
         <article id='article'>
-            <img src={Ondafina} alt="onda" />
             <h1 className='produtos'>Nossos produtos</h1>
             <div id="dupla">
                 <div className="dupla_imagem">
-                    <p className="maisvendido_p">Mais vendido</p>
                     <img src={Dupla}  />
                 </div>
                 <div className="dupla_textos">
@@ -32,13 +38,13 @@ function Produtos(){
                         <h2>MoveHand Par</h2>
                         <p className="avaliacao"><span>★★★★★</span>4.9 (128 avaliações)</p>
                         <p className="texto_dupla">Nossa órtese mais completa. Estimulação elétrica funcional integrada, 5 níveis de intensidade, bateria de 6h e controle total pelo aplicativo. Indicada para paralisia cerebral.</p>
-                        <div className="compra">
+                        
                         <p className="preco">A partir de <br />
                         <span>R$ 1400,00</span> <br />
                         ou 12x de R$ 120,00</p>
 
                         <Link to="/par"><span className="botao"> <BotaoComprar /> </span></Link>
-                        </div>
+                        
                     </div>
             </div>
             <div className='s1'>
