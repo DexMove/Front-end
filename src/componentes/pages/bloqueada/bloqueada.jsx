@@ -14,7 +14,7 @@ import {FiHeadphones} from "react-icons/fi"
 function Bloqueada(){
 
     return(
-        <main>
+        <main className="main-bl">
             <Header />
             <img src={onda1} alt="onda" className="onda-topo" />
             <section id="hero-bloqueada">

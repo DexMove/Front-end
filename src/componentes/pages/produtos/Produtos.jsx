@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import './Produtos.css';
 import BotaoComprar from "../../BotaoComprar";
@@ -15,6 +16,22 @@ import maozinha from "../../../assets/maozinha.png"
 import Wave from "../../Wave"
 import MaoBanner from "../../../assets/mao-banner.png"
 function Produtos(){
+
+    useEffect(() => {
+        const elementos = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-visible');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        elementos.forEach((el) => observer.observe(el));
+
+        return () => observer.disconnect();
+    }, []);
+
     return(
     <main>
         <Header />
@@ -29,7 +46,7 @@ function Produtos(){
     </section>
         <article id='article'>
             <h1 className='produtos'>Nossos produtos</h1>
-            <div id="dupla">
+            <div id="dupla" className="reveal">
                 <div className="dupla_imagem">
                     <img src={Dupla}  />
                 </div>
@@ -48,7 +65,7 @@ function Produtos(){
                     </div>
             </div>
             <div className='s1'>
-            <div id="direita">
+            <div id="direita" className="reveal">
                 <div className="direita_imagem">
                      <img src={Direita}  />
                 </div>
@@ -63,7 +80,7 @@ function Produtos(){
                         <Link to="/mao-direita"><span className="botao"> <BotaoComprar /> </span></Link>
                         </div>
             </div>
-            <div id="esquerda">
+            <div id="esquerda" className="reveal">
                 <div className="esquerda_imagem">
                     <img src={Esquerda}  />
                 </div>
@@ -80,7 +97,7 @@ function Produtos(){
             </div>
             </div>
             <div className='s2'> 
-                <div id="kit">
+                <div id="kit" className="reveal">
                     <div className="kit_imagem">
                     <img className="dup" src={Dupla}  />
                     <img className="car" src={Acessorio} />
@@ -96,7 +113,7 @@ function Produtos(){
                         <span className="botao"> <BotaoComprar /> </span>
                         </div>
                 </div>
-                <div id="carregador">
+                <div id="carregador" className="reveal">
                     <div className="carregador_imagem">
                     <img src={Acessorio} />
                 </div>
