@@ -678,6 +678,6 @@ main{
     .produtos { font-size: 34px; margin-bottom: 32px; }
     .dupla_imagem img,
     .direita_imagem img,
-    .esquerda_imagem img { width: 80%; height: auto; }
+    .esquerda_imagem img { width: auto; height: 300px; }
     #dupla, #direita, #esquerda, #kit, #carregador { width: 95%; padding: 16px; }
 }
