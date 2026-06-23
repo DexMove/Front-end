@@ -70,8 +70,8 @@ function Par() {
                 </div>
 
                 <div className={styles.preco}>
-                    <h3>R$5.000,00</h3>
-                    <p>  6x de R$000,00 sem juros</p>
+                    <h3>R$1.400,00</h3>
+                    <p>  6x de R$233,33 sem juros</p>
                 </div>
 
                 <div className={styles.tamanhos}>

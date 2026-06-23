@@ -65,8 +65,8 @@ function Section_8() {
                 </div>
 
                 <div className={styles.preco}>
-                    <h3>R$5.000,00</h3>
-                    <p>6x de R$000,00 sem juros</p>
+                    <h3>R$700,00</h3>
+                    <p>6x de R$116,67 sem juros</p>
                 </div>
 
                 <div className={styles.tamanhos}>

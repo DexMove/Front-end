@@ -147,8 +147,7 @@
         gap: 2rem;
     }
 
-    .card2 {
-        flex-direction: row;
+    .cardFlip {
         width: 45%;
         margin-top: 0;
     }
@@ -167,19 +166,19 @@
         justify-content: center;
     }
 
-    .card2 {
+    .cardFlip {
         width: 45%;
         margin-top: 0;
-        padding: 0. 75rem;
+        padding: 0.75rem;
     }
 
-    .card2 img {
+    .cardFlip img {
         height: auto;
         aspect-ratio: 4/3;
         object-fit: contain;
     }
 
-    .card2 h3 {
+    .cardFlip h3 {
         font-size: 0.9rem;
     }
 

@@ -1,10 +1,10 @@
 .page {
   width: 100%;
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
   background: white;
   display: flex;
   justify-content: center;
-  padding: 30px 3.5% 36px;
+  padding: calc(30px + 88px) 3.5% 36px;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }

@@ -12,8 +12,10 @@
 .vector24,
 .vector25 {
     position: absolute;
-    width: 100%;
-    left: -5px;
+    width: calc(100% + 280px);
+    max-width: none;
+    left: 50%;
+    transform: translateX(-50%);
     pointer-events: none;
     z-index: -1;
 }
@@ -21,7 +23,6 @@
     height: 90%;
     bottom: 80px;
     top: 110px;
-    
 }
 
 .vector23 {
@@ -108,8 +109,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   position: relative;
   flex: 1;
+  min-height: 110px;
+  padding-top: 0.5rem;
 }
  
 .etapaItem:not(:last-child) {
@@ -135,6 +139,8 @@
   font-weight: 600;
   transition: color 0.3s;
   text-align: center;
+  line-height: 1.2;
+  white-space: nowrap;
 }
  
 /* Estados da etapa */

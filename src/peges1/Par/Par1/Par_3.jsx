@@ -1,7 +1,7 @@
 import styles from '../css.par/Par_3.module.css'
 import vector20 from '../../../assets/imag/Vector20.svg'
 import vector21 from '../../../assets/imag/Vector21.svg'
-import carregador from '../../../assets/imag/carregador.png'
+import carregador from '../../../assets/imag/acessorio.png'
 import ortese from '../../../assets/imag/3ortese.png'
 import ortese1 from '../../../assets/imag/2ortese.png'
 import par from '../../../assets/imag/2par.png'
@@ -28,7 +28,7 @@ function Par_3() {
                         <img src={carregador} alt="Produto 1" />
                     </div>
                     <div className={styles.cardBody}>
-                        <p className={styles.nome}>Carregador USB-C<br />RB000V216</p>
+                        <p className={styles.nome}>Acessorio <br />RB000V216</p>
                         <p className={styles.preco}>R$000,00</p>
                         <button className={styles.btnComprar}>COMPRAR</button>
                     </div>
@@ -41,7 +41,7 @@ function Par_3() {
                     </div>
                     <div className={styles.cardBody}>
                         <p className={styles.nome}>Órtese Dexmove esquerda<br />RB000V130</p>
-                        <p className={styles.preco}>R$000,00</p>
+                        <p className={styles.preco}>R$700,00</p>
                         <button className={styles.btnComprar}>COMPRAR</button>
                     </div>
                 </div>
@@ -53,7 +53,7 @@ function Par_3() {
                     </div>
                     <div className={styles.cardBody}>
                         <p className={styles.nome}>Órtese Dexmove direita<br />RB000V048</p>
-                        <p className={styles.preco}>R$000,00</p>
+                        <p className={styles.preco}>R$700,00</p>
                         <button className={styles.btnComprar}>COMPRAR</button>
                     </div>
                 </div>
