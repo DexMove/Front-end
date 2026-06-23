@@ -108,8 +108,8 @@ function Produtos(){
                         <p className="avaliacao"><span>★★★★★</span>4.9 (128 avaliações)</p>
                         <p className="texto_kit">MoveHand Par + Separador funcional para posicionamento dos dedos. Facilita a colocação da órtese, mantendo os dedos suavemente separados de forma confortável e segura.</p>
                         <p className="preco">A partir de <br />
-                        <span>R$ 000</span> <br />
-                        ou 12x de R$ 000</p>
+                        <span>R$1430</span> <br />
+                        ou 12x de R$ 120,00</p>
                         <span className="botao"> <BotaoComprar /> </span>
                         </div>
                 </div>
@@ -123,8 +123,8 @@ function Produtos(){
                         <p className="avaliacao"><span>★★★★★</span>4.9 (128 avaliações)</p>
                         <p className="texto_carregador">Separador funcional para posicionamento dos dedos. Facilita a colocação da órtese, mantendo os dedos suavemente separados de forma confortável e segura.</p>
                         <p className="preco">A partir de <br />
-                        <span>R$ 000</span> <br />
-                        ou 12x de R$ 000</p>
+                        <span>R$ 30,00</span> <br />
+                        ou 2x de R$ 15,00</p>
                         <span className="botao"> <BotaoComprar /> </span>
                         </div>
                 </div>

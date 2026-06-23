@@ -93,7 +93,7 @@ main{
     background-position: center;
 }
 #dupla{
-    width: 70%;
+    width: 60%;
     margin: 0 auto;
     height: 600px;
     border: 0.5px solid #0B5C6A;
@@ -103,7 +103,7 @@ main{
     justify-content: center;
 }
 #direita{
-    width: 33%;
+    width: 29%;
     height: 1200px;
     border: 0.5px solid #0B5C6A;
     border-radius: 30px;
@@ -114,7 +114,7 @@ main{
     background-color: white;
 }
 #esquerda{
-    width: 33%;
+    width: 29%;
     height: 1200px;
     border: 0.5px solid #0B5C6A;
     border-radius: 30px;
@@ -133,9 +133,10 @@ main{
     border-radius: 30px; 
 }
 .dupla_imagem img{
-    width: 90%;
+    width: 100%;
     height: auto;
     align-items: center;
+    margin-top: 50px;
 }
 .maisvendido_p{
     position: relative;
@@ -183,6 +184,7 @@ main{
     margin-top: 15px; 
     width: 90%;
     margin-bottom: 10px;
+    line-height: 1;
 }
 .preco{
     font-size: 20px;
@@ -240,6 +242,7 @@ main{
     margin-top: 15px; 
     width: 90%;
     margin-bottom: 15px;
+    line-height: 1;
 }
 .esquerda_imagem{
     width: 100%;
@@ -273,6 +276,8 @@ main{
     margin-top: 15px; 
     width: 90%;
     margin-bottom: 15px;
+    line-height: 1;
+
 }
 .s2{
     flex-direction: row;
@@ -288,7 +293,7 @@ main{
     background-position: center;
 }
 #kit{
-    width: 33%;
+    width: 29%;
     height: 1200px;
     border: 0.5px solid #0B5C6A;
     border-radius: 30px;
@@ -299,7 +304,7 @@ main{
     background-color: white;
 }
 #carregador{
-    width: 33%;
+    width: 29%;
     height: 1200px;
     border: 0.5px solid #0B5C6A;
     border-radius: 30px;
@@ -343,6 +348,8 @@ main{
     margin-top: 15px; 
     width: 90%;
     margin-bottom: 15px;
+    line-height: 1;
+
 }
 .kit_imagem{
     width: 100%;
@@ -382,6 +389,7 @@ main{
     margin-top: 15px; 
     width: 90%;
     margin-bottom: 15px;
+    line-height: 1;
 }
 .compra{
     display: flex;
