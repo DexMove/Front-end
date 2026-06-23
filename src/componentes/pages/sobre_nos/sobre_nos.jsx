@@ -2,8 +2,8 @@ import { useState } from "react";
 import styles from "./sobre_nos.module.css";
 
 // Importação das imagens
-import equipe1 from "../../../assets/Thalyson.png";
-import equipe2 from "../../../assets/Vitoria.png";
+import equipe1 from "../../../assets/Vitoria.png";
+import equipe2 from "../../../assets/Thalyson.png";
 import equipe3 from "../../../assets/Christian.png";
 import equipe4 from "../../../assets/Amanda.png";
 import equipe5 from "../../../assets/Melissa.png";
@@ -27,12 +27,12 @@ import Header from '../../Header';
 function SobreNos() {
   // CORREÇÃO: Atribuindo cada imagem importada ao seu respectivo membro
   const equipe = [
-    { id: 1, nome: "Thalyson Silva", cargo: "CEO & Fundadora", imagem: equipe1 },
-    { id: 2, nome: "Vitoria Rocha", cargo: "CTO & Inovação", imagem: equipe2 },
-    { id: 3, nome: "Christian Lima", cargo: "Head de Reabilitação", imagem: equipe3 },
-    { id: 4, nome: "Amanda Souza", cargo: "Engenheira Chefe", imagem: equipe4 },
+    { id: 1, nome: "Vitória Laurenzano", cargo: "CEO & Fundadora", imagem: equipe1 },
+    { id: 2, nome: "Thalyson Pereira", cargo: "CTO & Inovação", imagem: equipe2 },
+    { id: 3, nome: "Christian Damasceno", cargo: "Head de Reabilitação", imagem: equipe3 },
+    { id: 4, nome: "Amanda Cristina", cargo: "Engenheira Chefe", imagem: equipe4 },
     { id: 5, nome: "Melissa Oliveira", cargo: "Fisioterapeuta Líder", imagem: equipe5 },
-    { id: 6, nome: "Luiz Santos", cargo: "Desenvolvedor Sênior", imagem: equipe6 },
+    { id: 6, nome: "Luiz Gustavo", cargo: "Desenvolvedor Sênior", imagem: equipe6 },
   ];
 
   const apoiadores = [
@@ -152,6 +152,31 @@ function SobreNos() {
 
       {/* ========== SEÇÃO 5: EQUIPE ========== */}
       <section className={styles.secaoEquipe}>
+        {/* NOVA ONDA ADICIONADA AQUI COMO FUNDO */}
+        <div className={styles.ondaFundoEquipe}>
+          <svg
+            viewBox="0 0 1440 450"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill="#0b5c6a"
+              d="M0,250 C300,-150 1100,700 1440,250 V450 H0 Z"
+            />
+            <path
+              fill="#ffb366"
+              d="M0,280 C300,-120 1100,730 1440,280 V450 H0 Z"
+            />
+            <path
+              fill="#efe39b"
+              d="M0,310 C300,-90 1100,760 1440,310 V450 H0 Z"
+            />
+            <path
+              fill="#f9f9f9"
+              d="M0,340 C300,-60 1100,790 1440,340 V450 H0 Z"
+            />
+          </svg>
+        </div>
         <h2>Nossa equipe</h2>
         <p>Profissionais apaixonados por tecnologia e reabilitação</p>
         <div className={styles.equipeGrid}>

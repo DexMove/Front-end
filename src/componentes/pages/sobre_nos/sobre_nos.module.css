@@ -97,7 +97,7 @@
   justify-content: center; 
   align-items: center;
   padding: 0 5%;
-  margin-top: -150px; /* Ajuste para o texto subir para a parte azul */
+  margin-top: -150px;
 }
 
 .textoOndasCentralizado {
@@ -117,60 +117,6 @@
   font-size: 26px;
   line-height: 1.8;
   margin: 0 auto;
-}
-
-.textoOndas {
-  position: relative;
-  z-index: 2;
-  max-width: 1300px;
-  width: 90%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center; /* ALTERADO: de space-between para center */
-  gap: 60px;
-  padding: 80px 0;
-}
-
-.textoOndas {
-  flex: none; /* ALTERADO: de 1 para none para respeitar o max-width */
-  width: 100%;
-  max-width: 900px; /* ADICIONADO: para o texto não ficar largo demais ao centralizar */
-  color: white;
-  margin-left: 0; /* ALTERADO: removido os 85px */
-  margin-top: -200px;
-  text-align: center; /* ADICIONADO: centraliza o texto */
-}
-
-.textoOndas h2 {
-  font-size: 56px; /* ALTERADO: aumentado de 42px */
-  margin-bottom: 20px;
-}
-
-.textoOndas p {
-  font-size: 32px; /* ALTERADO: aumentado de 30px */
-  line-height: 1.6;
-}
-
-/* Mantido para não quebrar caso ainda existam referências, mas sem uso no novo layout */
-.imagemOndas {
-  display: none; 
-}
-
-.ondaDexy {
-  position: absolute;
-  bottom: -100px;
-  left: 0;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  line-height: 0;
-  right: 0;
-}
-
-.ondaDexy svg {
-  width: 100%;
-  height: 250px;
-  display: block;
 }
 
 /* ========== SEÇÃO 3: CHATBOT DEXY ========== */
@@ -243,22 +189,31 @@
   align-items: center;
 }
 
-/* ADICIONADO: Estilo para o vídeo da Dexy com altura menor */
 .videoDexy {
-  max-width: 450px;
+  max-width: 550px;
   width: 100%;
-  height: 300px; /* Altura reduzida conforme pedido */
+  height: 450px;
   object-fit: cover;
   border-radius: 30px;
 }
 
-.imagemDex {
-  max-width: 450px;
-  width: 100%;
-  height: auto;
+.ondaDexy {
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  line-height: 0;
+  right: 0;
 }
 
-/* ========== SEÇÃO 4: MVV ========== */
+.ondaDexy svg {
+  width: 100%;
+  height: 250px;
+  display: block;
+}
+
+/* ========== SEÇÃO 4: MISSÃO, VISÃO E VALORES ========== */
 .secaoMVV {
   background-color: #f9f9f9;
   padding: 80px 5%;
@@ -318,9 +273,34 @@
 
 /* ========== SEÇÃO 5: EQUIPE ========== */
 .secaoEquipe {
-  padding: 80px 5%;
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px;
+  padding-bottom: 100px;
   text-align: center;
-  background-color: #fff;
+}
+
+.ondaFundoEquipe {
+  position: absolute;
+  top: 415px;
+  left: 0;
+  width: 100%;
+  height: 285px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.ondaFundoEquipe svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.secaoEquipe h2, 
+.secaoEquipe > p, 
+.equipeGrid {
+  position: relative;
+  z-index: 1;
 }
 
 .secaoEquipe h2 {
@@ -342,30 +322,31 @@
   max-width: 1200px;
   margin: 0 auto;
   justify-items: center;
-  align-items: center;
 }
 
 .cardEquipe {
-  min-width: 250px;
-  max-width: 300px;
+  width: 100%;
+  max-width: 320px;
   text-align: center;
   cursor: pointer;
 }
 
 .fotoContainer {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Garante que o container seja sempre um quadrado perfeito */
   margin: 0 auto 15px;
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: 24px;
+  background-color: #fff;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .fotoEquipe {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: all 0.3s ease;
+  object-fit: cover; /* Faz a imagem preencher o quadrado sem distorcer */
+  transition: transform 0.3s ease;
 }
 
 .overlayEquipe {
@@ -383,6 +364,7 @@
   transition: all 0.3s ease;
   padding: 20px;
   text-align: center;
+  color: white;
 }
 
 .cardEquipe:hover .overlayEquipe {
@@ -390,10 +372,10 @@
 }
 
 .nomeEquipe {
-  font-size: 20px;
+  font-size: 22px;
   color: #0b5c6a;
   margin-top: 10px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .ondaEquipe {
@@ -402,8 +384,7 @@
   line-height: 0;
   margin-top: 80px;
   position: relative;
-  left: 0;
-  right: 0;
+  z-index: 1;
 }
 
 .ondaEquipe svg {
@@ -440,86 +421,11 @@
   object-fit: contain;
 }
 
-/* Swiper Styles */
-:global(.swiper-wrapper) {
-  align-items: center;
-}
-
-:global(.swiper-slide) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-:global(.swiper-button-next),
-:global(.swiper-button-prev) {
-  color: #0b5c6a;
-}
-
-:global(.swiper-button-next:hover),
-:global(.swiper-button-prev:hover) {
-  color: #ffb366;
-}
-
-:global(.swiper-pagination-bullet) {
-  background-color: #ccc;
-  opacity: 1;
-}
-
-:global(.swiper-pagination-bullet-active) {
-  background-color: #0b5c6a;
-}
-
 /* ========== RESPONSIVIDADE ========== */
 
 @media (max-width: 1024px) {
-  .conteudoOndas {
-    flex-direction: column;
-    text-align: center;
-    gap: 40px;
-  }
-
-  .textoOndas {
-    margin-left: 0;
-    margin-top: 0;
-  }
-
-  .textoOndas h2 {
-    font-size: 32px;
-  }
-
-  .textoOndas p {
-    font-size: 20px;
-  }
-
-  .dexyContainer {
-    flex-direction: column;
-    text-align: center;
-    gap: 40px;
-  }
-
-  .dexyTexto h2 {
-    font-size: 32px;
-  }
-
-  .dexyTexto p {
-    font-size: 22px;
-  }
-
-  .dexyFeatures {
-    align-items: center;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .feature span:last-child {
-    font-size: 20px;
-  }
-
-  .videoDexy {
-    max-width: 350px;
-    height: 250px;
+  .ondaFundoEquipe {
+    display: none; /* Desaparece em telas menores que notebook */
   }
 
   .equipeGrid {
@@ -527,81 +433,12 @@
     gap: 30px;
   }
 
-  .cardApoiador img {
-    width: 300px;
-  }
+  .cardEquipe { max-width: 280px; }
 }
 
 @media (max-width: 768px) {
-  .secaoVideo {
-    height: 70vh;
-    min-height: 500px;
-  }
-
-  .videoConteudo h1 {
-    font-size: 36px;
-  }
-
-  .videoConteudo p {
-    font-size: 18px;
-  }
-
-  .textoOndas h2 {
-    font-size: 28px;
-  }
-
-  .textoOndas p {
-    font-size: 16px;
-    line-height: 1.4;
-  }
-
-  .secaoDexy {
-    margin-top: -50px;
-    padding: 60px 5%;
-  }
-
-  .dexyTexto h2 {
-    font-size: 24px;
-  }
-
-  .dexyTexto p {
-    font-size: 16px;
-    line-height: 1.4;
-    margin-bottom: 25px;
-  }
-
-  .feature {
-    padding: 8px 16px;
-  }
-
-  .featureIcon {
-    font-size: 20px;
-  }
-
-  .feature span:last-child {
-    font-size: 16px;
-  }
-
-  .videoDexy {
-    max-width: 250px;
-    height: 200px;
-  }
-
-  .secaoMVV h2,
-  .secaoEquipe h2,
-  .secaoApoiadores h2 {
-    font-size: 28px;
-  }
-
-  .mvvGrid {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .mvvImage {
-    width: 120px;
-    height: 120px;
-  }
+  .secaoVideo { height: 70vh; min-height: 500px; }
+  .videoConteudo h1 { font-size: 36px; }
 
   .equipeGrid {
     grid-template-columns: repeat(2, 1fr);
@@ -609,104 +446,26 @@
   }
 
   .fotoContainer {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    aspect-ratio: 1 / 1;
-  }
-
-  .cardEquipe {
-    min-width: auto;
     max-width: 100%;
   }
 
-  .nomeEquipe {
-    font-size: 18px;
-  }
-
-  .cardApoiador img {
-    width: 200px;
-  }
-
-  :global(.swiper-button-next),
-  :global(.swiper-button-prev) {
-    display: none;
-  }
+  .nomeEquipe { font-size: 18px; }
 }
 
 @media (max-width: 480px) {
-  .videoConteudo h1 {
-    font-size: 28px;
-  }
+  .videoConteudo h1 { font-size: 28px; }
 
   .equipeGrid {
-    grid-template-columns: 1fr;
-    gap: 30px;
+    grid-template-columns: 1fr; /* Uma foto por linha para ficar grande no celular */
+    gap: 40px;
   }
   
-  .fotoContainer {
-    max-width: 250px;
+  .cardEquipe {
+    max-width: 320px; /* Tamanho grande no mobile */
     margin: 0 auto;
   }
 
-  .videoConteudo p {
-    font-size: 14px;
-  }
-
-  .textoOndas h2 {
-    font-size: 24px;
-  }
-
-  .textoOndas p {
-    font-size: 14px;
-  }
-
-  .dexyTexto h2 {
-    font-size: 20px;
-  }
-
-  .dexyTexto p {
-    font-size: 14px;
-  }
-
-  .feature span:last-child {
-    font-size: 14px;
-  }
-
-  .videoDexy {
-    max-width: 200px;
-    height: 180px;
-  }
-
-  .secaoMVV h2,
-  .secaoEquipe h2,
-  .secaoApoiadores h2 {
-    font-size: 24px;
-  }
-
-  .mvvImage {
-    width: 100px;
-    height: 100px;
-  }
-
-  .mvvCard h3 {
-    font-size: 20px;
-  }
-
-  .mvvCard p {
-    font-size: 14px;
-  }
-
   .fotoContainer {
-    width: 200px;
-    height: 200px;
-  }
-
-  .nomeEquipe {
-    font-size: 18px;
-  }
-
-  .cardApoiador img {
-    width: 150px;
+    aspect-ratio: 1 / 1;
   }
 }
