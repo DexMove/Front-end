@@ -1,15 +1,30 @@
 import './Header.css';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [headerHeight, setHeaderHeight] = useState(0);
+  const headerRef = useRef(null);
+
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+
+    const updateHeight = () => setHeaderHeight(el.offsetHeight);
+    updateHeight();
+
+    const observer = new ResizeObserver(updateHeight);
+    observer.observe(el);
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <>
-      <div className="header-box">
+      <div className="header-box" ref={headerRef}>
         <div className="header-row">
           <Link to="/" className="logo-link">
             <img src={logo} alt="logo" />
@@ -74,6 +89,9 @@ function Header() {
           </div>
         </div>
       </div>
+
+      {/* Espaçador: empurra o conteúdo da página para baixo na altura exata do header fixo */}
+      <div style={{ height: headerHeight }} aria-hidden="true" />
 
       {/* Overlay */}
       {sidebarOpen && (

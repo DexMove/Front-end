@@ -1,4 +1,4 @@
-main{
+.main-bl{
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -7,14 +7,13 @@ main{
 }
 
 #hero-bloqueada{
-    width: 90%;
+    width: 100%;
     padding: 60px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
-    min-height: auto;
+    box-sizing: border-box;
 }
 
 .onda-topo{
@@ -26,24 +25,23 @@ main{
 
 .imagem-container{
     position: relative;
-    width: 100%;
+    width: 90%;
     max-width: 900px;
+    aspect-ratio: 16 / 9;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.imagem-bloqueada{
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-    object-fit: cover;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    display: block;
+    padding: 40px 20px;
+    box-sizing: border-box;
 }
 
 .conteudo-bloqueado{
-    position: absolute;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,19 +50,6 @@ main{
     z-index: 2;
     width: 90%;
     max-width: 700px;
-    bottom: 60px;
-}
-
-.icone-cadeado{
-    font-size: 80px;
-    background-color: white;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .conteudo-bloqueado h1{
@@ -92,12 +77,17 @@ main{
 
 .botao-comprar,
 .botao-tenho{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     padding: 14px 32px;
     border-radius: 25px;
     font-size: 16px;
     font-weight: bold;
     border: none;
     cursor: pointer;
+    text-decoration: none;
     transition: all 0.3s ease;
 }
 
@@ -128,12 +118,12 @@ main{
     flex-wrap: wrap;
     width: 100%;
     padding: 60px 20px;
-    background-color: #f9f9f9;
     box-sizing: border-box;
 }
 
 .feature-card{
-    background-color: white;
+    background-color: #f9f9f9;
+    border: 1px solid #d3d3d3;
     padding: 30px;
     border-radius: 20px;
     text-align: center;
@@ -149,6 +139,10 @@ main{
     font-size: 22px;
     color: #0B5C6A;
     margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
 .feature-card p{
@@ -198,28 +192,44 @@ main{
     transform: translateY(-2px);
 }
 
-@media (max-width: 768px) {
-    #hero-bloqueada{
-        padding: 40px 16px;
-    }
-
+@media (max-width: 1024px) {
     .conteudo-bloqueado h1{
         font-size: 32px;
     }
 
     .conteudo-bloqueado p{
-        font-size: 16px;
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 780px) {
+    #hero-bloqueada{
+        padding: 40px 16px;
     }
 
-    .icone-cadeado{
-        font-size: 60px;
-        width: 100px;
-        height: 100px;
+    .imagem-container{
+        width: 100%;
+        aspect-ratio: auto;
+        min-height: 460px;
+        padding: 30px 16px;
+    }
+
+    .conteudo-bloqueado{
+        gap: 16px;
+    }
+
+    .conteudo-bloqueado h1{
+        font-size: 26px;
+    }
+
+    .conteudo-bloqueado p{
+        font-size: 15px;
     }
 
     .botoes-bloqueada{
         flex-direction: column;
         gap: 12px;
+        width: 100%;
     }
 
     .botao-comprar,
@@ -243,31 +253,49 @@ main{
     }
 
     .suporte-section h2{
-        font-size: 28px;
+        font-size: 26px;
     }
 
     .suporte-section p{
-        font-size: 16px;
+        font-size: 15px;
     }
 }
 
-@media (max-width: 480px) {
-    #hero-bloqueada{
-        padding: 30px 16px;
+@media (max-width: 600px) {
+    .imagem-container{
+        min-height: 420px;
+        padding: 24px 14px;
+    }
+
+    .conteudo-bloqueado{
+        gap: 12px;
     }
 
     .conteudo-bloqueado h1{
-        font-size: 26px;
+        font-size: 22px;
     }
 
     .conteudo-bloqueado p{
         font-size: 14px;
     }
+}
 
-    .icone-cadeado{
-        font-size: 48px;
-        width: 90px;
-        height: 90px;
+@media (max-width: 430px) {
+    #hero-bloqueada{
+        padding: 24px 12px;
+    }
+
+    .imagem-container{
+        min-height: 380px;
+        padding: 20px 12px;
+    }
+
+    .conteudo-bloqueado h1{
+        font-size: 20px;
+    }
+
+    .conteudo-bloqueado p{
+        font-size: 13px;
     }
 
     .botao-comprar,
@@ -289,7 +317,7 @@ main{
     }
 
     .suporte-section h2{
-        font-size: 24px;
+        font-size: 22px;
     }
 
     .suporte-section p{
