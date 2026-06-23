@@ -1,17 +1,19 @@
 .section11 {
     position: relative;
+    isolation: isolate;
+    background-color: #ffffff;
     width: 100%;
     height: auto;
     padding: 3rem 4rem;
     display: flex;
     flex-direction: column;
-    align-items: center;        
+    align-items: center;
     box-sizing: border-box;
     overflow-x: clip;
     overflow-y: visible;
     gap: 2rem;
     margin-top: 2rem;
-   
+
 }
 
 .section11 h2 {
@@ -19,8 +21,9 @@
     font-weight: bold;
     color: #111;
     margin-bottom: 1rem;
-    text-align: center;        
+    text-align: center;
 }
+
 .vector20 {
     position: absolute;
     width: 100%;
@@ -40,77 +43,78 @@
     z-index: -1;
     margin-top: 600px;
 }
+
 .titulo {
-  text-align: center;
-  font-size: 32px;
-  font-weight: 500;
-  color: #1a1a1a;
-  margin-bottom: 2rem;
-  top: -50px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 2rem;
+    top: -50px;
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 3rem;
 }
 
 .card3 {
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
-  overflow: hidden;
-  background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #ffffff;
 }
 
 .cardImg {
-  background-color: #0B5C6A;
-  height: 260px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    background-color: #0B5C6A;
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cardImg img {
-  max-height: 220px;
-  max-width: 100%;
-  object-fit: contain;
+    max-height: 220px;
+    max-width: 100%;
+    object-fit: contain;
 }
 
 .cardBody {
-  padding: 16px 18px;
+    padding: 16px 18px;
 }
 
 .nome {
-  font-size: 14px;
-  color: #555555;
-  margin-bottom: 8px;
-  line-height: 1.4;
+    font-size: 14px;
+    color: #555555;
+    margin-bottom: 8px;
+    line-height: 1.4;
 }
 
 .preco {
-  font-size: 18px;
-  font-weight: 500;
-  color: #1a1a1a;
-  margin-bottom: 12px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 12px;
 }
 
 .btnComprar {
-  display: block;
-  width: 100%;
-  background: #F3E396;
-  color: #2a2000;
-  border: none;
-  border-radius: 20px;
-  padding: 12px 0;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  letter-spacing: 0.5px;
+    display: block;
+    width: 100%;
+    background: #F3E396;
+    color: #2a2000;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 0;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.5px;
 }
 
 .btnComprar:hover {
-  background: #f3c137;
+    background: #f3c137;
 }
 
 /* Responsividade */
@@ -118,17 +122,21 @@
     .section11 {
         padding: 2rem 2rem;
     }
+
     .section11 h2 {
         font-size: 1.5rem;
     }
+
     .cards3 {
         flex-wrap: wrap;
         gap: 1.5rem;
         justify-content: center;
     }
+
     .card3 {
         width: 45%;
     }
+
     .beneficios1 {
         gap: 2rem;
         flex-wrap: wrap;
@@ -139,28 +147,34 @@
     .section11 {
         padding: 1.5rem 1rem;
     }
+
     .section11 h2 {
         font-size: 1.2rem;
     }
+
     .cards3 {
         flex-direction: row;
         flex-wrap: wrap;
         gap: 1rem;
         justify-content: center;
     }
+
     .card3 {
         width: 45%;
         min-height: 220px;
     }
+
     .card3 img {
         height: 120px;
     }
+
     .beneficios1 {
         flex-direction: row;
         gap: 1rem;
         flex-wrap: wrap;
         justify-content: center;
     }
+
     .beneficio1 h3 {
         font-size: 0.8rem;
     }

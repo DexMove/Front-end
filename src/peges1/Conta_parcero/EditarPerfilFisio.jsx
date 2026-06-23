@@ -10,6 +10,7 @@ function EditarPerfilFisio() {
     telefone: '(11) 98765-4321',
     crefito: '123456-F',
     especialidade: 'Fisioterapia Neurológica',
+    atendimento: 'Presencial e Online',
     clinica: 'Clínica Movimento - SP',
     cidade: 'São Paulo',
     estado: 'SP',
@@ -89,6 +90,19 @@ function EditarPerfilFisio() {
               onChange={handleChange}
               placeholder="Ex: Fisioterapia Neurológica"
             />
+          </label>
+
+          <label className={styles["form-label"]}>
+            Atendimento
+            <select
+              name="atendimento"
+              value={dados.atendimento}
+              onChange={handleChange}
+            >
+              <option value="Presencial">Presencial</option>
+              <option value="Online">Online</option>
+              <option value="Presencial e Online">Presencial e Online</option>
+            </select>
           </label>
 
           <label className={styles["form-label"]}>

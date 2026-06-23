@@ -8,6 +8,7 @@ import Section_5 from "./Componentes/section_5";
 import Section_6 from "./Componentes/Section_6";
 import Section_7 from "./Componentes/Section_7";
 import SectionFisio from "./Componentes/SectionFisio";
+import ComoFunciona from "./Componentes/ComoFunciona";
 import styles from './Home.module.css';
 import Header from '../../componentes/Header';
 
@@ -18,6 +19,7 @@ function Home() {
       <Section_1 />
       <Section_2 />
       <Section_3 />
+      <ComoFunciona />
       <Section_4 />
       <Section_5 />
       <SectionFisio />

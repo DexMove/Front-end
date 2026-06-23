@@ -13,7 +13,7 @@
 .titulo {
     font-size: 2.2em;
     font-weight: bold;
-    color: #222;
+    color: #0B5C6A;
     text-align: center;
     margin-bottom: 2.5rem;
 }
@@ -33,7 +33,7 @@
 }
 
 .lado1 h3 {
-    font-size: 20px;
+    font-size: 1.25rem;
     color: #3a9e7e;
     margin: 0 0 4px 0;
     font-weight: 600;
@@ -41,7 +41,7 @@
 }
 
 .lado1 p {
-    font-size: 16px;
+    font-size: 1.125rem;
     color: #444;
     text-align: justify;
     margin: 0;

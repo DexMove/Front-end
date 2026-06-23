@@ -80,7 +80,24 @@
   align-items: start;
 }
 
-/* Inputs */
+.formulario select {
+  width: 100%;
+  background: #F5F0E8;
+  border: 1.5px solid #E0D9CC;
+  border-radius: 12px;
+  padding: 20px 22px;
+  font-size: 1.25rem;
+  font-family: 'Roboto', sans-serif;
+  color: #1a1a1a;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.formulario select:focus {
+  outline: none;
+  border-color: #E8C96A;
+}
+
 .formulario input {
   width: 100%;
   background: #F5F0E8;

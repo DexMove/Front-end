@@ -1,5 +1,7 @@
 .section5 {
     position: relative;
+    isolation: isolate;
+    background-color: #ffffff;
     width: 100%;
     min-height: 600px;
     height: auto;
@@ -9,7 +11,7 @@
     align-items: center;
     box-sizing: border-box;
     overflow: hidden;
-   
+
 }
 
 .vector10 {
@@ -138,17 +140,55 @@
 }
 
 @media (max-width: 1024px) {
-    .section5 { padding: 2rem 1rem; }
-    .section5 h2 { font-size: 1.5rem; margin-bottom: 1.5rem; }
-    .cards { flex-wrap: wrap; gap: 1.5rem; }
-    .cardFlip { width: 45%; height: 280px; }
+    .section5 {
+        padding: 2rem 1rem;
+    }
+
+    .section5 h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .cards {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+    .cardFlip {
+        width: 45%;
+        height: 280px;
+    }
 }
 
 @media (max-width: 768px) {
-    .section5 { padding: 1.5rem 1rem; }
-    .section5 h2 { font-size: 1.2rem; margin-bottom: 1rem; }
-    .cards { flex-direction: column; gap: 1rem; align-items: center; }
-    .cardFlip { width: 100%; height: 260px; }
-    .cardFrente h3 { font-size: 0.9rem; }
-    .vector10, .vector11, .vector12 { height: 100%; width: 100%; }
+    .section5 {
+        padding: 1.5rem 1rem;
+    }
+
+    .section5 h2 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .cards {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .cardFlip {
+        width: 100%;
+        height: 260px;
+    }
+
+    .cardFrente h3 {
+        font-size: 0.9rem;
+    }
+
+    .vector10,
+    .vector11,
+    .vector12 {
+        height: 100%;
+        width: 100%;
+    }
 }

@@ -21,17 +21,17 @@ function SectionFisio() {
 
         <div className={styles.cards}>
           <div className={styles.card}>
-            <img src={pacienteComponente} alt="Mais pacientes" className={styles.icone} />
+           {/*} <img src={pacienteComponente} alt="Mais pacientes" className={styles.icone} />*/}
             <strong>Mais pacientes</strong>
             <p>Conecte com pessoas que precisam do seu atendimento</p>
           </div>
           <div className={styles.card}>
-            <img src={gestaoComponente} alt="Gestão prática" className={styles.icone} />
+           {/* <img src={gestaoComponente} alt="Gestão prática" className={styles.icone} /> */}
             <strong>Gestão prática</strong>
             <p>Agenda, prontuários e atendimentos em um só lugar</p>
           </div>
           <div className={styles.card}>
-            <img src={crescimentoComponente} alt="Crescimento" className={styles.icone} />
+           {/* <img src={crescimentoComponente} alt="Crescimento" className={styles.icone} /> */}
             <strong>Crescimento</strong>
             <p>Acompanhe seus resultados e evolua na sa carreira</p>
           </div>

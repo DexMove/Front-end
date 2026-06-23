@@ -2,8 +2,8 @@ import styles from '../CSS/Section_11.module.css'
 import vector20 from '../../../assets/imag/Vector20.svg'
 import vector21 from '../../../assets/imag/Vector21.svg'
 import carregador from '../../../assets/imag/carregador.png'
-import ortese from '../../../assets/imag/1ortese.png'
-import ortese1 from '../../../assets/imag/2ortese.png'
+import ortese from '../../../assets/imag/3ortese.png'
+import ortese1 from '../../../assets/imag/2par.png'
 import par from '../../../assets/imag/2par.png'
 import truck from '../../../assets/imag/Truck.png'
 import refresh from '../../../assets/imag/Refresh.png'
@@ -52,7 +52,7 @@ function Section_11() {
                         <img src={ortese1} alt="Produto 3" />
                     </div>
                     <div className={styles.cardBody}>
-                        <p className={styles.nome}>Órtese Dexmove direita<br />RB000V048</p>
+                        <p className={styles.nome}>Órtese Dexmove Par<br />RB000V048</p>
                         <p className={styles.preco}>R$000,00</p>
                         <button className={styles.btnComprar}>COMPRAR</button>
                     </div>

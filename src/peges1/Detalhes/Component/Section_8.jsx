@@ -1,27 +1,25 @@
 import { useNavigate } from 'react-router-dom';
 import { Ruler } from 'lucide-react';
 import styles from '../CSS/Section_8.module.css';
-import ortesem1 from '../../../assets/imag/ortesen1.png';
-import ortesem2 from '../../../assets/imag/ortesen2.png';
-import ortesem3 from '../../../assets/imag/ortesen3.png';
-import ortesem4 from '../../../assets/imag/ortesem4.png';
+import ortesem1 from '../../../assets/imag/ortesen11.svg';
+import ortesem2 from '../../../assets/imag/ortesen21.svg';
+import ortesem3 from '../../../assets/imag/ortesen31.svg';
+import ortesem4 from '../../../assets/imag/2ortese.png';
 import ortese from '../../../assets/imag/2ortese.png';
 import celular from '../../../assets/imag/celular.png';
 import bateria from '../../../assets/imag/bateria.png';
 import bluet from '../../../assets/imag/bluet.png';
 import mao from '../../../assets/imag/mao.png';
+import guiaTamanhos from '../../../assets/imag/guia.png';
 import { useState } from 'react';
 
-const imagens = [
-  ortesem1,
-  ortesem2,
-  ortesem3,
-  ortesem4,
-];
+const imagens = [ortesem1, ortesem2, ortesem3, ortesem4];
 
 function Section_8() {
     const navigate = useNavigate();
     const [imagemSelecionada, setImagemSelecionada] = useState(ortese);
+    const [showRulerImage, setShowRulerImage] = useState(false); // 👈 ADICIONADO
+
     return (
         <section className={styles.section8}>
 
@@ -47,7 +45,6 @@ function Section_8() {
 
                 <h2 className={styles.titulo}>Órtese da mão direita</h2>
 
-
                 <div className={styles.icones}>
                     <div className={styles.icone}>
                         <img src={mao} alt="Design Ergonômico" />
@@ -69,7 +66,7 @@ function Section_8() {
 
                 <div className={styles.preco}>
                     <h3>R$5.000,00</h3>
-                    <p>  6x de R$000,00 sem juros</p>
+                    <p>6x de R$000,00 sem juros</p>
                 </div>
 
                 <div className={styles.tamanhos}>
@@ -78,19 +75,42 @@ function Section_8() {
                         {['PP', 'P', 'M', 'G', 'GG'].map((t) => (
                             <button key={t} className={styles.tamanho} type="button">{t}</button>
                         ))}
-                        <button className={styles.rulerBtn} type="button" title="Guia de tamanhos">
+                        <button
+                            className={styles.rulerBtn}
+                            type="button"
+                            title="Guia de tamanhos"
+                            onClick={() => setShowRulerImage(!showRulerImage)}
+                        >
                             <Ruler size={20} />
                         </button>
                     </div>
-                </div>
+
+                    {showRulerImage && (
+                        <div className={styles.rulerImageOverlay} onClick={() => setShowRulerImage(false)}>
+                            <div className={styles.rulerImageBox} onClick={(e) => e.stopPropagation()}>
+                                <button
+                                    className={styles.closeRulerImage}
+                                    type="button"
+                                    onClick={() => setShowRulerImage(false)}
+                                    aria-label="Fechar guia de tamanhos"
+                                >
+                                    ×
+                                </button>
+                                <img src={guiaTamanhos} alt="Guia de tamanhos" />
+                            </div>
+                        </div>
+                    )}
+                </div> {/* 👈 fecha .tamanhos */}
 
                 <button className={styles.Comprar} onClick={() => navigate('/comprar')}>
                     Comprar
                 </button>
-                <p className={styles.seguro}> COMPRA 100% SEGURA E PROTEGIDA</p>
+                <p className={styles.seguro}>COMPRA 100% SEGURA E PROTEGIDA</p>
 
-            </div>
+            </div> {/* 👈 fecha .info */}
+
         </section>
     );
 }
-export default Section_8
+
+export default Section_8;

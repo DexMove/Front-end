@@ -69,6 +69,10 @@ export default function ContaFisio() {
                 <span className={styles["cf-info-val"]}>Fisioterapia Neurológica</span>
               </div>
               <div className={styles["cf-info-item"]}>
+                <span className={styles["cf-info-key"]}>Atendimento</span>
+                <span className={styles["cf-info-val"]}>Presencial e Online</span>
+              </div>
+              <div className={styles["cf-info-item"]}>
                 <span className={styles["cf-info-key"]}>Cidade</span>
                 <span className={styles["cf-info-val"]}>São Paulo</span>
               </div>
