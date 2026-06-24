@@ -147,6 +147,30 @@
   
   .esquerda {
     width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .badge {
+    align-self: center;
+  }
+  
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .card {
+    width: 100%;
+    height: auto;
+    padding: 24px 16px;
+  }
+
+  .botao {
+    align-self: center;
+    width: 100%;
+    max-width: 340px;
   }
   
   .direita {

@@ -127,14 +127,13 @@
         font-size: 1.5rem;
     }
 
-    .cards3 {
-        flex-wrap: wrap;
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
-        justify-content: center;
     }
 
     .card3 {
-        width: 45%;
+        width: 100%;
     }
 
     .beneficios1 {
@@ -152,20 +151,22 @@
         font-size: 1.2rem;
     }
 
-    .cards3 {
-        flex-direction: row;
-        flex-wrap: wrap;
+    .grid {
+        grid-template-columns: 1fr;
         gap: 1rem;
-        justify-content: center;
     }
 
     .card3 {
-        width: 45%;
-        min-height: 220px;
+        width: 100%;
+        min-height: auto;
     }
 
-    .card3 img {
-        height: 120px;
+    .cardImg {
+        height: 180px;
+    }
+
+    .cardImg img {
+        max-height: 150px;
     }
 
     .beneficios1 {

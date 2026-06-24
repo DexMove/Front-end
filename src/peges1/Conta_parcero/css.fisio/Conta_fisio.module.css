@@ -3,7 +3,7 @@
   background: white;
   display: flex;
   justify-content: center;
-  padding: clamp(20px, 3.5vw, 36px) 4% clamp(20px, 4.5vw, 36px);
+  padding: calc(clamp(20px, 3.5vw, 36px) + 50px) 4% clamp(20px, 4.5vw, 36px);
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
   position: relative;
@@ -67,7 +67,7 @@
   font-size: clamp(2.8rem, 4vw, 5rem);
   font-weight: 700;
   color: #0B5C6A;
-  margin-bottom: 8px;
+  margin: 20px 0 8px;
   text-align: center;
 }
  

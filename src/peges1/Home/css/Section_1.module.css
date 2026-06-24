@@ -122,6 +122,7 @@
         width: 250px;
         height: 300px;
         left: 50%;
+        top: 10px;
         transform: translateX(-50%);
     }
 }
@@ -152,26 +153,20 @@
 
     .div2 {
         width: 100%;
-        height: 200px;
+        height: 220px;
     }
 
     .onda1 {
-        position: absolute;
-        width: 280%;
-        height: 300%;
-        right: -10px;
-        top: 0;
-        transform: rotate(-16deg)
+        display: none;
     }
 
     .mao1 {
-        width: 200px;
-        height: 200px;
-    }
-
-    .onda1 {
-        height: 100%;
-        width: 100%;
+        width: 170px;
+        height: auto;
         position: absolute;
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
     }
 }

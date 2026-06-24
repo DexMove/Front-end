@@ -85,9 +85,6 @@ function Agenda() {
   return (
      <Layout>
       <div className={styles.pagina}>
-        <img src={vector16} alt="vector16" className={styles.vector16} />
-                <img src={vector17} alt="vector17" className={styles.vector17} />
-                <img src={vector18} alt="vector18" className={styles.vector18} />
                 <img src={onda1} alt="onda1" className={styles.onda1} />
                 
         {/* Header */}

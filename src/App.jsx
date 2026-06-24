@@ -34,6 +34,7 @@ import DetalhesAgendamento from "./peges1/Conta_parcero/DetalhesAgendamento";
 import ContaFisio from "./peges1/Conta_parcero/Conta_do_fisio/Conta_fisio";
 import EditarPerfilFisio from "./peges1/Conta_parcero/EditarPerfilFisio";
 import MaoDireita from "./peges1/Detalhes/Detalhes"
+import Home2 from "./peges1/Home/Home2"
 import Bloqueada from "./componentes/pages/bloqueada/bloqueada";
 import Wave from "./componentes/Wave"
 import DadosProfissionais from "./componentes/pages/cadastro-fisioterapeuta/DadosProfissionais"
@@ -49,6 +50,7 @@ function App() {
       <Routes>
         <Route path="/header" element={<Header />} />
         <Route path="/" element={<Home />} />
+        <Route path="/home2" element={<Home2 />} />
         <Route path="/bem-vindo" element={<BemVindo />} />
         <Route path="/entrar" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
