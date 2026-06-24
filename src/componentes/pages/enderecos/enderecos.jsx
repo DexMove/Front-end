@@ -1,13 +1,23 @@
 import Header2 from "../../Header2";
 import Footer from "../../Footer";
 import "./enderecos.css";
-import Onda from "../../../assets/onda fina.png";
 
 export default function MeusEnderecos() {
   return (
-    <main className="account-page">
+    <main className="endereco-page">
       <Header2 />
-      <img src={Onda} alt="Onda de Transição" className="hero-wave" />
+      <div className="onda_topo">
+          <svg
+            viewBox="0 0 1440 450"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path fill="#0b5c6a" d="M0,250 C300,-150 1100,700 1440,250 V450 H0 Z" />
+            <path fill="#ffb366" d="M0,280 C300,-120 1100,730 1440,280 V450 H0 Z" />
+            <path fill="#efe39b" d="M0,310 C300,-90 1100,760 1440,310 V450 H0 Z" />
+            <path fill="#fff" d="M0,340 C300,-60 1100,790 1440,340 V450 H0 Z" />
+          </svg>
+        </div>
       <section className="account-hero-enderecos">
         <div className="hero-content-enderecos">         
           <div className="hero-title-container">
@@ -20,7 +30,7 @@ export default function MeusEnderecos() {
         <div className="content-container">
           <div className="add-button-container">
             <button type="button" className="btn-add-address">
-              adicionar endereço +
+             + Adicionar endereço
             </button>
           </div>
           <section className="address-list">

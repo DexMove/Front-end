@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ScrollToTop from './componentes/ScrollToTop';
 import Header from "./componentes/Header";
 import Planos from "./componentes/pages/planos/Planos";
 import Produtos from "./componentes/pages/produtos/Produtos";
@@ -43,6 +44,7 @@ import Termos from "./componentes/pages/termos/Termos"
 function App() {
   return (
     <BrowserRouter>
+    <ScrollToTop />
 
       <Routes>
         <Route path="/header" element={<Header />} />
