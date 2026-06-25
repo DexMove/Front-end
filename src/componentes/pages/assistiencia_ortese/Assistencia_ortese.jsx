@@ -1,23 +1,11 @@
 import { useState } from "react";
-import {
-  Activity,
-  ArrowUpRight,
-  CheckCircle2,
-  ChevronDown,
-  ClipboardList,
-  FileDown,
-  HandHeart,
-  Link2,
-  MessageSquareText,
-  Send,
-  ShieldAlert,
+import { 
+  ChevronDown, ClipboardList, FileDown, ArrowUpRight, 
+  ShieldAlert, MessageSquareText, Send, TrendingUp, CheckCircle2
 } from "lucide-react";
+import { MdOutlineBackHand } from 'react-icons/md';
 import Header2 from "../../Header2";
 import Footer from "../../Footer";
-import ortese from "../../../assets/imag/Orteseaberta.png";
-import ondaTeal from "../../../assets/imag/Vector1.svg";
-import ondaYellow from "../../../assets/imag/Vector.svg";
-import ondaWhite from "../../../assets/imag/Vector2.svg";
 import "./Assistencia_ortese.css";
 
 const orientacoes = [
@@ -30,189 +18,125 @@ function Assistencia_ortese() {
   const [orientacaoAberta, setOrientacaoAberta] = useState(true);
 
   return (
-    <div className="assistencia-page">
+    <main className="ao-page-wrapper">
       <Header2 />
 
-      <main className="assistencia-main">
-        <section className="hero-area">
-          <div className="hero-copy">
-            <p className="hero-kicker">
-              <HandHeart size={18} /> MoveHand
-            </p>
-            <h1>Assistente inteligente Dexmove</h1>
-            <p className="hero-subtitle">
-              Suporte personalizado exclusivamente nas orientações do seu fisioterapeuta
-            </p>
-          </div>
+      <div className="ao-container">
+        {/* Cabeçalho */}
+        <header className="ao-header-content">
+          <h1>Assistente inteligente Dexmove</h1>
+          <p>Suporte personalizado exclusivamente nas orientações do seu fisioterapeuta</p>
+        </header>
 
-          <div className="hero-card">
-            <div className="hero-card-text">
-              <span className="hero-card-label">Monitoramento da sessão</span>
-              <h2>Órtese conectada com feedback visual imediato</h2>
-              <p>
-                Veja o progresso, confirme os parâmetros indicados e acompanhe a
-                execução com mais segurança.
-              </p>
-              <div className="hero-card-actions">
-                <button className="secondary-action" type="button">
-                  <Link2 size={18} />
-                  Ver orientações
-                </button>
-              </div>
-            </div>
-
-            <div className="hero-card-image">
-              <img src={ortese} alt="Órtese robótica Dexmove" />
-            </div>
-          </div>
-        </section>
-
-        <div className="wave-band" aria-hidden="true">
-          <img className="wave teal" src={ondaTeal} alt="" />
-          <img className="wave yellow" src={ondaYellow} alt="" />
-          <img className="wave white" src={ondaWhite} alt="" />
+        {/* Onda */}
+        <div className="ao-onda-topo">
+          <svg viewBox="0 0 1440 450" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#0b5c6a" d="M0,250 C300,-150 1100,700 1440,250 V450 H0 Z" />
+            <path fill="#ffb366" d="M0,280 C300,-120 1100,730 1440,280 V450 H0 Z" />
+            <path fill="#efe39b" d="M0,310 C300,-90 1100,760 1440,310 V450 H0 Z" />
+            <path fill="#ffffff" d="M0,340 C300,-60 1100,790 1440,340 V450 H0 Z" />
+          </svg>
         </div>
 
-        <section className="card accordion-card">
-          <button
-            className="accordion-header"
-            type="button"
-            aria-expanded={orientacaoAberta}
-            onClick={() => setOrientacaoAberta(!orientacaoAberta)}
-          >
-            <span className="accordion-icon">
-              <ClipboardList size={28} />
-            </span>
-            <span className="accordion-copy">
-              <strong>Orientação para esta sessão</strong>
-              <span>Informação definida pelo seu fisioterapeuta</span>
-            </span>
-            <ChevronDown className={`accordion-chevron ${orientacaoAberta ? "open" : ""}`} />
-          </button>
-
-          {orientacaoAberta && (
-            <div className="accordion-body">
-              {orientacoes.map((item) => (
-                <p key={item}>{item}</p>
-              ))}
-            </div>
-          )}
-        </section>
-
-        <section className="card progresso-card">
-          <div className="card-topline">
-            <div>
-              <p className="section-label">Como você está evoluído</p>
-              <h2>A IA analisa seus dados para acompanhar sua execução</h2>
-            </div>
-
-            <div className="status-pill">
-              <CheckCircle2 size={18} />
-              Execução dentro do parâmetro recomendado
-            </div>
-          </div>
-
-          <div className="metrics-row">
-            <article>
-              <strong>5</strong>
-              <span> Sessão realizada esta semana</span>
-            </article>
-            <article>
-              <strong>95%</strong>
-              <span> Execução correta</span>
-            </article>
-            <article>
-              <strong>Boa</strong>
-              <span> Padrão de movimentos</span>
-            </article>
+        {/* Identificação */}
+        <section className="ao-intro">
+          <div className="ao-id-box">
+            <MdOutlineBackHand className="ao-hand-icon" />
+            <strong>MoveHand</strong>
           </div>
         </section>
 
-        <section className="card chat-card">
-          <div className="chat-header">
-            <span className="chat-icon">
-              <MessageSquareText size={24} />
-            </span>
-            <div>
-              <h2>Converse com a IA</h2>
-              <p>
-                Tire suas dúvidas do uso da órtese com base nas orientações do seu fisioterapeuta.
-              </p>
+        {/* Stack de Cards */}
+        <div className="ao-content-stack">
+          
+          {/* Card 1: Orientação */}
+          <section className={`ao-card ao-accordion ${orientacaoAberta ? 'open' : ''}`}>
+            <div className="ao-acc-trigger" onClick={() => setOrientacaoAberta(!orientacaoAberta)}>
+              <div className="ao-icon-box orange"><ClipboardList size={30} /></div>
+              <div className="ao-title-text">
+                <h3>Orientação para esta sessão</h3>
+                <p>Informação definida pelo seu fisioterapeuta</p>
+              </div>
+              <ChevronDown className={`ao-chevron ${orientacaoAberta ? 'rotate' : ''}`} />
             </div>
-          </div>
+            {orientacaoAberta && (
+              <div className="ao-acc-content">
+                {orientacoes.map((item, index) => <p key={index}>{item}</p>)}
+              </div>
+            )}
+          </section>
 
-          <div className="chat-bubbles">
-            <div className="bubble bubble-user">
-              Como devo posicionar a minha mão para esse exercício?
-            </div>
-            <div className="bubble bubble-ai">
-              Mantenha o punho alinhado e os dedos levemente abertos. Evite compensações com o ombro
-              durante o movimento.
-            </div>
-          </div>
-
-          <div className="chat-input">
-            <input type="text" placeholder="Digite a sua dúvida" />
-            <button type="button" aria-label="Enviar pergunta">
-              <Send size={18} />
-            </button>
-          </div>
-        </section>
-
-        <section className="bottom-grid">
-          <article className="card share-card">
-            <div className="share-title">
-              <FileDown size={22} />
-              <div>
-                <h2>Acompanhe e compartilhe</h2>
-                <p>Você pode exportar seu relatório de uso e mandar para o seu fisioterapeuta para acompanhamento.</p>
+          {/* Card 2: Evolução */}
+          <section className="ao-card ao-evolution">
+            <div className="ao-card-header">
+              <TrendingUp size={28} color="#0B5C6A" />
+              <div className="ao-title-text">
+                <h3>Como você está evoluído</h3>
+                <p>A IA analisa seus dados para acompanhar sua execução</p>
               </div>
             </div>
-
-            <div className="share-actions">
-              <button className="action-button primary" type="button">
-                <FileDown size={18} />
-                Exportar relatório
-              </button>
-              <button className="action-button secondary" type="button">
-                <ArrowUpRight size={18} />
-                Enviar para o fisioterapeuta
-              </button>
-            </div>
-          </article>
-
-          <article className="card importante-card">
-            <div className="share-title">
-              <ShieldAlert size={22} />
+            <div className="ao-banner-green">
+              <CheckCircle2 size={20} />
               <div>
-                <h2>Importante</h2>
-                <p>
-                  A IA da Dexmove é uma ferramenta de apoio e não substitui a atuação do fisioterapeuta.
-                  Em caso de dor ou desconforto, entre em contato com um profissional responsável.
-                </p>
+                <strong>Execução dentro do parâmetro recomendado</strong>
+                <span>Continue assim! Você está seguindo as orientações corretamente</span>
               </div>
             </div>
-          </article>
-
-          <article className="card purchase-card">
-            <div>
-              <p className="section-label">Reposição ou upgrade</p>
-              <h2>Precisa de uma nova órtese?</h2>
-              <p>
-                Use o mesmo fluxo de compra da plataforma para garantir orientação e suporte durante a decisão.
-              </p>
+            <div className="ao-metrics">
+              <div className="ao-metric-item"><strong>5</strong><span>Sessão realizada esta semana</span></div>
+              <div className="ao-divider"></div>
+              <div className="ao-metric-item"><strong>95%</strong><span>Regularidade das sessões</span></div>
+              <div className="ao-divider"></div>
+              <div className="ao-metric-item"><strong>Boa</strong><span>Padrão de execuções</span></div>
             </div>
-          </article>
-        </section>
+          </section>
 
-        <div className="decorative-activity" aria-hidden="true">
-          <Activity size={18} />
-          <span>Dados sincronizados com a sessão ativa</span>
+          {/* Card 3: Chat */}
+          <section className="ao-card ao-chat">
+            <div className="ao-card-header">
+              <MessageSquareText size={28} color="#27ae60" />
+              <div className="ao-title-text">
+                <h3>Converse com a IA.</h3>
+                <p>Tire suas dúvidas com base nos dados da sua utilização.</p>
+              </div>
+            </div>
+            <div className="ao-chat-box">
+              <div className="ao-bubble user">Como devo posicionar a minha mão?</div>
+              <div className="ao-bubble ai">Mantenha o punho alinhado e os dedos levemente abertos.</div>
+            </div>
+            <div className="ao-chat-input">
+              <input type="text" placeholder="Digite a sua dúvida" />
+              <button><Send size={18} /></button>
+            </div>
+          </section>
+
+          {/* Card 4: Compartilhar */}
+          <section className="ao-card ao-share">
+             <div className="ao-share-layout">
+                <div className="ao-title-text">
+                  <h3>Acompanhe e compartilhe</h3>
+                  <p>Exporte seu relatório e mande para o seu fisioterapeuta.</p>
+                </div>
+                <div className="ao-share-btns">
+                  <button className="ao-btn-primary">Exportar relatório</button>
+                  <button className="ao-btn-outline"><Send size={16}/> Enviar para o fisioterapeuta</button>
+                </div>
+             </div>
+          </section>
+
+          {/* Card 5: Importante */}
+          <section className="ao-card ao-important">
+            <div className="ao-card-header">
+              <ShieldAlert size={24} color="#0B5C6A" />
+              <h3>Importante</h3>
+            </div>
+            <p>A IA da Dexmove é uma ferramenta de apoio e não substitui a atuação do Fisioterapeuta.</p>
+          </section>
+
         </div>
-      </main>
-
+      </div>
       <Footer />
-    </div>
+    </main>
   );
 }
 

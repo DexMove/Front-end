@@ -11,7 +11,7 @@ function Footer() {
           <h2>DexMove</h2>
 
           <p>
-            Proporcionando liberdade e conforto através de tecnologia especializada.
+            Tecnologia que move vidas.
           </p>
         </div>
 

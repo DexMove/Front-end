@@ -3,7 +3,6 @@ import "./pedidos.css";
 import Header2 from "../../Header2";
 import Footer from "../../Footer";
 import AccountMenu from "../../AccountMenu";
-import Onda from "../../../assets/onda fina.png";
 import Direita from "../../../assets/direita1.png";
 import Esquerda from "../../../assets/esquerda.png";
 
@@ -50,7 +49,18 @@ export default function MeusPedidos() {
   return (
     <main className="pedidos-page">
       <Header2 />
-      <img src={Onda} alt="Onda fina" />
+      <div className="onda_topo">
+          <svg
+            viewBox="0 0 1440 450"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path fill="#0b5c6a" d="M0,250 C300,-150 1100,700 1440,250 V450 H0 Z" />
+            <path fill="#ffb366" d="M0,280 C300,-120 1100,730 1440,280 V450 H0 Z" />
+            <path fill="#efe39b" d="M0,310 C300,-90 1100,760 1440,310 V450 H0 Z" />
+            <path fill="#fff" d="M0,340 C300,-60 1100,790 1440,340 V450 H0 Z" />
+          </svg>
+        </div>
       <div className="pedidos-container">
 
         <section className="pedidos-hero">

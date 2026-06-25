@@ -1,14 +1,14 @@
 
-.account-page {
+.endereco-page {
   width: 100%;
-  min-height: 100vh;
   background-color: #ffffff;
   color: #0c1d1a;
   display: flex;
   flex-direction: column;
+  margin-top: 80px;
 }
 
-.account-hero {
+.account-hero-enderecos {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,11 +58,10 @@
 .page-enderecos {
   flex: 1;
   background-color: #ffffff;
+  width: 60%;
 }
 .content-container {
-  max-width: 800px;
   margin: 0 auto;
-  padding: 24px;
 }
 .add-button-container {
   margin-bottom: 24px;
@@ -75,11 +74,12 @@
   border: none;
   border-radius: 999px;
   padding: 10px 24px;
-  font-size: 13px;
-  font-weight: 800;
+  font-size: 15px;
+  font-weight: 700;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(241, 231, 143, 0.2);
   transition: all 0.2s ease;
+  margin: 0 auto;
 }
 .btn-add-address:hover {
   background-color: #f7e66d;

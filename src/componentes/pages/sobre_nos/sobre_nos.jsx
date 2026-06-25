@@ -3,14 +3,14 @@ import styles from "./sobre_nos.module.css";
 
 // Importação das imagens
 import equipe1 from "../../../assets/Vitoria.png";
-import equipe2 from "../../../assets/Thalyson.png";
-import equipe3 from "../../../assets/Christian.png";
+import equipe2 from "../../../assets/Christian.png";
+import equipe3 from "../../../assets/Thalyson.png";
 import equipe4 from "../../../assets/Amanda.png";
 import equipe5 from "../../../assets/Melissa.png";
 import equipe6 from "../../../assets/Luiz.png";
-import logoSenac from "../../../assets/image_62.png";
-import logoProa from "../../../assets/image_62.png";
-import logoPorto from "../../../assets/image_62.png";
+import logoSenac from "../../../assets/senac.png";
+import logoProa from "../../../assets/proa.png";
+import logoEverRise from "../../../assets/everRise.png";
 import iconeMissao from "../../../assets/missao.png";
 import iconeVisao from "../../../assets/visao.png";
 import iconeValores from "../../../assets/valores.png";
@@ -28,17 +28,17 @@ function SobreNos() {
   // CORREÇÃO: Atribuindo cada imagem importada ao seu respectivo membro
   const equipe = [
     { id: 1, nome: "Vitória Laurenzano", cargo: "CEO & Fundadora", imagem: equipe1 },
-    { id: 2, nome: "Thalyson Pereira", cargo: "CTO & Inovação", imagem: equipe2 },
-    { id: 3, nome: "Christian Damasceno", cargo: "Head de Reabilitação", imagem: equipe3 },
+    { id: 2, nome: "Christian Damasceno", cargo: "CTO & Inovação", imagem: equipe2 },
+    { id: 3, nome: "Thalyson Pereira", cargo: "Head de Reabilitação", imagem: equipe3 },
     { id: 4, nome: "Amanda Cristina", cargo: "Engenheira Chefe", imagem: equipe4 },
-    { id: 5, nome: "Melissa Oliveira", cargo: "Fisioterapeuta Líder", imagem: equipe5 },
+    { id: 5, nome: "Melissa Fiuza", cargo: "Fisioterapeuta Líder", imagem: equipe5 },
     { id: 6, nome: "Luiz Gustavo", cargo: "Desenvolvedor Sênior", imagem: equipe6 },
   ];
 
   const apoiadores = [
     { id: 1, nome: "Senac", logo: logoSenac },
     { id: 2, nome: "PROA", logo: logoProa },
-    { id: 3, nome: "Porto Seguro", logo: logoPorto },
+    { id: 3, nome: "Ever Rise", logo: logoEverRise },
   ];
 
   const [hoveredId, setHoveredId] = useState(null);
@@ -172,7 +172,7 @@ function SobreNos() {
               d="M0,310 C300,-90 1100,760 1440,310 V450 H0 Z"
             />
             <path
-              fill="#f9f9f9"
+              fill="#ffffff"
               d="M0,340 C300,-60 1100,790 1440,340 V450 H0 Z"
             />
           </svg>

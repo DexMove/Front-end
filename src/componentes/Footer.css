@@ -100,7 +100,8 @@
     .footer-container {
         flex-direction: column;
         gap: 30px;
-        align-items: flex-start;
+        align-items: center;
+        text-align: center ;
     }
 
     .footer-col {
@@ -110,7 +111,6 @@
 
     #dexmove {
         width: 50%;
-        margin: 0 auto;
     }
 
     .footer-col h2 {
@@ -126,13 +126,10 @@
         font-size: 14px;
     }
 
-    .linha {
-        margin: 30px 0 20px;
-    }
 
     .footer-bottom {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 12px;
     }
 
