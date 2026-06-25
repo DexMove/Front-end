@@ -24,6 +24,7 @@ function Par() {
     const navigate = useNavigate();
     const [imagemSelecionada, setImagemSelecionada] = useState(ortese);
     const [showRulerImage, setShowRulerImage] = useState(false);
+    const [tamanhoSelecionado, setTamanhoSelecionado] = useState('M');
     return (
         <section className={styles.section8}>
 
@@ -78,7 +79,14 @@ function Par() {
                     <p>Tamanho:</p>
                     <div className={styles.botoesTomanho}>
                         {['PP', 'P', 'M', 'G', 'GG'].map((t) => (
-                            <button key={t} className={styles.tamanho} type="button">{t}</button>
+                            <button
+                                key={t}
+                                className={`${styles.tamanho} ${tamanhoSelecionado === t ? styles.tamanhoAtivo : ''}`}
+                                type="button"
+                                onClick={() => setTamanhoSelecionado(t)}
+                            >
+                                {t}
+                            </button>
                         ))}
                         <button
                             className={styles.rulerBtn}

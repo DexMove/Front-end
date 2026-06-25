@@ -20,27 +20,27 @@
     z-index: -1;
 }
 .vector22 {
-    height: 90%;
+    height: 95%;
     bottom: 80px;
     top: 110px;
 }
 
 .vector23 {
-    height: 90%;
+    height: 95%;
     bottom: 0px;
     z-index: -1;
     top: 150px;
 }
 
 .vector24 {
-    height: 90%;
+    height: 95%;
     bottom: 110px;
     z-index: -2;
     top: 50px;
 }
 
 .vector25 {
-    height: 90%;
+    height: 95%;
     bottom: 90px;
     z-index: -2;
     top: 90px;
@@ -69,9 +69,9 @@
 .conteudoPrincipal {
   flex: 1;
   width: 100%;
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 3rem 2rem;
+  padding: 3rem 1rem;
   position: relative;
   z-index: 1;
   box-sizing: border-box;
@@ -371,8 +371,8 @@
  
 .campoForm input:focus,
 .selectForm:focus {
-  border-color: #0a5c61;
-  box-shadow: 0 0 0 3px rgba(10, 92, 97, 0.1);
+  border-color: #F3E396;
+  box-shadow: 0 0 0 3px rgba(243, 227, 150, 0.3);
   background-color: #fff;
 }
  

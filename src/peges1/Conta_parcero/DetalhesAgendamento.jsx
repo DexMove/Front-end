@@ -1,7 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Calendar, User, Phone, Cake } from 'lucide-react';
-import Layout from './Layout';
+import Header2 from '../../componentes/Header2';
+import Footer from '../../componentes/Footer';
 import styles from './DetalhesAgendamento.module.css';
 import patientAvatar from '../../assets/imag/menino1.png';
 import vector16 from '../../assets/imag/Vector16.svg';
@@ -20,7 +21,8 @@ function DetalhesAgendamento() {
   };
 
   return (
-    <Layout>
+    <>
+    <Header2 />
       <div className={styles.pagina}>
         <img src={vector16} alt="vector16" className={styles.vector16} />
         <img src={vector17} alt="vector17" className={styles.vector17} />
@@ -92,7 +94,8 @@ function DetalhesAgendamento() {
           </button>
         </div>
       </div>
-    </Layout>
+    <Footer />
+  </>
   );
 }
 

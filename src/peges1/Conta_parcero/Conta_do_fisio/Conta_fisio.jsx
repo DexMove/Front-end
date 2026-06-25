@@ -1,11 +1,13 @@
 import { useNavigate } from "react-router-dom";
-import Layout from "../Layout";
+import Header2 from '../../../componentes/Header2';
+import Footer from '../../../componentes/Footer';
 import styles from "../css.fisio/Conta_fisio.module.css";
 import avatar from "../../../assets/imag/fisio2.png";
 import vector16 from '../../../assets/imag/Vector16.svg';
 import vector17 from '../../../assets/imag/Vector17.svg';
 import vector18 from '../../../assets/imag/Vector18.svg';
-import onda1 from '../../../assets/imag/Group274.svg';
+import onda15 from '../../../assets/imag/Group274.svg';
+
  
 const IconEdit = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -22,12 +24,13 @@ export default function ContaFisio() {
   const handleGoToDetails = () => navigate("/detalhes-agendamento");
  
   return (
-    <Layout>
+    <>
+    <Header2 /> 
       <div className={styles["cf-page"]}>
         <img src={vector16} alt="vector16" className={styles.vector16} />
         <img src={vector17} alt="vector17" className={styles.vector17} />
         <img src={vector18} alt="vector18" className={styles.vector18} />
-        <img src={onda1} alt="onda1" className={styles.onda1} />
+        <img src={onda15} alt="onda1" className={styles.onda1} />
         
         <div className={styles["cf-container"]}>
  
@@ -121,6 +124,7 @@ export default function ContaFisio() {
  
         </div>
       </div>
-    </Layout>
+      <Footer />
+  </>
   );
 }

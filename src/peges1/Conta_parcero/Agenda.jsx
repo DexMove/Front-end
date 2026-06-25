@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Layout from './Layout';
+import Header2 from '../../componentes/Header2';
+import Footer from '../../componentes/Footer';
 import styles from './Agenda.module.css';
 import vector16 from '../../assets/imag/Vector16.svg';
 import vector17 from '../../assets/imag/Vector17.svg';
@@ -83,9 +84,11 @@ function Agenda() {
   };
 
   return (
-     <Layout>
+    <>
+     <Header2 />
+     <img src={onda1} alt="onda1" className={styles.onda1} />
       <div className={styles.pagina}>
-                <img src={onda1} alt="onda1" className={styles.onda1} />
+                
                 
         {/* Header */}
         <div className={styles.cabecalho}>
@@ -144,8 +147,8 @@ function Agenda() {
           </button>
         </div>
       </div>
-    </Layout>
-  
+    <Footer />
+  </>
   );
 }
 

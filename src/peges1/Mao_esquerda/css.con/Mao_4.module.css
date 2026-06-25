@@ -57,7 +57,9 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
-    margin-bottom: 3rem;
+    margin: 0 auto 3rem;
+    max-width: 960px;
+    width: 100%;
 }
 
 .card3 {
