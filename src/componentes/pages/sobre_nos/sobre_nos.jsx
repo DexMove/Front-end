@@ -10,7 +10,7 @@ import equipe5 from "../../../assets/Melissa.png";
 import equipe6 from "../../../assets/Luiz.png";
 import logoSenac from "../../../assets/senac.png";
 import logoProa from "../../../assets/proa.png";
-import logoEverRise from "../../../assets/everRise.png";
+import logoEverRise from "../../../assets/everRise.PNG";
 import iconeMissao from "../../../assets/missao.png";
 import iconeVisao from "../../../assets/visao.png";
 import iconeValores from "../../../assets/valores.png";
