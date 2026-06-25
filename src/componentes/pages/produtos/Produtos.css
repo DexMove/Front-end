@@ -104,7 +104,7 @@ main{
 }
 #direita{
     width: 24%;
-    height: 1200px;
+    height: 1000px;
     border: 0.5px solid #0B5C6A;
     border-radius: 30px;
     flex-direction: column;
@@ -115,7 +115,7 @@ main{
 }
 #esquerda{
     width: 24%;
-    height: 1200px;
+    height: 1000px;
     border: 0.5px solid #0B5C6A;
     border-radius: 30px;
     flex-direction: column;
@@ -293,7 +293,7 @@ main{
 }
 #kit{
     width: 24%;
-    height: 1200px;
+    height: 1000px;
     border: 0.5px solid #0B5C6A;
     border-radius: 30px;
     flex-direction: column;
@@ -304,7 +304,7 @@ main{
 }
 #carregador{
     width: 24%;
-    height: 1200px;
+    height: 1000px;
     border: 0.5px solid #0B5C6A;
     border-radius: 30px;
     flex-direction: column;

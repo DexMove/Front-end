@@ -135,4 +135,4 @@ function Produtos(){
     </main>
     )
 }
-export default Produtos
+export default Produtos;
