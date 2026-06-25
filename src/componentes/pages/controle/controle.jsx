@@ -31,9 +31,9 @@ const DexMovePage = () => {
       
       <div className="dexmove-container">
         {/* Cabeçalho idêntico ao anterior */}
-        <header className="header-content">
-          <h1>Área de controle liberada</h1>
-          <p>Dispositivo liberado e parâmetros ativos</p>
+        <header className="controle-header">
+          <h1 className="controle-title">Área de controle liberada</h1>
+          <p className="controle-subtitle">Dispositivo liberado e parâmetros ativos</p>
         </header>
 
         {/* Onda idêntica à anterior */}
@@ -46,7 +46,7 @@ const DexMovePage = () => {
             <path fill="#0b5c6a" d="M0,250 C300,-150 1100,700 1440,250 V450 H0 Z" />
             <path fill="#ffb366" d="M0,280 C300,-120 1100,730 1440,280 V450 H0 Z" />
             <path fill="#efe39b" d="M0,310 C300,-90 1100,760 1440,310 V450 H0 Z" />
-            <path fill="#f9f9f9" d="M0,340 C300,-60 1100,790 1440,340 V450 H0 Z" />
+            <path fill="#ffffff" d="M0,340 C300,-60 1100,790 1440,340 V450 H0 Z" />
           </svg>
         </div>
 
@@ -152,7 +152,7 @@ const DexMovePage = () => {
                 <p>Recomendações do fisioterapeuta e orientação da órtese com base nos dados coletados.</p>
               </div>
             </div>
-            <Link to="/assistencia-ortese">
+            <Link to="/assistencia-ortese"className='botao'>
               <button className="btn-ai-action">
                 Ver análise da IA
               </button>

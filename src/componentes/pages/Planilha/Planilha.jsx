@@ -76,7 +76,7 @@ const Planilha = () => {
 
             {/* Camada 4: Fundo (Cinza claro) */}
             <path
-              fill="#f9f9f9"
+              fill="#ffffff"
               d="M0,340 C300,-60 1100,790 1440,340 V450 H0 Z"
             />
           </svg>
@@ -154,15 +154,19 @@ const Planilha = () => {
         </div>
 
         {/* Botão Principal */}
-        <Link to="/controle" className='btn-icon'>
-        <button
-          className="btn-submit"
-          onClick={handleSubmit}
-        >
-          <FiUpload className="btn-icon" />
-          Enviar planilha para análise.
-        </button>
-       </Link>
+        <Link to="/controle" className="btn-link-submit">
+          <button
+            className="btn-submit"
+            onClick={handleSubmit}
+          >
+            <FiUpload className="submit-icon" />
+            <span className="btn-submit-text">
+              Enviar planilha
+              <br />
+              para análise
+            </span>
+          </button>
+        </Link>
       </div>
 
       {/* Cards Informativos */}

@@ -24,30 +24,36 @@ body {
 .dexmove-container {
   width: 100%;
   margin: 0 auto;
+  padding-top: 110px;
   padding-bottom: 40px;
   display: flex;
   flex-direction: column;
-  gap: 35px; /* Espaçamento igual à página anterior */
+  gap: 35px;
 }
 
 /* --- TOPO IDENTICO À PÁGINA ANTERIOR --- */
 
-.header-content {
+.controle-header {
   text-align: center;
   padding: 40px 20px 0px;
-  background-color: transparent; /* Remove o fundo branco */
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
 }
 
-.header-content h1 {
+.controle-title {
   font-size: clamp(30px, 5vw, 42px);
   font-weight: 700;
   color: #1E1E1E;
-  margin-bottom: 10px;
+  margin-bottom: 4px;
+  display: block;
+  line-height: 1.1;
 }
 
-.header-content p {
+.controle-subtitle {
   font-size: 22px;
   color: #333;
+  margin: 0;
 }
 
 .onda_topo {
@@ -283,6 +289,10 @@ body {
 .ai-title h3 {
   color: var(--primary-blue);
   margin-bottom: 5px;
+}
+
+.botao{
+  text-decoration: none;
 }
 
 .btn-ai-action {

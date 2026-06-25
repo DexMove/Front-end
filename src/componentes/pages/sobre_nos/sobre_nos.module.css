@@ -1,7 +1,12 @@
+/* ========== CONFIGURAÇÕES GERAIS ========== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  background-color: #ffffff; /* Garante o fundo branco em todo o site */
 }
 
 .container {
@@ -9,7 +14,7 @@
   overflow-x: hidden;
 }
 
-/* ========== SEÇÃO 1: VÍDEO ========== */
+/* ========== SEÇÃO 1: VÍDEO (HERO) ========== */
 .secaoVideo {
   width: 100%;
   height: 100vh;
@@ -64,14 +69,16 @@
   opacity: 0.95;
 }
 
-/* ========== SEÇÃO 2: ONDAS ========== */
+/* ========== SEÇÃO 2: ONDAS (DEXMOVE) ========== */
 .secaoOndas {
   position: relative;
   width: 100%;
-  min-height: 750px;
+  min-height: 650px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 50px 0; 
+  background-color: #ffffff;
 }
 
 .containerOndas {
@@ -87,6 +94,7 @@
   width: 100%;
   height: 100%;
   display: block;
+  object-fit: cover;
 }
 
 .containerTextoDestaque {
@@ -97,7 +105,7 @@
   justify-content: center; 
   align-items: center;
   padding: 0 5%;
-  margin-top: -150px;
+  transform: translateY(-100px); 
 }
 
 .textoOndasCentralizado {
@@ -121,11 +129,14 @@
 
 /* ========== SEÇÃO 3: CHATBOT DEXY ========== */
 .secaoDexy {
-  margin-top: -100px;
-  padding: 80px 5%;
+  padding: 80px 5% 180px 5%; 
   color: #000;
   position: relative;
   overflow: hidden;
+  transform: translateY(-120px); 
+  background-color: #ffffff; /* Fundo branco unificado */
+  z-index: 2;
+   margin-bottom: -120px; 
 }
 
 .dexyContainer {
@@ -135,6 +146,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 60px;
+  position: relative;
+  z-index: 3;
 }
 
 .dexyTexto {
@@ -153,7 +166,7 @@
 }
 
 .dexyTexto p {
-  font-size: 30px;
+  font-size: 24px;
   line-height: 1.6;
   margin-bottom: 35px;
   opacity: 0.95;
@@ -170,7 +183,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px 24px;
+  padding: 10px 0;
 }
 
 .featureIcon {
@@ -178,7 +191,7 @@
 }
 
 .feature span:last-child {
-  font-size: 25px;
+  font-size: 22px;
   font-weight: 500;
 }
 
@@ -187,43 +200,45 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  /* AQUI VOCÊ SOBE O VÍDEO: */
+  transform: translateY(-40px); 
 }
 
 .videoDexy {
   max-width: 550px;
   width: 100%;
-  height: 450px;
+  height: 400px;
   object-fit: cover;
   border-radius: 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
 .ondaDexy {
   position: absolute;
-  bottom: -100px;
+  bottom: 0;
   left: 0;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
+  width: 100%;
   line-height: 0;
-  right: 0;
+  z-index: 1;
 }
 
 .ondaDexy svg {
   width: 100%;
-  height: 250px;
+  height: 200px;
   display: block;
 }
 
 /* ========== SEÇÃO 4: MISSÃO, VISÃO E VALORES ========== */
 .secaoMVV {
-  background-color: #f9f9f9;
-  padding: 80px 5%;
+  background-color: #ffffff; /* Tom de cinza bem claro para contraste suave */
+  padding: 50px 5%;
   text-align: center;
 }
 
 .secaoMVV h2 {
   font-size: 36px;
   color: #0b5c6a;
-  margin-bottom: 50px;
+  margin-bottom: 40px; 
 }
 
 .mvvGrid {
@@ -275,17 +290,27 @@
 .secaoEquipe {
   position: relative;
   overflow: hidden;
-  padding-top: 80px;
-  padding-bottom: 100px;
+  padding-top: 50px;
+  padding-bottom: 0px;
   text-align: center;
+  background-color: #ffffff;
+  transform: translateY(-20px);
+}
+
+.secaoEquipe::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #ffffff;
+  z-index: 0;
 }
 
 .ondaFundoEquipe {
   position: absolute;
-  top: 417px;
+  top: 277px;
   left: 0;
   width: 100%;
-  height: 285px;
+  height: 200px;
   z-index: 0;
   pointer-events: none;
 }
@@ -334,7 +359,7 @@
 .fotoContainer {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1; /* Garante que o container seja sempre um quadrado perfeito */
+  aspect-ratio: 1 / 1;
   margin: 0 auto 15px;
   overflow: hidden;
   border-radius: 24px;
@@ -345,7 +370,7 @@
 .fotoEquipe {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Faz a imagem preencher o quadrado sem distorcer */
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 
@@ -379,10 +404,9 @@
 }
 
 .ondaEquipe {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
+  width: 100%;
   line-height: 0;
-  margin-top: 80px;
+  margin-top: 0;
   position: relative;
   z-index: 1;
 }
@@ -395,77 +419,127 @@
 
 /* ========== SEÇÃO 6: APOIADORES ========== */
 .secaoApoiadores {
-  background-color: #f9f9f9;
-  padding: 60px 5%;
-  position: relative;
-  overflow-x: hidden;
+  background-color: #ffffff;
+  padding: 80px 5%;
+  text-align: center;
 }
 
 .secaoApoiadores h2 {
   font-size: 36px;
   color: #0b5c6a;
-  margin-bottom: 40px;
-  text-align: center;
+  margin-bottom: 50px;
 }
 
 .carrosselApoiadores {
   width: 100%;
-  max-width: 1600px;
+  max-width: 1500px;
   margin: 0 auto;
-  padding-bottom: 50px;
+  padding-bottom: 60px; 
+}
+
+.carrosselApoiadores :global(.swiper-slide) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.cardApoiador {
+  width: 100%;
+  height: 250px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  padding: 10px;
+  transition: transform 0.3s ease;
 }
 
 .cardApoiador img {
-  width: 450px;
-  height: auto;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+  display: block;
 }
 
-/* ========== RESPONSIVIDADE ========== */
+/* ========== RESPONSIVIDADE (MEDIA QUERIES) ========== */
 
 @media (max-width: 1024px) {
-  .ondaFundoEquipe {
-    display: none; /* Desaparece em telas menores que notebook */
-  }
-
-  .equipeGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-  }
-
-  .cardEquipe { max-width: 280px; }
+  .textoOndasCentralizado h2 { font-size: 42px; }
+  .textoOndasCentralizado p { font-size: 22px; }
+  .dexyTexto h2 { font-size: 34px; }
+  .dexyTexto p { font-size: 24px; }
+  .videoDexy { height: 350px; }
+  .ondaFundoEquipe { display: none; }
+  .equipeGrid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
 }
 
 @media (max-width: 768px) {
-  .secaoVideo { height: 70vh; min-height: 500px; }
+  .secaoVideo { height: 60vh; min-height: 450px; }
   .videoConteudo h1 { font-size: 36px; }
+  .videoConteudo p { font-size: 18px; }
 
-  .equipeGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+  /* Dexmove (Ondas) */
+  .secaoOndas { min-height: auto; padding: 60px 0; }
+  .containerTextoDestaque { transform: translateY(-35px); padding: 0 8% 20px; }
+  .textoOndasCentralizado h2 { font-size: 30px; }
+  .textoOndasCentralizado p { font-size: 18px; line-height: 1.6; }
+
+  /* Dexy Chatbot */
+  .secaoDexy {
+    padding: 60px 5% 80px 5%;
+    transform: translateY(0);
+    margin-bottom: 0;
+  }
+  .dexyContainer { flex-direction: column; text-align: center; gap: 40px; }
+  .dexyTexto h2 { font-size: 28px; }
+  .dexyTexto p { font-size: 18px; }
+  .dexyFeatures { align-items: center; }
+  .feature span:last-child { font-size: 18px; }
+  
+  /* Ajuste do vídeo no mobile para não ficar gigante verticalmente */
+  .dexyImagem { transform: translateY(0); width: 100%; }
+  .videoDexy {
+    width: 100%;
+    max-width: 420px;
+    height: 280px; /* Altura controlada */
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+  }
+  .ondaDexy svg { height: 120px; }
+
+  .secaoMVV {
+    padding-top: 90px;
+    position: relative;
+    z-index: 3;
   }
 
-  .fotoContainer {
-    max-width: 100%;
+  .secaoMVV h2 {
+    display: block;
+    margin-bottom: 24px;
   }
 
-  .nomeEquipe { font-size: 18px; }
+  .equipeGrid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
 }
 
 @media (max-width: 480px) {
   .videoConteudo h1 { font-size: 28px; }
-
-  .equipeGrid {
-    grid-template-columns: 1fr; /* Uma foto por linha para ficar grande no celular */
-    gap: 40px;
-  }
+  .containerTextoDestaque { transform: translateY(-28px); padding: 0 6% 16px; }
+  .textoOndasCentralizado h2 { font-size: 24px; }
+  .textoOndasCentralizado p { font-size: 16px; }
+  .dexyTexto h2 { font-size: 24px; }
+  .dexyTexto p { font-size: 17px; }
   
-  .cardEquipe {
-    max-width: 320px; /* Tamanho grande no mobile */
-    margin: 0 auto;
+  /* Vídeo ainda menor em celulares pequenos */
+  .videoDexy {
+    max-width: 100%;
+    height: 220px;
+    border-radius: 18px;
   }
-
-  .fotoContainer {
-    aspect-ratio: 1 / 1;
+  .secaoMVV {
+    padding-top: 70px;
   }
+  .equipeGrid { grid-template-columns: 1fr; }
+  .secaoMVV h2 { font-size: 28px; margin-bottom: 20px; }
 }
