@@ -75,7 +75,7 @@ function SobreNos() {
           <div className={styles.textoOndasCentralizado}>
             <h2>Sobre a DexMove:</h2>
             <p>
-              A Dexmove nasce da inquietação de não aceitar que o movimento seja
+              A Dexmovee nasce da inquietação de não aceitar que o movimento seja
               limitado quando a tecnologia pode ampliar possibilidades. Criamos
               soluções que unem inovação e cuidado para devolver autonomia,
               independência e novos começos a quem mais precisa.
