@@ -98,7 +98,7 @@ function EditarPerfilFisio() {
               <option value="Fisioterapia Geriátrica">Fisioterapia Geriátrica</option>
               <option value="Fisioterapia Pediátrica">Fisioterapia Pediátrica</option>
               <option value="Osteopatia e Quiropraxia">Osteopatia e Quiropraxia</option>
-              <option value="Saúde da Mulher">Saúde da Mulher</option>
+              
             </select>
           </label>
 
