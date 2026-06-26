@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Header2 from '../../componentes/Header2';
 import Footer from '../../componentes/Footer';
 import styles from './EditarPerfilFisio.module.css';;
-import onda1 from '../../assets/imag/Group274.svg';
+import onda1 from '../../assets/Group274.svg';
 
 function EditarPerfilFisio() {
   const [dados, setDados] = useState({

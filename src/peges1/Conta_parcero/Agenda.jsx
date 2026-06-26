@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import Header2 from '../../componentes/Header2';
 import Footer from '../../componentes/Footer';
 import styles from './Agenda.module.css';
-import vector16 from '../../assets/imag/Vector16.svg';
-import vector17 from '../../assets/imag/Vector17.svg';
-import vector18 from '../../assets/imag/Vector18.svg';
-import onda1 from '../../assets/imag/Group274.svg';
+import vector16 from '../../assets/Vector16.svg';
+import vector17 from '../../assets/Vector17.svg';
+import vector18 from '../../assets/Vector18.svg';
+import onda1 from '../../assets/Group274.svg';
 
 function Agenda() {
   const navigate = useNavigate();

@@ -1,0 +1,184 @@
+.section11 {
+    position: relative;
+    isolation: isolate;
+    background-color: #ffffff;
+    width: 100%;
+    height: auto;
+    padding: 3rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    overflow-x: clip;
+    overflow-y: visible;
+    gap: 2rem;
+    margin-top: 2rem;
+
+}
+
+.section11 h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.vector20 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 80px;
+    left: 0px;
+    z-index: -1;
+    margin-top: 1rem;
+}
+
+.vector21 {
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    bottom: 105px;
+    left: 0px;
+    z-index: -1;
+    margin-top: 600px;
+}
+
+.titulo {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 2rem;
+    top: -50px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 0 auto 3rem;
+    max-width: 960px;
+    width: 100%;
+}
+
+.card3 {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.cardImg {
+    background-color: #0B5C6A;
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardImg img {
+    max-height: 220px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.cardBody {
+    padding: 16px 18px;
+}
+
+.nome {
+    font-size: 14px;
+    color: #555555;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.preco {
+    font-size: 18px;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+}
+
+.btnComprar {
+    display: block;
+    width: 100%;
+    background: #F3E396;
+    color: #2a2000;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 0;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+
+.btnComprar:hover {
+    background: #f3c137;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .section11 {
+        padding: 2rem 2rem;
+    }
+
+    .section11 h2 {
+        font-size: 1.5rem;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .card3 {
+        width: 100%;
+    }
+
+    .beneficios1 {
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .section11 {
+        padding: 1.5rem 1rem;
+    }
+
+    .section11 h2 {
+        font-size: 1.2rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .card3 {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .cardImg {
+        height: 180px;
+    }
+
+    .cardImg img {
+        max-height: 150px;
+    }
+
+    .beneficios1 {
+        flex-direction: row;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .beneficio1 h3 {
+        font-size: 0.8rem;
+    }
+}

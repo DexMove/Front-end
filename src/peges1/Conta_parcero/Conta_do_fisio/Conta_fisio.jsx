@@ -2,11 +2,11 @@ import { useNavigate } from "react-router-dom";
 import Header2 from '../../../componentes/Header2';
 import Footer from '../../../componentes/Footer';
 import styles from "../css.fisio/Conta_fisio.module.css";
-import avatar from "../../../assets/imag/ofisio.png";
-import vector16 from '../../../assets/imag/Vector16.svg';
-import vector17 from '../../../assets/imag/Vector17.svg';
-import vector18 from '../../../assets/imag/Vector18.svg';
-import onda15 from '../../../assets/imag/Group274.svg';
+import avatar from "../../../assets/ofisio.png";
+import vector16 from '../../../assets/Vector16.svg';
+import vector17 from '../../../assets/Vector17.svg';
+import vector18 from '../../../assets/Vector18.svg';
+import onda15 from '../../../assets/Group274.svg';
 
  
 const IconEdit = () => (
