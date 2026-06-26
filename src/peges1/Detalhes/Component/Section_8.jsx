@@ -18,7 +18,7 @@ const imagens = [ortesem1, ortesem2, ortesem3, ortesem4];
 function Section_8() {
     const navigate = useNavigate();
     const [imagemSelecionada, setImagemSelecionada] = useState(ortese);
-    const [showRulerImage, setShowRulerImage] = useState(false); // 👈 ADICIONADO
+    const [showRulerImage, setShowRulerImage] = useState(false); 
     const [tamanhoSelecionado, setTamanhoSelecionado] = useState('M');
 
     return (
