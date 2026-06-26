@@ -384,7 +384,7 @@ function Home({ useHeader2 = false }) {
           <div className={styles.formi}>
             <div style={{ display: "flex", gap: "1rem" }}>
               <div style={{ flex: 1 }}>
-                <label htmlFor="nome">Nome completo</label>
+                <label className="nome-form" htmlFor="nome">Nome</label>
                 <input id="nome" type="text" placeholder="Seu Nome" />
               </div>
               <div style={{ flex: 1 }}>
