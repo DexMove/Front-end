@@ -39,8 +39,8 @@ function Produtos(){
       <div className="mh-hero-content">
         <img src={MaoBanner} alt="Órtese MoveHand" className="mh-hero-image" />
         <div className="mh-hero-text">
-          <h1>MOVEHAND</h1>
-          <h2>Tecnologia que transforma<br />dificuldades em possibilidades</h2>
+          <h1 className="h1-mh">MOVEHAND</h1>
+          <h2 className="h2-mh">Tecnologia que transforma<br />dificuldades em possibilidades</h2>
         </div>
       </div>
     </section>

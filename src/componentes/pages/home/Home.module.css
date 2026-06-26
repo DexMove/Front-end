@@ -878,7 +878,8 @@ body {
 .formi label {
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
-    color: #333;
+    color: #1a1a1a;
+    font-weight: 600;
 }
 .formi input {
     width: 100%;
@@ -890,6 +891,8 @@ body {
     box-sizing: border-box;
     font-size: 1rem;
     transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    color: black;
+    background-color: #fff;
 }
 .formi textarea {
     width: 100%;
@@ -902,15 +905,19 @@ body {
     resize: none;
     font-size: 1.25rem;
     transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    color: black;
+    background-color: #fff;
 }
 .formi input:focus,
 .formi textarea:focus {
     border-color: #f3e396;
     outline: none;
     box-shadow: 0 0 0 3px rgba(243, 227, 150, 0.35);
+    
 }
 .formi button {
     align-self: center;
+    color: black;
     padding: 1rem 3rem;
     background-color: #E8C96A;
     border: none;
