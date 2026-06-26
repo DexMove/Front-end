@@ -37,7 +37,6 @@ import DadosProfissionais from "./componentes/pages/cadastro-fisioterapeuta/Dado
 import EditarInformacoes2 from "./componentes/pages/editar-informacoes/editar-informações2";
 import EditarPaciente2 from "./componentes/pages/editar-paciente/Editar-paciente2";
 import Termos from "./componentes/pages/termos/Termos";
-import UserWayWidget from './UserWayWidget';
 
 function App() {
   return (
