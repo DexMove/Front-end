@@ -146,12 +146,16 @@
 }
 
 .badgeVerificado {
+  position: absolute;
+  top: 210px; /* Posicionado acima da parte inferior da foto (que tem 260px de altura) */
+  left: 15px;
   background: #dff3df;
   color: #3b7c3b;
   padding: 6px 12px;
   border-radius: 8px;
   font-size: 13px;
   font-weight: 600;
+  z-index: 1;
 }
 
 .fotoFisio {

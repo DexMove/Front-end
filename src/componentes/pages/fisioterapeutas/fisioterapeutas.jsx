@@ -159,6 +159,7 @@ export default function Fisioterapeutas() {
           <div className="gridFisio">
             {fisioterapeutas.map((fisio) => (
               <div className="cardFisio" key={fisio.id}>
+                <span className="badgeVerificado">Verificado</span>
                 <img src={fisio.imagem} alt={fisio.nome} className="fotoFisio" />
                 <div className="conteudoCard">
                   <h3>{fisio.nome}</h3>
@@ -168,7 +169,6 @@ export default function Fisioterapeutas() {
                   <div className="tagsFisio">
                     <span>{fisio.atendimento}</span>
                     <span>Agende agora</span>
-                    <span className="badgeVerificado">Verificado</span>
                   </div>
                   <div className="avaliacao">⭐⭐⭐⭐⭐ {fisio.nota}</div>
                   <button className="btnPerfil" onClick={() => abrirModal(fisio)}>Ver perfil</button>
