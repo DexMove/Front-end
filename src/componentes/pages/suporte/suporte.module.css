@@ -317,7 +317,7 @@
 .campoEntrada input:focus, 
 .campoMensagem textarea:focus {
     outline: none;           
-    border-color: #ffb366;   
+    border-color: #F3E396;    
     background-color: #fff;  
 
 }
