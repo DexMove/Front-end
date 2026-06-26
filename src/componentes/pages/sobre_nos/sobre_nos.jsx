@@ -15,6 +15,7 @@ import iconeMissao from "../../../assets/missao.png";
 import iconeVisao from "../../../assets/visao.png";
 import iconeValores from "../../../assets/valores.png";
 import videoDexMove from "../../../assets/dexmove.mp4";
+import video from "../../../assets/Dexy.mp4";
 import Footer from '../../Footer';
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -114,7 +115,7 @@ function SobreNos() {
           </div>
           <div className={styles.dexyImagem}>
             <video autoPlay loop muted playsInline className={styles.videoDexy}>
-              <source src={videoDexMove} type="video/mp4" />
+              <source src={video} type="video/mp4" />
               Seu navegador não suporta vídeos.
             </video>
           </div>

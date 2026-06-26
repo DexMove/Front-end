@@ -3,10 +3,10 @@ import "./fisioterapeutas.css";
 import Footer from "../../Footer";
 import Header from '../../Header';
 import { MdKeyboardArrowDown } from 'react-icons/md'; // Ícone para a interação
-import fisioterapeuta1 from "../../../assets/image_62.png";
-import fisioterapeuta2 from "../../../assets/image_62.png";
-import fisioterapeuta3 from "../../../assets/image_62.png";
-import fisioterapeuta4 from "../../../assets/image_62.png";
+import fisioterapeuta1 from "../../../assets/fisio4.png";
+import fisioterapeuta2 from "../../../assets/fisio2.png";
+import fisioterapeuta3 from "../../../assets/fisio3.png";
+import fisioterapeuta4 from "../../../assets/fisio1.png";
 
 export default function Fisioterapeutas() {
   const [modalAberto, setModalAberto] = useState(false);
