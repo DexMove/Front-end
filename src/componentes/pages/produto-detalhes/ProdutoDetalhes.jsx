@@ -70,7 +70,8 @@ function ProdutoDetalhes({ lado = "direita" }) {
   // Determine main image based on side
   const getMainImage = () => {
     if (lado === "par") return ortesePar;
-    return orteseDireita; // Default is right hand style, also used for left hand default in Section_8
+    if (lado === "esquerda") return orteseEsquerda;
+    return orteseDireita;
   };
 
   const [imagemSelecionada, setImagemSelecionada] = useState(getMainImage());

@@ -14,7 +14,7 @@ import vector16 from "../../../assets/Vector16.svg";
 import vector17 from "../../../assets/Vector17.svg";
 import vector18 from "../../../assets/Vector18.svg";
 import menina2 from "../../../assets/menina2.png";
-import OrteseSec2 from "../../../assets/3ortese.png";
+import OrteseSec2 from "../../../assets/imgnova.png";
 import menina1 from "../../../assets/menina1.png";
 import menino1 from "../../../assets/novameni.png";
 import videoDexMove from "../../../assets/video.mp4";
