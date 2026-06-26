@@ -7,7 +7,7 @@ body {
     box-sizing: border-box;
 }
 
-#root { 
+#root {
     box-sizing: border-box;
 }
 
@@ -26,6 +26,7 @@ body {
     background-color: #ffffff;
     overflow: hidden;
 }
+
 .div1 {
     width: 45%;
     display: flex;
@@ -35,6 +36,7 @@ body {
     z-index: 2;
     gap: 0rem;
 }
+
 .div1 h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
@@ -42,6 +44,7 @@ body {
     color: #0B5C6A;
     text-align: center;
 }
+
 .div1 p {
     font-size: 2rem;
     margin-bottom: 2rem;
@@ -49,10 +52,12 @@ body {
     text-align: center;
     margin-top: 0;
 }
+
 .botoins {
     display: flex;
     gap: 1rem;
 }
+
 .button {
     width: 300px;
     height: 60px;
@@ -69,16 +74,19 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .button:hover {
     background-color: #e8d472;
     transform: translateY(-2px);
 }
+
 .div2 {
     position: relative;
     width: 50%;
     height: 500px;
     overflow: visible;
 }
+
 .onda1 {
     position: absolute;
     right: -350px;
@@ -88,6 +96,7 @@ body {
     z-index: 1;
     transform: rotate(-16deg);
 }
+
 .mao1 {
     position: absolute;
     left: 45%;
@@ -110,6 +119,7 @@ body {
     box-sizing: border-box;
     overflow: hidden;
 }
+
 .vector16 {
     position: absolute;
     width: 100%;
@@ -119,6 +129,7 @@ body {
     z-index: 1;
     margin-top: 0;
 }
+
 .vector17 {
     position: absolute;
     width: 100%;
@@ -128,6 +139,7 @@ body {
     z-index: -0;
     margin-top: 0;
 }
+
 .vector18 {
     position: absolute;
     width: 100%;
@@ -137,6 +149,7 @@ body {
     z-index: -0;
     margin-top: 0;
 }
+
 .section2 h2 {
     font-size: 2rem;
     color: #0B5C6A;
@@ -145,6 +158,7 @@ body {
     font-weight: bold;
     z-index: 2;
 }
+
 .s2Cards {
     position: relative;
     display: flex;
@@ -154,6 +168,7 @@ body {
     width: 100%;
     z-index: 2;
 }
+
 .s2Card {
     background-color: #ffffff;
     border-radius: 16px;
@@ -165,6 +180,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
 }
+
 .s2Card img {
     width: 100%;
     height: 230px;
@@ -172,12 +188,14 @@ body {
     border-radius: 12px;
     margin-bottom: 1rem;
 }
+
 .s2Card h3 {
     font-size: 1.25rem;
     font-weight: bold;
     color: #0B5C6A;
     margin-bottom: 0.5rem;
 }
+
 .s2Card p {
     font-size: 1.25rem;
     color: #555555;
@@ -194,6 +212,7 @@ body {
     background-color: #ffffff;
     box-sizing: border-box;
 }
+
 .s3Titulo {
     font-size: 2.2em;
     font-weight: bold;
@@ -201,18 +220,21 @@ body {
     text-align: center;
     margin-bottom: 2.5rem;
 }
+
 .conteudo {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 3rem;
 }
+
 .lado1 {
     width: 55%;
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
 }
+
 .lado1 h3 {
     font-size: 1.25rem;
     color: #0B5C6A;
@@ -220,6 +242,7 @@ body {
     font-weight: 600;
     text-align: left;
 }
+
 .lado1 p {
     font-size: 1.125rem;
     color: #444;
@@ -227,12 +250,14 @@ body {
     margin: 0;
     line-height: 1.5;
 }
+
 .item {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     gap: 1rem;
 }
+
 .checkBox {
     min-width: 36px;
     height: 36px;
@@ -245,11 +270,13 @@ body {
     font-size: 1.2em;
     font-weight: bold;
 }
+
 .lado2 {
     width: 45%;
     display: flex;
     justify-content: center;
 }
+
 .foto {
     width: 100%;
     max-width: 320px;
@@ -259,183 +286,207 @@ body {
 
 /* Como Funciona */
 .funcSection {
-  padding: 4rem 2rem;
-  box-sizing: border-box;
-  background-color: #ffffff;
+    padding: 4rem 2rem;
+    box-sizing: border-box;
+    background-color: #ffffff;
 }
+
 .eyebrow {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 500;
-  letter-spacing: 1px;
-  color: #FFA663;
-  margin: 0 0 0.5rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #FFA663;
+    margin: 0 0 0.5rem;
 }
+
 .funcTitulo {
-  text-align: center;
-  font-size: 3rem;
-  font-weight: 500;
-  color: #0B5C6A;
-  margin: 0 0 1rem;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 500;
+    color: #0B5C6A;
+    margin: 0 0 1rem;
 }
+
 .funcTitulo span {
-  color: #FFA663;
+    color: #FFA663;
 }
+
 .funcSubtitulo {
-  text-align: center;
-  font-size: 1.25rem;
-  color: #555;
-  line-height: 1.7;
-  margin: 0 0 2.5rem;
+    text-align: center;
+    font-size: 1.25rem;
+    color: #555;
+    line-height: 1.7;
+    margin: 0 0 2.5rem;
 }
+
 .funcGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin-bottom: 2rem;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    box-sizing: border-box;
 }
+
 .funcCard {
-  background: #fff;
-  border: 0.5px solid #ddd;
-  border-radius: 12px;
-  padding: 1.25rem 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  box-sizing: border-box;
+    background: #fff;
+    border: 0.5px solid #ddd;
+    border-radius: 12px;
+    padding: 1.25rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-sizing: border-box;
 }
+
 .numero {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background: #0B5C6A;
-  color: #FFF5C2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  font-weight: 500;
-  flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #0B5C6A;
+    color: #FFF5C2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 500;
+    flex-shrink: 0;
 }
+
 .numeroAlt {
-  background: #FFA663;
-  color: #fff;
+    background: #FFA663;
+    color: #fff;
 }
+
 .cardTitulo {
-  font-size: 2rem;
-  font-weight: 600;
-  color: #0B5C6A;
-  line-height: 1.4;
-  margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #0B5C6A;
+    line-height: 1.4;
+    margin: 0;
 }
+
 .cardDesc {
-  font-size: 1.25rem;
-  color: #555;
-  line-height: 1.6;
-  margin: 0;
+    font-size: 1.25rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
 }
+
 .divider {
-  border: none;
-  border-top: 0.5px solid #eee;
-  margin: 4px 0;
+    border: none;
+    border-top: 0.5px solid #eee;
+    margin: 4px 0;
 }
+
 .lista {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
+
 .funcItem {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  font-size: 1.25rem;
-  color: #444;
-  line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 1.25rem;
+    color: #444;
+    line-height: 1.5;
 }
+
 .check {
-  color: #FFA663;
-  font-size: 1.25rem;
-  flex-shrink: 0;
-  margin-top: 1px;
+    color: #FFA663;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    margin-top: 1px;
 }
+
 .banner {
-  background: #0B5C6A;
-  border-radius: 12px;
-  padding: 1rem 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-  box-sizing: border-box;
+    background: #0B5C6A;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
 }
+
 .bannerEsquerda {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
+
 .bannerLogo {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #FFA663;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  font-weight: 700;
-  color: #fff;
-  flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #FFA663;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
 }
+
 .bannerTexto p {
-  margin: 0;
-  font-size: 1.25rem;
-  color: #FFF5C2;
-  line-height: 1.6;
+    margin: 0;
+    font-size: 1.25rem;
+    color: #FFF5C2;
+    line-height: 1.6;
 }
+
 .bannerTexto strong {
-  color: #fff;
-  font-weight: 500;
+    color: #fff;
+    font-weight: 500;
 }
+
 .destaque {
-  color: #FFA663;
+    color: #FFA663;
 }
+
 .bannerDireita {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
 }
+
 .bannerDesc {
-  font-size: 1.25rem;
-  color: #aacfd4;
-  line-height: 1.6;
-  max-width: 220px;
-  margin: 0;
+    font-size: 1.25rem;
+    color: #aacfd4;
+    line-height: 1.6;
+    max-width: 220px;
+    margin: 0;
 }
+
 .bannerBtn {
-  background: #FFF5C2;
-  color: #0B5C6A;
-  border: none;
-  border-radius: 8px;
-  padding: 0.5rem 1.25rem;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  white-space: nowrap;
+    background: #FFF5C2;
+    color: #0B5C6A;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
 }
+
 .bannerBtn:hover {
-  opacity: 0.9;
+    opacity: 0.9;
 }
 
 /* Section 4 */
@@ -449,6 +500,7 @@ body {
     box-sizing: border-box;
     align-items: center;
 }
+
 .section4 h2 {
     position: relative;
     font-size: 3rem;
@@ -458,6 +510,7 @@ body {
     font-weight: bold;
     z-index: 3;
 }
+
 .section4 p {
     position: relative;
     font-size: 2rem;
@@ -466,6 +519,7 @@ body {
     z-index: 3;
     margin-bottom: 2rem;
 }
+
 .comprar4 {
     width: 430px;
     height: 60px;
@@ -482,25 +536,29 @@ body {
     justify-content: center;
     margin-top: 2rem;
 }
+
 .comprar4:hover {
     background-color: #f1c602;
     transform: scale(1.05);
 }
+
 .caixa7 {
     width: 50%;
     height: 500px;
-    background-color: #e0e0e0;  
+    background-color: #e0e0e0;
     border-radius: 16px;
     box-sizing: border-box;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin-top: 1.5rem;         
+    margin-top: 1.5rem;
     overflow: hidden;
 }
+
 .caixa7Video {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
 .grupo {
     position: relative;
     display: flex;
@@ -526,6 +584,7 @@ body {
     box-sizing: border-box;
     overflow: hidden;
 }
+
 .vector10 {
     position: absolute;
     width: 180%;
@@ -534,6 +593,7 @@ body {
     left: 0px;
     z-index: 0;
 }
+
 .vector11 {
     position: absolute;
     width: 100%;
@@ -542,6 +602,7 @@ body {
     left: 0px;
     z-index: -1;
 }
+
 .vector12 {
     position: absolute;
     width: 150%;
@@ -550,6 +611,7 @@ body {
     left: -290px;
     z-index: -2;
 }
+
 .section5 h2 {
     position: relative;
     font-size: 2rem;
@@ -559,6 +621,7 @@ body {
     font-weight: bold;
     z-index: 3;
 }
+
 .subtitulo5 {
     position: relative;
     font-size: 1.2rem;
@@ -566,6 +629,7 @@ body {
     margin-top: 1rem;
     z-index: 3;
 }
+
 .s5Cards {
     position: relative;
     display: flex;
@@ -576,12 +640,14 @@ body {
     z-index: 3;
     margin-top: 2rem;
 }
+
 .cardFlip {
     width: 300px;
     height: 320px;
     perspective: 1000px;
     cursor: pointer;
 }
+
 .cardInner {
     position: relative;
     width: 100%;
@@ -589,9 +655,11 @@ body {
     transition: transform 0.6s ease;
     transform-style: preserve-3d;
 }
+
 .cardFlip:hover .cardInner {
     transform: rotateY(180deg);
 }
+
 .cardFrente,
 .cardVerso {
     position: absolute;
@@ -606,10 +674,12 @@ body {
     padding: 1rem;
     box-sizing: border-box;
 }
+
 .cardFrente {
     background-color: #FDF5D3;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
+
 .cardFrente h3 {
     font-size: 1.25rem;
     font-weight: bold;
@@ -618,17 +688,20 @@ body {
     width: 100%;
     margin: 0;
 }
+
 .s5Icone {
     width: 120px;
     height: 120px;
     object-fit: contain;
     margin-bottom: 1rem;
 }
+
 .cardVerso {
     background-color: #FDF5D3;
     transform: rotateY(180deg);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
+
 .cardVerso p {
     font-size: 1.2rem;
     color: #2a2000;
@@ -639,113 +712,127 @@ body {
 
 /* Section Fisio */
 .fisioSection {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 4rem 5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #ffffff;
-  gap: 4rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 4rem 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    gap: 4rem;
 }
+
 .fisioEsquerda {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
+
 .badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  align-self: flex-start;
-  background: #ffffff;
-  border: 1px solid #d0d0d0;
-  border-radius: 20px;
-  padding: 6px 14px;
-  font-size: 1.25rem;
-  color: #555555;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    align-self: flex-start;
+    background: #ffffff;
+    border: 1px solid #d0d0d0;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 1.25rem;
+    color: #555555;
 }
+
 .badgeIcon {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
 }
+
 .fisioTitulo {
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: #0B5C6A;
-  line-height: 1.3;
-  margin: 0;
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #0B5C6A;
+    line-height: 1.3;
+    margin: 0;
 }
+
 .fisioSubtitulo {
-  font-size: 1.25rem;
-  color: #555555;
-  margin: 0;
+    font-size: 1.25rem;
+    color: #555555;
+    margin: 0;
 }
+
 .fisioCards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
 }
+
 .fisioCard {
-  width: 100%;
-  height: auto;
-  min-height: 260px;
-  text-align: center;
-  background: #ffffff;
-  border: 2px solid #FFF5C2;
-  border-radius: 12px;
-  padding: 32px 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    min-height: 260px;
+    text-align: center;
+    background: #ffffff;
+    border: 2px solid #FFF5C2;
+    border-radius: 12px;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    box-sizing: border-box;
 }
+
 .fisioIcone {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
 }
+
 .fisioCard strong {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #0B5C6A;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0B5C6A;
 }
+
 .fisioCard p {
-  font-size: 1.25rem;
-  color: #040404;
-  line-height: 1.6;
-  margin: 0;
+    font-size: 1.25rem;
+    color: #040404;
+    line-height: 1.6;
+    margin: 0;
 }
+
 .fisioBotao {
-  align-self: flex-start;
-  background: #f5e9a0;
-  color: #2a2000;
-  border: 2px solid #f7e39d;
-  border-radius: 24px;
-  padding: 12px 28px;
-  font-size: 20px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
+    align-self: flex-start;
+    background: #f5e9a0;
+    color: #2a2000;
+    border: 2px solid #f7e39d;
+    border-radius: 24px;
+    padding: 12px 28px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
 }
+
 .fisioBotao:hover {
-  background: #ffdf0d;
+    background: #ffdf0d;
 }
+
 .fisioDireita {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
+
 .fisioDireita img {
-  max-width: 100%;
-  max-height: 480px;
-  object-fit: cover;
-  border-radius: 20%;
-  border: 4px solid #e8a020;
+    max-width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    border-radius: 20%;
+    border: 4px solid #e8a020;
 }
 
 /* Section 6 */
@@ -761,6 +848,7 @@ body {
     box-sizing: border-box;
     overflow: visible;
 }
+
 .section6 h2 {
     font-size: 2rem;
     color: #0B5C6A;
@@ -768,12 +856,14 @@ body {
     margin-bottom: 2rem;
     font-weight: bold;
 }
+
 .section6 p {
     font-size: 1.25rem;
     color: #121111;
     margin: 0;
     margin-top: 1rem;
 }
+
 .s6Cards {
     position: relative;
     display: flex;
@@ -783,6 +873,7 @@ body {
     width: 100%;
     z-index: 1;
 }
+
 .s6Card {
     background-color: #ffffff;
     border-radius: 16px;
@@ -796,17 +887,20 @@ body {
     align-items: flex-start;
     margin-top: 3rem;
 }
+
 .s6Card h3 {
     font-size: 1.25rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
+
 .s6Card hr {
     border: none;
     border-top: 1px solid #e0e0e0;
     width: 100%;
     margin: 1.5rem 0 0.3rem 0;
 }
+
 .funcao {
     color: #0B5C6A;
 }
@@ -824,6 +918,7 @@ body {
     box-sizing: border-box;
     overflow: hidden;
 }
+
 .vector13 {
     position: absolute;
     width: 100%;
@@ -832,6 +927,7 @@ body {
     left: 0px;
     z-index: -1;
 }
+
 .vector14 {
     position: absolute;
     width: 100%;
@@ -840,6 +936,7 @@ body {
     left: 0px;
     z-index: -2;
 }
+
 .vector15 {
     position: absolute;
     width: 150%;
@@ -848,23 +945,27 @@ body {
     left: -350px;
     z-index: -3;
 }
+
 .section7 h2 {
     font-size: 3rem;
     color: #0B5C6A;
     font-weight: bold;
     margin-bottom: 1rem;
 }
+
 .section7 p {
     font-size: 1.25rem;
     color: #444;
     margin-bottom: 2rem;
 }
+
 .contend {
     display: flex;
     justify-content: center;
     width: 100%;
     margin-top: 3rem;
 }
+
 .formi {
     background-color: #ffffff;
     border-radius: 15px;
@@ -875,11 +976,13 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
 }
+
 .formi label {
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
     color: #333;
 }
+
 .formi input {
     width: 100%;
     height: 50px;
@@ -891,6 +994,7 @@ body {
     font-size: 1rem;
     transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
+
 .formi textarea {
     width: 100%;
     height: 140px;
@@ -903,12 +1007,14 @@ body {
     font-size: 1.25rem;
     transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
+
 .formi input:focus,
 .formi textarea:focus {
     border-color: #f3e396;
     outline: none;
     box-shadow: 0 0 0 3px rgba(243, 227, 150, 0.35);
 }
+
 .formi button {
     align-self: center;
     padding: 1rem 3rem;
@@ -920,6 +1026,7 @@ body {
     cursor: pointer;
     transition: transform 0.2s ease, background-color 0.2s ease;
 }
+
 .formi button:hover {
     background-color: #f3c137;
     transform: scale(1.02);
@@ -929,31 +1036,38 @@ body {
 
 /* ===== Tablet ===== */
 @media (max-width: 1024px) {
+
     /* Section 1 */
     .section1 {
         height: auto;
         flex-direction: column;
         padding: 2rem 1rem;
     }
+
     .div1 {
         width: 100%;
         padding: 1rem;
         text-align: center;
     }
+
     .div1 h1 {
         font-size: 2rem;
     }
+
     .div1 p {
         font-size: 1.2rem;
     }
+
     .botoins {
         justify-content: center;
         flex-wrap: wrap;
     }
+
     .div2 {
         width: 100%;
         height: 300px;
     }
+
     .mao1 {
         width: 250px;
         height: 300px;
@@ -967,13 +1081,16 @@ body {
         height: auto;
         padding: 2rem 1rem;
     }
+
     .section2 h2 {
         font-size: 1.5rem;
     }
+
     .s2Cards {
         flex-wrap: wrap;
         gap: 1.5rem;
     }
+
     .s2Card {
         width: 45%;
     }
@@ -983,23 +1100,29 @@ body {
         height: auto;
         padding: 2rem 2rem;
     }
+
     .s3Titulo {
         font-size: 1.5rem;
         margin-bottom: 1.5rem;
     }
+
     .conteudo {
         flex-direction: column;
         gap: 2rem;
     }
+
     .lado1 {
         width: 100%;
     }
+
     .lado2 {
         width: 100%;
     }
+
     .lado1 h3 {
         font-size: 18px;
     }
+
     .lado1 p {
         font-size: 14px;
     }
@@ -1016,25 +1139,30 @@ body {
     .section4 {
         padding: 3rem 2.5rem;
     }
+
     .section4 h2 {
         font-size: 2.2rem;
         margin-bottom: 1rem;
     }
+
     .section4 p {
         font-size: 1.3rem;
         margin-top: -0.5rem;
         margin-bottom: 1.5rem;
     }
+
     .comprar4 {
         width: 300px;
         height: 50px;
         font-size: 1.3rem;
         margin-top: 1rem;
     }
+
     .caixa7 {
         width: 70%;
         height: 350px;
     }
+
     .grupo {
         gap: 2rem;
     }
@@ -1043,14 +1171,17 @@ body {
     .section5 {
         padding: 2rem 1rem;
     }
+
     .section5 h2 {
         font-size: 1.5rem;
         margin-bottom: 1.5rem;
     }
+
     .s5Cards {
         flex-wrap: wrap;
         gap: 1.5rem;
     }
+
     .cardFlip {
         width: 45%;
         height: 280px;
@@ -1061,6 +1192,7 @@ body {
         padding: 3rem 2rem;
         gap: 2rem;
     }
+
     .fisioSection h2 {
         font-size: 1.8rem;
     }
@@ -1070,14 +1202,17 @@ body {
         height: auto;
         padding: 2rem 1rem;
     }
+
     .section6 h2 {
         font-size: 1.5rem;
         margin-bottom: 1.5rem;
     }
+
     .s6Cards {
         flex-wrap: wrap;
         gap: 1.5rem;
     }
+
     .s6Card {
         width: 45%;
         margin-top: 1rem;
@@ -1087,10 +1222,12 @@ body {
     .section7 {
         padding: 2rem 1rem;
     }
+
     .section7 h2 {
         font-size: 1.5rem;
         margin-bottom: 1rem;
     }
+
     .formi {
         width: 70%;
         padding: 1.5rem;
@@ -1099,32 +1236,39 @@ body {
 
 /* ===== Mobile ===== */
 @media (max-width: 768px) {
+
     /* Section 1 */
     .section1 {
         height: auto;
         padding: 1rem;
     }
+
     .div1 h1 {
         font-size: 1.5rem;
         line-height: 1.3;
         margin-bottom: 0;
     }
+
     .div1 p {
         font-size: 1rem;
         margin-top: 0.5rem;
     }
+
     .button {
         width: 100%;
         height: 40px;
         font-size: 0.9rem;
     }
+
     .div2 {
         width: 100%;
         height: 220px;
     }
+
     .onda1 {
         display: none;
     }
+
     .mao1 {
         width: 170px;
         height: auto;
@@ -1166,40 +1310,58 @@ body {
         position: absolute;
         width: 100% !important;
         left: 0 !important;
-        bottom: 0 !important;
         right: 0 !important;
         top: auto !important;
         object-fit: cover !important;
     }
-    .vector18 { height: 80% !important; }
-    .vector17 { height: 65% !important; }
-    .vector16 { height: 50% !important; }
+    .vector18 {
+        height: 250px !important;
+        bottom: 0px !important;
+        z-index: 0 !important;
+    }
+    .vector17 {
+        height: 250px !important;
+        bottom: 15px !important;
+        z-index: 0 !important;
+    }
+    .vector16 {
+        height: 300px !important;
+        bottom: -50px !important;
+        z-index: 1 !important;
+    }
 
     /* Section 3 */
     .section3 {
         padding: 1.5rem 1rem;
     }
-    .s3Titulo {
-        font-size: 1.2rem;
+
+    h2.s3Titulo {
+        font-size: 1.3rem !important;
         margin-bottom: 1rem;
     }
+
     .conteudo {
         gap: 1rem;
     }
+
     .lado1 h3 {
-        font-size: 16px;
+        font-size: 1.1rem !important;
     }
+
     .lado1 p {
-        font-size: 13px;
+        font-size: 0.9rem !important;
     }
+
     .checkBox {
         min-width: 30px;
         height: 30px;
         font-size: 1rem;
     }
+
     .item {
         gap: 0.7rem;
     }
+
     .foto {
         max-width: 250px;
     }
@@ -1209,15 +1371,18 @@ body {
         padding: 2rem 1.5rem;
         align-items: center;
     }
+
     .section4 h2 {
         font-size: 1.8rem;
         margin-bottom: 0.8rem;
     }
+
     .section4 p {
         font-size: 1rem;
         margin-top: 0;
         margin-bottom: 1rem;
     }
+
     .comprar4 {
         width: 80%;
         max-width: 250px;
@@ -1226,39 +1391,77 @@ body {
         margin-top: 1rem;
         border-radius: 15px;
     }
+
     .caixa7 {
         width: 90%;
         max-width: 350px;
         height: 250px;
     }
+
     .grupo {
         flex-direction: column;
         gap: 1.5rem;
         width: 100%;
     }
+    .vector16 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: -100px;
+    left: 0px;
+    z-index: 1;
+    margin-top: 0;
+}
+
+.vector17 {
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    bottom: 0px;
+    left: 0px;
+    z-index: -0;
+    margin-top: 0;
+}
+
+.vector18 {
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    bottom: 20px;
+    left: 0px;
+    z-index: -0;
+    margin-top: 0;
+}
 
     /* Section 5 */
     .section5 {
         padding: 1.5rem 1rem;
     }
+
     .section5 h2 {
         font-size: 1.2rem;
         margin-bottom: 1rem;
     }
+
     .s5Cards {
         flex-direction: column;
         gap: 1rem;
         align-items: center;
     }
+
     .cardFlip {
         width: 100%;
         max-width: 320px;
         height: 280px;
     }
+
     .cardFrente h3 {
         font-size: 0.9rem;
     }
-    .vector10, .vector11, .vector12 {
+
+    .vector10,
+    .vector11,
+    .vector12 {
         position: absolute;
         width: 100% !important;
         left: 0 !important;
@@ -1267,9 +1470,18 @@ body {
         top: auto !important;
         object-fit: cover !important;
     }
-    .vector12 { height: 80% !important; }
-    .vector11 { height: 65% !important; }
-    .vector10 { height: 50% !important; }
+
+    .vector12 {
+        height: 80% !important;
+    }
+
+    .vector11 {
+        height: 65% !important;
+    }
+
+    .vector10 {
+        height: 50% !important;
+    }
 
     /* Section Fisio */
     .fisioSection {
@@ -1277,29 +1489,35 @@ body {
         padding: 2.5rem 1.5rem;
         gap: 2.5rem;
     }
+
     .fisioEsquerda {
         width: 100%;
         align-items: center;
         text-align: center;
     }
+
     .badge {
         align-self: center;
     }
+
     .fisioCards {
         grid-template-columns: 1fr;
         gap: 16px;
         width: 100%;
     }
+
     .fisioCard {
         width: 100%;
         height: auto;
         padding: 24px 16px;
     }
+
     .fisioBotao {
         align-self: center;
         width: 100%;
         max-width: 340px;
     }
+
     .fisioDireita {
         width: 100%;
     }
@@ -1308,21 +1526,26 @@ body {
     .section6 {
         padding: 1.5rem 1rem;
     }
+
     .section6 h2 {
         font-size: 1.2rem;
         margin-bottom: 1rem;
     }
+
     .s6Cards {
         flex-direction: column;
         gap: 1rem;
     }
+
     .s6Card {
         width: 100%;
         margin-top: 0.5rem;
     }
+
     .s6Card h3 {
         font-size: 0.9rem;
     }
+
     .section6 p {
         font-size: 1.25rem;
     }
@@ -1331,32 +1554,42 @@ body {
     .section7 {
         padding: 1.5rem 1rem;
     }
+
     .section7 h2 {
         font-size: 1.2rem;
     }
+
     .contend {
         margin-top: 1rem;
     }
+
     .formi {
         width: 100%;
         padding: 1rem;
     }
+
     .formi label {
         font-size: 0.85rem;
     }
+
     .formi input {
         height: 35px;
         font-size: 0.9rem;
     }
+
     .formi textarea {
         height: 80px;
         font-size: 0.9rem;
     }
+
     .formi button {
         padding: 0.7rem 1.5rem;
         font-size: 0.9rem;
     }
-    .vector13, .vector14, .vector15 {
+
+    .vector13,
+    .vector14,
+    .vector15 {
         position: absolute;
         width: 100% !important;
         left: 0 !important;
@@ -1365,35 +1598,48 @@ body {
         top: auto !important;
         object-fit: cover !important;
     }
-    .vector15 { height: 80% !important; }
-    .vector14 { height: 65% !important; }
-    .vector13 { height: 50% !important; }
+
+    .vector15 {
+        height: 80% !important;
+    }
+
+    .vector14 {
+        height: 65% !important;
+    }
+
+    .vector13 {
+        height: 50% !important;
+    }
 }
 
 /* ===== Como Funciona Mobile/Extra Pequeno ===== */
 @media (max-width: 600px) {
-  .funcGrid {
-    grid-template-columns: 1fr;
-    max-width: 320px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .funcTitulo {
-    font-size: 1.5rem;
-  }
-  .banner {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1.25rem;
-  }
-  .bannerDireita {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-  .bannerDesc {
-    max-width: 100%;
-  }
+    .funcGrid {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .funcTitulo {
+        font-size: 1.5rem;
+    }
+
+    .banner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.25rem;
+    }
+
+    .bannerDireita {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .bannerDesc {
+        max-width: 100%;
+    }
 }
 
 /* ===== Mobile Extra Pequeno ===== */
@@ -1402,25 +1648,31 @@ body {
         margin: 0;
         padding: 0;
     }
+
     .Home {
         width: 100vw;
     }
+
     .section4 {
         padding: 1.5rem 1rem;
     }
+
     .section4 h2 {
         font-size: 1.4rem;
         margin-bottom: 0.5rem;
     }
+
     .section4 p {
         font-size: 0.9rem;
         margin-bottom: 0.8rem;
     }
+
     .comprar4 {
         width: 100%;
         height: 40px;
         font-size: 0.9rem;
     }
+
     .caixa7 {
         width: 100%;
         height: 200px;

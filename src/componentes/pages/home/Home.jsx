@@ -227,12 +227,12 @@ function Home({ useHeader2 = false }) {
         <div className={styles.caixa7}>
           <video
             className={styles.caixa7Video}
-            controls
             autoPlay
             loop
             muted
             playsInline
             preload="metadata"
+            style={{ pointerEvents: "none" }}
           >
             <source src={videoDexMove} type="video/mp4" />
             Seu navegador não suporta vídeos HTML5.
