@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Header2 from '../../componentes/Header2';
-import Footer from '../../componentes/Footer';
+import Header2 from '../../Header2';
+import Footer from '../../Footer';
 import styles from './Agenda.module.css';
+<<<<<<< HEAD:src/peges1/Conta_parcero/Agenda.jsx
 import vector16 from '../../assets/Vector16.svg';
 import vector17 from '../../assets/Vector17.svg';
 import vector18 from '../../assets/Vector18.svg';
 import onda1 from '../../assets/Group274.svg';
+=======
+import vector16 from '../../../assets/imag/Vector16.svg';
+import vector17 from '../../../assets/imag/Vector17.svg';
+import vector18 from '../../../assets/imag/Vector18.svg';
+import onda1 from '../../../assets/imag/Group274.svg';
+>>>>>>> 7623945e480f19eb33861f332e48de7fb6c684ce:src/componentes/pages/agenda/Agenda.jsx
 
 function Agenda() {
   const navigate = useNavigate();

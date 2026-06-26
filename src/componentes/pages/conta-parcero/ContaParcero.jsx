@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Header2 from '../../componentes/Header2';
-import Footer from '../../componentes/Footer';
+import Header2 from '../../Header2';
+import Footer from '../../Footer';
 import styles from './ContaParcero.module.css';
 
 const IconEdit = () => (
