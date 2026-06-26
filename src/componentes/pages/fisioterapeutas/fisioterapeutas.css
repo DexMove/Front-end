@@ -149,7 +149,8 @@
 
 .badgeVerificado {
   position: absolute;
-  margin: 15px;
+  top: 210px; /* Posicionado acima da parte inferior da foto (que tem 260px de altura) */
+  left: 15px;
   background: #dff3df;
   color: #3b7c3b;
   padding: 6px 12px;
@@ -189,6 +190,7 @@
 
 .tagsFisio {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 18px;
   margin-top: 10px;

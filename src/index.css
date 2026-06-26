@@ -300,3 +300,40 @@ iframe[id*="userway"] {
   }
 }
 
+/* ==========================================
+   Restaurar a estilização original da section mh-hero na página de produtos
+   ========================================== */
+.mh-hero-text h1 {
+  font-size: 70px !important;
+  color: #FFA663 !important;
+  margin: 0 !important;
+}
+
+.mh-hero-text h2 {
+  font-size: 44px !important;
+  color: #FFFFFF !important;
+  line-height: 1.2 !important;
+  margin: 0 !important;
+}
+
+/* Responsividade da section mh-hero na página de produtos */
+@media (max-width: 1024px) {
+  .mh-hero-text h1 { font-size: 56px !important; }
+  .mh-hero-text h2 { font-size: 32px !important; }
+}
+
+@media (max-width: 768px) {
+  .mh-hero-text h1 { font-size: 40px !important; }
+  .mh-hero-text h2 { font-size: 28px !important; }
+}
+
+@media (max-width: 600px) {
+  .mh-hero-text h1 { font-size: 32px !important; }
+  .mh-hero-text h2 { font-size: 20px !important; }
+}
+
+@media (max-width: 480px), (max-width: 430px) {
+  .mh-hero-text h1 { font-size: 28px !important; }
+  .mh-hero-text h2 { font-size: 16px !important; }
+}
+
