@@ -21,7 +21,7 @@ import videoDexMove from "../../../assets/video.mp4";
 import livro from "../../../assets/livro.png";
 import circolo from "../../../assets/circolo.png";
 import grafico from "../../../assets/grafimao.png";
-import fisioterapeuta from "../../../assets/fisio2.png";
+import fisioterapeuta from "../../../assets/afisio.png";
 import fisioComponente from "../../../assets/fisio_componente.png";
 import vector13 from "../../../assets/Vector13.svg";
 import vector14 from "../../../assets/Vector14.svg";
