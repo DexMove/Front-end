@@ -8,27 +8,27 @@ import BotaoComprar from "../../BotaoComprar";
 import styles from "./Home.module.css";
 
 // Assets imports
-import onda from "../../../assets/imag/Ellipse321.svg";
-import ortese from "../../../assets/imag/home.png";
-import vector16 from "../../../assets/imag/Vector16.svg";
-import vector17 from "../../../assets/imag/Vector17.svg";
-import vector18 from "../../../assets/imag/Vector18.svg";
-import menina2 from "../../../assets/imag/menina2.png";
-import OrteseSec2 from "../../../assets/imag/3ortese.png";
-import menina1 from "../../../assets/imag/menina1.png";
-import menino1 from "../../../assets/imag/novameni.png";
-import videoDexMove from "../../../assets/imag/video.mp4";
-import livro from "../../../assets/imag/livro.png";
-import circolo from "../../../assets/imag/circolo.png";
-import grafico from "../../../assets/imag/grafimao.png";
-import fisioterapeuta from "../../../assets/imag/fisio2.png";
+import onda from "../../../assets/Ellipse321.svg";
+import ortese from "../../../assets/home.png";
+import vector16 from "../../../assets/Vector16.svg";
+import vector17 from "../../../assets/Vector17.svg";
+import vector18 from "../../../assets/Vector18.svg";
+import menina2 from "../../../assets/menina2.png";
+import OrteseSec2 from "../../../assets/3ortese.png";
+import menina1 from "../../../assets/menina1.png";
+import menino1 from "../../../assets/novameni.png";
+import videoDexMove from "../../../assets/video.mp4";
+import livro from "../../../assets/livro.png";
+import circolo from "../../../assets/circolo.png";
+import grafico from "../../../assets/grafimao.png";
+import fisioterapeuta from "../../../assets/fisio2.png";
 import fisioComponente from "../../../assets/fisio_componente.png";
-import vector13 from "../../../assets/imag/Vector13.svg";
-import vector14 from "../../../assets/imag/Vector14.svg";
-import vector15 from "../../../assets/imag/Vector15.svg";
-import vector10 from "../../../assets/imag/Vector10.svg";
-import vector11 from "../../../assets/imag/Vector11.svg";
-import vector12 from "../../../assets/imag/Vector12.svg";
+import vector13 from "../../../assets/Vector13.svg";
+import vector14 from "../../../assets/Vector14.svg";
+import vector15 from "../../../assets/Vector15.svg";
+import vector10 from "../../../assets/Vector10.svg";
+import vector11 from "../../../assets/Vector11.svg";
+import vector12 from "../../../assets/Vector12.svg";
 
 // Data arrays
 const passos = [

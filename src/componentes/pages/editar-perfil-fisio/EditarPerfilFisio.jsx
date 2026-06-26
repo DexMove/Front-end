@@ -1,15 +1,8 @@
 import React, { useState } from 'react';
-<<<<<<< HEAD:src/peges1/Conta_parcero/EditarPerfilFisio.jsx
-import Header2 from '../../componentes/Header2';
-import Footer from '../../componentes/Footer';
-import styles from './EditarPerfilFisio.module.css';;
-import onda1 from '../../assets/Group274.svg';
-=======
 import Header2 from '../../Header2';
 import Footer from '../../Footer';
 import styles from './EditarPerfilFisio.module.css';
-import onda1 from '../../../assets/imag/Group274.svg';
->>>>>>> 7623945e480f19eb33861f332e48de7fb6c684ce:src/componentes/pages/editar-perfil-fisio/EditarPerfilFisio.jsx
+import onda1 from '../../../assets/Group274.svg';
 
 function EditarPerfilFisio() {
   const [dados, setDados] = useState({

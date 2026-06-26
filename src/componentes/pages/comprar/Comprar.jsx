@@ -13,21 +13,12 @@ import {
   QrCode,
   FileText
 } from "lucide-react";
-<<<<<<< HEAD:src/peges1/Comprar/comprars/Comprar.jsx
-import Footer from "../../../componentes/Footer";
-import styles from '../Css.css/Comprar.module.css';
+import Footer from "../../Footer";
+import styles from "./Comprar.module.css";
 import vector22 from '../../../assets/Vector22.svg';
 import vector23 from '../../../assets/Vector23.svg';
 import vector24 from '../../../assets/Vector24.svg';
 import vector25 from '../../../assets/Vector25.svg';
-=======
-import Footer from "../../Footer";
-import styles from "./Comprar.module.css";
-import vector22 from '../../../assets/imag/Vector22.svg';
-import vector23 from '../../../assets/imag/Vector23.svg';
-import vector24 from '../../../assets/imag/Vector24.svg';
-import vector25 from '../../../assets/imag/Vector25.svg';
->>>>>>> 7623945e480f19eb33861f332e48de7fb6c684ce:src/componentes/pages/comprar/Comprar.jsx
 // Usando imagens do projeto para o resumo do pedido
 import orteset from '../../../assets/2ortese.png';
 

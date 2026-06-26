@@ -7,35 +7,35 @@ import Footer from "../../Footer";
 import styles from "./ProdutoDetalhes.module.css";
 
 // Assets imports
-import ortesem1 from "../../../assets/imag/ortesen11.svg";
-import ortesem2 from "../../../assets/imag/ortesen21.svg";
-import ortesem3 from "../../../assets/imag/ortesen31.svg";
-import ortesem4 from "../../../assets/imag/2ortese.png";
-import celular from "../../../assets/imag/celular.png";
-import bateria from "../../../assets/imag/bateria.png";
-import bluet from "../../../assets/imag/bluet.png";
-import mao from "../../../assets/imag/mao.png";
-import guiaTamanhos from "../../../assets/imag/guia.png";
+import ortesem1 from "../../../assets/ortesen11.svg";
+import ortesem2 from "../../../assets/ortesen21.svg";
+import ortesem3 from "../../../assets/ortesen31.svg";
+import ortesem4 from "../../../assets/2ortese.png";
+import celular from "../../../assets/celular.png";
+import bateria from "../../../assets/bateria.png";
+import bluet from "../../../assets/bluet.png";
+import mao from "../../../assets/mao.png";
+import guiaTamanhos from "../../../assets/guia.png";
 
-import vector16 from "../../../assets/imag/Vector16.svg";
-import vector17 from "../../../assets/imag/Vector17.svg";
-import vector18 from "../../../assets/imag/Vector18.svg";
-import iconedt from "../../../assets/imag/iconedt.png";
-import iconedt1 from "../../../assets/imag/iconedt1.png";
-import iconedt2 from "../../../assets/imag/iconedt2.png";
-import iconedt3 from "../../../assets/imag/iconedt3.png";
+import vector16 from "../../../assets/Vector16.svg";
+import vector17 from "../../../assets/Vector17.svg";
+import vector18 from "../../../assets/Vector18.svg";
+import iconedt from "../../../assets/iconedt.png";
+import iconedt1 from "../../../assets/iconedt1.png";
+import iconedt2 from "../../../assets/iconedt2.png";
+import iconedt3 from "../../../assets/iconedt3.png";
 
-import vector19 from "../../../assets/imag/Vector19.svg";
-import ajuste from "../../../assets/imag/ajuste.png";
-import pena from "../../../assets/imag/pena.png";
-import coracao from "../../../assets/imag/coracao.png";
+import vector19 from "../../../assets/Vector19.svg";
+import ajuste from "../../../assets/ajuste.png";
+import pena from "../../../assets/pena.png";
+import coracao from "../../../assets/coracao.png";
 
-import vector20 from "../../../assets/imag/Vector20.svg";
-import vector21 from "../../../assets/imag/Vector21.svg";
-import carregador from "../../../assets/imag/acessorio.png";
-import orteseDireita from "../../../assets/imag/2ortese.png";
-import orteseEsquerda from "../../../assets/imag/3ortese.png";
-import ortesePar from "../../../assets/imag/2par.png";
+import vector20 from "../../../assets/Vector20.svg";
+import vector21 from "../../../assets/Vector21.svg";
+import carregador from "../../../assets/acessorio.png";
+import orteseDireita from "../../../assets/2ortese.png";
+import orteseEsquerda from "../../../assets/3ortese.png";
+import ortesePar from "../../../assets/2par.png";
 
 const imagensThumbnails = [ortesem1, ortesem2, ortesem3, ortesem4];
 

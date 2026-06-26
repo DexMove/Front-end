@@ -4,10 +4,10 @@ import { Calendar, User, Phone, Cake } from 'lucide-react';
 import Header2 from '../../Header2';
 import Footer from '../../Footer';
 import styles from './DetalhesAgendamento.module.css';
-import patientAvatar from '../../assets/menino1.png';
-import vector16 from '../../assets/Vector16.svg';
-import vector17 from '../../assets/Vector17.svg';
-import vector18 from '../../assets/Vector18.svg';
+import patientAvatar from '../../../assets/menino1.png';
+import vector16 from '../../../assets/Vector16.svg';
+import vector17 from '../../../assets/Vector17.svg';
+import vector18 from '../../../assets/Vector18.svg';
 
 function DetalhesAgendamento() {
   const navigate = useNavigate();
