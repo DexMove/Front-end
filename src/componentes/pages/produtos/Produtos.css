@@ -49,24 +49,6 @@ main{
   gap: 16px;
 }
 
-.mh-hero-text h1 {
-  font-family: 'Roboto', sans-serif;
-  font-size: 70px;
-  font-weight: 700;
-  color: #FFA663;
-  margin: 0 ;
-}
-
-.mh-hero-text h2 {
-  font-family: 'Roboto', sans-serif;
-  font-size: 44px;
-  font-weight: 700;
-  color: #FFFFFF;
-  line-height: 1.2;
-  margin: 0;
-}
-
-
 #article{
     display: flex;
     flex-direction: column;

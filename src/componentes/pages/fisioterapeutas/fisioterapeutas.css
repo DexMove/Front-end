@@ -76,6 +76,7 @@
   display: flex;
   align-items: center;
   min-width: 200px;
+  color: black;
 }
 
 .select-wrapper select {
@@ -94,6 +95,7 @@
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
+  color: black;
 }
 
 /* Estilo do ícone da seta (MdKeyboardArrowDown) */
