@@ -127,6 +127,13 @@
   font-weight: 600;
 }
 
+.beneficios li svg {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .plano-card button {
   width: 100%;
   margin-top: auto;

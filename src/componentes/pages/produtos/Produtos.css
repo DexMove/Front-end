@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 main{
     width: 100%;
@@ -154,7 +154,7 @@ main{
 .ortese{
     font-size: 24px;
     color:#0B5C6A;
-    text-align: justify;
+    text-align: left;
     margin-top: 50px;
     font-weight: 400;
 }
@@ -162,14 +162,14 @@ main{
     font-size: 40px;
     font-weight: bolder;
     color: black;
-    text-align: justify;
+    text-align: left;
     margin-top: 15px;
 }
 .avaliacao{
    font-size: 20px;
     font-weight: lighter;
     color: black;
-    text-align: justify;
+    text-align: left;
     margin-top: 15px; 
 }
 .avaliacao span{
@@ -179,7 +179,7 @@ main{
     font-size: 24px;
     color: black;
     font-weight: 400;
-    text-align: justify;
+    text-align: left;
     margin-top: 15px; 
     width: 90%;
     margin-bottom: 10px;
@@ -189,7 +189,7 @@ main{
     font-size: 20px;
     color: black;
     font-weight: 500;
-    text-align: justify;
+    text-align: left;
     margin-top: 20px;
     margin-left: 0;
     gap: 2%;
@@ -219,7 +219,7 @@ main{
     font-size: 40px;
     font-weight: bolder;
     color: black;
-    text-align: justify;
+    text-align: left;
     margin-top: 15px;
 
 }
@@ -227,7 +227,7 @@ main{
    font-size: 20px;
     font-weight: lighter;
     color: black;
-    text-align: justify;
+    text-align: left;
     margin-top: 15px; 
 }
 .avaliacao span{
@@ -237,7 +237,7 @@ main{
     font-size: 24px;
     color: black;
     font-weight: 400;
-    text-align: justify;
+    text-align: left;
     margin-top: 15px; 
     width: 90%;
     margin-bottom: 15px;
@@ -264,14 +264,14 @@ main{
     font-size: 40px;
     font-weight: bolder;
     color: black;
-    text-align: justify;
+    text-align: left;
     margin-top: 15px;
 }
 .texto_esquerda{
     font-size: 24px;
     color: black;
     font-weight: 400;
-    text-align: justify;
+    text-align: left;
     margin-top: 15px; 
     width: 90%;
     margin-bottom: 15px;
@@ -336,14 +336,14 @@ main{
     font-size: 40px;
     font-weight: bolder;
     color: black;
-    text-align: justify;
+    text-align: left;
     margin-top: 15px;
 }
 .texto_carregador{
     font-size: 24px;
     color: black;
     font-weight: 400;
-    text-align: justify;
+    text-align: left;
     margin-top: 15px; 
     width: 90%;
     margin-bottom: 15px;
@@ -376,14 +376,14 @@ main{
     font-size: 40px;
     font-weight: bolder;
     color: black;
-    text-align: justify;
+    text-align: left;
     margin-top: 15px;
 }
 .texto_kit{
     font-size: 24px;
     color: black;
     font-weight: 400;
-    text-align: justify;
+    text-align: left;
     margin-top: 15px; 
     width: 90%;
     margin-bottom: 15px;

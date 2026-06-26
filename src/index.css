@@ -11,8 +11,8 @@
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --sans: 'Inter', sans-serif;
+  --heading: 'Roboto', sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
   font: 18px/145% var(--sans);
@@ -64,33 +64,68 @@ body {
   box-sizing: border-box;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+/* Títulos e Cabeçalhos - Roboto */
+h1, h2, h3, h4, h5, h6, 
+[class*="titulo"], [class*="Titulo"], 
+[class*="title"], [class*="Title"] {
+  font-family: 'Roboto', sans-serif !important;
+  color: #0B5C6A !important;
+}
+
+/* Preserve white headings on dark backgrounds and footers */
+.texto-hero h1, .texto-hero h2,
+[class*="texto-hero"] h1, [class*="texto-hero"] h2,
+[class*="videoConteudo"] h1,
+[class*="textoOndasCentralizado"] h2,
+[class*="conteudoPrincipal"] h1,
+.mh-hero-text h1, .mh-hero-text h2,
+[class*="mh-hero-text"] h1, [class*="mh-hero-text"] h2,
+.banner h1, .banner h2, .banner h3,
+.bannerTexto h1, .bannerTexto h2,
+[class*="bannerTexto"] h1, [class*="bannerTexto"] h2,
+[class*="overlayEquipe"] h3, [class*="overlayEquipe"] h4,
+[class*="recomendado"],
+footer h1, footer h2, footer h3, footer h4, footer h5, footer h6,
+.footer h1, .footer h2, .footer h3, .footer h4,
+[class*="footer"] h1, [class*="footer"] h2, [class*="footer"] h3, [class*="footer"] h4,
+[class*="white"] h1, [class*="white"] h2, [class*="white"] h3,
+[class*="white"] h4, [class*="white"] h5, [class*="white"] h6,
+[class*="branco"] h1, [class*="branco"] h2, [class*="branco"] h3 {
+  color: white !important;
 }
 
 h1 {
-  font-size: 56px;
+  font-size: 3rem !important;
+  font-weight: 700 !important;
   letter-spacing: -1.68px;
   margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
 }
+
 h2 {
-  font-size: 24px;
+  font-size: 2rem !important;
+  font-weight: 700 !important;
   line-height: 118%;
   letter-spacing: -0.24px;
   margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
 }
-p {
-  margin: 0;
+
+/* Textos e Parágrafos - Inter */
+p, 
+[class*="paragrafo"], [class*="Paragrafo"], 
+[class*="descricao"], [class*="Descricao"] {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 1.25rem !important;
+}
+
+/* Botões - Inter */
+button, 
+.button, 
+a.button, 
+[class*="btn"], [class*="Btn"], 
+[class*="button"], [class*="Button"], 
+[class*="botao"], [class*="Botao"] {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 1rem !important;
 }
 
 code,
@@ -107,10 +142,11 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
 html, body, #root {
@@ -147,6 +183,14 @@ canvas {
     display: block;
 }
 
+/* Permitir que ondas e vetores de fundo decorativos excedam max-width: 100% */
+img[class*="vector"],
+img[class*="Vector"],
+img[class*="onda"],
+img[class*="Onda"] {
+    max-width: none !important;
+}
+
 button,
 input,
 textarea,
@@ -163,5 +207,37 @@ footer,
 aside {
     width: 100%;
     box-sizing: border-box;
+}
+
+/* ==========================================
+   Acessibilidade: Alinhamento de VLibras e UserWay
+   ========================================== */
+div[vw] {
+  top: auto !important;
+  bottom: 20px !important; /* VLibras na parte inferior */
+  right: 20px !important;
+  left: auto !important;
+  transform: none !important;
+}
+
+div[vw] [vw-access-button] {
+  top: auto !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  left: auto !important;
+  transform: none !important;
+}
+
+/* Posiciona o UserWay acima do VLibras */
+body .userway,
+body .userway-widget,
+body [class*="userway"],
+body [id*="userway"],
+#userwayAccessibilityWidget,
+div.uaw,
+.uaw,
+iframe[src*="userway"],
+iframe[id*="userway"] {
+  bottom: 110px !important;
 }
 

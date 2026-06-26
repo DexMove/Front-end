@@ -691,7 +691,8 @@ body {
 }
 .fisioCard {
   width: 100%;
-  height: 260px;
+  height: auto;
+  min-height: 260px;
   text-align: center;
   background: #ffffff;
   border: 2px solid #FFF5C2;

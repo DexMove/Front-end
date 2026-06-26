@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 import ScrollToTop from './componentes/ScrollToTop';
 import Header from "./componentes/Header";
 import Planos from "./componentes/pages/planos/Planos";
@@ -37,12 +38,13 @@ import DadosProfissionais from "./componentes/pages/cadastro-fisioterapeuta/Dado
 import EditarInformacoes2 from "./componentes/pages/editar-informacoes/editar-informações2";
 import EditarPaciente2 from "./componentes/pages/editar-paciente/Editar-paciente2";
 import Termos from "./componentes/pages/termos/Termos";
+import UserWayWidget from './UserWayWidget';
 
 function App() {
   return (
+<>
     <BrowserRouter>
       <ScrollToTop />
-
       <Routes>
         <Route path="/header" element={<Header />} />
         <Route path="/" element={<Home useHeader2={false} />} />
@@ -87,6 +89,8 @@ function App() {
         <Route path="/termos" element={<Termos />} />
       </Routes>
     </BrowserRouter>
+    <UserWayWidget />
+    </>
   );
 }
 
