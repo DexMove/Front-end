@@ -146,15 +146,12 @@
 }
 
 .badgeVerificado {
-  position: absolute;
-  margin: 15px;
   background: #dff3df;
   color: #3b7c3b;
   padding: 6px 12px;
   border-radius: 8px;
   font-size: 13px;
   font-weight: 600;
-  z-index: 1;
 }
 
 .fotoFisio {
@@ -187,6 +184,7 @@
 
 .tagsFisio {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 18px;
   margin-top: 10px;
