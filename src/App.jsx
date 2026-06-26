@@ -23,7 +23,6 @@ import Planilha from "./componentes/pages/Planilha/Planilha";
 import AssistenciaOrtese from "./componentes/pages/assistiencia_ortese/Assistencia_ortese";
 import SobreNos from "./componentes/pages/sobre_nos/sobre_nos";
 import Suporte from "./componentes/pages/suporte/suporte";
-<<<<<<< HEAD
 import Home from "./componentes/pages/home/Home/Home";
 import Detalhes from "./componentes/pages/detalhes/Detalhes/Detalhes";
 import Comprar from "./componentes/pages/comprar/Comprar/comprars/Comprar";
@@ -36,16 +35,6 @@ import ContaFisio from "./componentes/pages/conta-parcero/Conta_parcero/Conta_do
 import EditarPerfilFisio from "./componentes/pages/conta-parcero/Conta_parcero/EditarPerfilFisio";
 import MaoDireita from "./componentes/pages/detalhes/Detalhes/Detalhes"
 import Home2 from "./componentes/pages/home/Home/Home2"
-=======
-import Home from "./componentes/pages/home/Home";
-import Comprar from "./componentes/pages/comprar/Comprar";
-import ProdutoDetalhes from "./componentes/pages/produto-detalhes/ProdutoDetalhes";
-import Agenda from "./componentes/pages/agenda/Agenda";
-import ContaParcero from "./componentes/pages/conta-parcero/ContaParcero";
-import DetalhesAgendamento from "./componentes/pages/detalhes-agendamento/DetalhesAgendamento";
-import EditarPerfilFisio from "./componentes/pages/editar-perfil-fisio/EditarPerfilFisio";
-import ContaFisio from "./componentes/pages/conta-fisio/ContaFisio";
->>>>>>> 7623945e480f19eb33861f332e48de7fb6c684ce
 import Bloqueada from "./componentes/pages/bloqueada/bloqueada";
 import Wave from "./componentes/Wave";
 import DadosProfissionais from "./componentes/pages/cadastro-fisioterapeuta/DadosProfissionais";

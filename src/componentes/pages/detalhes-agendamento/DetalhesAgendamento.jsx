@@ -4,17 +4,10 @@ import { Calendar, User, Phone, Cake } from 'lucide-react';
 import Header2 from '../../Header2';
 import Footer from '../../Footer';
 import styles from './DetalhesAgendamento.module.css';
-<<<<<<< HEAD:src/peges1/Conta_parcero/DetalhesAgendamento.jsx
 import patientAvatar from '../../assets/menino1.png';
 import vector16 from '../../assets/Vector16.svg';
 import vector17 from '../../assets/Vector17.svg';
 import vector18 from '../../assets/Vector18.svg';
-=======
-import patientAvatar from '../../../assets/imag/menino1.png';
-import vector16 from '../../../assets/imag/Vector16.svg';
-import vector17 from '../../../assets/imag/Vector17.svg';
-import vector18 from '../../../assets/imag/Vector18.svg';
->>>>>>> 7623945e480f19eb33861f332e48de7fb6c684ce:src/componentes/pages/detalhes-agendamento/DetalhesAgendamento.jsx
 
 function DetalhesAgendamento() {
   const navigate = useNavigate();
