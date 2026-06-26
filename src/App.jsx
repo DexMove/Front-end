@@ -23,34 +23,30 @@ import Planilha from "./componentes/pages/Planilha/Planilha";
 import AssistenciaOrtese from "./componentes/pages/assistiencia_ortese/Assistencia_ortese";
 import SobreNos from "./componentes/pages/sobre_nos/sobre_nos";
 import Suporte from "./componentes/pages/suporte/suporte";
-import Home from "./peges1/Home/Home";
-import Detalhes from "./peges1/Detalhes/Detalhes";
-import Comprar from "./peges1/Comprar/comprars/Comprar";
-import MaoEsquerda from "./peges1/Mao_esquerda/MaoEsquerda";
-import ParPage from "./peges1/Par/ParPage";
-import ContaParcero from "./peges1/Conta_parcero/Conta_parcero";
-import Agenda from "./peges1/Conta_parcero/Agenda";
-import DetalhesAgendamento from "./peges1/Conta_parcero/DetalhesAgendamento";
-import ContaFisio from "./peges1/Conta_parcero/Conta_do_fisio/Conta_fisio";
-import EditarPerfilFisio from "./peges1/Conta_parcero/EditarPerfilFisio";
-import MaoDireita from "./peges1/Detalhes/Detalhes"
-import Home2 from "./peges1/Home/Home2"
+import Home from "./componentes/pages/home/Home";
+import Comprar from "./componentes/pages/comprar/Comprar";
+import ProdutoDetalhes from "./componentes/pages/produto-detalhes/ProdutoDetalhes";
+import Agenda from "./componentes/pages/agenda/Agenda";
+import ContaParcero from "./componentes/pages/conta-parcero/ContaParcero";
+import DetalhesAgendamento from "./componentes/pages/detalhes-agendamento/DetalhesAgendamento";
+import EditarPerfilFisio from "./componentes/pages/editar-perfil-fisio/EditarPerfilFisio";
+import ContaFisio from "./componentes/pages/conta-fisio/ContaFisio";
 import Bloqueada from "./componentes/pages/bloqueada/bloqueada";
-import Wave from "./componentes/Wave"
-import DadosProfissionais from "./componentes/pages/cadastro-fisioterapeuta/DadosProfissionais"
+import Wave from "./componentes/Wave";
+import DadosProfissionais from "./componentes/pages/cadastro-fisioterapeuta/DadosProfissionais";
 import EditarInformacoes2 from "./componentes/pages/editar-informacoes/editar-informações2";
 import EditarPaciente2 from "./componentes/pages/editar-paciente/Editar-paciente2";
-import EditarFisio from "./peges1/Conta_parcero/EditarPerfilFisio"
-import Termos from "./componentes/pages/termos/Termos"
+import Termos from "./componentes/pages/termos/Termos";
+
 function App() {
   return (
     <BrowserRouter>
-    <ScrollToTop />
+      <ScrollToTop />
 
       <Routes>
         <Route path="/header" element={<Header />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/home2" element={<Home2 />} />
+        <Route path="/" element={<Home useHeader2={false} />} />
+        <Route path="/home2" element={<Home useHeader2={true} />} />
         <Route path="/bem-vindo" element={<BemVindo />} />
         <Route path="/entrar" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
@@ -74,24 +70,24 @@ function App() {
         <Route path="/assistencia-ortese" element={<AssistenciaOrtese />} />
         <Route path="/sobre" element={<SobreNos />} />
         <Route path="/suporte" element={<Suporte />} />
-        <Route path="/detalhes" element={<Detalhes />} />
+        <Route path="/detalhes" element={<ProdutoDetalhes lado="direita" />} />
         <Route path="/comprar" element={<Comprar />} />
-        <Route path="/mao-esquerda" element={<MaoEsquerda />} />
-        <Route path="/par" element={<ParPage />} />
+        <Route path="/mao-esquerda" element={<ProdutoDetalhes lado="esquerda" />} />
+        <Route path="/par" element={<ProdutoDetalhes lado="par" />} />
         <Route path="/conta_parcero" element={<ContaParcero />} />
         <Route path="/agenda" element={<Agenda />} />
         <Route path="/detalhes-agendamento" element={<DetalhesAgendamento />} />
         <Route path="/editar-perfil" element={<EditarPerfilFisio />} />
         <Route path="/conta-fisio" element={<ContaFisio />} />
-        <Route path="/mao-direita" element={<MaoDireita />} />
+        <Route path="/mao-direita" element={<ProdutoDetalhes lado="direita" />} />
         <Route path="/bloqueada" element={<Bloqueada />} />
         <Route path="/cadastro-fisioterapeuta" element={<CadastroFisioterapeuta />} />
         <Route path="/wave" element={<Wave />} />
         <Route path="/dados-profissionais" element={<DadosProfissionais />} />
-        <Route path="/editar-perfil" element={<EditarFisio />} />
         <Route path="/termos" element={<Termos />} />
       </Routes>
     </BrowserRouter>
   );
 }
+
 export default App;
