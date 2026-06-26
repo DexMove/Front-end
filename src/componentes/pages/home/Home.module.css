@@ -1163,10 +1163,17 @@ body {
         font-size: 1.25rem;
     }
     .vector16, .vector17, .vector18 {
-        height: 100%;
-        width: 100%;
         position: absolute;
+        width: 100% !important;
+        left: 0 !important;
+        bottom: 0 !important;
+        right: 0 !important;
+        top: auto !important;
+        object-fit: cover !important;
     }
+    .vector18 { height: 80% !important; }
+    .vector17 { height: 65% !important; }
+    .vector16 { height: 50% !important; }
 
     /* Section 3 */
     .section3 {
@@ -1252,9 +1259,17 @@ body {
         font-size: 0.9rem;
     }
     .vector10, .vector11, .vector12 {
-        height: 100%;
-        width: 100%;
+        position: absolute;
+        width: 100% !important;
+        left: 0 !important;
+        bottom: 0 !important;
+        right: 0 !important;
+        top: auto !important;
+        object-fit: cover !important;
     }
+    .vector12 { height: 80% !important; }
+    .vector11 { height: 65% !important; }
+    .vector10 { height: 50% !important; }
 
     /* Section Fisio */
     .fisioSection {
@@ -1342,10 +1357,17 @@ body {
         font-size: 0.9rem;
     }
     .vector13, .vector14, .vector15 {
-        height: 100%;
-        width: 100%;
         position: absolute;
+        width: 100% !important;
+        left: 0 !important;
+        bottom: 0 !important;
+        right: 0 !important;
+        top: auto !important;
+        object-fit: cover !important;
     }
+    .vector15 { height: 80% !important; }
+    .vector14 { height: 65% !important; }
+    .vector13 { height: 50% !important; }
 }
 
 /* ===== Como Funciona Mobile/Extra Pequeno ===== */
