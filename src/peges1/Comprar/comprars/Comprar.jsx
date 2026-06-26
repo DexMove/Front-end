@@ -453,7 +453,7 @@ function Comprar() {
                   <button onClick={() => navigate("/")} className={styles.btnAcompanhar}>
                     Acompanhar pedido
                   </button>
-                  <button onClick={() => navigate("/")} className={styles.btnIrInicio}>
+                  <button onClick={() => navigate("/home2")} className={styles.btnIrInicio}>
                     Ir para a página inicial
                   </button>
                 </div>
@@ -477,7 +477,7 @@ function Comprar() {
                   <p className={styles.subtextItemResumo}>Qtd: 1</p>
                 </div>
                 <div className={styles.itemResumoPrecoTotal}>
-                  R$ 5.000,00
+                  R$ 700,00
                 </div>
               </div>
 

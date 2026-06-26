@@ -1,7 +1,7 @@
 
 
 import styles from '../css/Section_3.module.css';
-import menino1 from '../../../assets/imag/menino1.png';
+import menino1 from '../../../assets/imag/novameni.png';
 
 function Section_3() {
     return (

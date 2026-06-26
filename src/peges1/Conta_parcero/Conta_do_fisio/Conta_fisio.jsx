@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Header2 from '../../../componentes/Header2';
 import Footer from '../../../componentes/Footer';
 import styles from "../css.fisio/Conta_fisio.module.css";
-import avatar from "../../../assets/imag/fisio2.png";
+import avatar from "../../../assets/imag/ofisio.png";
 import vector16 from '../../../assets/imag/Vector16.svg';
 import vector17 from '../../../assets/imag/Vector17.svg';
 import vector18 from '../../../assets/imag/Vector18.svg';
