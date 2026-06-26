@@ -8,24 +8,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <title>front-end</title>
-    <!-- Início do Widget UserWay -->
-    <script>
-        (function(d){
-        var s = d.createElement("script");
-        s.setAttribute("data-account","iDDjijJSLN");
-        s.setAttribute("src","https://cdn.userway.org/widget.js");
-        (d.body || d.head).appendChild(s);
-        })(document)
-    </script>
-    <!-- Fim do Widget UserWay -->
+    
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <!-- Widget de Acessibilidade - UserWay -->
+    <script>
+      (function (d) {
+        var s = d.createElement("script");
+        s.setAttribute("data-account", "iDDjijJSLN");
+        s.setAttribute("data-position", "5"); // 5 = canto inferior esquerdo
+        s.setAttribute("src", "https://cdn.userway.org/widget.js");
+        (d.body || d.head).appendChild(s);
+      })(document);
+    </script>
 
-    <!-- Início do Widget VLibras -->
-    <div vw class="enabled">q
-      
+    <!-- Widget de Tradução em Libras - VLibras -->
+    <div vw class="enabled">
       <div vw-access-button class="active"></div>
       <div vw-plugin-wrapper>
         <div class="vw-plugin-top-wrapper"></div>
@@ -33,8 +33,10 @@
     </div>
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script>
-      new window.VLibras.Widget('https://vlibras.gov.br/app');
+      new window.VLibras.Widget({
+        rootPath: "https://vlibras.gov.br/app",
+        position: "BR", // canto inferior direito
+      });
     </script>
-    <!-- Fim do Widget VLibras -->
   </body>
 </html>
