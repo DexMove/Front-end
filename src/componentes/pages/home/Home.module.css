@@ -975,6 +975,7 @@ body {
     flex-direction: column;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
+    text-align: justify;
 }
 
 .formi label {
@@ -982,7 +983,9 @@ body {
     margin-bottom: 0.5rem;
     color: #1a1a1a;
     font-weight: 600;
+    text-align: justify;
 }
+
 
 .formi input {
     width: 100%;
