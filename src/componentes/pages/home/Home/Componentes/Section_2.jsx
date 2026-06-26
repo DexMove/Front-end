@@ -3,7 +3,7 @@ import vector16 from'../../../assets/Vector16.svg'
 import vector17 from '../../../assets/Vector17.svg'
 import vector18 from '../../../assets/Vector18.svg'
 import menina2 from '../../../assets/menina2.png';
-import Ortese from '../../../assets/3ortese.png';
+import Ortese from '../../../assets/novaimg.png';
 import menina1 from '../../../assets/menina1.png';
 
 
