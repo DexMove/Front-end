@@ -7,6 +7,17 @@
   min-height: 780px;
   padding: 42px 28px 92px;
   color: white;
+  background-color: #f8f4ee;
+}
+
+#hero-planos::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
   background-image: linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.18)),
     url("../../../assets/Rectangle 140.png");
   background-position: top center;
@@ -15,6 +26,8 @@
 }
 
 .texto-hero {
+  position: relative;
+  z-index: 1;
   width: min(820px, 92%);
   text-align: center;
 }
@@ -167,6 +180,11 @@
     background-size: cover;
   }
 
+  #hero-planos::before {
+    bottom: auto;
+    height: 480px;
+  }
+
   .texto-hero h1 {
     font-size: 40px;
   }
@@ -213,4 +231,8 @@
   .texto-hero h2 { font-size: 18px; }
   .planos { gap: 16px; }
   .plano-card { padding: 16px; }
+
+  #hero-planos::before {
+    height: 280px;
+  }
 }

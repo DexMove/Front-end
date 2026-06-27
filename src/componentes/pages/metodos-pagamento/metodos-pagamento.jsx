@@ -57,16 +57,13 @@ export default function MetodosPagamento() {
             <path fill="#fff" d="M0,340 C300,-60 1100,790 1440,340 V450 H0 Z" />
           </svg>
         </div>
-      <div className="page page-pagamentos">
+      <div className="page-pagamentos">
         <section className="account-hero">
           <div>
             <h1 className="pagamento-title">Métodos de pagamento</h1>
-            <h2 className="pagamento-subtitle">Gerencie seus métodos de pagamento cadastrados
+            <h2 className="pagamento-sub">Gerencie seus métodos de pagamento cadastrados
             </h2>
           </div>
-          <button className="primary-button" type="button">
-            + Adicionar método
-          </button>
         </section>
         <section className="payment-grid">
           {paymentMethods.map((method) => (

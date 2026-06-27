@@ -110,7 +110,7 @@ function Produtos(){
                         <p className="preco">A partir de <br />
                         <span>R$1430</span> <br />
                         ou 12x de R$ 120,00</p>
-                        <span className="botao"> <BotaoComprar /> </span>
+                        <Link to="/mao-esquerda"><span className="botao"> <BotaoComprar /> </span></Link>
                         </div>
                 </div>
                 <div id="carregador" className="reveal">

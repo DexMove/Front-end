@@ -58,7 +58,8 @@
 .page-enderecos {
   flex: 1;
   background-color: #ffffff;
-  width: 60%;
+  width: 90%;
+  margin-bottom: 20px;
 }
 .content-container {
   margin: 0 auto;

@@ -35,7 +35,7 @@ export default function Configuracoes() {
           <div>
             
             <h1 className="config-title">Configurações</h1>
-            <h2 className="config-subtitle">
+            <h2 className="config-sub">
               Ajuste preferências de conta, notificações e as informações de contato.
             </h2>
           </div>

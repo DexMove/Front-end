@@ -152,7 +152,7 @@
 
 /* ── Responsividade ── */
 @media (max-width: 1024px) {
-  .mc-page { padding: 40px 5% 56px; }
+  .mc-page { padding: 40px 5% 56px; margin-top: 30px }
 }
 
 @media (max-width: 780px) {

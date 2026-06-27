@@ -427,10 +427,94 @@ iframe[id*="userway"] {
 }
 
 /* Celulares Muito Pequenos (320px) */
+
 @media (max-width: 380px) {
     .conteudoPrincipal h1 { font-size: 1.4rem !important; }
     .itemFaq { font-size: 15px !important; }
     .cardContato { padding: 20px 15px !important; }
     .campoEntrada input, .campoMensagem textarea { font-size: 13px !important; }
 }
+@media (max-width: 900px) {
 
+  .texto-hero h2 {
+    font-size: 24px !important;
+  }
+
+}
+
+@media (max-width: 1024px) {
+  .texto-hero h2 { font-size: 26px !important; }
+
+}
+
+@media (max-width: 768px) {
+  .texto-hero h1 { font-size: 36px !important; }
+  .texto-hero h2 { font-size: 22px !important; }
+  .pedidos-sub{font-size: 28px !important;}
+  .pagamento-title { font-size: 36px !important; margin-bottom: 10px; }
+  .pagamento-sub { font-size: 26px !important; }
+  .config-title { font-size: 36px !important; margin-bottom: 10px; }
+  .config-sub { font-size: 26px !important; }
+
+}
+.setting-card h2 {
+    color: #153b3d !important;
+    font-size: 24px !important;
+  }
+@media (max-width: 600px) {
+  .texto-hero h1 { font-size: 32px !important; }
+  .valor-p { font-size: 24px !important; }
+  .pedidos-sub{font-size: 24px !important;}
+  .hero-content-enderecos h1{ font-size: 32px !important; margin-bottom: 10px; }
+  .hero-content-enderecos h2{ font-size: 24px !important; }
+  .pagamento-title { font-size: 32px !important;  }
+  .pagamento-sub { font-size: 24px !important; }
+  .config-title { font-size: 32px !important; margin-bottom: 10px; }
+  .config-sub { font-size: 24px !important; }
+
+
+}
+
+@media (max-width: 430px) {
+  .texto-hero h1 { font-size: 28px !important; }
+  .texto-hero h2 { font-size: 18px !important; }
+  .pedidos-title{font-size: 32px !important;}
+  .pedidos-sub{font-size: 18px !important;}
+  .order-summary h2, p{font-size: 18px !important;}
+  .hero-content-enderecos h1{ font-size: 32px !important; }
+  .hero-content-enderecos h2{ font-size: 18px !important; }
+  .pagamento-sub { font-size: 22px !important; width: 90%; text-align: center !important; margin: 0 auto; }
+
+
+
+
+}
+@media (max-width: 480px){
+  .config-sub { font-size: 18px !important; }
+  .setting-card h2 { font-size: 18px !important; }
+
+
+}
+.plano-h3, .valor-p, .valor-p2{
+  color: black !important;
+}
+label{
+  text-align: justify !important;
+}
+.termos-container h2{
+  color: #1a1a1a !important;
+  text-align: justify !important;
+  font-size: 1.5rem !important;
+}
+.termos-container p{
+  text-align: justify !important ;
+}
+.termos-container h1{
+  font-size: 2.5rem !important;
+  color: #1a1a1a !important;
+  text-align: justify !important;
+}
+.pedidos-sub, .hero-content-enderecos h2, .pagamento-sub, .config-sub{
+  color: #1a1a1a !important;}
+
+  

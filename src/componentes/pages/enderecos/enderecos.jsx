@@ -28,11 +28,6 @@ export default function MeusEnderecos() {
       </section>
       <div className="page page-enderecos">
         <div className="content-container">
-          <div className="add-button-container">
-            <button type="button" className="btn-add-address">
-             + Adicionar endereço
-            </button>
-          </div>
           <section className="address-list">
             <article className="address-card-horizontal">
               <div className="card-left-panel">

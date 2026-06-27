@@ -6,7 +6,7 @@ import AccountMenu from "../../AccountMenu";
 import Direita from "../../../assets/direita1.png";
 import Esquerda from "../../../assets/esquerda.png";
 
-const filters = ["Todos", "Em andamento", "Enviados", "Concluídos", "Cancelados"];
+
 
 const orders = [
   {
@@ -71,21 +71,6 @@ export default function MeusPedidos() {
             
           </div>
 
-          <div className="hero-tabs">
-            {["Todos", "Em andamento", "Enviados", "Concluídos", "Cancelados"].map(
-              (filter) => (
-                <button
-                  key={filter}
-                  className={
-                    activeFilter === filter ? "tab-button active" : "tab-button"
-                  }
-                  onClick={() => setActiveFilter(filter)}
-                >
-                  {filter}
-                </button>
-              )
-            )}
-          </div>
         </section>
 
         <section className="order-grid">

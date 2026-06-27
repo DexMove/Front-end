@@ -22,11 +22,13 @@
   color:#0B5C6A;
   text-align: center;
 }
-.config-subtitle {
+.config-sub {
   color: #1a1a1a;
   font-size: 2rem;
   line-height: 1.4;
   text-align: center;
+  margin-bottom: 50px;
+
 }
 .hero-wave {
   width: 100%;
@@ -63,8 +65,8 @@
 }
 .setting-card h2 {
   font-size: 24px;
-  color: #153b3d;
   font-weight: 700;
+
 }
 .setting-card + .setting-card {
   margin-top: 18px;
