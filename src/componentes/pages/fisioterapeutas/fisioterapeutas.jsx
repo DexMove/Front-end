@@ -74,7 +74,7 @@ export default function Fisioterapeutas() {
       crefito: "123456-F",
       cidade: "São Paulo, SP",
       nota: "4.9",
-      atendimento: "Presencial e Online",
+      atendimento: "Presencial",
       imagem: fisioterapeuta4,
       telefone: "(11) 99999-1234",
       email: "lucas.barbosa@email.com",

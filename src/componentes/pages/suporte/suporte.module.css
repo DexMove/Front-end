@@ -102,7 +102,6 @@
     margin-bottom: 10px;
     font-size: 35px;
     color: #000;
-
 }
 
 .itemFaq {
@@ -189,20 +188,17 @@
 }
 
 /* Seção de contato */
-
 .secaoContato {
     position: relative;
     width: 100%;
     overflow: hidden;
     background-color: transparent;
-    /* Removemos qualquer padding superior para eliminar a tira verde */
     padding: 0; 
 }
 
-/* ONDAS DE FUNDO */
 .containerOndasInferior {
     position: absolute;
-    top: 0; /* Garante que comece no topo exato */
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
@@ -213,54 +209,30 @@
     width: 100%;
     height: 100%;
     display: block;
-    object-fit: cover; /* Garante que o fundo preencha sem deixar espaços */
+    object-fit: cover;
 }
 
-/* CONTEÚDO (IMAGEM + CARD) */
 .containerContato {
     position: relative;
     z-index: 2;
     max-width: 1300px;
     margin: 0 auto;
     padding: 190px 20px 80px; 
-    
     display: flex;
     gap: 60px;
     align-items: center;
     justify-content: center;
 }
 
-
-.cardContato {
-    flex: 0 0 auto;
-    width: 480px; 
-    background-color: #ffffff;
-    border-radius: 25px;
-    padding: 40px; 
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-}
-
-/* Garante que a imagem acompanhe o alinhamento */
-.imagemContato img {
-    width: 100%;
-    max-width: 700px; /* Tamanho proporcional ao card */
-    border-radius: 20px;
-    object-fit: cover;
-}
-
-/* CARD DO FORMULÁRIO - Mais largo e menos alto */
 .conteudoContato {
-    flex: 1.2; /* Dá um pouco mais de peso para o card ocupar espaço lateral */
-    max-width: 550px; /* Aumentado para ficar mais largo */
+    flex: 1.2;
+    max-width: 550px;
 }
 
 .cardContato {
     width: 100%;
     background-color: #ffffff;
     border-radius: 20px;
-    /* Padding generoso nas laterais e menor no topo/base para reduzir a altura */
     padding: 35px 45px; 
     border: 1px solid rgba(0, 0, 0, 0.05);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
@@ -271,7 +243,7 @@
 .cardContato h3 {
     font-size: 28px;
     color: #0b5c6a;
-    margin-bottom: 8px; /* Margem curta para reduzir altura */
+    margin-bottom: 8px;
     letter-spacing: -0.5px;
     font-weight: 800;
     line-height: 1.2;
@@ -280,15 +252,14 @@
 .cardContato p {
     font-size: 16px;
     color: #666;
-    margin-bottom: 25px; /* Espaço antes do form */
+    margin-bottom: 25px;
     line-height: 1.4;
 }
 
-/* FORMULÁRIO */
 .formularioSuporte {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Gap reduzido para o card não esticar muito para baixo */
+    gap: 15px;
 }
 
 .campoEntrada, .campoMensagem {
@@ -313,16 +284,13 @@
     width: 100%;
 }
 
-/* --- NOVO: EFEITO LARANJA AO CLICAR --- */
 .campoEntrada input:focus, 
 .campoMensagem textarea:focus {
     outline: none;           
     border-color: #F3E396;    
     background-color: #fff;  
-
 }
 
-/* Textarea com altura controlada para o card não ficar muito alto */
 .campoMensagem textarea {
     min-height: 90px; 
     resize: none;
@@ -346,126 +314,78 @@
     transform: translateY(-2px);
 }
 
+.imagemContato img {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 20px;
+    object-fit: cover;
+}
 
-/* RESPONSIVIDADE */
+/* ==========================================
+   RESPONSIVIDADE MELHORADA (100% ADAPTÁVEL)
+========================================== */
+
+/* Telas Grandes e Notebooks */
 @media (max-width: 1200px) {
-    .secaoPrincipal {
-        min-height: 520px;
-    }
-    .conteudoPrincipal {
-        padding: 60px 18px 18px;
-        font-size: 26px;
-    }
-    .conteudoPrincipal h1 {
-        font-size: 2.6rem;
-    }
-    .containerContato {
-        gap: 30px;
-        padding: 160px 20px 70px;
-    }
-    .cardContato {
-        width: 420px;
-    }
+    .secaoPrincipal { min-height: 550px !important; }
+    .conteudoPrincipal h1 { font-size: 2.8rem !important; }
+    .containerContato { gap: 40px; padding-top: 150px !important; }
+    .cardContato { padding: 30px 35px !important; }
 }
 
+/* Tablets e iPads (Landscape/Portrait) */
 @media (max-width: 1024px) {
-    .containerContato { gap: 26px; }
-    .cardContato { width: 420px; }
-    .centralAjuda {
-        padding: 70px 18px 30px;
-        margin-top: -110px;
-    }
+    .conteudoPrincipal { padding-top: 60px !important; }
+    .conteudoPrincipal h1 { font-size: 2.5rem !important; }
+    .centralAjuda { margin-top: -100px; padding-top: 80px !important; }
+    .containerContato { padding-top: 120px !important; }
+    .imagemContato img { max-width: 500px !important; }
 }
 
+/* Tablets Médios */
 @media (max-width: 900px) {
-    .centralAjuda h2 {
-        font-size: 2.4rem;
-    }
-    .centralAjuda p {
-        font-size: 1.05rem;
-        max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .itemFaq {
-        font-size: 18px;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-    .cardInterno {
-        padding: 14px 14px;
-    }
+    .conteudoPrincipal h1 { font-size: 2.2rem !important; }
+    .centralAjuda h2 { font-size: 30px !important; }
+    .itemFaq { font-size: 18px; padding: 15px 20px !important; }
+    .containerContato { flex-direction: column; text-align: center; padding-top: 100px !important; }
+    .imagemContato { order: 2 !important; } /* Imagem vai para baixo do card no tablet se necessário */
+    .cardContato { order: 1; max-width: 600px; text-align: left !important; }
 }
 
+/* Celulares Grandes e Tablets Pequenos */
 @media (max-width: 768px) {
-    .containerContato {
-        flex-direction: column;
-        gap: 40px;
-        padding: 90px 18px 50px;
-    }
-    .imagemContato img {
-        max-width: 100%;
-    }
-    .cardContato {
-        width: 100%;
-        max-width: 520px;
-    }
-    .secaoPrincipal, .secaoContato {
-        height: auto;
-        padding: 40px 16px;
-    }
-    .conteudoPrincipal {
-        font-size: 22px;
-        padding-top: 40px;
-    }
-    .conteudoPrincipal h1 {
-        font-size: 2.2rem;
-    }
-    .conteudoPrincipal p {
-        font-size: 1rem;
-    }
+    .secaoPrincipal { min-height: 450px !important; }
+    .conteudoPrincipal { padding-top: 50px !important; }
+    .conteudoPrincipal h1 { font-size: 1.8rem !important; }
+    .conteudoPrincipal p { font-size: 1rem; margin-top: 15px !important; }
+    
+    .centralAjuda { margin-top: -80px; padding-top: 60px !important; }
+    .centralAjuda h2 { font-size: 26px !important; }
+    
+    .containerContato { padding: 80px 20px 40px !important; }
+    .imagemContato { display: none !important; } /* Esconde imagem para focar no formulário */
+    .cardContato { width: 100%; padding: 25px !important; }
 }
 
+/* Celulares Médios e Pequenos (iPhone, Android) */
 @media (max-width: 600px) {
-    .secaoPrincipal {
-        padding: 40px 14px;
-    }
-    .centralAjuda {
-        padding: 34px 14px 18px;
-        margin-top: -160px;
-    }
-    .conteudoPrincipal {
-        font-size: 18px;
-        padding-top: 24px;
-    }
-    .conteudoPrincipal h1 {
-        font-size: 1.9rem;
-    }
-    .conteudoPrincipal p {
-        font-size: 0.95rem;
-    }
-    .containerContato {
-        padding: 0 12px;
-        gap: 20px;
-    }
-    .cardContato {
-        padding: 22px 16px;
-    }
-    .btnSuporte {
-        width: 100%;
-    }
-    .itemFaq {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 18px 20px;
-    }
-    .itemFaq .setaPng {
-        margin: 0;
-    }
-    .imagemContato img {
-        max-width: 100%;
-        height: auto;
-    }
-    .imagemContato { display: none; }
-    .cardContato { width: 100%; max-width: none; }
+    .conteudoPrincipal h1 { font-size: 1.6rem; line-height: 1.2 !important; }
+    .btnSuporte { width: 100%; font-size: 14px !important; }
+    
+    .centralAjuda { margin-top: -60px !important; }
+    .centralAjuda p { font-size: 16px !important; }
+    .itemFaq { font-size: 16px; padding: 15px !important; }
+    .perguntaInterna { font-size: 16px !important; }
+    
+    .cardContato h3 { font-size: 22px !important; }
+    .cardContato p { font-size: 14px !important; }
+    .btnEnviar { font-size: 15px; padding: 12px !important; }
+}
+
+/* Celulares Muito Pequenos (320px) */
+@media (max-width: 380px) {
+    .conteudoPrincipal h1 { font-size: 1.4rem !important; }
+    .itemFaq { font-size: 15px !important; }
+    .cardContato { padding: 20px 15px !important; }
+    .campoEntrada input, .campoMensagem textarea { font-size: 13px !important; }
 }

@@ -52,7 +52,7 @@ body {
 
 .controle-subtitle {
   font-size: 22px;
-  color: #333;
+  color: #333 !important;
   margin: 0;
 }
 
