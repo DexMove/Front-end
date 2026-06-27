@@ -26,14 +26,13 @@ import "swiper/css/pagination";
 import Header from '../../Header';
 
 function SobreNos() {
-  // CORREÇÃO: Atribuindo cada imagem importada ao seu respectivo membro
   const equipe = [
-    { id: 1, nome: "Vitória Laurenzano", cargo: "CEO & Fundadora", imagem: equipe1 },
-    { id: 2, nome: "Christian Damasceno", cargo: "CTO & Inovação", imagem: equipe2 },
-    { id: 3, nome: "Thalyson Pereira", cargo: "Head de Reabilitação", imagem: equipe3 },
-    { id: 4, nome: "Amanda Cristina", cargo: "Engenheira Chefe", imagem: equipe4 },
-    { id: 5, nome: "Melissa Fiuza", cargo: "Fisioterapeuta Líder", imagem: equipe5 },
-    { id: 6, nome: "Luiz Gustavo", cargo: "Desenvolvedor Sênior", imagem: equipe6 },
+    { id: 1, nome: "Vitória Laurenzano", cargo: "P.O e desenvolvedora back end", imagem: equipe1 },
+    { id: 2, nome: "Christian Damasceno", cargo: "Scrum master e desenvolvedor back end", imagem: equipe2 },
+    { id: 3, nome: "Thalyson Pereira", cargo: "Marketing e desenvolvedor front end", imagem: equipe3 },
+    { id: 4, nome: "Amanda Cristina", cargo: "Desenvolvedora front end", imagem: equipe4 },
+    { id: 5, nome: "Melissa Fiuza", cargo: "Desenvolvedora front end", imagem: equipe5 },
+    { id: 6, nome: "Luiz Gustavo", cargo: "Desenvolvedor full stark", imagem: equipe6 },
   ];
 
   const apoiadores = [
@@ -85,7 +84,7 @@ function SobreNos() {
         </div>
       </section>
 
-      {/* ========== SEÇÃO 3: CHATBOT DEXY (Com Vídeo de altura menor) ========== */}
+      {/* ========== SEÇÃO 3: CHATBOT DEXY ========== */}
       <section className={styles.secaoDexy}>
         <div className={styles.dexyContainer}>
           <div className={styles.dexyTexto}>
@@ -153,41 +152,29 @@ function SobreNos() {
 
       {/* ========== SEÇÃO 5: EQUIPE ========== */}
       <section className={styles.secaoEquipe}>
-        {/* NOVA ONDA ADICIONADA AQUI COMO FUNDO */}
         <div className={styles.ondaFundoEquipe}>
-          <svg
-            viewBox="0 0 1440 450"
-            preserveAspectRatio="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill="#0b5c6a"
-              d="M0,250 C300,-150 1100,700 1440,250 V450 H0 Z"
-            />
-            <path
-              fill="#ffb366"
-              d="M0,280 C300,-120 1100,730 1440,280 V450 H0 Z"
-            />
-            <path
-              fill="#efe39b"
-              d="M0,310 C300,-90 1100,760 1440,310 V450 H0 Z"
-            />
-            <path
-              fill="#ffffff"
-              d="M0,340 C300,-60 1100,790 1440,340 V450 H0 Z"
-            />
+          <svg viewBox="0 0 1440 450" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#0b5c6a" d="M0,250 C300,-150 1100,700 1440,250 V450 H0 Z" />
+            <path fill="#ffb366" d="M0,280 C300,-120 1100,730 1440,280 V450 H0 Z" />
+            <path fill="#efe39b" d="M0,310 C300,-90 1100,760 1440,310 V450 H0 Z" />
+            <path fill="#ffffff" d="M0,340 C300,-60 1100,790 1440,340 V450 H0 Z" />
           </svg>
         </div>
         <h2>Nossa equipe</h2>
         <p>Profissionais apaixonados por tecnologia e reabilitação</p>
         <div className={styles.equipeGrid}>
           {equipe.map((membro) => (
-            <div key={membro.id} className={styles.cardEquipe} onMouseEnter={() => setHoveredId(membro.id)} onMouseLeave={() => setHoveredId(null)}>
+            <div 
+              key={membro.id} 
+              className={styles.cardEquipe} 
+              onMouseEnter={() => setHoveredId(membro.id)} 
+              onMouseLeave={() => setHoveredId(null)}
+            >
               <div className={styles.fotoContainer}>
                 <img src={membro.imagem} alt={membro.nome} className={styles.fotoEquipe} />
                 <div className={`${styles.overlayEquipe} ${hoveredId === membro.id ? styles.overlayVisible : ""}`}>
                   <p>{membro.cargo}</p>
-                  <p className={styles.bioEquipe}>Especialista em reabilitação</p>
+                  {/* Texto "Especialista em reabilitação" removido daqui */}
                 </div>
               </div>
               <h4 className={styles.nomeEquipe}>{membro.nome}</h4>

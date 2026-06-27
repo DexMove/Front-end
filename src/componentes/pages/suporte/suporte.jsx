@@ -35,15 +35,15 @@ function Suporte() {
             conteudo: [
                 {
                     q: "Passo a passo inicial",
-                    r: "Basta ligar o dispositivo, ativar o Bluetooth do seu celular e seguir o guia no app oficial."
+                    r: "Basta ligar o dispositivo, ativar o Bluetooth do seu celular e seguir o guia no site."
                 },
                 {
                     q: "Problemas de conexão?",
-                    r: "Verifique se o Bluetooth do seu celular está ativo para sincronizar os dados com o aplicativo. Se falhar, segure o botão reset por 5 segundos."
+                    r: "Verifique se o Bluetooth do seu celular está ativo para sincronizar os dados. Se falhar, segure o botão reset por 5 segundos."
                 },
                 {
                     q: "Como calibrar?",
-                    r: "No primeiro uso, o app pedirá para você realizar o movimento máximo de abertura e fechamento. Isso define seus limites anatômicos e garante que a órtese respeite sua amplitude de movimento."
+                    r: "No primeiro uso, realize o exercício de abertura e fechamento. Isso define seus limites anatômicos e garante que a órtese respeite sua amplitude de movimento."
                 }
             ]
         },
@@ -53,7 +53,7 @@ function Suporte() {
             conteudo: [
                 {
                     q: "Posso usar diariamente?",
-                    r: "A MoviHand é um dispositivo de suporte à reabilitação motora. No modo assistido, ela auxilia na execução de movimentos passivos e repetitivos para preservar a mobilidade das articulações, devendo ser utilizada estritamente sob orientação profissional."
+                    r: "Esse parâmetro é definido por seu fisioterapeuta. A MoveHand é utilizada estritamente sob orientação profissional."
                 },
                 {
                     q: "Quais são os modos?",
