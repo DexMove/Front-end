@@ -69,7 +69,9 @@ export default function Login() {
             </p>
             <div className="lc-toggle">
               <button className="lc-tab active">Entrar</button>
-              <a href="/bem-vindo" className="lc-tab">Cadastre-se</a>
+              <Link to="/entrar" className="lc-tab">
+                Cadastre-se
+              </Link>
             </div>
             <form onSubmit={handleLoginSubmit}>
               <div className="lc-field">

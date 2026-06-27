@@ -84,7 +84,9 @@ export default function Cadastro() {
             </p>
 
             <div className="lc-toggle">
-              <a href="/entrar" className="lc-tab">Entrar</a>
+              <Link to="/entrar" className="lc-tab">
+                Entrar
+              </Link>
               <button className="lc-tab active">Cadastre-se</button>
             </div>
 
@@ -163,7 +165,9 @@ export default function Cadastro() {
               <label className="cf-checkbox">
               <input type="checkbox" checked={termos} onChange={() => setTermos(!termos)} required />
               <span>
-                Li e concordo com os <a href="/termos" className="cf-link">Termos de Consentimento e Tratamento de Dados</a> conforme a LGPD.
+                Li e concordo com os <Link to="/termos" className="cf-link">
+                Termos de Consentimento e Tratamento de Dados
+              </Link> conforme a LGPD.
               </span>
             </label>
 
