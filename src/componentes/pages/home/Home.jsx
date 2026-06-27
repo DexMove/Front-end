@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../../Header";
 import Header2 from "../../Header2";
 import Footer from "../../Footer";
@@ -79,13 +79,37 @@ const cardsIA = [
 function Home({ useHeader2 = false }) {
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px 0px -80px 0px",
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(styles.revealActive);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    const elementsToReveal = document.querySelectorAll(`.${styles.reveal}`);
+    elementsToReveal.forEach((el) => observer.observe(el));
+
+    return () => {
+      elementsToReveal.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
   return (
     <div className={styles.Home}>
       {useHeader2 ? <Header2 /> : <Header />}
 
       {/* Section 1 */}
       <section className={styles.section1}>
-        <div className={styles.div1}>
+        <div className={`${styles.div1} ${styles.reveal}`}>
           <h1>Recupere a autonomia e o bem-estar no conforto de casa.</h1>
           <p>MOVEHAND: Um aliado contínuo para reduzir a rigidez muscular.</p>
           <div className={styles.botoins}>
@@ -97,7 +121,7 @@ function Home({ useHeader2 = false }) {
             </button>
           </div>
         </div>
-        <div className={styles.div2}>
+        <div className={`${styles.div2} ${styles.reveal} ${styles.revealDelay1}`}>
           <img src={onda} alt="Onda" className={styles.onda1} />
           <img src={ortese} alt="Ortese1" className={styles.mao1} />
         </div>
@@ -109,20 +133,20 @@ function Home({ useHeader2 = false }) {
         <img src={vector17} alt="Vector1" className={styles.vector17} />
         <img src={vector18} alt="Vector2" className={styles.vector18} />
 
-        <h2>Do Problema à Solução Contínua.</h2>
+        <h2 className={styles.reveal}>Do Problema à Solução Contínua.</h2>
 
         <div className={styles.s2Cards}>
-          <div className={styles.s2Card}>
+          <div className={`${styles.s2Card} ${styles.reveal} ${styles.revealDelay1}`}>
             <img src={menina2} alt="Menina 2" />
             <h3>1. Falta de acesso</h3>
             <p>Hospital, clínica fisioterapêutica e ONGs.</p>
           </div>
-          <div className={styles.s2Card}>
+          <div className={`${styles.s2Card} ${styles.reveal} ${styles.revealDelay2}`}>
             <img src={OrteseSec2} alt="Ortese" />
             <h3>2. Acolhimento</h3>
             <p>Uma órtese robótica que estimula a abertura da mão, diminuindo a espasticidade.</p>
           </div>
-          <div className={styles.s2Card}>
+          <div className={`${styles.s2Card} ${styles.reveal} ${styles.revealDelay3}`}>
             <img src={menina1} alt="Menina 1" />
             <h3>3. Falta de recursos</h3>
             <p>Acesso limitado a tecnologias e equipamentos necessários para o tratamento.</p>
@@ -132,9 +156,9 @@ function Home({ useHeader2 = false }) {
 
       {/* Section 3 */}
       <section className={styles.section3}>
-        <h2 className={styles.s3Titulo}>Por que escolher o Dexmove</h2>
+        <h2 className={`${styles.s3Titulo} ${styles.reveal}`}>Por que escolher o Dexmove</h2>
         <div className={styles.conteudo}>
-          <div className={styles.lado1}>
+          <div className={`${styles.lado1} ${styles.reveal} ${styles.left}`}>
             <div className={styles.item}>
               <div className={styles.checkBox}>✓</div>
               <div>
@@ -164,7 +188,7 @@ function Home({ useHeader2 = false }) {
               </div>
             </div>
           </div>
-          <div className={styles.lado2}>
+          <div className={`${styles.lado2} ${styles.reveal} ${styles.right}`}>
             <img src={menino1} alt="Menino1" className={styles.foto} />
           </div>
         </div>
@@ -172,18 +196,18 @@ function Home({ useHeader2 = false }) {
 
       {/* Como Funciona */}
       <section className={styles.funcSection}>
-        <p className={styles.eyebrow}>COMO FUNCIONA</p>
-        <h2 className={styles.funcTitulo}>
+        <p className={`${styles.eyebrow} ${styles.reveal}`}>COMO FUNCIONA</p>
+        <h2 className={`${styles.funcTitulo} ${styles.reveal} ${styles.revealDelay1}`}>
           A MoveHand <span>em 4 passos</span>
         </h2>
-        <p className={styles.funcSubtitulo}>
+        <p className={`${styles.funcSubtitulo} ${styles.reveal} ${styles.revealDelay2}`}>
           Tecnologia, inteligência e acompanhamento para transformar a reabilitação
           <br />em um processo mais acessível e eficiente.
         </p>
 
         <div className={styles.funcGrid}>
-          {passos.map((passo) => (
-            <div key={passo.numero} className={styles.funcCard}>
+          {passos.map((passo, idx) => (
+            <div key={passo.numero} className={`${styles.funcCard} ${styles.reveal} ${styles[`revealDelay${(idx % 4) + 1}`]}`}>
               <div className={`${styles.numero} ${passo.numero % 2 === 0 ? styles.numeroAlt : ""}`}>
                 {passo.numero}
               </div>
@@ -202,7 +226,7 @@ function Home({ useHeader2 = false }) {
           ))}
         </div>
 
-        <div className={styles.banner}>
+        <div className={`${styles.banner} ${styles.reveal}`}>
           <div className={styles.bannerEsquerda}>
             <div className={styles.bannerLogo}>D</div>
             <div className={styles.bannerTexto}>
@@ -221,10 +245,12 @@ function Home({ useHeader2 = false }) {
 
       {/* Section 4 (Video) */}
       <section className={styles.section4}>
-        <h2>Sobre o nosso produto.</h2>
-        <p>Transforme seu dia a dia em conforto e movimento</p>
-        <BotaoComprar />
-        <div className={styles.caixa7}>
+        <h2 className={styles.reveal}>Sobre o nosso produto.</h2>
+        <p className={`${styles.reveal} ${styles.revealDelay1}`}>Transforme seu dia a dia em conforto e movimento</p>
+        <div className={`${styles.reveal} ${styles.revealDelay2}`}>
+          <BotaoComprar />
+        </div>
+        <div className={`${styles.caixa7} ${styles.reveal} ${styles.revealDelay3}`}>
           <video
             className={styles.caixa7Video}
             autoPlay
@@ -245,12 +271,12 @@ function Home({ useHeader2 = false }) {
         <img src={vector12} alt="Vector12" className={styles.vector12} />
         <img src={vector11} alt="Vector11" className={styles.vector11} />
         <img src={vector10} alt="Vector10" className={styles.vector10} />
-        <h2>Sua Reabilitação com Inteligência Artificial.</h2>
-        <p className={styles.subtitulo5}>Nossa IA atua como um assistente inteligente em tempo real.</p>
+        <h2 className={styles.reveal}>Sua Reabilitação com Inteligência Artificial.</h2>
+        <p className={`${styles.subtitulo5} ${styles.reveal} ${styles.revealDelay1}`}>Nossa IA atua como um assistente inteligente em tempo real.</p>
 
         <div className={styles.s5Cards}>
           {cardsIA.map((card, index) => (
-            <div key={index} className={styles.cardFlip}>
+            <div key={index} className={`${styles.cardFlip} ${styles.reveal} ${styles[`revealDelay${(index % 3) + 1}`]}`}>
               <div className={styles.cardInner}>
                 <div className={styles.cardFrente}>
                   <img src={card.icone} alt={card.titulo} className={styles.s5Icone} />
@@ -267,7 +293,7 @@ function Home({ useHeader2 = false }) {
 
       {/* Section Fisio */}
       <section className={styles.fisioSection}>
-        <div className={styles.fisioEsquerda}>
+        <div className={`${styles.fisioEsquerda} ${styles.reveal} ${styles.left}`}>
           <span className={styles.badge}>
             <img src={fisioComponente} alt="Fisioterapeutas" className={styles.badgeIcon} />
             Para fisioterapeutas
@@ -296,7 +322,7 @@ function Home({ useHeader2 = false }) {
           </button>
         </div>
 
-        <div className={styles.fisioDireita}>
+        <div className={`${styles.fisioDireita} ${styles.reveal} ${styles.right}`}>
           <img
             src={fisioterapeuta}
             alt="Fisioterapeuta"
@@ -310,11 +336,11 @@ function Home({ useHeader2 = false }) {
 
       {/* Section 6 (Testemunhos) */}
       <section className={styles.section6}>
-        <h2>O que nossos clientes dizem</h2>
-        <p>Experiências que inspiram e transformam vidas.</p>
+        <h2 className={styles.reveal}>O que nossos clientes dizem</h2>
+        <p className={`${styles.reveal} ${styles.revealDelay1}`}>Experiências que inspiram e transformam vidas.</p>
 
         <div className={styles.s6Cards}>
-          <div className={styles.s6Card}>
+          <div className={`${styles.s6Card} ${styles.reveal} ${styles.revealDelay1}`}>
             <h3>⭐⭐⭐⭐⭐</h3>
             <p>
               "A órtese transformou a vida da minha filha. Ela consegue realizar atividades que antes eram
@@ -324,7 +350,7 @@ function Home({ useHeader2 = false }) {
             <p>Maria Silva</p>
             <p className={styles.funcao}>Mãe de paciente</p>
           </div>
-          <div className={styles.s6Card}>
+          <div className={`${styles.s6Card} ${styles.reveal} ${styles.revealDelay2}`}>
             <h3>⭐⭐⭐⭐⭐</h3>
             <p>
               "Como profissional da área, fico impressionado com os resultados que a DexMove proporciona.
@@ -334,7 +360,7 @@ function Home({ useHeader2 = false }) {
             <p>Dr. Carlos Mendes</p>
             <p className={styles.funcao}>Fisioterapeuta</p>
           </div>
-          <div className={styles.s6Card}>
+          <div className={`${styles.s6Card} ${styles.reveal} ${styles.revealDelay3}`}>
             <h3>⭐⭐⭐⭐⭐</h3>
             <p>
               "Uso a órtese há 6 meses e a melhora é notável. Consigo escrever, usar o celular e fazer coisas
@@ -352,13 +378,13 @@ function Home({ useHeader2 = false }) {
         <img src={vector13} alt="" className={styles.vector13} />
         <img src={vector14} alt="" className={styles.vector14} />
         <img src={vector15} alt="" className={styles.vector15} />
-        <h2>Entre em contato</h2>
-        <p>Estamos aqui para ajudar. Preencha o formulário e entraremos em contato em breve.</p>
-        <div className={styles.contend}>
+        <h2 className={styles.reveal}>Entre em contato</h2>
+        <p className={`${styles.reveal} ${styles.revealDelay1}`}>Estamos aqui para ajudar. Preencha o formulário e entraremos em contato em breve.</p>
+        <div className={`${styles.contend} ${styles.reveal} ${styles.revealDelay2}`}>
           <div className={styles.formi}>
             <div style={{ display: "flex", gap: "1rem" }}>
               <div style={{ flex: 1 }}>
-                <label htmlFor="nome">Nome completo</label>
+                <label className="nome-form" htmlFor="nome">Nome</label>
                 <input id="nome" type="text" placeholder="Seu Nome" />
               </div>
               <div style={{ flex: 1 }}>

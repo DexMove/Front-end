@@ -74,7 +74,7 @@ function App() {
         <Route path="/comprar" element={<Comprar />} />
         <Route path="/mao-esquerda" element={<ProdutoDetalhes lado="esquerda" />} />
         <Route path="/par" element={<ProdutoDetalhes lado="par" />} />
-        <Route path="/conta_parcero" element={<ContaParcero />} />
+        <Route path="/conta-parcero" element={<ContaParcero />} />
         <Route path="/agenda" element={<Agenda />} />
         <Route path="/detalhes-agendamento" element={<DetalhesAgendamento />} />
         <Route path="/editar-perfil" element={<EditarPerfilFisio />} />
