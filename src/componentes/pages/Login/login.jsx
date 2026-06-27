@@ -69,7 +69,7 @@ export default function Login() {
             </p>
             <div className="lc-toggle">
               <button className="lc-tab active">Entrar</button>
-              <Link to="/entrar" className="lc-tab">
+              <Link to="/bem-vindo" className="lc-tab">
                 Cadastre-se
               </Link>
             </div>
@@ -109,7 +109,9 @@ export default function Login() {
 
               <div className="lc-alt-link">
                 Não tem uma conta?{" "}
-                <a href="/bem-vindo">Cadastre-se</a>
+                <Link to="/bem-vindo" className="lc-tab">
+                Cadastre-se
+              </Link>
               </div>
 
               <div className="lc-divider">ou continue com</div>
