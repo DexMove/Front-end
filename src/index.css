@@ -409,6 +409,7 @@ iframe[id*="userway"] {
     .containerContato { padding: 80px 20px 40px !important; }
     .imagemContato { display: none !important; } /* Esconde imagem para focar no formulário */
     .cardContato { width: 100%; padding: 25px !important; }
+
 }
 
 /* Celulares Médios e Pequenos (iPhone, Android) */
@@ -512,7 +513,7 @@ label{
 .termos-container h1{
   font-size: 2.5rem !important;
   color: #1a1a1a !important;
-  text-align: justify !important;
+  ;
 }
 .pedidos-sub, .hero-content-enderecos h2, .pagamento-sub, .config-sub{
   color: #1a1a1a !important;}
