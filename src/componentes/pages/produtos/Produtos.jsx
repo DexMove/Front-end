@@ -110,7 +110,7 @@ function Produtos(){
                         <p className="preco">A partir de <br />
                         <span>R$1430</span> <br />
                         ou 12x de R$ 120,00</p>
-                        <Link to="/mao-esquerda"><span className="botao"> <BotaoComprar /> </span></Link>
+                        <Link to="/kit"><span className="botao"> <BotaoComprar /> </span></Link>
                         </div>
                 </div>
                 <div id="carregador" className="reveal">
@@ -125,7 +125,7 @@ function Produtos(){
                         <p className="preco">A partir de <br />
                         <span>R$ 30,00</span> <br />
                         ou 2x de R$ 15,00</p>
-                        <span className="botao"> <BotaoComprar /> </span>
+                        <Link to="/acessorio"><span className="botao"> <BotaoComprar /> </span></Link>
                         </div>
                 </div>
             </div>

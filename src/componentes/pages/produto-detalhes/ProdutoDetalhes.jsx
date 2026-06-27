@@ -71,6 +71,8 @@ function ProdutoDetalhes({ lado = "direita" }) {
   const getMainImage = () => {
     if (lado === "par") return ortesePar;
     if (lado === "esquerda") return orteseEsquerda;
+    if (lado === "acessorio") return carregador;
+    if (lado === "kit") return ortesePar;
     return orteseDireita;
   };
 
@@ -80,6 +82,60 @@ function ProdutoDetalhes({ lado = "direita" }) {
   useEffect(() => {
     setImagemSelecionada(getMainImage());
   }, [lado]);
+
+  // Determine thumbnails dynamically
+  const getThumbnails = () => {
+    if (lado === "acessorio") return [carregador];
+    if (lado === "kit") return [ortesePar, carregador, ortesem1, ortesem2];
+    return [ortesem1, ortesem2, ortesem3, ortesem4];
+  };
+
+  // Determine product features
+  const getProductFeatures = () => {
+    if (lado === "acessorio") {
+      return [
+        { icone: mao, texto: "Design Ergonômico" },
+        { icone: ajuste, texto: "Ajuste Anatômico" },
+        { icone: pena, texto: "Material Leve" },
+        { icone: coracao, texto: "Alta Durabilidade" },
+      ];
+    }
+    return [
+      { icone: mao, texto: "Design Ergonômico" },
+      { icone: bluet, texto: "Conexão Bluetooth" },
+      { icone: celular, texto: "Controle via APP" },
+      { icone: bateria, texto: "Longa Duração" },
+    ];
+  };
+
+  // Determine dynamic cardsData for Section 9
+  const getCardsData = () => {
+    if (lado === "acessorio") {
+      return [
+        {
+          icone: iconedt,
+          titulo: "Silicone Premium",
+          descricao: "Material macio, hipoalergênico e extremamente confortável para uso diário.",
+        },
+        {
+          icone: iconedt1,
+          titulo: "Posicionamento Correto",
+          descricao: "Mantém os dedos suavemente separados, reduzindo a espasticidade e rigidez.",
+        },
+        {
+          icone: iconedt2,
+          titulo: "Fácil de Higienizar",
+          descricao: "Pode ser lavado facilmente com água e sabão neutro para uso contínuo.",
+        },
+        {
+          icone: iconedt3,
+          titulo: "Compatibilidade Total",
+          descricao: "Desenvolvido especificamente para ser usado junto com a órtese MoveHand.",
+        },
+      ];
+    }
+    return cardsData;
+  };
 
   // Determine texts and prices
   const getProductData = () => {
@@ -91,10 +147,10 @@ function ProdutoDetalhes({ lado = "direita" }) {
           parcelas: "6x de R$116,67 sem juros",
           similares: [
             {
-              nome: "Acessorio RB000V216",
-              preco: "R$000,00",
+              nome: "Separador de dedos",
+              preco: "R$30,00",
               img: carregador,
-              path: "/suporte",
+              path: "/acessorio",
             },
             {
               nome: "Órtese Dexmove Par RB000V130",
@@ -117,10 +173,62 @@ function ProdutoDetalhes({ lado = "direita" }) {
           parcelas: "6x de R$233,33 sem juros",
           similares: [
             {
-              nome: "Acessorio RB000V216",
-              preco: "R$000,00",
+              nome: "Separador de dedos",
+              preco: "R$30,00",
               img: carregador,
-              path: "/suporte",
+              path: "/acessorio",
+            },
+            {
+              nome: "Órtese Dexmove esquerda RB000V130",
+              preco: "R$700,00",
+              img: orteseEsquerda,
+              path: "/mao-esquerda",
+            },
+            {
+              nome: "Órtese Dexmove direita RB000V048",
+              preco: "R$700,00",
+              img: orteseDireita,
+              path: "/detalhes",
+            },
+          ],
+        };
+      case "acessorio":
+        return {
+          titulo: "Separador de dedos (Acessório)",
+          preco: "R$30,00",
+          parcelas: "2x de R$15,00 sem juros",
+          similares: [
+            {
+              nome: "Órtese Dexmove direita RB000V048",
+              preco: "R$700,00",
+              img: orteseDireita,
+              path: "/detalhes",
+            },
+            {
+              nome: "Órtese Dexmove esquerda RB000V130",
+              preco: "R$700,00",
+              img: orteseEsquerda,
+              path: "/mao-esquerda",
+            },
+            {
+              nome: "Kit MoveHand + Acessório",
+              preco: "R$1.430,00",
+              img: ortesePar,
+              path: "/kit",
+            },
+          ],
+        };
+      case "kit":
+        return {
+          titulo: "Kit MoveHand + Acessório",
+          preco: "R$1.430,00",
+          parcelas: "12x de R$120,00 sem juros",
+          similares: [
+            {
+              nome: "Separador de dedos",
+              preco: "R$30,00",
+              img: carregador,
+              path: "/acessorio",
             },
             {
               nome: "Órtese Dexmove esquerda RB000V130",
@@ -144,10 +252,10 @@ function ProdutoDetalhes({ lado = "direita" }) {
           parcelas: "6x de R$116,67 sem juros",
           similares: [
             {
-              nome: "Acessorio RB000V216",
-              preco: "R$000,00",
+              nome: "Separador de dedos",
+              preco: "R$30,00",
               img: carregador,
-              path: "/suporte",
+              path: "/acessorio",
             },
             {
               nome: "Órtese Dexmove esquerda RB000V130",
@@ -176,7 +284,7 @@ function ProdutoDetalhes({ lado = "direita" }) {
       <section className={styles.section8}>
         <div className={styles.esquerda}>
           <div className={styles.orteses}>
-            {imagensThumbnails.map((img, index) => (
+            {getThumbnails().map((img, index) => (
               <div
                 key={index}
                 className={`${styles.caixa} ${imagemSelecionada === img ? styles.ativa : ""}`}
@@ -196,22 +304,12 @@ function ProdutoDetalhes({ lado = "direita" }) {
           <h2 className={styles.prodTitulo}>{productData.titulo}</h2>
 
           <div className={styles.icones}>
-            <div className={styles.icone}>
-              <img src={mao} alt="Design Ergonômico" />
-              <p>Design Ergonômico</p>
-            </div>
-            <div className={styles.icone}>
-              <img src={bluet} alt="Conexão Bluetooth" />
-              <p>Conexão Bluetooth</p>
-            </div>
-            <div className={styles.icone}>
-              <img src={celular} alt="Controle via APP" />
-              <p>Controle via APP</p>
-            </div>
-            <div className={styles.icone}>
-              <img src={bateria} alt="Longa Duração" className={styles.bateria} />
-              <p>Longa Duração</p>
-            </div>
+            {getProductFeatures().map((feat, index) => (
+              <div key={index} className={styles.icone}>
+                <img src={feat.icone} alt={feat.texto} className={feat.icone === bateria ? styles.bateria : ""} />
+                <p>{feat.texto}</p>
+              </div>
+            ))}
           </div>
 
           <div className={styles.prodPreco}>
@@ -273,7 +371,7 @@ function ProdutoDetalhes({ lado = "direita" }) {
         <img src={vector18} alt="vector18" className={styles.vector18} />
 
         <div className={styles.cards2}>
-          {cardsData.map((card, index) => (
+          {getCardsData().map((card, index) => (
             <div key={index} className={styles.cardFlip}>
               <div className={styles.cardInner}>
                 <div className={styles.cardFrente}>
