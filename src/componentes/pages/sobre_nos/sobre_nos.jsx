@@ -32,7 +32,7 @@ function SobreNos() {
     { id: 3, nome: "Thalyson Pereira", cargo: "Marketing e desenvolvedor front end", imagem: equipe3 },
     { id: 4, nome: "Amanda Cristina", cargo: "Desenvolvedora front end", imagem: equipe4 },
     { id: 5, nome: "Melissa Fiuza", cargo: "Desenvolvedora front end", imagem: equipe5 },
-    { id: 6, nome: "Luiz Gustavo", cargo: "Desenvolvedor full stark", imagem: equipe6 },
+    { id: 6, nome: "Luiz Gustavo", cargo: "Desenvolvedor hardware", imagem: equipe6 },
   ];
 
   const apoiadores = [
