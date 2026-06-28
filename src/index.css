@@ -456,6 +456,9 @@ iframe[id*="userway"] {
   .pagamento-sub { font-size: 26px !important; }
   .config-title { font-size: 36px !important; margin-bottom: 10px; }
   .config-sub { font-size: 26px !important; }
+  .s1 h2, .s2 h2, span, .botao{
+      font-size: 24px !important;
+    }
 
 }
 .setting-card h2 {
@@ -493,6 +496,9 @@ iframe[id*="userway"] {
 @media (max-width: 480px){
   .config-sub { font-size: 18px !important; }
   .setting-card h2 { font-size: 18px !important; }
+  .s1 h2, .s2 h2, span, button{
+      font-size: 20px !important;
+    }
 
 
 }
@@ -518,4 +524,79 @@ label{
 .pedidos-sub, .hero-content-enderecos h2, .pagamento-sub, .config-sub{
   color: #1a1a1a !important;}
 
-  
+
+  @media (max-width: 480px) {
+
+      .mh-hero-text h1 {
+    font-size: 28px !important;
+  }
+
+  .mh-hero-text h2 {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+  }
+    .produtos{
+        font-size: 32px !important;
+    }
+
+    .ortese,
+    .avaliacao,
+    .preco {
+        font-size: 12px !important;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .mh-hero-text h1 {
+    font-size: 32px !important;
+  }
+
+  .mh-hero-text h2 {
+    font-size: 20px !important;
+    font-weight: 500 !important;
+  }
+    .produtos { font-size: 44px; margin-bottom: 40px; padding: 0 16p !important }
+}
+
+@media (max-width: 430px) {
+      .mh-hero-text h1 {
+    font-size: 28px !important;
+  }
+
+  .mh-hero-text h2 {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+  }
+    .produtos { font-size: 34px; margin-bottom: 32px !important; }
+    .s1 h2, .s2 h2, span{
+      font-size: 18px !important;
+    }
+    @media (max-width: 1024px) {
+  .botao-comprar {
+    height: 48px !important;
+    padding: 10px 14px !important;
+    font-size: 18px !important;
+    border-radius: 12px !important;
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  .botao-comprar span {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .botao-comprar {
+    height: 46px !important;
+    padding: 8px 12px !important ;
+    font-size: 16px !important;
+  }
+  .botao-comprar span {
+    font-size: 14px !important;
+  }
+}
+
+
+
+}

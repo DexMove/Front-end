@@ -48,6 +48,7 @@ function Produtos(){
             <h1 className='produtos'>Nossos produtos</h1>
             <div id="dupla" className="reveal">
                 <div className="dupla_imagem">
+                    
                     <img src={Dupla}  />
                 </div>
                 <div className="dupla_textos">
