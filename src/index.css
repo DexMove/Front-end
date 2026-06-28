@@ -574,13 +574,8 @@ label{
     }
     @media (max-width: 1024px) {
   .botao-comprar {
-    height: 48px !important;
-    padding: 10px 14px !important;
-    font-size: 18px !important;
-    border-radius: 12px !important;
-    width: 100% !important;
-    justify-content: center !important;
-  }
+    font-size: 18px !important;}
+ 
   .botao-comprar span {
     font-size: 16px !important;
   }
@@ -588,8 +583,7 @@ label{
 
 @media (max-width: 480px) {
   .botao-comprar {
-    height: 46px !important;
-    padding: 8px 12px !important ;
+
     font-size: 16px !important;
   }
   .botao-comprar span {

@@ -597,10 +597,16 @@ main{
     .preco {
         font-size: 13px;
     }
- 
-    .botao {
-        margin-top: 8px;
+
+    .dupla_imagem img,
+    .direita_imagem img,
+    .esquerda_imagem img{
+        width: 60%;
     }
+    .dup, .car{
+        width: 40%;
+    }
+
 }
  
 @media (max-width: 480px) {
@@ -660,6 +666,15 @@ main{
     .kit_imagem,
     .carregador_imagem {
         height: 200px;
+    }
+    .dupla_imagem img,
+    .direita_imagem img,
+    .esquerda_imagem img,
+    .carregador_imagem img{
+        width: 80%;
+    }
+    .dup, .car{
+        width: 45%;
     }
 }
  
