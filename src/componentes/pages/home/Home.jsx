@@ -230,15 +230,16 @@ function Home({ useHeader2 = false }) {
           <div className={styles.bannerEsquerda}>
             <div className={styles.bannerLogo}>D</div>
             <div className={styles.bannerTexto}>
-              <p><strong>Avaliada pelo fisioterapeuta, personalizada para você</strong></p>
-              <p>e acompanhada <span className={styles.destaque}>de qualquer lugar.</span></p>
+              <p>
+                <strong>Avaliada por fisioterapeutas, personalizada para você</strong> e acompanhada <span className={styles.destaque}>de onde você estiver.</span>
+              </p>
             </div>
           </div>
           <div className={styles.bannerDireita}>
             <p className={styles.bannerDesc}>
               A MoveHand transforma a reabilitação em uma experiência mais acessível, inteligente e humana.
             </p>
-            <button className={styles.bannerBtn} onClick={() => navigate("/produtos")}>SAIBA MAIS</button>
+            <button className={styles.bannerBtn} onClick={() => navigate("/bloqueada")}>SAIBA MAIS</button>
           </div>
         </div>
       </section>
@@ -248,7 +249,9 @@ function Home({ useHeader2 = false }) {
         <h2 className={styles.reveal}>Sobre o nosso produto.</h2>
         <p className={`${styles.reveal} ${styles.revealDelay1}`}>Transforme seu dia a dia em conforto e movimento</p>
         <div className={`${styles.reveal} ${styles.revealDelay2}`}>
-          <BotaoComprar />
+          <Link to="/produtos">
+            <BotaoComprar />
+          </Link>
         </div>
         <div className={`${styles.caixa7} ${styles.reveal} ${styles.revealDelay3}`}>
           <video

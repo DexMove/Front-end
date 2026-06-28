@@ -395,7 +395,7 @@ function ProdutoDetalhes({ lado = "direita" }) {
           para transformar o amanhã.
         </h2>
         <div className={styles.meio}>
-          <h3>Benefício que você sente</h3>
+          <h3>Benefícios que você percebe</h3>
         </div>
         <div className={styles.beneficios}>
           <div className={styles.beneficio}>
