@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import {
   User,
   MapPin,
@@ -20,10 +20,96 @@ import vector23 from '../../../assets/Vector23.svg';
 import vector24 from '../../../assets/Vector24.svg';
 import vector25 from '../../../assets/Vector25.svg';
 // Usando imagens do projeto para o resumo do pedido
-import orteset from '../../../assets/2ortese.png';
+import Direita from '../../../assets/direita1.png';
+import Esquerda from '../../../assets/esquerda.png';
+import Dupla from '../../../assets/dupla.png';
+import Acessorio from '../../../assets/acessorio.png';
 
 function Comprar() {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const produtosInfo = {
+    direita: {
+      titulo: "Órtese MoveHand - Mão Direita",
+      subtitulo: "Tamanho: M | Qtd: 1",
+      imagem: Direita,
+      preco: 700.00,
+      precoFormatado: "R$ 700,00",
+      parcelas: [
+        { value: "1", label: "1x de R$ 700,00 sem juros" },
+        { value: "2", label: "2x de R$ 350,00 sem juros" },
+        { value: "3", label: "3x de R$ 233,33 sem juros" },
+        { value: "4", label: "4x de R$ 175,00 sem juros" },
+        { value: "5", label: "5x de R$ 140,00 sem juros" },
+        { value: "6", label: "6x de R$ 116,67 sem juros" },
+        { value: "12", label: "12x de R$ 58,33 sem juros" }
+      ]
+    },
+    esquerda: {
+      titulo: "Órtese MoveHand - Mão Esquerda",
+      subtitulo: "Tamanho: M | Qtd: 1",
+      imagem: Esquerda,
+      preco: 700.00,
+      precoFormatado: "R$ 700,00",
+      parcelas: [
+        { value: "1", label: "1x de R$ 700,00 sem juros" },
+        { value: "2", label: "2x de R$ 350,00 sem juros" },
+        { value: "3", label: "3x de R$ 233,33 sem juros" },
+        { value: "4", label: "4x de R$ 175,00 sem juros" },
+        { value: "5", label: "5x de R$ 140,00 sem juros" },
+        { value: "6", label: "6x de R$ 116,67 sem juros" },
+        { value: "12", label: "12x de R$ 58,33 sem juros" }
+      ]
+    },
+    par: {
+      titulo: "Órtese MoveHand - Par",
+      subtitulo: "Tamanho: M | Qtd: 1",
+      imagem: Dupla,
+      preco: 1400.00,
+      precoFormatado: "R$ 1.400,00",
+      parcelas: [
+        { value: "1", label: "1x de R$ 1.400,00 sem juros" },
+        { value: "2", label: "2x de R$ 700,00 sem juros" },
+        { value: "3", label: "3x de R$ 466,67 sem juros" },
+        { value: "4", label: "4x de R$ 350,00 sem juros" },
+        { value: "5", label: "5x de R$ 280,00 sem juros" },
+        { value: "6", label: "6x de R$ 233,33 sem juros" },
+        { value: "12", label: "12x de R$ 116,67 sem juros" }
+      ]
+    },
+    kit: {
+      titulo: "Kit MoveHand + Acessório",
+      subtitulo: "Tamanho: M | Qtd: 1",
+      imagem: Dupla,
+      preco: 1430.00,
+      precoFormatado: "R$ 1.430,00",
+      parcelas: [
+        { value: "1", label: "1x de R$ 1.430,00 sem juros" },
+        { value: "2", label: "2x de R$ 715,00 sem juros" },
+        { value: "3", label: "3x de R$ 476,67 sem juros" },
+        { value: "4", label: "4x de R$ 357,50 sem juros" },
+        { value: "5", label: "5x de R$ 286,00 sem juros" },
+        { value: "6", label: "6x de R$ 238,33 sem juros" },
+        { value: "12", label: "12x de R$ 119,17 sem juros" }
+      ]
+    },
+    acessorio: {
+      titulo: "Separador de dedos (Acessório)",
+      subtitulo: "Tamanho: Único | Qtd: 1",
+      imagem: Acessorio,
+      preco: 30.00,
+      precoFormatado: "R$ 30,00",
+      parcelas: [
+        { value: "1", label: "1x de R$ 30,00 sem juros" },
+        { value: "2", label: "2x de R$ 15,00 sem juros" }
+      ]
+    }
+  };
+
+  const produtoKey = location.state?.produto || "direita";
+  const produto = produtosInfo[produtoKey] || produtosInfo.direita;
+
   const [etapa, setEtapa] = useState(1);
   const [metodoPagamento, setMetodoPagamento] = useState("cartao"); // "cartao", "pix", "boleto"
 
@@ -384,12 +470,9 @@ function Comprar() {
                         onChange={handleChange}
                         className={styles.selectForm}
                       >
-                        <option value="1">1x de R$ 5.000,00 sem juros</option>
-                        <option value="2">2x de R$ 2.500,00 sem juros</option>
-                        <option value="3">3x de R$ 1.666,67 sem juros</option>
-                        <option value="4">4x de R$ 1.250,00 sem juros</option>
-                        <option value="5">5x de R$ 1.000,00 sem juros</option>
-                        <option value="6">6x de R$ 833,33 sem juros</option>
+                        {produto.parcelas.map((p) => (
+                          <option key={p.value} value={p.value}>{p.label}</option>
+                        ))}
                       </select>
                     </div>
                   </div>
@@ -469,15 +552,14 @@ function Comprar() {
 
               <div className={styles.itemResumoFlex}>
                 <div className={styles.itemResumoImagemBox}>
-                  <img src={orteset} alt="Órtese MoveHand" />
+                  <img src={produto.imagem} alt={produto.titulo} />
                 </div>
                 <div className={styles.itemResumoDetalhes}>
-                  <h4>Órtese da mão direita</h4>
-                  <p className={styles.subtextItemResumo}>Tamanho: M</p>
-                  <p className={styles.subtextItemResumo}>Qtd: 1</p>
+                  <h4>{produto.titulo}</h4>
+                  <p className={styles.subtextItemResumo}>{produto.subtitulo}</p>
                 </div>
                 <div className={styles.itemResumoPrecoTotal}>
-                  R$ 700,00
+                  {produto.precoFormatado}
                 </div>
               </div>
 
@@ -486,7 +568,7 @@ function Comprar() {
               <div className={styles.detalhesLinhasValores}>
                 <div className={styles.linhaValorFila}>
                   <span>Subtotal</span>
-                  <span>R$ 5.000,00</span>
+                  <span>{produto.precoFormatado}</span>
                 </div>
                 <div className={styles.linhaValorFila}>
                   <span>Frete</span>
@@ -495,7 +577,7 @@ function Comprar() {
                 <div className={styles.divisorResumo}></div>
                 <div className={`${styles.linhaValorFila} ${styles.linhaTotalDestaque}`}>
                   <span>Total</span>
-                  <span>R$ 5.000,00</span>
+                  <span>{produto.precoFormatado}</span>
                 </div>
               </div>
 

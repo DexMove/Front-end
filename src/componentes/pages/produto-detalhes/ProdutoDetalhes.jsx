@@ -357,7 +357,7 @@ function ProdutoDetalhes({ lado = "direita" }) {
             )}
           </div>
 
-          <button className={styles.Comprar} onClick={() => navigate("/comprar")}>
+          <button className={styles.Comprar} onClick={() => navigate("/comprar", { state: { produto: lado } })}>
             Comprar
           </button>
           <p className={styles.seguro}>COMPRA 100% SEGURA E PROTEGIDA</p>
