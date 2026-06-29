@@ -96,16 +96,16 @@ const DexMovePage = () => {
           <div className="control-card">
             <h3>Configurações ativas</h3>
             <div className="setting-group">
-              <label>Nível de assistência</label>
-              <span className="highlight-text">Moderado</span>
+              <label>Posição Inicial</label>
+              <span className="highlight-text">45°</span>
             </div>
             <div className="setting-group">
-              <label>Força de flexão</label>
-              <span className="highlight-text">60%</span>
+              <label>Movimento</label>
+              <span className="highlight-text">77°</span>
             </div>
             <div className="setting-group">
-              <label>Velocidade</label>
-              <span className="highlight-text">Média</span>
+              <label>Posição Final</label>
+              <span className="highlight-text">32°</span>
             </div>
             <p className="footer-note">Definido pelo fisioterapeuta</p>
           </div>

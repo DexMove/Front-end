@@ -346,14 +346,75 @@ body {
   cursor: pointer;
 }
 
-/* Responsividade */
-@media (max-width: 992px) {
-  .main-grid { grid-template-columns: 1fr 1fr; }
-}
+/* --- NOVA RESPONSIVIDADE: TEXTOS MAIORES E LADO A LADO --- */
 
 @media (max-width: 768px) {
-  .status-card { flex-direction: column; gap: 20px; }
+  /* 1. Ajuste do Card Principal */
+  .status-card {
+    flex-direction: row !important; /* Força ficar um ao lado do outro */
+    flex-wrap: nowrap !important;   /* Impede quebra de linha */
+    padding: 20px 8px !important;   /* Reduz padding lateral para ganhar espaço */
+    justify-content: space-around;
+    gap: 2px;
+  }
+
+  /* 2. Ajuste de cada bloco de informação */
+  .status-item {
+    flex: 1;
+    min-width: 0; /* Permite que o flexbox encolha o item se necessário */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* 3. Títulos (STATUS, BATERIA, etc) */
+  .status-item .label {
+    font-size: 15px !important; /* Aumentado de 9px para 11px */
+    letter-spacing: 0;
+    line-height: 1.1 !important;
+    margin-bottom: 8px;
+    height: 28px; /* Altura fixa para alinhar os valores de baixo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+  }
+
+  /* 4. Valores Principais (Conectada, 85%, Horário) */
+  .value-row {
+    font-size: 20px !important; /* Aumentado para ficar bem legível */
+    gap: 4px;
+    justify-content: center;
+    white-space: nowrap; /* Evita que "Hoje, 09:32" quebre em duas linhas */
+  }
+
+  /* Ajuste específico para o ícone da bateria e ponto verde */
+  .dot-online { width: 8px; height: 8px; }
+  .value-row i, .value-row svg { font-size: 16px; }
+
+  /* 5. Texto do ID (Dexmove...) */
+  .status-item span:last-child {
+    font-size: 15px !important;
+    margin-top: 4px;
+    opacity: 0.8;
+  }
+
+  /* 6. Divisores (Opcional: se ficar muito apertado, podemos diminuir a opacidade) */
+  .divider {
+    display: block; /* Garante que apareçam */
+    height: 35px;
+    margin: 10px 2px 0;
+    background-color: #ddd;
+  }
+
+  /* --- Outros ajustes de tela cheia --- */
   .main-grid { grid-template-columns: 1fr; }
-  .ai-card, .support-content { flex-direction: column; text-align: center; gap: 20px; }
-  .ai-header { flex-direction: column; }
+  .ai-card, .support-content { flex-direction: column; text-align: center; }
+}
+
+/* Ajuste para telas MUITO pequenas (abaixo de 360px) */
+@media (max-width: 360px) {
+  .status-item .label { font-size: 10px !important; }
+  .value-row { font-size: 13px !important; }
 }
