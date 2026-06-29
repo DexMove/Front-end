@@ -169,7 +169,7 @@ function ProdutoDetalhes({ lado = "direita" }) {
         };
       case "par":
         return {
-          titulo: "Órtese do par",
+          titulo: "par da Órtese",
           preco: "R$1.400,00",
           parcelas: "6x de R$233,33 sem juros",
           similares: [
