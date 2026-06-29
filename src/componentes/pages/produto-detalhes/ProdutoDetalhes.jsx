@@ -140,6 +140,54 @@ function ProdutoDetalhes({ lado = "direita" }) {
 
   // Determine texts and prices
   const getProductData = () => {
+    const produtosCatalogo = {
+      direita: {
+        categoria: "Órtese Robótica",
+        titulo: "MoveHand Mão direita",
+        preco: "R$700,00",
+        parcela: "ou 12x de R$60,00",
+        descricao: "A versão padrão da MoveHand, desenvolvida para a mão direita. Tecnologia robótica completa para reabilitação contínua em casa.",
+        img: orteseDireita,
+        path: "/mao-direita"
+      },
+      esquerda: {
+        categoria: "Órtese Robótica",
+        titulo: "MoveHand Mão esquerda",
+        preco: "R$700,00",
+        parcela: "ou 12x de R$60,00",
+        descricao: "A versão padrão da MoveHand, desenvolvida para a mão esquerda. Tecnologia robótica completa para reabilitação contínua em casa.",
+        img: orteseEsquerda,
+        path: "/mao-esquerda"
+      },
+      par: {
+        categoria: "Órtese Robótica",
+        titulo: "MoveHand Par",
+        preco: "R$ 1.400,00",
+        parcela: "ou 12x de R$ 120,00",
+        descricao: "Nossa órtese mais completa. Estimulação elétrica funcional integrada, 5 níveis de intensidade, bateria de 6h e controle total pelo aplicativo. Indicada para paralisia cerebral.",
+        img: ortesePar,
+        path: "/par"
+      },
+      kit: {
+        categoria: "Kit",
+        titulo: "MoveHand + acessório",
+        preco: "R$1.430,00",
+        parcela: "ou 12x de R$ 120,00",
+        descricao: "MoveHand Par + Separador funcional para posicionamento dos dedos. Facilita a colocação da órtese, mantendo os dedos suavemente separados de forma confortável e segura.",
+        img: ortesePar,
+        path: "/kit"
+      },
+      acessorio: {
+        categoria: "Acessório",
+        titulo: "Separador de dedos",
+        preco: "R$ 30,00",
+        parcela: "ou 2x de R$ 15,00",
+        descricao: "Separador funcional para posicionamento dos dedos. Facilita a colocação da órtese, mantendo os dedos suavemente separados de forma confortável e segura.",
+        img: carregador,
+        path: "/acessorio"
+      }
+    };
+
     switch (lado) {
       case "esquerda":
         return {
@@ -147,24 +195,9 @@ function ProdutoDetalhes({ lado = "direita" }) {
           preco: "R$700,00",
           parcelas: "6x de R$116,67 sem juros",
           similares: [
-            {
-              nome: "Separador de dedos",
-              preco: "R$30,00",
-              img: carregador,
-              path: "/acessorio",
-            },
-            {
-              nome: "Órtese Dexmove Par RB000V130",
-              preco: "R$1.400,00",
-              img: ortesePar,
-              path: "/par",
-            },
-            {
-              nome: "Órtese Dexmove direita RB000V048",
-              preco: "R$700,00",
-              img: orteseDireita,
-              path: "/detalhes",
-            },
+            produtosCatalogo.acessorio,
+            produtosCatalogo.par,
+            produtosCatalogo.direita
           ],
         };
       case "par":
@@ -173,24 +206,9 @@ function ProdutoDetalhes({ lado = "direita" }) {
           preco: "R$1.400,00",
           parcelas: "6x de R$233,33 sem juros",
           similares: [
-            {
-              nome: "Separador de dedos",
-              preco: "R$30,00",
-              img: carregador,
-              path: "/acessorio",
-            },
-            {
-              nome: "Órtese Dexmove esquerda RB000V130",
-              preco: "R$700,00",
-              img: orteseEsquerda,
-              path: "/mao-esquerda",
-            },
-            {
-              nome: "Órtese Dexmove direita RB000V048",
-              preco: "R$700,00",
-              img: orteseDireita,
-              path: "/detalhes",
-            },
+            produtosCatalogo.acessorio,
+            produtosCatalogo.esquerda,
+            produtosCatalogo.direita
           ],
         };
       case "acessorio":
@@ -199,24 +217,9 @@ function ProdutoDetalhes({ lado = "direita" }) {
           preco: "R$30,00",
           parcelas: "2x de R$15,00 sem juros",
           similares: [
-            {
-              nome: "Órtese Dexmove direita RB000V048",
-              preco: "R$700,00",
-              img: orteseDireita,
-              path: "/detalhes",
-            },
-            {
-              nome: "Órtese Dexmove esquerda RB000V130",
-              preco: "R$700,00",
-              img: orteseEsquerda,
-              path: "/mao-esquerda",
-            },
-            {
-              nome: "Kit MoveHand + Acessório",
-              preco: "R$1.430,00",
-              img: ortesePar,
-              path: "/kit",
-            },
+            produtosCatalogo.direita,
+            produtosCatalogo.esquerda,
+            produtosCatalogo.kit
           ],
         };
       case "kit":
@@ -225,24 +228,9 @@ function ProdutoDetalhes({ lado = "direita" }) {
           preco: "R$1.430,00",
           parcelas: "12x de R$120,00 sem juros",
           similares: [
-            {
-              nome: "Separador de dedos",
-              preco: "R$30,00",
-              img: carregador,
-              path: "/acessorio",
-            },
-            {
-              nome: "Órtese Dexmove esquerda RB000V130",
-              preco: "R$700,00",
-              img: orteseEsquerda,
-              path: "/mao-esquerda",
-            },
-            {
-              nome: "Órtese Dexmove direita RB000V048",
-              preco: "R$700,00",
-              img: orteseDireita,
-              path: "/detalhes",
-            },
+            produtosCatalogo.acessorio,
+            produtosCatalogo.esquerda,
+            produtosCatalogo.direita
           ],
         };
       case "direita":
@@ -252,24 +240,9 @@ function ProdutoDetalhes({ lado = "direita" }) {
           preco: "R$700,00",
           parcelas: "6x de R$116,67 sem juros",
           similares: [
-            {
-              nome: "Separador de dedos",
-              preco: "R$30,00",
-              img: carregador,
-              path: "/acessorio",
-            },
-            {
-              nome: "Órtese Dexmove esquerda RB000V130",
-              preco: "R$700,00",
-              img: orteseEsquerda,
-              path: "/mao-esquerda",
-            },
-            {
-              nome: "Órtese Dexmove Par RB000V048",
-              preco: "R$1.400,00",
-              img: ortesePar,
-              path: "/par",
-            },
+            produtosCatalogo.acessorio,
+            produtosCatalogo.esquerda,
+            produtosCatalogo.par
           ],
         };
     }
@@ -429,11 +402,17 @@ function ProdutoDetalhes({ lado = "direita" }) {
           {productData.similares.map((similar, index) => (
             <div key={index} className={styles.card3}>
               <div className={styles.cardImg}>
-                <img src={similar.img} alt={similar.nome} />
+                <img src={similar.img} alt={similar.titulo} />
               </div>
               <div className={styles.cardBody}>
-                <p className={styles.nome}>{similar.nome}</p>
-                <p className={styles.similarPreco}>{similar.preco}</p>
+                <p className={styles.ortese}>{similar.categoria}</p>
+                <h3>{similar.titulo}</h3>
+                <p className={styles.avaliacao}><span>★★★★★</span> 4.9 (128 avaliações)</p>
+                <p className={styles.cardTexto}>{similar.descricao}</p>
+                <p className={styles.preco}>A partir de <br />
+                  <span>{similar.preco}</span> <br />
+                  {similar.parcela}
+                </p>
                 <button className={styles.btnComprar} onClick={() => navigate(similar.path)}>
                   COMPRAR
                 </button>
