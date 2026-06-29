@@ -265,8 +265,7 @@
   max-width: 500px;
   height: 70px;
   margin: 2rem auto 1rem;
-  background: #D32F2F;
-  color: #ffffff;
+  background: #f5e9a0;
   border: none;
   border-radius: 18px;
   font-size: 1.5rem;
@@ -275,12 +274,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s, transform 0.3s;
 }
 
 .Comprar:hover {
-  background: #B71C1C;
   transform: scale(1.02);
+  transition: 0.3s;
 }
 
 .seguro {
