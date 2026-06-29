@@ -184,10 +184,7 @@
 .ao-chat-input input { flex: 1; border: none; background: transparent; outline: none; }
 .ao-chat-input button { background: transparent; border: none; color: #27ae60; cursor: pointer; padding: 8px; }
 
-/* Card Compartilhar */
-.ao-share {
-  /* Este card agora é fixo, sem efeito de hover no transform */
-}
+
 
 .ao-share-layout { display: flex; justify-content: space-between; align-items: center; }
 .ao-share-btns { display: flex; flex-direction: column; gap: 10px; }
