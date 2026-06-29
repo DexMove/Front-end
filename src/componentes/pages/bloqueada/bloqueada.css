@@ -112,10 +112,10 @@
 }
 
 .features{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     gap: 24px;
-    flex-wrap: wrap;
     width: 100%;
     padding: 60px 20px;
     box-sizing: border-box;
@@ -239,13 +239,24 @@
     }
 
     .features{
-        flex-direction: column;
-        align-items: center;
+        gap: 12px;
         padding: 40px 16px;
     }
 
     .feature-card{
         max-width: 100%;
+        padding: 18px 12px;
+        gap: 10px;
+    }
+
+    .feature-card h3{
+        font-size: 16px !important;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .feature-card p{
+        font-size: 12px !important;
     }
 
     .suporte-section{
@@ -253,11 +264,11 @@
     }
 
     .suporte-section h2{
-        font-size: 26px;
+        font-size: 26px !important;
     }
 
     .suporte-section p{
-        font-size: 15px;
+        font-size: 15px !important;
     }
 }
 
@@ -272,11 +283,28 @@
     }
 
     .conteudo-bloqueado h1{
-        font-size: 22px;
+        font-size: 22px !important;
     }
 
     .conteudo-bloqueado p{
-        font-size: 14px;
+        font-size: 14px !important;
+    }
+
+    .features{
+        gap: 8px;
+    }
+
+    .feature-card{
+        padding: 14px 8px;
+        gap: 8px;
+    }
+
+    .feature-card h3{
+        font-size: 14px !important;
+    }
+
+    .feature-card p{
+        font-size: 11px !important;
     }
 }
 
@@ -291,36 +319,41 @@
     }
 
     .conteudo-bloqueado h1{
-        font-size: 20px;
+        font-size: 20px !important;
     }
 
     .conteudo-bloqueado p{
-        font-size: 13px;
+        font-size: 13px !important;
     }
 
     .botao-comprar,
     .botao-tenho{
         padding: 12px 20px;
-        font-size: 14px;
+        font-size: 14px !important;
+    }
+
+    .features{
+        gap: 6px;
+        padding: 24px 8px;
     }
 
     .feature-card{
-        padding: 20px;
+        padding: 12px 6px;
     }
 
     .feature-card h3{
-        font-size: 18px;
+        font-size: 12px !important;
     }
 
     .feature-card p{
-        font-size: 14px;
+        font-size: 10px !important;
     }
 
     .suporte-section h2{
-        font-size: 22px;
+        font-size: 22px !important;
     }
 
     .suporte-section p{
-        font-size: 14px;
+        font-size: 14px !important;
     }
 }

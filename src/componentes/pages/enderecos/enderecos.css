@@ -123,7 +123,7 @@
   background-color: #e2efef;
 }
 .address-type-icon {
-  color: #1a6b6b;
+  color: #0B5C6A;
 }
 .card-right-panel {
   flex: 1;
@@ -144,8 +144,8 @@
   gap: 8px;
 }
 .badge-principal-new {
-  background-color: #e2ecea;
-  color: #1a6b6b;
+  background-color: #f1e78f;
+  color: #1a1a1a;
   font-size: 18px;
   font-weight: 700;
   padding: 3px 10px;
@@ -169,7 +169,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: #6b8d8a;
+  color: #ffb366;
   padding: 6px;
   border-radius: 8px;
   display: flex;
@@ -179,8 +179,8 @@
 }
 
 .action-icon-btn:hover {
-  background-color: #f4faf9;
-  color: #1d9e75;
+  background-color: #fff5f2;
+  color: #ffb366;
 }
 
 .action-icon-btn.delete:hover {

@@ -346,7 +346,10 @@ iframe[id*="userway"] {
   line-height: 1.2 !important;
   margin: 0 !important;
 }
-
+.conteudo-bloqueado h1{
+  color: white !important;
+}
+  
 /* Responsividade da section mh-hero na página de produtos */
 @media (max-width: 1024px) {
   .mh-hero-text h1 { font-size: 56px !important; }
@@ -356,6 +359,13 @@ iframe[id*="userway"] {
 @media (max-width: 768px) {
   .mh-hero-text h1 { font-size: 40px !important; }
   .mh-hero-text h2 { font-size: 28px !important; }
+  .suporte-section h2{
+        font-size: 26px !important;
+    }
+
+    .suporte-section p{
+        font-size: 15px !important;
+    }
 }
 
 @media (max-width: 600px) {
@@ -366,6 +376,21 @@ iframe[id*="userway"] {
 @media (max-width: 480px), (max-width: 430px) {
   .mh-hero-text h1 { font-size: 28px !important; }
   .mh-hero-text h2 { font-size: 16px !important; }
+   .feature-card h3{
+        font-size: 18px !important;
+    }
+
+    .feature-card p{
+        font-size: 14px !important;
+    }
+
+    .suporte-section h2{
+        font-size: 22px !important;
+    }
+
+    .suporte-section p{
+        font-size: 14px !important;
+    }
 }
 
 
