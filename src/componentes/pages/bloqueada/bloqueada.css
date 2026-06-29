@@ -116,8 +116,8 @@
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     gap: 24px;
-    width: 100%;
-    padding: 60px 20px;
+    width: 60%;
+    padding: 60px 0px;
     box-sizing: border-box;
 }
 
@@ -199,6 +199,9 @@
 
     .conteudo-bloqueado p{
         font-size: 17px;
+    }
+    .features{
+        width: 90%;
     }
 }
 
@@ -292,6 +295,7 @@
 
     .features{
         gap: 8px;
+        width: 100%;
     }
 
     .feature-card{
