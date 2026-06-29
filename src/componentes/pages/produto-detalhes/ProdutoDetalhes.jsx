@@ -398,8 +398,7 @@ function ProdutoDetalhes({ lado = "direita" }) {
       <section className={styles.section10}>
         <img src={vector19} alt="vector19" className={styles.vector19} />
         <h2 className={styles.techTitulo}>
-          Tecnologia que cuida hoje <br />
-          para transformar o amanhã.
+          Tecnologia que cuida hoje para transformar o amanhã.
         </h2>
         <div className={styles.meio}>
           <h3>Benefícios que você percebe</h3>
@@ -407,26 +406,15 @@ function ProdutoDetalhes({ lado = "direita" }) {
         <div className={styles.beneficios}>
           <div className={styles.beneficio}>
             <img src={ajuste} alt="ajuste" />
-            <h3>
-              Ajuste anatômico.
-              <br />
-              É confortável.
-            </h3>
+            <h3>Ajuste anatômico. É confortável.</h3>
           </div>
           <div className={styles.beneficio}>
             <img src={pena} alt="pena" />
-            <h3>
-              Materiais leves
-              <br />e resistentes.
-            </h3>
+            <h3>Materiais leves e resistentes.</h3>
           </div>
           <div className={styles.beneficio}>
             <img src={coracao} alt="coração" />
-            <h3>
-              Mais qualidade
-              <br />
-              de vida
-            </h3>
+            <h3>Mais qualidade de vida</h3>
           </div>
         </div>
       </section>

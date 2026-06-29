@@ -833,7 +833,7 @@ h2.techTitulo {
     padding: 1.5rem 1rem;
   }
   h2.techTitulo {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     top: 0;
     position: relative;
     z-index: 2;
@@ -865,6 +865,7 @@ h2.techTitulo {
   }
   .beneficio h3 {
     font-size: 0.8rem;
+    line-height: 1.3;
   }
   .vector19 {
     height: 220px;
@@ -952,6 +953,10 @@ h2.techTitulo {
   }
 
   /* Section 10 */
+  h2.techTitulo {
+    font-size: 1.15rem !important;
+    line-height: 1.3 !important;
+  }
   .beneficios {
     flex-direction: column !important;
     align-items: center !important;
@@ -960,5 +965,9 @@ h2.techTitulo {
   .beneficio {
     max-width: 100% !important;
     text-align: center !important;
+  }
+  .beneficio h3 {
+    font-size: 0.78rem !important;
+    line-height: 1.25 !important;
   }
 }
