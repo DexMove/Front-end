@@ -207,6 +207,7 @@
   border: 1px solid #d0d0d0;
   border-radius: 12px;
   background: white;
+  color: #111;   /* ADICIONE ESTA LINHA */
   display: flex;
   justify-content: center;
   align-items: center;
