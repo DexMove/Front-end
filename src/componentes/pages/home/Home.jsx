@@ -18,6 +18,7 @@ import OrteseSec2 from "../../../assets/imgnova.png";
 import menina1 from "../../../assets/menina1.png";
 import menino1 from "../../../assets/novameni.png";
 import videoDexMove from "../../../assets/video.mp4";
+import moveVideo from "../../../assets/move.mp4";
 import livro from "../../../assets/livro.png";
 import circolo from "../../../assets/circolo.png";
 import grafico from "../../../assets/grafimao.png";
@@ -76,8 +77,31 @@ const cardsIA = [
   },
 ];
 
+const testemunhos = [
+  {
+    estrelas: "⭐⭐⭐⭐⭐",
+    texto: '"A órtese transformou a vida da minha filha. Ela consegue realizar atividades que antes eram impossíveis. O conforto e o acolhimento da equipe nos deram esperança."',
+    autor: "Maria Silva",
+    funcao: "Mãe de paciente"
+  },
+  {
+    estrelas: "⭐⭐⭐⭐⭐",
+    texto: '"Como profissional da área, fico impressionado com os resultados que a DexMove proporciona. É uma solução inovadora que realmente faz diferença na qualidade de vida dos pacientes."',
+    autor: "Dr. Carlos Mendes",
+    funcao: "Fisioterapeuta"
+  },
+  {
+    estrelas: "⭐⭐⭐⭐⭐",
+    texto: '"Uso a órtese há 6 meses e a melhora é notável. Consigo escrever, usar o celular e fazer coisas simples que antes eram um desafio. Sou muito grata!"',
+    autor: "Ana Paula Costa",
+    funcao: "Cuidadora"
+  }
+];
+
 function Home({ useHeader2 = false }) {
   const navigate = useNavigate();
+  const [testemunhoAtivo, setTestemunhoAtivo] = useState(0);
+  const [showVideoModal, setShowVideoModal] = useState(false);
 
   useEffect(() => {
     const observerOptions = {
@@ -111,12 +135,12 @@ function Home({ useHeader2 = false }) {
       <section className={styles.section1}>
         <div className={`${styles.div1} ${styles.reveal}`}>
           <h1>Recupere a autonomia e o bem-estar no conforto de casa.</h1>
-          <p>MOVEHAND: Um aliado contínuo para reduzir a rigidez muscular.</p>
+          <p><span className={styles.verdeDexmove}>MOVEHAND</span>: Um aliado contínuo para reduzir a rigidez muscular.</p>
           <div className={styles.botoins}>
             <button className={styles.button} onClick={() => navigate("/bem-vindo")}>
               Cadastre-se gratuitamente.
             </button>
-            <button className={styles.button} onClick={() => navigate("/suporte")}>
+            <button className={styles.button} onClick={() => setShowVideoModal(true)}>
               Ver vídeo.
             </button>
           </div>
@@ -302,7 +326,7 @@ function Home({ useHeader2 = false }) {
             Para fisioterapeutas
           </span>
 
-          <h2 className={styles.fisioTitulo}>Cadastre-se e transforme<br />mais vidas com a DexMove</h2>
+          <h2 className={styles.fisioTitulo}>Cadastre-se e transforme mais vidas com a DexMove</h2>
           <p className={styles.fisioSubtitulo}>Junte-se à nossa rede de profissionais</p>
 
           <div className={styles.fisioCards}>
@@ -337,42 +361,52 @@ function Home({ useHeader2 = false }) {
         </div>
       </section>
 
-      {/* Section 6 (Testemunhos) */}
+      {/* Section 6 (Testemunhos - Carrossel) */}
       <section className={styles.section6}>
         <h2 className={styles.reveal}>O que nossos clientes dizem</h2>
         <p className={`${styles.reveal} ${styles.revealDelay1}`}>Experiências que inspiram e transformam vidas.</p>
 
-        <div className={styles.s6Cards}>
-          <div className={`${styles.s6Card} ${styles.reveal} ${styles.revealDelay1}`}>
-            <h3>⭐⭐⭐⭐⭐</h3>
-            <p>
-              "A órtese transformou a vida da minha filha. Ela consegue realizar atividades que antes eram
-              impossíveis. O conforto e o acolhimento da equipe nos deram esperança."
-            </p>
-            <hr />
-            <p>Maria Silva</p>
-            <p className={styles.funcao}>Mãe de paciente</p>
+        <div className={styles.carrosselWrapper}>
+          <button 
+            className={styles.carrosselArrow} 
+            onClick={() => setTestemunhoAtivo((prev) => (prev === 0 ? testemunhos.length - 1 : prev - 1))}
+            aria-label="Depoimento anterior"
+          >
+            ‹
+          </button>
+          
+          <div className={styles.carrosselTrack}>
+            {testemunhos.map((test, index) => (
+              <div 
+                key={index} 
+                className={`${styles.s6Card} ${index === testemunhoAtivo ? styles.activeCard : styles.inactiveCard}`}
+              >
+                <h3>{test.estrelas}</h3>
+                <p>{test.texto}</p>
+                <hr />
+                <p>{test.autor}</p>
+                <p className={styles.funcao}>{test.funcao}</p>
+              </div>
+            ))}
           </div>
-          <div className={`${styles.s6Card} ${styles.reveal} ${styles.revealDelay2}`}>
-            <h3>⭐⭐⭐⭐⭐</h3>
-            <p>
-              "Como profissional da área, fico impressionado com os resultados que a DexMove proporciona.
-              É uma solução inovadora que realmente faz diferença na qualidade de vida dos pacientes."
-            </p>
-            <hr />
-            <p>Dr. Carlos Mendes</p>
-            <p className={styles.funcao}>Fisioterapeuta</p>
-          </div>
-          <div className={`${styles.s6Card} ${styles.reveal} ${styles.revealDelay3}`}>
-            <h3>⭐⭐⭐⭐⭐</h3>
-            <p>
-              "Uso a órtese há 6 meses e a melhora é notável. Consigo escrever, usar o celular e fazer coisas
-              simples que antes eram um desafio. Sou muito grata!"
-            </p>
-            <hr />
-            <p>Ana Paula Costa</p>
-            <p className={styles.funcao}>Cuidadora</p>
-          </div>
+
+          <button 
+            className={styles.carrosselArrow} 
+            onClick={() => setTestemunhoAtivo((prev) => (prev === testemunhos.length - 1 ? 0 : prev + 1))}
+            aria-label="Próximo depoimento"
+          >
+            ›
+          </button>
+        </div>
+
+        <div className={styles.carrosselDots}>
+          {testemunhos.map((_, index) => (
+            <span 
+              key={index} 
+              className={`${styles.carrosselDot} ${index === testemunhoAtivo ? styles.activeDot : ""}`}
+              onClick={() => setTestemunhoAtivo(index)}
+            />
+          ))}
         </div>
       </section>
 
@@ -405,6 +439,21 @@ function Home({ useHeader2 = false }) {
       </section>
 
       <Footer />
+
+      {showVideoModal && (
+        <div className={styles.videoOverlay} onClick={() => setShowVideoModal(false)}>
+          <div className={styles.videoBox} onClick={(e) => e.stopPropagation()}>
+            <button 
+              className={styles.closeVideo} 
+              onClick={() => setShowVideoModal(false)}
+              aria-label="Fechar vídeo"
+            >
+              ×
+            </button>
+            <video src={moveVideo} controls autoPlay className={styles.videoPlayer} />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

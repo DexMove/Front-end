@@ -389,3 +389,17 @@
     .cardContato { padding: 20px 15px !important; }
     .campoEntrada input, .campoMensagem textarea { font-size: 13px !important; }
 }
+
+.sucessoMsg {
+  background-color: rgba(11, 92, 106, 0.08);
+  color: #0b5c6a;
+  border: 1px solid rgba(11, 92, 106, 0.2);
+  border-radius: 12px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}

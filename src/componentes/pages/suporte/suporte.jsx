@@ -8,6 +8,14 @@ import Header from '../../Header';
 
 function Suporte() { 
     const [faqAberto, setFaqAberto] = useState(null);
+    const [enviado, setEnviado] = useState(false);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setEnviado(true);
+        setTimeout(() => setEnviado(false), 5000);
+        e.target.reset();
+    };
 
     // 1. Lista organizada com "conteudo" sendo um array para os mini-cards
     const perguntas = [
@@ -188,21 +196,27 @@ function Suporte() {
                             <div className={styles.cardContato}>
                                 <h3>Entre em contato com o suporte técnico</h3>
                                 <p>Nossa equipe está pronta para ajudar você com qualquer dúvida sobre a MoviHand.</p>
-                                <form className={styles.formularioSuporte}>
-                                    <div className={styles.campoEntrada}>
-                                        <label htmlFor="email">E-mail</label>
-                                        <input type="email" id="email" placeholder="exemplo@email.com" />
+                                {enviado ? (
+                                    <div className={styles.sucessoMsg}>
+                                        Mensagem enviada com sucesso! Nossa equipe entrará em contato em breve.
                                     </div>
-                                    <div className={styles.campoEntrada}>
-                                        <label htmlFor="tel">Telefone de contato</label>
-                                        <input type="tel" id="tel" placeholder="(00) 00000-0000" />
-                                    </div>
-                                    <div className={styles.campoMensagem}>
-                                        <label htmlFor="msg">Como podemos ajudar?</label>
-                                        <textarea id="msg" rows="4" placeholder="Descreva sua dúvida ou problema..."></textarea>
-                                    </div>
-                                    <button type="submit" className={styles.btnEnviar}>Enviar Mensagem</button>
-                                </form>
+                                ) : (
+                                    <form onSubmit={handleSubmit} className={styles.formularioSuporte}>
+                                        <div className={styles.campoEntrada}>
+                                            <label htmlFor="email">E-mail</label>
+                                            <input type="email" id="email" placeholder="exemplo@email.com" required />
+                                        </div>
+                                        <div className={styles.campoEntrada}>
+                                            <label htmlFor="tel">Telefone de contato</label>
+                                            <input type="tel" id="tel" placeholder="(00) 00000-0000" required />
+                                        </div>
+                                        <div className={styles.campoMensagem}>
+                                            <label htmlFor="msg">Como podemos ajudar?</label>
+                                            <textarea id="msg" rows="4" placeholder="Descreva sua dúvida ou problema..." required></textarea>
+                                        </div>
+                                        <button type="submit" className={styles.btnEnviar}>Enviar Mensagem</button>
+                                    </form>
+                                )}
                             </div>
                         </div>
                     </div>

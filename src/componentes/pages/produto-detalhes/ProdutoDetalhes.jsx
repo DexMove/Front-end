@@ -65,6 +65,7 @@ const cardsData = [
 function ProdutoDetalhes({ lado = "direita" }) {
   const navigate = useNavigate();
   const [showRulerImage, setShowRulerImage] = useState(false);
+  const [rulerLoading, setRulerLoading] = useState(true);
   const [tamanhoSelecionado, setTamanhoSelecionado] = useState("M");
 
   // Determine main image based on side
@@ -334,7 +335,7 @@ function ProdutoDetalhes({ lado = "direita" }) {
                 className={styles.rulerBtn}
                 type="button"
                 title="Guia de tamanhos"
-                onClick={() => setShowRulerImage(!showRulerImage)}
+                onClick={() => { setShowRulerImage(!showRulerImage); setRulerLoading(true); }}
               >
                 <Ruler size={20} />
               </button>
@@ -351,7 +352,13 @@ function ProdutoDetalhes({ lado = "direita" }) {
                   >
                     ×
                   </button>
-                  <img src={guiaTamanhos} alt="Guia de tamanhos" />
+                  {rulerLoading && <div className={styles.rulerLoader}>Carregando guia de tamanhos...</div>}
+                  <img 
+                    src={guiaTamanhos} 
+                    alt="Guia de tamanhos" 
+                    onLoad={() => setRulerLoading(false)}
+                    style={rulerLoading ? { display: 'none' } : {}}
+                  />
                 </div>
               </div>
             )}

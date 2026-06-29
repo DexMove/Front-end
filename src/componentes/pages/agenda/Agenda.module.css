@@ -8,7 +8,7 @@
   flex-direction: column;
   overflow: hidden;
   gap: 1.8rem;
-  padding: 0 1.5rem 2rem;
+  padding: 0 1.5rem 4rem;
 }
 
 .vector16,
@@ -125,7 +125,7 @@
 }
 
 .appointmentCard {
-  background-color: #eeedec;
+  background-color: #FFFBF5;
   border: 1px solid rgba(239, 163, 92, 0.15);
   border-radius: 16px;
   padding: 1.5rem 2rem;
@@ -210,7 +210,8 @@
 .footerAction {
   display: flex;
   justify-content: center;
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
   width: 100%;
 }
 
@@ -238,7 +239,7 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .pagina {
-    padding: 0 1rem;
+    padding: 0 1rem 4rem;
     gap: 1.5rem;
   }
 
@@ -266,7 +267,7 @@
 
 @media (max-width: 600px) {
   .pagina {
-    padding: 0 0.75rem;
+    padding: 0 0.75rem 3rem;
   }
 
   .titulo {

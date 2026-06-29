@@ -1,5 +1,14 @@
 /* Product Details Stylesheet - DexMove */
 
+.vector16,
+.vector17,
+.vector18,
+.vector19,
+.vector20,
+.vector21 {
+  pointer-events: none !important;
+}
+
 /* ===== Section 8 (Product Hero) ===== */
 .section8 {
   width: 100%;
@@ -80,7 +89,8 @@
   min-width: 350px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-top: 1.5rem;
 }
 
 .prodTitulo {
@@ -161,7 +171,7 @@
 }
 
 .tamanho {
-  width: 90px;
+  width: 75px;
   height: 65px;
   border: 1px solid #d0d0d0;
   border-radius: 12px;
@@ -237,6 +247,17 @@
   display: grid;
   place-items: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.rulerLoader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0b5c6a;
 }
 
 .Comprar {
