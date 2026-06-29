@@ -2107,4 +2107,51 @@ body {
 
 .closeVideo:hover {
   background-color: white;
+}
+
+/* ===== Ultra Mobile (360px or less) ===== */
+@media (max-width: 360px) {
+    .div1 h1 {
+        font-size: 1.25rem !important;
+    }
+    
+    .div1 p {
+        font-size: 0.8rem !important;
+    }
+    
+    .section2 h2,
+    .section5 h2,
+    .fisioTitulo {
+        white-space: normal !important;
+        font-size: 1.1rem !important;
+        line-height: 1.3 !important;
+        text-align: center !important;
+    }
+
+    .funcGrid {
+        grid-template-columns: 1fr !important;
+        max-width: 280px !important;
+        margin: 0 auto !important;
+    }
+
+    .s2Card, 
+    .s5Card, 
+    .s6Card, 
+    .cardFlip {
+        width: 100% !important;
+        max-width: 280px !important;
+        min-width: unset !important;
+        margin: 0 auto !important;
+    }
+
+    .cardFlip {
+        height: 180px !important;
+    }
+    
+    .carrosselTrack .s6Card {
+        width: 100% !important;
+        max-width: 280px !important;
+        min-width: unset !important;
+        padding: 1rem !important;
+    }
 }

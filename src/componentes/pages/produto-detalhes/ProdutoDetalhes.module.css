@@ -899,3 +899,66 @@ h2.techTitulo {
     max-height: 150px;
   }
 }
+
+/* ===== Ultra Mobile (360px or less) ===== */
+@media (max-width: 360px) {
+  .section8 {
+    padding: 1.5rem 0.5rem !important;
+  }
+  .esquerda {
+    min-width: unset !important;
+    width: 100% !important;
+  }
+  .imagemPrincipal {
+    height: 220px !important;
+    padding: 1rem !important;
+  }
+  .info {
+    min-width: unset !important;
+    width: 100% !important;
+    padding-top: 1rem !important;
+  }
+  .prodTitulo {
+    font-size: 1.35rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .prodPreco h3 {
+    font-size: 1.5rem !important;
+  }
+  .botoesTomanho {
+    gap: 0.4rem !important;
+  }
+  .tamanho,
+  .rulerBtn {
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 0.9rem !important;
+    border-radius: 8px !important;
+  }
+  
+  /* Section 9 */
+  .cards2 {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1rem !important;
+  }
+  .cardFlip {
+    width: 100% !important;
+    max-width: 280px !important;
+    height: 160px !important;
+  }
+  .cardFlip img {
+    height: 50% !important;
+  }
+
+  /* Section 10 */
+  .beneficios {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
+  }
+  .beneficio {
+    max-width: 100% !important;
+    text-align: center !important;
+  }
+}
