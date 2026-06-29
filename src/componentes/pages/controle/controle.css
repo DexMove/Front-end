@@ -81,6 +81,10 @@ body {
   margin-right: auto;
 }
 
+.support-text{
+  font-size: 25px;
+}
+
 /* --- IDENTIFICAÇÃO MOVEHAND (IGUAL À PLANILHA) --- */
 .planilha-id {
   display: flex;
@@ -289,6 +293,7 @@ body {
 .ai-title h3 {
   color: var(--primary-blue);
   margin-bottom: 5px;
+  font-size: 25px;
 }
 
 .botao{

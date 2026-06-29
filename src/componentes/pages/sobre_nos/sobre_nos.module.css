@@ -134,9 +134,9 @@ body {
   position: relative;
   overflow: hidden;
   transform: translateY(-120px); 
-  background-color: #ffffff; /* Fundo branco unificado */
+  background-color: #ffffff; 
   z-index: 2;
-   margin-bottom: -120px; 
+  margin-bottom: -120px; 
 }
 
 .dexyContainer {
@@ -200,7 +200,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* AQUI VOCÊ SOBE O VÍDEO: */
   transform: translateY(-40px); 
 }
 
@@ -219,7 +218,7 @@ body {
   left: 0;
   width: 100%;
   line-height: 0;
-  z-index: 1;
+  z-index: 10;
 }
 
 .ondaDexy svg {
@@ -230,7 +229,7 @@ body {
 
 /* ========== SEÇÃO 4: MISSÃO, VISÃO E VALORES ========== */
 .secaoMVV {
-  background-color: #ffffff; /* Tom de cinza bem claro para contraste suave */
+  background-color: #ffffff;
   padding: 50px 5%;
   text-align: center;
 }
@@ -479,13 +478,11 @@ body {
   .videoConteudo h1 { font-size: 36px; }
   .videoConteudo p { font-size: 18px; }
 
-  /* Dexmove (Ondas) */
   .secaoOndas { min-height: auto; padding: 60px 0; }
   .containerTextoDestaque { transform: translateY(-35px); padding: 0 8% 20px; }
   .textoOndasCentralizado h2 { font-size: 30px; }
   .textoOndasCentralizado p { font-size: 18px; line-height: 1.6; }
 
-  /* Dexy Chatbot */
   .secaoDexy {
     padding: 60px 5% 80px 5%;
     transform: translateY(0);
@@ -497,17 +494,16 @@ body {
   .dexyFeatures { align-items: center; }
   .feature span:last-child { font-size: 18px; }
   
-  /* Ajuste do vídeo no mobile para não ficar gigante verticalmente */
   .dexyImagem { transform: translateY(0); width: 100%; }
   .videoDexy {
     width: 100%;
     max-width: 420px;
-    height: 280px; /* Altura controlada */
+    height: 280px;
     object-fit: cover;
     display: block;
     margin: 0 auto;
   }
-  .ondaDexy svg { height: 120px; }
+  .ondaDexy svg { height: 140px; }
 
   .secaoMVV {
     padding-top: 90px;
@@ -520,18 +516,18 @@ body {
     margin-bottom: 24px;
   }
 
+  /* Mantém 2 colunas em tablets */
   .equipeGrid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
 }
 
 @media (max-width: 480px) {
   .videoConteudo h1 { font-size: 28px; }
-  .containerTextoDestaque { transform: translateY(-28px); padding: 0 6% 16px; }
+  .containerTextoDestaque { transform: translateY(-60px); padding: 0 6% 16px !important; }
   .textoOndasCentralizado h2 { font-size: 24px; }
   .textoOndasCentralizado p { font-size: 16px; }
   .dexyTexto h2 { font-size: 24px; }
   .dexyTexto p { font-size: 17px; }
   
-  /* Vídeo ainda menor em celulares pequenos */
   .videoDexy {
     max-width: 100%;
     height: 220px;
@@ -540,6 +536,21 @@ body {
   .secaoMVV {
     padding-top: 70px;
   }
-  .equipeGrid { grid-template-columns: 1fr; }
+
+  /* AJUSTE PARA FOTOS LADO A LADO EM CELULARES PEQUENOS */
+  .equipeGrid { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px; 
+    padding: 0 10px;
+  }
+
+  .nomeEquipe {
+    font-size: 16px; /* Ajuste para o nome caber no card menor */
+  }
+
+  .fotoContainer {
+    border-radius: 16px;
+  }
+
   .secaoMVV h2 { font-size: 28px; margin-bottom: 20px; }
 }

@@ -31,7 +31,7 @@ function SobreNos() {
     { id: 2, nome: "Christian Damasceno", cargo: "Scrum master e desenvolvedor back end", imagem: equipe2 },
     { id: 3, nome: "Thalyson Pereira", cargo: "Marketing e desenvolvedor front end", imagem: equipe3 },
     { id: 4, nome: "Amanda Cristina", cargo: "Desenvolvedora front end", imagem: equipe4 },
-    { id: 5, nome: "Melissa Fiuza", cargo: "Desenvolvedora front end", imagem: equipe5 },
+    { id: 5, nome: "Melissa Fiuza", cargo: "Financeira e Desenvolvedora front end", imagem: equipe5 },
     { id: 6, nome: "Luiz Gustavo", cargo: "Desenvolvedor hardware", imagem: equipe6 },
   ];
 

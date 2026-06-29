@@ -193,7 +193,7 @@
 .ao-share-btns { display: flex; flex-direction: column; gap: 10px; }
 
 .ao-btn-primary {
-  background: #0B5C6A; color: #fff; border: none;
+  background: #F3E28A; color: #333; border: none;
   padding: 12px 25px; border-radius: 10px; font-weight: bold; cursor: pointer;
 }
 
@@ -208,7 +208,85 @@
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .ao-metrics, .ao-share-layout { flex-direction: column; gap: 25px; text-align: center; }
-  .ao-divider { display: none; }
-  .ao-share-btns { width: 100%; }
+  /* Mantém métricas lado a lado */
+  .ao-metrics {
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    display: flex !important;
+    gap: 10px !important;
+  }
+
+  .ao-divider {
+    display: block !important;
+    height: 40px !important;
+  }
+
+  .ao-metric-item strong {
+    font-size: 22px !important;
+  }
+
+  /* Mantém botões de compartilhar lado a lado */
+  .ao-share-layout {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    display: flex !important;
+  }
+
+  .ao-share-btns {
+    flex-direction: row !important;
+    width: 100% !important;
+    display: flex !important;
+    gap: 8px !important;
+  }
+
+  .ao-btn-primary, .ao-btn-outline {
+    flex: 1 !important;
+    padding: 10px 8px !important;
+    font-size: 12px !important;
+    white-space: nowrap !important;
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .ao-card {
+    padding: 15px !important;
+  }
+
+  .ao-header-content h1 {
+    font-size: 22px !important;
+  }
+
+  /* Métricas em celulares pequenos */
+  .ao-metric-item strong {
+    font-size: 18px !important;
+  }
+
+  .ao-metric-item span {
+    font-size: 10px !important;
+  }
+
+  /* Botões em celulares pequenos */
+  .ao-share-btns {
+    gap: 5px !important;
+  }
+
+  .ao-btn-primary, .ao-btn-outline {
+    font-size: 10px !important;
+    padding: 8px 4px !important;
+    border-radius: 8px !important;
+  }
+
+  .ao-btn-outline svg {
+    font-size: 12px !important;
+  }
+
+  /* Ajuste do ícone e texto MoveHand */
+  .ao-id-box strong {
+    font-size: 16px !important;
+  }
+  
+  .ao-hand-icon {
+    font-size: 22px !important;
+  }
 }

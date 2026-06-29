@@ -84,13 +84,13 @@ body {
 }
 
 .id-text strong {
-  font-size: 19px;
+  font-size: 25px;
   color: #1E1E1E;
   font-weight: 700;
 }
 
 .id-text span {
-  font-size: 16px;
+  font-size: 25px;
   color: #666;
 }
 
@@ -236,6 +236,7 @@ body {
   padding: 30px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.03);
   transition: transform 0.3s ease;
+  font-size: 25px;
 }
 
 .info-card:hover {
@@ -262,7 +263,7 @@ body {
 }
 
 .support-text h5 {
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   font-size: 26px;
   margin: 0 0 8px 0;
 }
@@ -297,22 +298,89 @@ body {
 /* --- AJUSTES DE RESPONSIVIDADE --- */
 
 @media (max-width: 850px) {
+  /* Força o banner de suporte a ficar sempre em linha */
   .support-banner {
-    flex-direction: column;
-    text-align: center;
-    padding: 30px;
+    flex-direction: row !important; 
+    justify-content: space-between !important;
+    padding: 20px !important;
+    gap: 15px !important;
+    display: flex !important;
+  }
+
+  .support-text h5 { font-size: 18px !important; }
+  .support-text p { font-size: 14px !important; }
+
+  .btn-support {
+    padding: 10px 15px !important;
+    font-size: 14px !important;
+    white-space: nowrap !important;
+    display: flex !important;
   }
   
+  /* Força os 3 cards informativos a ficarem lado a lado ignorando o minmax(300px) */
   .info-cards-grid {
-    grid-template-columns: 1fr;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important; 
+    gap: 10px !important;
   }
+
+  .info-card {
+    padding: 15px !important;
+    min-width: 0 !important; /* Impede o card de empurrar o vizinho */
+  }
+
+  .info-card h4 { font-size: 15px !important; }
+  .info-card p { font-size: 13px !important; }
+  .card-icon { font-size: 25px !important; }
 }
 
 @media (max-width: 480px) {
-  .main-card {
-    padding: 20px;
+  .main-card { padding: 20px !important; }
+  .header-content h1 { font-size: 22px !important; }
+
+  /* Força 3 colunas em celulares muito pequenos */
+  .info-cards-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important; 
+    gap: 5px !important;
   }
-  .header-content h1 {
-    font-size: 24px;
+
+  .info-card {
+    padding: 10px 4px !important;
   }
+
+  /* Diminuição agressiva de fonte para não quebrar o layout lado a lado */
+  .info-card h4 { 
+    font-size: 10px !important; 
+    line-height: 1.1 !important;
+  }
+
+  .info-card p { 
+    font-size: 9px !important; 
+    line-height: 1.2 !important;
+  }
+
+  .card-icon { font-size: 18px !important; }
+
+  /* Suporte lado a lado no celular */
+  .support-banner {
+    flex-direction: row !important;
+    padding: 12px 8px !important;
+    gap: 5px !important;
+    display: flex !important;
+  }
+
+  .support-text h5 { font-size: 13px !important; }
+  .support-text p { font-size: 10px !important; }
+
+  .btn-support {
+    font-size: 10px !important;
+    padding: 6px 8px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Ajuste da identificação MoveHand */
+  .id-text strong { font-size: 15px !important; }
+  .id-text span { font-size: 13px !important; }
+  .hand-icon { font-size: 20px !important; }
 }
