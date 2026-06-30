@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { 
   ChevronDown, ClipboardList, FileDown, ArrowUpRight, 
-  ShieldAlert, MessageSquareText, Send, TrendingUp, CheckCircle2
+  ShieldAlert, MessageSquareText, Send, TrendingUp, CheckCircle2, Hand
 } from "lucide-react";
-import { MdOutlineBackHand } from 'react-icons/md';
 import Header2 from "../../Header2";
 import Footer from "../../Footer";
 import "./Assistencia_ortese.css";
@@ -41,7 +40,7 @@ function Assistencia_ortese() {
         {/* Identificação */}
         <section className="ao-intro">
           <div className="ao-id-box">
-            <MdOutlineBackHand className="ao-hand-icon" />
+            <Hand className="ao-hand-icon" />
             <strong>MoveHand</strong>
           </div>
         </section>

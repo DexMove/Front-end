@@ -516,13 +516,13 @@
  
 .btnFinalizar {
   background-color: #F3E396;
-  color: #fff;
-  box-shadow: 0 4px 15px rgba(10, 92, 97, 0.25);
+  color: #111;
+  box-shadow: 0 4px 15px rgba(246, 208, 76, 0.3);
 }
  
 .btnFinalizar:hover {
-  background-color: #08484c;
-  box-shadow: 0 6px 20px rgba(10, 92, 97, 0.35);
+  background-color: #e8d472;
+  box-shadow: 0 6px 20px rgba(246, 208, 76, 0.4);
 }
  
 /* Painel Centralizado (Passos 4 e 5) */

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./fisioterapeutas.css";
 import Footer from "../../Footer";
 import Header from '../../Header';
-import { MdKeyboardArrowDown } from 'react-icons/md'; // Ícone para a interação
+import { ChevronDown } from 'lucide-react'; // Ícone para a interação
 import fisioterapeuta1 from "../../../assets/fisio4.png";
 import fisioterapeuta2 from "../../../assets/fisio2.png";
 import fisioterapeuta3 from "../../../assets/fisio3.png";
@@ -132,7 +132,7 @@ export default function Fisioterapeutas() {
                 <option>Cidade</option>
                 {cidades.map(c => <option key={c}>{c}</option>)}
               </select>
-              <MdKeyboardArrowDown className="select-icon" />
+              <ChevronDown className="select-icon" />
             </div>
 
             {/* SELECT ESPECIALIDADE COM INTERAÇÃO */}
@@ -141,7 +141,7 @@ export default function Fisioterapeutas() {
                 <option>Especialidade</option>
                 {especialidades.map(e => <option key={e}>{e}</option>)}
               </select>
-              <MdKeyboardArrowDown className="select-icon" />
+              <ChevronDown className="select-icon" />
             </div>
 
             {/* SELECT ATENDIMENTO COM INTERAÇÃO */}
@@ -150,7 +150,7 @@ export default function Fisioterapeutas() {
                 <option>Atendimento</option>
                 {atendimentos.map(a => <option key={a}>{a}</option>)}
               </select>
-              <MdKeyboardArrowDown className="select-icon" />
+              <ChevronDown className="select-icon" />
             </div>
 
             <input type="text" placeholder="Buscar por nome" />

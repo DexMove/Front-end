@@ -4,7 +4,7 @@ import MoviHand from '../../../assets/image_62.png';
 import Header2 from '../../Header2';
 import Footer from '../../Footer';
 import { Link } from 'react-router-dom';
-import { MdOutlineBackHand } from 'react-icons/md';
+import { Hand } from 'lucide-react';
 
 // --- Componentes de Ícones Auxiliares ---
 const BatteryIcon = () => (
@@ -53,7 +53,7 @@ const DexMovePage = () => {
         {/* Introdução - Agora com o ícone MdOutlineBackHand corrigido */}
         <section className="intro-section">
           <div className="planilha-id">
-            <MdOutlineBackHand className="hand-icon" />
+            <Hand className="hand-icon" />
             <div className="id-text">
               <strong>MoveHand</strong>
               <span>Área de controle da sua órtese MoveHand.</span>

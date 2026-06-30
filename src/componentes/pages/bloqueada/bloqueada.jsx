@@ -3,11 +3,7 @@ import Header from "../../Header"
 import Footer from "../../Footer"
 import bloqueada from "../../../assets/area bloqueada.png"
 import { Link } from "react-router-dom"
-import { ShoppingCart } from "lucide-react";
-import {NotepadText} from "lucide-react";
-import {Bot} from "lucide-react"
-import {LockKeyhole} from "lucide-react"
-import {FiHeadphones} from "react-icons/fi"
+import { ShoppingCart, NotepadText, Bot, LockKeyhole, Headphones } from "lucide-react";
 
 function Bloqueada(){
 
@@ -72,7 +68,7 @@ function Bloqueada(){
 
                     <Link to="/suporte" className="botao-suporte" style={{ textDecoration: 'none' }}>
                       Falar com suporte
-                      <FiHeadphones className="support-icon" />
+                      <Headphones className="support-icon" />
                     </Link>
                   </div>
 

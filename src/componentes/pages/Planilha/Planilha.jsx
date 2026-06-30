@@ -1,15 +1,15 @@
 import React, { useState, useRef } from 'react';
 import './Planilha.css';
 import {
-  FiUploadCloud,
-  FiCheckCircle,
-  FiUpload,
-  FiBarChart2,
-  FiShield,
-  FiHeadphones
-} from 'react-icons/fi';
-import { MdOutlineBackHand } from 'react-icons/md';
-import { AiOutlineRobot } from 'react-icons/ai';
+  UploadCloud,
+  CheckCircle,
+  Upload,
+  BarChart2,
+  Shield,
+  Headphones,
+  Hand,
+  Bot
+} from 'lucide-react';
 import Header2 from '../../Header2';
 import Footer from '../../Footer';
 import { Link } from "react-router-dom"
@@ -84,7 +84,7 @@ const Planilha = () => {
 
       {/* Identificação */}
       <div className="planilha-id">
-        <MdOutlineBackHand className="hand-icon" />
+        <Hand className="hand-icon" />
 
         <div className="id-text">
           <strong>MoveHand</strong>
@@ -105,7 +105,7 @@ const Planilha = () => {
             className="upload-area"
             onClick={triggerFileInput}
           >
-            <FiUploadCloud className="cloud-icon" />
+            <UploadCloud className="cloud-icon" />
 
             <p>
               Clique para selecionar formatos aceitos: .xlsx e .csv.
@@ -159,7 +159,7 @@ const Planilha = () => {
             className="btn-submit"
             onClick={handleSubmit}
           >
-            <FiUpload className="submit-icon" />
+            <Upload className="submit-icon" />
             <span className="btn-submit-text">
               Enviar planilha
               <br />
@@ -172,7 +172,7 @@ const Planilha = () => {
       {/* Cards Informativos */}
       <div className="info-cards-grid">
         <div className="info-card">
-          <FiBarChart2 className="card-icon" />
+          <BarChart2 className="card-icon" />
 
           <h4>Acompanhamento</h4>
 
@@ -182,7 +182,7 @@ const Planilha = () => {
         </div>
 
         <div className="info-card">
-          <AiOutlineRobot className="card-icon" />
+          <Bot className="card-icon" />
 
           <h4>Inteligência Artificial</h4>
 
@@ -192,7 +192,7 @@ const Planilha = () => {
         </div>
 
         <div className="info-card">
-          <FiShield className="card-icon" />
+          <Shield className="card-icon" />
 
           <h4>Segurança</h4>
 
@@ -214,7 +214,7 @@ const Planilha = () => {
 
         <Link to="/suporte" className="btn-support" style={{ textDecoration: 'none' }}>
           Falar com suporte
-          <FiHeadphones className="support-icon" />
+          <Headphones className="support-icon" />
         </Link>
       </div>
       <Footer />
