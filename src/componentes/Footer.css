@@ -90,48 +90,51 @@
 /* ── MOBILE (até 600px) ── */
 @media (max-width: 600px) {
     
-    /* Esconde os itens solicitados */
     .hide-mobile {
         display: none !important;
     }
 
     .footer {
-        padding: 40px 15px 20px; /* Redução de padding para ganhar espaço */
+        padding: 40px 20px 20px; /* Ajuste leve no padding lateral */
     }
 
     .footer-container {
-        flex-direction: row; /* FORÇA LADO A LADO */
-        flex-wrap: nowrap;   /* IMPEDE QUEBRA DE LINHA */
+        display: flex;
+        flex-direction: row; 
+        flex-wrap: nowrap;   
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: flex-start; /* Garante que todos comecem no mesmo topo */
         text-align: left;
         gap: 10px;
     }
 
     .footer-col {
-        width: 32%; /* Divide o espaço em 3 colunas aproximadas */
-        gap: 10px;
+        flex: 1; /* Faz com que as colunas dividam o espaço igualmente */
+        width: auto; /* Remove o width fixo de 32% */
+        gap: 8px;
     }
 
     #dexmove {
-        width: 35%;
+        width: auto; /* Deixa o flex: 1 controlar */
         margin-top: 0;
     }
 
-    /* Ajuste de fontes para caber em telas pequenas */
-    .footer-col h2 {
-        font-size: 16px;
-    }
-
+    /* IGUALAR TÍTULOS: O segredo do alinhamento visual */
+    .footer-col h2, 
     .footer-col h3 {
-        font-size: 14px;
-        margin-bottom: 5px;
+        font-size: 14px; /* Tamanho igual para h2 e h3 no mobile */
+        line-height: 1.2;
+        margin: 0; /* Remove margens que desalinhariam o topo */
+        min-height: 35px; /* Reserva espaço para títulos que quebram linha (ex: Links Rápidos) */
+        display: flex;
+        align-items: flex-start;
     }
 
     .footer-col p,
     .footer-col a {
         font-size: 11px;
         line-height: 1.4;
+        margin: 0;
     }
 
     .footer-bottom {
@@ -144,6 +147,6 @@
     }
 
     .linha {
-        margin: 30px 0 20px;
+        margin: 20px 0;
     }
 }
