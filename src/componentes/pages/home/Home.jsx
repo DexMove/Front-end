@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Check } from "lucide-react";
 import Header from "../../Header";
 import Header2 from "../../Header2";
 import Footer from "../../Footer";
@@ -235,14 +236,16 @@ function Home({ useHeader2 = false }) {
               <div className={`${styles.numero} ${passo.numero % 2 === 0 ? styles.numeroAlt : ""}`}>
                 {passo.numero}
               </div>
-              <p className={styles.cardTitulo}>{passo.titulo}</p>
+              <p className={`${styles.cardTitulo} ${passo.numero % 2 === 0 ? styles.cardTituloAlt : ""}`}>{passo.titulo}</p>
               <p className={styles.cardDesc}>{passo.descricao}</p>
               <hr className={styles.divider} />
               <ul className={styles.lista}>
                 {passo.itens.map((item, i) => (
                   <li key={i} className={styles.funcItem}>
-                    <span className={styles.check}>✓</span>
-                    {item}
+                    <span className={`${styles.checkCircle} ${passo.numero % 2 === 0 ? styles.checkCircleAlt : ""}`}>
+                      <Check size={12} strokeWidth={3} />
+                    </span>
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -252,16 +255,15 @@ function Home({ useHeader2 = false }) {
 
         <div className={`${styles.banner} ${styles.reveal}`}>
           <div className={styles.bannerEsquerda}>
-            <div className={styles.bannerLogo}>D</div>
             <div className={styles.bannerTexto}>
               <p>
-                <strong>Avaliada por fisioterapeutas, personalizada para você</strong> e acompanhada <span className={styles.destaque}>de onde você estiver.</span>
+                <strong>Uma jornada de reabilitação inteligente, segura</strong> e totalmente <span className={styles.destaque}>monitorada.</span>
               </p>
             </div>
           </div>
           <div className={styles.bannerDireita}>
             <p className={styles.bannerDesc}>
-              A MoveHand transforma a reabilitação em uma experiência mais acessível, inteligente e humana.
+              Da avaliação inicial ao acompanhamento diário, a MoveHand simplifica o seu tratamento e conecta você diretamente ao seu fisioterapeuta.
             </p>
             <button className={styles.bannerBtn} onClick={() => navigate("/bloqueada")}>SAIBA MAIS</button>
           </div>
