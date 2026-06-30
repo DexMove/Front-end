@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './Planilha.css';
 import {
   FiUploadCloud,
@@ -12,8 +12,10 @@ import { MdOutlineBackHand } from 'react-icons/md';
 import { AiOutlineRobot } from 'react-icons/ai';
 import Header2 from '../../Header2';
 import Footer from '../../Footer';
+import api from '../../../services/api';
 const Planilha = () => {
   const [selectedFile, setSelectedFile] = useState(null);
+  const [statusAnalise, setStatusAnalise] = useState({ text: 'Documentos aguardando análise.', type: 'idle' });
   const fileInputRef = useRef(null);
 
   const handleFileChange = (event) => {
@@ -23,6 +25,56 @@ const Planilha = () => {
       setSelectedFile(file);
     }
   };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const file = e.dataTransfer.files[0];
+    if (file) setSelectedFile(file);
+  };
+
+  const uploadFile = async () => {
+    if (!selectedFile) return;
+
+    setStatusAnalise({ text: 'Enviando documentos...', type: 'sending' });
+
+    // Tentar obter pacienteId do localStorage / fallback para 1
+    const pacienteId = localStorage.getItem('pacienteId') || 1;
+
+    const formData = new FormData();
+    formData.append('file', selectedFile);
+
+    try {
+      const response = await api.post(`/api/prescricoes/upload/${pacienteId}`, formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      });
+
+      setStatusAnalise({ text: 'Recebido com sucesso! Analisando parâmetros...', type: 'success' });
+      // Notifica outras páginas (ex: Área de Controle) que uma nova planilha foi enviada
+      try {
+        window.dispatchEvent(new Event('planilhaUploaded'));
+      } catch (e) {
+        // noop
+      }
+    } catch (error) {
+      const msg = error?.response?.data || error.message || 'Erro ao enviar documento.';
+      setStatusAnalise({ text: String(msg), type: 'error' });
+    }
+  };
+
+  useEffect(() => {
+    if (selectedFile) {
+      // Envio automático assim que o arquivo é selecionado (drop ou input)
+      uploadFile();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedFile]);
 
   const triggerFileInput = () => {
     fileInputRef.current.click();
@@ -34,7 +86,8 @@ const Planilha = () => {
       return;
     }
 
-    alert(`Planilha "${selectedFile.name}" enviada com sucesso para análise!`);
+    // Permite envio manual (retry) caso necessário
+    uploadFile();
   };
 
   return (
@@ -101,6 +154,8 @@ const Planilha = () => {
           <div
             className="upload-area"
             onClick={triggerFileInput}
+            onDragOver={handleDragOver}
+            onDrop={handleDrop}
           >
             <FiUploadCloud className="cloud-icon" />
 
@@ -126,19 +181,19 @@ const Planilha = () => {
         </div>
 
         {/* Status da Análise */}
-        <div className="status-card">
+        <div className={`status-card ${statusAnalise.type === 'error' ? 'status-error' : ''}`}>
           <div className="status-header">
             <FiCheckCircle className="check-icon" />
             <h3>Status de análise</h3>
           </div>
 
           <div className="status-body">
-            <strong>Documentos aguardando análise.</strong>
+            <strong>{statusAnalise.text}</strong>
 
             <p>
-              Nossa equipe especializada avaliará os dados enviados
-              para garantir que sua órtese seja configurada com
-              segurança e precisão.
+              {statusAnalise.type === 'error'
+                ? 'Houve um problema ao enviar. Verifique o arquivo e tente novamente.'
+                : 'Nossa equipe especializada avaliará os dados enviados para garantir segurança e precisão.'}
             </p>
           </div>
         </div>

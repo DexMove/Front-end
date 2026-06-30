@@ -24,6 +24,10 @@ import Assistencia_ortese from "./componentes/pages/assistiencia_ortese/Assisten
 import Planilha from "./componentes/pages/Planilha/Planilha"
 import Controle from "./componentes/pages/controle/controle"
 import Fisioterapeutas from "./componentes/pages/fisioterapeutas/fisioterapeutas"
+import AreaControle from './pages/AreaControle';
+
+
+
 
 function App() {
   return (
@@ -36,6 +40,7 @@ function App() {
         <Route path="/sobre" element={<Sobre />} />
         <Route path="/suporte" element={<Suporte />} />
         <Route path="/entrar" element={<Entrar />} />
+        <Route path="/area-controle" element={<AreaControle />} />
         <Route path="/cadastro_fisioterapeuta" element={<Cadastro_fisioterapeuta/>} />
         <Route path="/conecte" element={<Conecte />} />
         <Route path="/meus-pedidos" element={<MeusPedidos />} />
