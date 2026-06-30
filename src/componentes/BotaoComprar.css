@@ -2,7 +2,7 @@
   height: 40px;
   display: flex;
   align-items: center;
-  background-color: #e7d37d;
+  background-color: #F3E396;
   border: none;
   border-radius: 14px;
   font-size: 2rem;
@@ -15,6 +15,7 @@
 }
 
 .botao-comprar:hover {
+  background-color: #e8d472;
   transform: scale(1.03);
 }
 

@@ -212,10 +212,10 @@ const Planilha = () => {
           </p>
         </div>
 
-        <button className="btn-support">
+        <Link to="/suporte" className="btn-support" style={{ textDecoration: 'none' }}>
           Falar com suporte
           <FiHeadphones className="support-icon" />
-        </button>
+        </Link>
       </div>
       <Footer />
     </main>

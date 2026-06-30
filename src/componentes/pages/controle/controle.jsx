@@ -167,9 +167,9 @@ const DexMovePage = () => {
               <h4>Ainda tem dúvidas?</h4>
               <p>Nossa equipe de suporte está pronta para ajudar você.</p>
             </div>
-            <button className="btn-support">
+            <Link to="/suporte" className="btn-support" style={{ textDecoration: 'none' }}>
               <span>🎧</span> Falar com suporte
-            </button>
+            </Link>
           </div>
         </footer>
       </div>

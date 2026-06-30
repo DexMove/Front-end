@@ -97,7 +97,7 @@
 }
 
 .botao-comprar:hover{
-    background-color: #e8d87a;
+    background-color: #e8d472;
     transform: translateY(-2px);
 }
 
@@ -188,7 +188,7 @@
 }
 
 .botao-suporte:hover{
-    background-color: #e8d87a;
+    background-color: #e8d472;
     transform: translateY(-2px);
 }
 

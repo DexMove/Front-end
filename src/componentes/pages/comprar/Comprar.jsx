@@ -533,7 +533,7 @@ function Comprar() {
                 <p className={styles.sucessoMensagem}>Você acaba de dar um passo muito importante para melhorar sua qualidade de vida.</p>
 
                 <div className={styles.botoesSucesso}>
-                  <button onClick={() => navigate("/")} className={styles.btnAcompanhar}>
+                  <button onClick={() => navigate("/pedidos")} className={styles.btnAcompanhar}>
                     Acompanhar pedido
                   </button>
                   <button onClick={() => navigate("/home2")} className={styles.btnIrInicio}>

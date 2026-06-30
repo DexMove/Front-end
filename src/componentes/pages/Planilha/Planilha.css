@@ -274,7 +274,7 @@ body {
 }
 
 .btn-support {
-  background-color: #F7E38B;
+  background-color: #F3E396;
   color: #1E1E1E;
   border: none;
   border-radius: 12px;
@@ -289,7 +289,7 @@ body {
 }
 
 .btn-support:hover {
-  background-color: #f5d961;
+  background-color: #e8d472;
   transform: scale(1.05);
 }
 

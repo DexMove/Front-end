@@ -70,10 +70,10 @@ function Bloqueada(){
                       </p>
                     </div>
 
-                    <button className="btn-support">
+                    <Link to="/suporte" className="botao-suporte" style={{ textDecoration: 'none' }}>
                       Falar com suporte
                       <FiHeadphones className="support-icon" />
-                    </button>
+                    </Link>
                   </div>
 
             <Footer />

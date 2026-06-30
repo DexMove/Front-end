@@ -337,13 +337,18 @@ body {
 }
 
 .btn-support {
-  background-color: var(--light-yellow);
-  color: var(--primary-blue);
+  background-color: #F3E396;
+  color: #111;
   border: none;
   padding: 15px 30px;
   border-radius: 12px;
   font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-support:hover {
+  background-color: #e8d472;
 }
 
 /* --- NOVA RESPONSIVIDADE: TEXTOS MAIORES E LADO A LADO --- */

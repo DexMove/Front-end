@@ -1,4 +1,4 @@
-﻿.header-box {
+.header-box {
   width: 100%;
   background: #fff;
   font-family: 'Montserrat', sans-serif;
@@ -74,10 +74,15 @@
 }
 
 .cadastro {
-  background-color: #f3e396;
+  background-color: #F3E396;
   border-radius: 30px;
   padding: 10px 16px;
   white-space: nowrap;
+  transition: background-color 0.2s;
+}
+
+.cadastro:hover {
+  background-color: #e8d472;
 }
 
 .sidebar {

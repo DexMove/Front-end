@@ -265,7 +265,7 @@
   max-width: 500px;
   height: 70px;
   margin: 2rem auto 1rem;
-  background: #f5e9a0;
+  background: #F3E396;
   border: none;
   border-radius: 18px;
   font-size: 1.5rem;
@@ -277,6 +277,7 @@
 }
 
 .Comprar:hover {
+  background: #e8d472;
   transform: scale(1.02);
   transition: 0.3s;
 }
@@ -664,7 +665,7 @@ h2.techTitulo {
 }
 
 .btnComprar:hover {
-    background: #f3c137;
+    background: #e8d472;
 }
 
 /* ===== RESPONSIVIDADE ===== */

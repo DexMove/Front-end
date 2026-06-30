@@ -62,7 +62,7 @@
     align-items: center;
     justify-content: center;
     margin: 30px auto 0;
-    background-color: #f3e396;
+    background-color: #F3E396;
     color: #333;
     border: 1px solid #000;
     padding: 10px 20px;
@@ -70,6 +70,11 @@
     cursor: pointer;
     font-weight: bold;
     font-size: 15px;
+    transition: background-color 0.2s;
+}
+
+.btnSuporte:hover {
+    background-color: #e8d472;
 }
 
 .btnIcne {
@@ -310,7 +315,7 @@
 }
 
 .btnEnviar:hover {
-    background-color: #e5d385;
+    background-color: #e8d472;
     transform: translateY(-2px);
 }
 
