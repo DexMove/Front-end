@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./EditarPaciente.css";
-import Header from "../../Header";
 import Footer from "../../Footer";
 import { useNavigate } from "react-router-dom";
+import Header from '../../Header';
 
 export default function EditarPaciente() {
   const navigate = useNavigate();
@@ -13,6 +13,7 @@ export default function EditarPaciente() {
     peso: "72",
     diagnostico: "AVC",
     grauDificuldade: "Moderado",
+    objetivo: "Recuperar movimentos finos da mão",
   });
 
   function handleChange(e) {
@@ -32,7 +33,7 @@ export default function EditarPaciente() {
         <div className="ep-card">
 
           <div className="ep-header">
-            <h1 className="ep-title">Editar os dados do paciente</h1>
+            <h1 className="ep-title">Editar dados clínicos</h1>
             <p className="ep-subtitle">Altere as informações clínicas do paciente</p>
           </div>
 
@@ -89,6 +90,19 @@ export default function EditarPaciente() {
                   <option>Leve</option>
                   <option>Moderado</option>
                   <option>Grave</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="ep-field ep-field--full">
+              <label className="ep-label">Principal objetivo da reabilitação</label>
+              <div className="ep-select-wrap">
+                <select className="ep-select" name="objetivo" value={form.objetivo} onChange={handleChange}>
+                  <option>Recuperar movimentos finos da mão</option>
+                  <option>Reduzir espasticidade</option>
+                  <option>Aumentar amplitude de movimento</option>
+                  <option>Fortalecimento muscular</option>
+                  <option>Outro</option>
                 </select>
               </div>
             </div>

@@ -1,59 +1,86 @@
-import React, { useEffect, useState, useCallback } from 'react';
-import api from '../services/api'; // Importa a configuração do Axios
+import React, { useEffect, useState } from 'react';
+import api from '../../services/api'; // Importa a configuração do Axios
 
 const AreaControle = () => {
-    // 1. Estados para guardar os dados que vêm do Java
-    const [configuracao, setConfiguracao] = useState(null);
+    const [dados, setDados] = useState(null);
     const [carregando, setCarregando] = useState(true);
+    const [dashboardId, setDashboardId] = useState('');
 
-    // Estados específicos para os ângulos (iniciados com valores padrão)
-    const [posicaoInicial, setPosicaoInicial] = useState(45);
-    const [movimento, setMovimento] = useState(77);
-    const [posicaoFinal, setPosicaoFinal] = useState(32);
+    const tipoUsuario = (localStorage.getItem('tipoUsuario') || '').toString().toLowerCase();
+    const idUser = localStorage.getItem('idUser');
+    const pacienteIdSalvo = localStorage.getItem('pacienteId');
 
-    // Simulando o ID do paciente (depois pegaremos do login)
-    const pacienteId = 1;
-
-    const fetchDashboard = useCallback(() => {
-        setCarregando(true);
-        api.get(`/api/prescricoes/dashboard/${pacienteId}`)
-            .then(response => {
-                setConfiguracao(response.data);
-                // Atualiza os estados dos ângulos com os valores do backend
-                if (response.data) {
-                    if (typeof response.data.posicaoInicial !== 'undefined') setPosicaoInicial(response.data.posicaoInicial);
-                    if (typeof response.data.movimento !== 'undefined') setMovimento(response.data.movimento);
-                    if (typeof response.data.posicaoFinal !== 'undefined') setPosicaoFinal(response.data.posicaoFinal);
-                }
-                setCarregando(false);
-            })
-            .catch(error => {
-                console.error("Erro ao buscar dados do Java:", error);
-                setCarregando(false);
-            });
-    }, [pacienteId]);
-
-    // 2. useEffect: Executa assim que a tela abre e quando um evento de upload acontece
     useEffect(() => {
+        let idParaDashboard = '';
+
+        if (tipoUsuario.includes('paciente')) {
+            idParaDashboard = idUser || '';
+        } else if (tipoUsuario.includes('responsavel')) {
+            idParaDashboard = pacienteIdSalvo || '';
+            if (!idParaDashboard) {
+                const promptId = window.prompt('Informe o ID do paciente vinculado para acessar a área de controle:');
+                if (promptId) {
+                    idParaDashboard = promptId.trim();
+                    localStorage.setItem('pacienteId', idParaDashboard);
+                }
+            }
+        } else {
+            idParaDashboard = idUser || '';
+        }
+
+        if (idParaDashboard) {
+            setDashboardId(idParaDashboard);
+        } else {
+            setDashboardId('');
+            setCarregando(false);
+            console.warn('ID para dashboard não encontrado. Faça login novamente ou informe o ID do paciente vinculado.');
+        }
+    }, [tipoUsuario, idUser, pacienteIdSalvo]);
+
+    useEffect(() => {
+        if (!dashboardId) return;
+
+        const fetchDashboard = () => {
+            setCarregando(true);
+            console.log(`🔍 Buscando dados para dashboardId: ${dashboardId}`);
+
+            api.get(`/api/prescricoes/dashboard/${dashboardId}`)
+                .then(response => {
+                    console.log("✅ Dados recebidos do backend:", response.data);
+                    setDados(response.data);
+                    setCarregando(false);
+                })
+                .catch(error => {
+                    console.error("❌ Erro ao buscar dados:", error.message);
+                    console.error("❌ URL tentada:", `/api/prescricoes/dashboard/${dashboardId}`);
+                    console.error("❌ Status HTTP:", error.response?.status);
+                    console.error("❌ Resposta do erro:", error.response?.data);
+
+                    alert(`Erro ao carregar dados. Verifique se o backend está rodando em http://localhost:8081`);
+                    setCarregando(false);
+                });
+        };
+
         fetchDashboard();
 
         const onUpload = () => {
+            console.log("📤 Planilha foi enviada! Recarregando dados...");
             fetchDashboard();
         };
 
         window.addEventListener('planilhaUploaded', onUpload);
         return () => window.removeEventListener('planilhaUploaded', onUpload);
-    }, [fetchDashboard]);
+    }, [dashboardId]);
 
     if (carregando) return <p>Carregando dados da MoveHand...</p>;
-    if (!configuracao) return <p>Nenhuma prescrição ativa encontrada.</p>;
+    if (!dados) return <p>Nenhuma prescrição ativa encontrada.</p>;
 
     return (
         <div className="movehand-container">
             {/* PARTE DAS ORIENTAÇÕES (O card do topo da sua imagem) */}
             <section className="orientacoes-section">
                 <h2>Orientação para esta sessão</h2>
-                {configuracao.orientacoes.map((texto, index) => (
+                {dados.orientacoes && dados.orientacoes.map((texto, index) => (
                     <p key={index}>{texto}</p>
                 ))}
             </section>
@@ -62,22 +89,22 @@ const AreaControle = () => {
             <section className="configuracoes-ativas">
                 <div className="card">
                     <span>Posição Inicial</span>
-                    <h3>{posicaoInicial}°</h3>
+                    <h3>{dados.posicaoInicial}°</h3>
                 </div>
                 <div className="card">
                     <span>Movimento</span>
-                    <h3>{movimento}°</h3>
+                    <h3>{dados.movimento}°</h3>
                 </div>
                 <div className="card">
                     <span>Posição Final</span>
-                    <h3>{posicaoFinal}°</h3>
+                    <h3>{dados.posicaoFinal}°</h3>
                 </div>
             </section>
 
             {/* STATUS DA BATERIA E CONEXÃO */}
             <div className="status-bar">
-                <span>Status: {configuracao.statusDispositivo}</span>
-                <span>Bateria: {configuracao.bateria}%</span>
+                <span>Status: {dados.statusDispositivo}</span>
+                <span>Bateria: {dados.bateria}%</span>
             </div>
         </div>
     );

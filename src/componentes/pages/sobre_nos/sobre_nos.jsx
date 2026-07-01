@@ -1,79 +1,52 @@
 import { useState } from "react";
 import styles from "./sobre_nos.module.css";
 
-import equipe1 from "../../../assets/image_62.png";
-import equipe2 from "../../../assets/image_62.png";
-import equipe3 from "../../../assets/image_62.png";
-import equipe4 from "../../../assets/image_62.png";
-import equipe5 from "../../../assets/image_62.png";
-import equipe6 from "../../../assets/image_62.png";
-import logoSenac from "../../../assets/image_62.png";
-import logoProa from "../../../assets/image_62.png";
-import logoPorto from "../../../assets/image_62.png";
-import imagemEquipe from "../../../assets/equipe.png";
-import imagemDex from "../../../assets/dexy.png";
+// Importação das imagens
+import equipe1 from "../../../assets/Vitoria.png";
+import equipe2 from "../../../assets/Christian.png";
+import equipe3 from "../../../assets/Thalyson.png";
+import equipe4 from "../../../assets/Amanda.png";
+import equipe5 from "../../../assets/Melissa.png";
+import equipe6 from "../../../assets/Luiz.png";
+import logoSenac from "../../../assets/senac.png";
+import logoProa from "../../../assets/proa.png";
+import logoEverRise from "../../../assets/everRise.PNG";
 import iconeMissao from "../../../assets/missao.png";
 import iconeVisao from "../../../assets/visao.png";
 import iconeValores from "../../../assets/valores.png";
 import videoDexMove from "../../../assets/dexmove.mp4";
+import video from "../../../assets/Dexy.mp4";
+import Footer from '../../Footer';
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Header from '../../Header';
 
 function SobreNos() {
-  // Time de membros
   const equipe = [
-    {
-      id: 1,
-      nome: "Dra. Ana Beatriz",
-      cargo: "CEO & Fundadora",
-      imagem: equipe1,
-    },
-    {
-      id: 2,
-      nome: "Dr. Carlos Mendes",
-      cargo: "CTO & Inovação",
-      imagem: equipe2,
-    },
-    {
-      id: 3,
-      nome: "Ma. Fernanda Lima",
-      cargo: "Head de Reabilitação",
-      imagem: equipe3,
-    },
-    {
-      id: 4,
-      nome: "Dr. Ricardo Souza",
-      cargo: "Engenheiro Chefe",
-      imagem: equipe1,
-    },
-    {
-      id: 5,
-      nome: "Dra. Patrícia Oliveira",
-      cargo: "Fisioterapeuta Líder",
-      imagem: equipe2,
-    },
-    {
-      id: 6,
-      nome: "Me. Lucas Santos",
-      cargo: "Desenvolvedor Sênior",
-      imagem: equipe3,
-    },
+    { id: 1, nome: "Vitória Laurenzano", cargo: "P.O e desenvolvedora back end", imagem: equipe1 },
+    { id: 2, nome: "Christian Damasceno", cargo: "Scrum master e desenvolvedor back end", imagem: equipe2 },
+    { id: 3, nome: "Thalyson Pereira", cargo: "Marketing e desenvolvedor front end", imagem: equipe3 },
+    { id: 4, nome: "Amanda Cristina", cargo: "Desenvolvedora front end", imagem: equipe4 },
+    { id: 5, nome: "Melissa Fiuza", cargo: "Financeira e Desenvolvedora front end", imagem: equipe5 },
+    { id: 6, nome: "Luiz Gustavo", cargo: "Desenvolvedor hardware", imagem: equipe6 },
   ];
 
   const apoiadores = [
     { id: 1, nome: "Senac", logo: logoSenac },
     { id: 2, nome: "PROA", logo: logoProa },
-    { id: 3, nome: "Porto Seguro", logo: logoPorto },
+    { id: 3, nome: "Ever Rise", logo: logoEverRise },
   ];
 
   const [hoveredId, setHoveredId] = useState(null);
 
   return (
     <div className={styles.container}>
+      <Header />
+      
       {/* ========== SEÇÃO 1: VÍDEO NO TOPO ========== */}
       <section className={styles.secaoVideo}>
         <div className={styles.videoWrapper}>
@@ -89,46 +62,24 @@ function SobreNos() {
         </div>
       </section>
 
-      {/* ========== SEÇÃO 2: ONDAS + TEXTO + IMAGEM (Sobre a DexMove) ========== */}
+      {/* ========== SEÇÃO 2: TEXTO CENTRALIZADO ========== */}
       <section className={styles.secaoOndas}>
         <div className={styles.containerOndas}>
-          <svg
-            viewBox="0 0 1440 500"
-            preserveAspectRatio="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill="#f3e396"
-              d="M0,0 H1440 V400 C1100,400 400,400 0,450 Z"
-            ></path>
-            <path
-              fill="#ffb366"
-              d="M0,0 H1440 V350 C1100,450 400,350 0,400 Z"
-            ></path>
-            <path
-              fill="#0b5c6a"
-              d="M0,0 H1440 V300 C1100,400 100,400 0,150 Z"
-            ></path>
+          <svg viewBox="0 0 1440 500" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#f3e396" d="M0,0 H1440 V400 C1100,400 400,400 0,450 Z"></path>
+            <path fill="#ffb366" d="M0,0 H1440 V350 C1100,450 400,350 0,400 Z"></path>
+            <path fill="#0b5c6a" d="M0,0 H1440 V300 C1100,400 100,400 0,150 Z"></path>
           </svg>
         </div>
-        <div className={styles.conteudoOndas}>
-          <div className={styles.textoOndas}>
+        <div className={styles.containerTextoDestaque}>
+          <div className={styles.textoOndasCentralizado}>
             <h2>Sobre a DexMove:</h2>
             <p>
-              A Dexmove nasce da inquietação de não aceitar que o movimento seja
+              A Dexmovee nasce da inquietação de não aceitar que o movimento seja
               limitado quando a tecnologia pode ampliar possibilidades. Criamos
               soluções que unem inovação e cuidado para devolver autonomia,
               independência e novos começos a quem mais precisa.
             </p>
-          </div>
-          <div className={styles.imagemOndas}>
-            <div className={styles.placeholderImagemOndas}>
-              <img
-                src={imagemEquipe}
-                alt="Equipe DexMove"
-                className={styles.imagemEquipe}
-              />
-            </div>
           </div>
         </div>
       </section>
@@ -162,41 +113,18 @@ function SobreNos() {
             </div>
           </div>
           <div className={styles.dexyImagem}>
-            <img src={imagemDex} alt="Dexy" className={styles.imagemDex} />
+            <video autoPlay loop muted playsInline className={styles.videoDexy}>
+              <source src={video} type="video/mp4" />
+              Seu navegador não suporta vídeos.
+            </video>
           </div>
         </div>
 
-        {/* ONDA NA PARTE INFERIOR DA SEÇÃO DEXY */}
         <div className={styles.ondaDexy}>
-            {/* Azul */}
- <svg viewBox="0 0 1440 300" preserveAspectRatio="none">
-    {/* Laranja */}
-    <path
-      fill="#ffb366"
-      d="
-        M0,0
-        C220,170 420,200 650,170
-        C900,130 1150,70 1440,90
-        L1440,150
-        C1150,120 900,170 650,220
-        C420,250 220,220 0,90
-        Z
-      "
-    />
-    {/* Amarelo */}
-    <path
-      fill="#f3e396"
-      d="
-        M0,50
-        C220,220 420,250 650,220
-        C900,170 1150,120 1440,150
-        L1440,210
-        C1150,200 1000,220 700,270
-        C420,300 220,280 0,170
-        Z
-      "
-    />
-  </svg>
+          <svg viewBox="0 0 1440 300" preserveAspectRatio="none">
+            <path fill="#ffb366" d="M0,0 C220,170 420,200 650,170 C900,130 1150,70 1440,90 L1440,150 C1150,120 900,170 650,220 C420,250 220,220 0,90 Z" />
+            <path fill="#f3e396" d="M0,50 C220,220 420,250 650,220 C900,170 1150,120 1440,150 L1440,210 C1150,200 1000,220 700,270 C420,300 220,280 0,170 Z" />
+          </svg>
         </div>
       </section>
 
@@ -207,136 +135,84 @@ function SobreNos() {
           <div className={styles.mvvCard}>
             <img src={iconeMissao} alt="Missão" className={styles.mvvImage} />
             <h3>O que fazemos hoje</h3>
-            <p>
-              Proporcionar reabilitação física e mental aos usuários,
-              contribuindo para sua saúde e qualidade de vida através de
-              tecnologia acessível e eficaz.
-            </p>
+            <p>Proporcionar reabilitação física e mental aos usuários, contribuindo para sua saúde e qualidade de vida através de tecnologia acessível e eficaz.</p>
           </div>
-
           <div className={styles.mvvCard}>
             <img src={iconeVisao} alt="Visão" className={styles.mvvImage} />
             <h3>O futuro que buscamos</h3>
-            <p>
-              Trazer uma solução inovadora e tecnológica para melhorar o
-              desempenho e a qualidade de vida, tornando a reabilitação robótica
-              acessível para todos.
-            </p>
+            <p>Trazer uma solução inovadora e tecnológica para melhorar o desempenho e a qualidade de vida, tornando a reabilitação robótica acessível para todos.</p>
           </div>
-
           <div className={styles.mvvCard}>
             <img src={iconeValores} alt="Valores" className={styles.mvvImage} />
             <h3>Nossos valores</h3>
-            <p>
-              Acessibilidade, inclusão, eficácia, inovação, transparência e
-              cuidado com o paciente são os pilares que guiam cada decisão na
-              DexMove.
-            </p>
+            <p>Acessibilidade, inclusão, eficácia, inovação, transparência e cuidado com o paciente são os pilares que guiam cada decisão na DexMove.</p>
           </div>
         </div>
       </section>
 
       {/* ========== SEÇÃO 5: EQUIPE ========== */}
       <section className={styles.secaoEquipe}>
+        <div className={styles.ondaFundoEquipe}>
+          <svg viewBox="0 0 1440 450" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#0b5c6a" d="M0,250 C300,-150 1100,700 1440,250 V450 H0 Z" />
+            <path fill="#ffb366" d="M0,280 C300,-120 1100,730 1440,280 V450 H0 Z" />
+            <path fill="#efe39b" d="M0,310 C300,-90 1100,760 1440,310 V450 H0 Z" />
+            <path fill="#ffffff" d="M0,340 C300,-60 1100,790 1440,340 V450 H0 Z" />
+          </svg>
+        </div>
         <h2>Nossa equipe</h2>
         <p>Profissionais apaixonados por tecnologia e reabilitação</p>
         <div className={styles.equipeGrid}>
           {equipe.map((membro) => (
-            <div
-              key={membro.id}
-              className={styles.cardEquipe}
-              onMouseEnter={() => setHoveredId(membro.id)}
+            <div 
+              key={membro.id} 
+              className={styles.cardEquipe} 
+              onMouseEnter={() => setHoveredId(membro.id)} 
               onMouseLeave={() => setHoveredId(null)}
             >
               <div className={styles.fotoContainer}>
-                <img
-                  src={membro.imagem}
-                  alt={membro.nome}
-                  className={styles.fotoEquipe}
-                />
-                <div
-                  className={`${styles.overlayEquipe} ${hoveredId === membro.id ? styles.overlayVisible : ""}`}
-                >
+                <img src={membro.imagem} alt={membro.nome} className={styles.fotoEquipe} />
+                <div className={`${styles.overlayEquipe} ${hoveredId === membro.id ? styles.overlayVisible : ""}`}>
                   <p>{membro.cargo}</p>
-                  <p className={styles.bioEquipe}>
-                    Especialista em reabilitação
-                  </p>
+                  {/* Texto "Especialista em reabilitação" removido daqui */}
                 </div>
               </div>
               <h4 className={styles.nomeEquipe}>{membro.nome}</h4>
             </div>
           ))}
         </div>
-<div className={styles.ondaEquipe}>
-  <svg viewBox="0 0 1440 300" preserveAspectRatio="none">
-    {/* Laranja */}
-    <path
-      fill="#ffb366"
-      d="
-        M0,0
-        C220,170 420,200 650,170
-        C900,130 1150,70 1440,90
-        L1440,150
-        C1150,120 900,170 650,220
-        C420,250 220,220 0,90
-        Z
-      "
-    />
-    {/* Amarelo */}
-    <path
-      fill="#f3e396"
-      d="
-        M0,50
-        C220,220 420,250 650,220
-        C900,170 1150,120 1440,150
-        L1440,210
-        C1150,200 1000,220 700,270
-        C420,300 220,280 0,170
-        Z
-      "
-    />
-  </svg>
-</div>
+        <div className={styles.ondaEquipe}>
+          <svg viewBox="0 0 1440 300" preserveAspectRatio="none">
+            <path fill="#ffb366" d="M0,0 C220,170 420,200 650,170 C900,130 1150,70 1440,90 L1440,150 C1150,120 900,170 650,220 C420,250 220,220 0,90 Z" />
+            <path fill="#f3e396" d="M0,50 C220,220 420,250 650,220 C900,170 1150,120 1440,150 L1440,210 C1150,200 1000,220 700,270 C420,300 220,280 0,170 Z" />
+          </svg>
+        </div>
       </section>
 
       {/* ========== SEÇÃO 6: APOIADORES ========== */}
       <section className={styles.secaoApoiadores}>
         <h2>Nossos apoiadores</h2>
-       <Swiper
-  modules={[Autoplay, Navigation, Pagination]}
-  slidesPerView={1}  // Padrão para mobile
-  centeredSlides={true}
-  spaceBetween={20}
-  navigation
-  pagination={{ clickable: true }}
-  autoplay={{
-    delay: 2500,
-    disableOnInteraction: false,
-  }}
-  breakpoints={{
-    // Quando a tela for >= 640px
-    640: {
-      slidesPerView: 2,
-      spaceBetween: 30,
-    },
-    // Quando a tela for >= 1024px
-    1024: {
-      slidesPerView: 3,
-      spaceBetween: 50,
-    },
-  }}
-  className={styles.carrosselApoiadores}
->
-  {apoiadores.map((apoio) => (
-    <SwiperSlide key={apoio.id}>
-      <div className={styles.cardApoiador}>
-        <img src={apoio.logo} alt={apoio.nome} />
-      </div>
-    </SwiperSlide>
-  ))}
-</Swiper>
+        <Swiper
+          modules={[Autoplay, Navigation, Pagination]}
+          slidesPerView={1}
+          centeredSlides={true}
+          spaceBetween={20}
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
+          breakpoints={{ 640: { slidesPerView: 2, spaceBetween: 30 }, 1024: { slidesPerView: 3, spaceBetween: 50 } }}
+          className={styles.carrosselApoiadores}
+        >
+          {apoiadores.map((apoio) => (
+            <SwiperSlide key={apoio.id}>
+              <div className={styles.cardApoiador}>
+                <img src={apoio.logo} alt={apoio.nome} />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </section>
-
+      <Footer/>
     </div>
   );
 }

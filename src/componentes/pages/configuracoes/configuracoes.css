@@ -1,28 +1,34 @@
-
+.config-page{
+  margin-top: 80px;
+  width: 100%;
+}
 .page-topbar {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 24px;
 }
-.account-hero{
+.account-hero-cpnf{
   display: flex;
   width: 100%;
   margin-bottom: 24px;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  
 }
 .config-title {
   line-height: 1.4;
-  font-size: 60px;
+  font-size: 3rem;
   font-weight: 700;
   color:#0B5C6A;
+  text-align: center;
 }
-.config-subtitle {
-  color: #0B5C6A;
-  font-size: 32px;
+.config-sub {
+  color: #1a1a1a;
+  font-size: 2rem;
   line-height: 1.4;
+  text-align: center;
+  margin-bottom: 50px;
+
 }
 .hero-wave {
   width: 100%;
@@ -31,7 +37,7 @@
   margin-bottom: 10px;
 }
 
-.account-hero p {
+.account-hero-conf p {
   margin: 0;
   color: #375c62;
   font-size: 0.98rem;
@@ -54,11 +60,13 @@
   padding: 22px 24px;
   background: white;
   margin-bottom: 18px;
+  width: 100%;
+  margin: 0 auto;
 }
 .setting-card h2 {
   font-size: 24px;
-  color: #153b3d;
   font-weight: 700;
+
 }
 .setting-card + .setting-card {
   margin-top: 18px;
@@ -73,7 +81,6 @@
 }
 
 .section-heading h2 {
-  margin: 0;
   font-size: 1.05rem;
   color: #153b3d;
 }

@@ -85,13 +85,6 @@ export default function EditarInformacoes() {
                   <input type="email" name="email" value={form.email} onChange={handleChange} required />
                 </div>
               </div>
-              <div className="ei-field">
-                <label className="ei-label">Telefone</label>
-                <div className="ei-input-wrap">
-                  <IconPhone />
-                  <input type="tel" name="telefone" value={form.telefone} onChange={handleChange} />
-                </div>
-              </div>
             </div>
 
             <div className="ei-divider">

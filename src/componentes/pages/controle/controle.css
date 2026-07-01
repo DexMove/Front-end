@@ -16,74 +16,108 @@
 }
 
 body {
-  background-color: var(--bg-gray);
+  background-color: #F5F5F5; /* Cor de fundo igual à página anterior */
   color: var(--text-dark);
 }
 
+/* Container principal ajustado para a onda ocupar a largura total */
 .dexmove-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-bottom: 40px;
-}
-
-/* Header */
-.header {
-  text-align: center;
-  padding: 40px 20px 20px;
-  background-color: var(--white);
-}
-
-.header h1 {
-  color: var(--text-dark);
-  font-size: 2.2rem;
-  margin-bottom: 8px;
-}
-
-.header p {
-  color: #666;
-  font-size: 1.1rem;
-}
-
-.top-wave {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  margin-left: -50vw;
-  line-height: 0;
-  margin-bottom: 20px;
-  overflow: hidden; /* Garante que a subida não ultrapasse o header */
-}
-
-.top-wave svg {
-  display: block;
   width: 100%;
-  height: 200px; /* Aumentado de 120px para 200px para dar amplitude à curva */
+  margin: 0 auto;
+  padding-top: 110px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
 }
 
-/* Intro Section */
-.intro-section {
-  padding: 0 20px;
-  margin-bottom: 30px;
+/* --- TOPO IDENTICO À PÁGINA ANTERIOR --- */
+
+.controle-header {
+  text-align: center;
+  padding: 40px 20px 0px;
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
 }
 
-.intro-badge {
+.controle-title {
+  font-size: clamp(30px, 5vw, 42px);
+  font-weight: 700;
+  color: #1E1E1E;
+  margin-bottom: 4px;
+  display: block;
+  line-height: 1.1;
+}
+
+.controle-subtitle {
+  font-size: 22px;
+  color: #333 !important;
+  margin: 0;
+}
+
+.onda_topo {
+  width: 100%;
+  height: 120px; /* Altura exata da página anterior */
+  overflow: hidden;
+  margin-top: 0px;
+}
+
+.onda_topo svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* --- CENTRALIZADOR DE CONTEÚDO --- */
+.intro-section,
+.status-panel,
+.main-grid,
+.ai-assistant,
+.support-footer {
+  max-width: 1200px;
+  width: 92%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.support-text{
+  font-size: 25px;
+}
+
+/* --- IDENTIFICAÇÃO MOVEHAND (IGUAL À PLANILHA) --- */
+.planilha-id {
   display: flex;
   align-items: center;
   gap: 15px;
-  color: var(--primary-blue);
+  max-width: 1100px;
 }
 
-.intro-badge p {
-  font-size: 0.9rem;
-  color: #777;
+.hand-icon {
+  font-size: 30px; /* Tamanho igual ao da outra página */
+  color: #333;    /* Cor cinza escuro igual ao da outra página */
+  flex-shrink: 0;
+}
+
+.id-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;               /* Espaço entre as linhas */
+  text-align: left;
+}
+
+.id-text strong {
+  font-size: 19px;
+  color: #1E1E1E;
+  font-weight: 700;
+}
+
+.id-text span {
+  font-size: 16px;
+  color: #666;
 }
 
 /* Status Panel */
-.status-panel {
-  padding: 0 20px;
-  margin-bottom: 40px;
-}
-
 .status-card {
   background: var(--white);
   border-radius: 20px;
@@ -137,7 +171,6 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
-  padding: 0 20px;
   margin-bottom: 40px;
 }
 
@@ -163,7 +196,7 @@ body {
   padding-bottom: 10px;
 }
 
-/* Form Elements Refatorados */
+/* Form Elements */
 .setting-group {
   margin-bottom: 20px;
 }
@@ -175,72 +208,15 @@ body {
   margin-bottom: 8px;
 }
 
-.form-select {
-  width: 100%;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-  background-color: #f9f9f9;
-  color: var(--primary-blue);
+.highlight-text {
   font-weight: bold;
-  outline: none;
-  cursor: pointer;
-}
-
-.select-exercise {
-  text-align: center;
+  color: var(--primary-blue);
   font-size: 1.1rem;
-  border-color: #27ae60;
-  color: #27ae60;
 }
-
-.form-range {
-  width: 100%;
-  accent-color: var(--primary-blue);
-  cursor: pointer;
-}
-
-.range-value {
-  font-weight: bold;
-  color: var(--primary-blue);
-  float: right;
-}
-
-.btn-save-settings {
-  margin-top: 10px;
-  background-color: var(--primary-blue);
-  color: white;
-  border: none;
-  padding: 12px;
-  border-radius: 12px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: opacity 0.2s;
-}
-
-.btn-save-settings:hover {
-  opacity: 0.9;
-}
-
-/* Status Badge */
-.status-badge-container {
-  margin-bottom: 15px;
-}
-
-.status-badge {
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.status-badge.active { background: #e8f4f5; color: #27ae60; }
-.status-badge.paused { background: #fff5ed; color: var(--soft-orange); }
 
 .footer-note {
-  margin-top: 5px;
-  font-size: 17px;
+  margin-top: auto;
+  font-size: 14px;
   color: #aaa;
   font-style: italic;
   padding-top: 15px;
@@ -252,15 +228,9 @@ body {
   background: linear-gradient(to bottom, #ffffff, #fffdfa);
 }
 
-.orthosis-visual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .ortese-img {
-  width: 220px;
-  margin-left: 75px;
+  width: 180px;
+  margin: 20px auto;
 }
 
 .progress-count {
@@ -274,7 +244,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 .btn-start, .btn-pause {
@@ -302,23 +272,7 @@ body {
   border: 1px solid var(--soft-orange);
 }
 
-/* Estilo para botão ativo */
-.active-btn {
-  background-color: var(--primary-blue) !important;
-  color: white !important;
-  box-shadow: 0 5px 15px rgba(11, 92, 106, 0.3);
-}
-
-.btn-pause.active-btn {
-  background-color: var(--soft-orange) !important;
-}
-
 /* AI Assistant */
-.ai-assistant {
-  padding: 0 20px;
-  margin-bottom: 40px;
-}
-
 .ai-card {
   background: var(--white);
   border-radius: 24px;
@@ -334,66 +288,46 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
-  max-width: 70%;
 }
 
 .ai-title h3 {
   color: var(--primary-blue);
   margin-bottom: 5px;
+  font-size: 25px;
 }
 
-.ai-title p {
-  color: #666;
-  font-size: 0.95rem;
+.botao{
+  text-decoration: none;
 }
 
 .btn-ai-action {
-  background-color: var(--primary-blue);
-  color: white;
+ background-color: #F7E38B; /* Amarelo padrão do seu site */
+  color: #1E1E1E;           /* Texto escuro para contraste */
   border: none;
-  padding: 12px 24px;
   border-radius: 12px;
-  font-weight: bold;
+  padding: 15px 30px;
+  font-size: 19px;          /* Tamanho padronizado */
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease;
-  white-space: nowrap; /* Evita que o texto do botão quebre em telas menores */
-  box-shadow: 0 4px 12px rgba(11, 92, 106, 0.2);
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .btn-ai-action:hover {
-  background-color: #084a55; /* Um tom mais escuro do azul primário */
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(11, 92, 106, 0.3);
-}
-
-.btn-ai-action:active {
-  transform: translateY(0);
-}
-
-
-.pulse-bar {
-  width: 8px;
-  height: 20px;
-  background-color: var(--light-yellow);
-  border-radius: 4px;
-  animation: pulse 1.2s infinite ease-in-out;
-}
-
-.delay-1 { animation-delay: 0.2s; height: 35px; }
-.delay-2 { animation-delay: 0.4s; height: 25px; }
-
-@keyframes pulse {
-  0%, 100% { transform: scaleY(1); opacity: 0.5; }
-  50% { transform: scaleY(1.5); opacity: 1; }
+  background-color: #f5d961; /* Tom de hover que você usou antes */
+  transform: scale(1.05);    /* Efeito de leve aumento ao passar o mouse */
 }
 
 /* Footer Support */
 .support-footer {
-  margin: 0 20px;
   background-color: var(--primary-blue);
   border-radius: 20px;
-  padding: 30px;
+  padding: 35px 50px;
   color: white;
+  margin-bottom: 50px;
 }
 
 .support-content {
@@ -402,72 +336,90 @@ body {
   align-items: center;
 }
 
-.support-text h4 {
-  font-size: 1.3rem;
-  margin-bottom: 5px;
-}
-
-.support-text p {
-  opacity: 0.8;
-}
-
 .btn-support {
-  background-color: var(--light-yellow);
-  color: var(--primary-blue);
+  background-color: #F3E396;
+  color: #111;
   border: none;
   padding: 15px 30px;
   border-radius: 12px;
   font-weight: bold;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: transform 0.2s ease;
+  transition: background-color 0.2s;
 }
 
 .btn-support:hover {
-  transform: scale(1.05);
+  background-color: #e8d472;
 }
 
-/* Responsividade */
-@media (max-width: 992px) {
-  .main-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
+/* --- NOVA RESPONSIVIDADE: TEXTOS MAIORES E LADO A LADO --- */
 
 @media (max-width: 768px) {
-  .header h1 { font-size: 1.8rem; }
-  
+  /* 1. Ajuste do Card Principal */
   .status-card {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
+    flex-direction: row !important; /* Força ficar um ao lado do outro */
+    flex-wrap: nowrap !important;   /* Impede quebra de linha */
+    padding: 20px 8px !important;   /* Reduz padding lateral para ganhar espaço */
+    justify-content: space-around;
+    gap: 2px;
   }
-  
+
+  /* 2. Ajuste de cada bloco de informação */
+  .status-item {
+    flex: 1;
+    min-width: 0; /* Permite que o flexbox encolha o item se necessário */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* 3. Títulos (STATUS, BATERIA, etc) */
+  .status-item .label {
+    font-size: 15px !important; /* Aumentado de 9px para 11px */
+    letter-spacing: 0;
+    line-height: 1.1 !important;
+    margin-bottom: 8px;
+    height: 28px; /* Altura fixa para alinhar os valores de baixo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+  }
+
+  /* 4. Valores Principais (Conectada, 85%, Horário) */
+  .value-row {
+    font-size: 20px !important; /* Aumentado para ficar bem legível */
+    gap: 4px;
+    justify-content: center;
+    white-space: nowrap; /* Evita que "Hoje, 09:32" quebre em duas linhas */
+  }
+
+  /* Ajuste específico para o ícone da bateria e ponto verde */
+  .dot-online { width: 8px; height: 8px; }
+  .value-row i, .value-row svg { font-size: 16px; }
+
+  /* 5. Texto do ID (Dexmove...) */
+  .status-item span:last-child {
+    font-size: 15px !important;
+    margin-top: 4px;
+    opacity: 0.8;
+  }
+
+  /* 6. Divisores (Opcional: se ficar muito apertado, podemos diminuir a opacidade) */
   .divider {
-    width: 80%;
-    height: 1px;
+    display: block; /* Garante que apareçam */
+    height: 35px;
+    margin: 10px 2px 0;
+    background-color: #ddd;
   }
-  
-  .main-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .ai-card {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-  }
-  
-  .ai-header {
-    flex-direction: column;
-    max-width: 100%;
-  }
-  
-  .support-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-  }
+
+  /* --- Outros ajustes de tela cheia --- */
+  .main-grid { grid-template-columns: 1fr; }
+  .ai-card, .support-content { flex-direction: column; text-align: center; }
+}
+
+/* Ajuste para telas MUITO pequenas (abaixo de 360px) */
+@media (max-width: 360px) {
+  .status-item .label { font-size: 10px !important; }
+  .value-row { font-size: 13px !important; }
 }

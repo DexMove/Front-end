@@ -4,7 +4,7 @@
   background: white;
   display: flex;
   justify-content: center;
-  padding: 48px 5% 64px;
+  padding: 100px 5% 64px;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }
@@ -19,16 +19,18 @@
   font-weight: 700;
   color: #0B5C6A;
   margin-bottom: 4px;
+  text-align: center;
 }
 
 .mc-page-sub {
-  font-size: 1.25rem;
-  color: #0B5C6A;
+  font-size: 2rem;
+  color: #1a1a1a;
   margin-bottom: 28px;
+  text-align: center;
 }
 
 .mc-card {
-  background: #f8f4ec;
+  background: #fffbf4;
   border: 1px solid #e2ddd5;
   border-radius: 16px;
   padding: 20px 24px;
@@ -36,7 +38,7 @@
 }
 
 .mc-card--patient {
-  background: #f8f4ec;
+  background: #fffbf4;
 }
 
 .mc-card-header {
@@ -49,8 +51,8 @@
 }
 
 .mc-card-label {
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 700;
   color: #076576;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -60,7 +62,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.78rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #111;
   text-decoration: none;
@@ -87,7 +89,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 0.88rem;
+  font-size: 1rem;
   color: #111;
 }
 
@@ -135,8 +137,8 @@
 }
 
 .mc-patient-key {
-  font-size: 0.72rem;
-  color: #555;
+  font-size: 0.9rem;
+  color: #333;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.4px;
@@ -150,7 +152,7 @@
 
 /* ── Responsividade ── */
 @media (max-width: 1024px) {
-  .mc-page { padding: 40px 5% 56px; }
+  .mc-page { padding: 40px 5% 56px; margin-top: 30px }
 }
 
 @media (max-width: 780px) {
@@ -171,5 +173,6 @@
   .mc-page { padding: 20px 4% 36px; }
   .mc-patient-grid { grid-template-columns: 1fr; }
   .mc-card-header { flex-direction: column; align-items: flex-start; }
-  .mc-page-title { font-size: 1.2rem; }
+  .mc-page-title { font-size: 1.5rem; }
+   .mc-page-sub{font-size: 1.2rem;}
 }

@@ -7,6 +7,17 @@
   min-height: 780px;
   padding: 42px 28px 92px;
   color: white;
+  background-color: #f8f4ee;
+}
+
+#hero-planos::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
   background-image: linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.18)),
     url("../../../assets/Rectangle 140.png");
   background-position: top center;
@@ -15,6 +26,8 @@
 }
 
 .texto-hero {
+  position: relative;
+  z-index: 1;
   width: min(820px, 92%);
   text-align: center;
 }
@@ -46,6 +59,12 @@
   border: 1px solid black;
   border-radius: 10px;
   cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.planos-botao:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .planos {
@@ -61,7 +80,7 @@
 }
 
 .plano-card {
-  width: 330px;
+  width: 50%;
   min-height: 470px;
   padding: 36px 30px 26px;
   background-color: white;
@@ -72,22 +91,37 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.plano-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.35);
+}
+.movimento {
+  box-shadow: 0 5px 18px rgba(243, 227, 150, 0.35);
+}
+
+.movimento:hover {
+  box-shadow: 0 10px 24px rgba(243, 227, 150, 0.5);
 }
 
 .independencia {
   min-height: 540px;
   padding-top: 0;
-  box-shadow: 0 5px 18px rgba(48, 144, 161, 0.55);
+  box-shadow: 0 5px 18px rgba(48, 144, 161, 0.25);
 }
 
-.recomendado {
-  width: calc(100% + 60px);
-  margin: 0 0 28px;
-  padding: 17px 0;
-  background-color: #43bbcf;
-  border-radius: 9px;
-  font-size: 21px;
-  font-weight: 500;
+.independencia:hover {
+  box-shadow: 0 10px 24px rgba(48, 144, 161, 0.4);
+}
+
+.autonomia {
+  box-shadow: 0 5px 18px rgba(255, 166, 99, 0.3);
+}
+
+.autonomia:hover {
+  box-shadow: 0 10px 24px rgba(255, 166, 99, 0.45);
 }
 
 .plano-h3 {
@@ -99,12 +133,13 @@
 }
 
 .valor-p {
-  margin: 0 0 24px;
-  font-size: 30px;
+  font-size: 24px;
   line-height: 1.1;
-  font-weight: 800;
+  font-weight: 700;
 }
-
+.valor-p2{
+  margin-bottom: 24px;
+}
 .beneficios {
   display: flex;
   flex-direction: column;
@@ -119,19 +154,16 @@
 .beneficios li {
   position: relative;
   padding-left: 28px;
-  font-size: 15px;
+  font-size: 20px;
   line-height: 1.15;
-  font-weight: 700;
+  font-weight: 600;
 }
 
-.beneficios li::before {
-  content: "✓";
+.beneficios li svg {
   position: absolute;
-  top: -1px;
   left: 0;
-  color: #0b6d78;
-  font-size: 19px;
-  font-weight: 800;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .plano-card button {
@@ -145,6 +177,12 @@
   font-weight: 800;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
   cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.plano-card button:hover {
+  transform: scale(1.03);
+  filter: brightness(0.93);
 }
 
 .movimento button {
@@ -152,7 +190,8 @@
 }
 
 .independencia button {
-  background-color: #43bbcf;
+  background-color: #0b6d78;
+  color: white;
 }
 
 .autonomia button {
@@ -164,6 +203,11 @@
     min-height: auto;
     padding-inline: 18px;
     background-size: cover;
+  }
+
+  #hero-planos::before {
+    bottom: auto;
+    height: 480px;
   }
 
   .texto-hero h1 {
@@ -186,7 +230,6 @@
   }
 }
 
-/* Breakpoints: 1024 / 768 / 600 / 430 */
 @media (max-width: 1024px) {
   #hero-planos { padding-inline: 20px; }
   .texto-hero h1 { font-size: 48px; }
@@ -213,4 +256,8 @@
   .texto-hero h2 { font-size: 18px; }
   .planos { gap: 16px; }
   .plano-card { padding: 16px; }
+
+  #hero-planos::before {
+    height: 280px;
+  }
 }

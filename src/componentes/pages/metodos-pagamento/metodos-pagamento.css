@@ -1,6 +1,6 @@
 .account-page{
   width: 100%;
-  margin: 0 auto;
+  margin: 80px auto;
   background-color: white;
 }
 .page-topbar {
@@ -15,6 +15,7 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
+
   
 }
 .pagamento-title {
@@ -23,8 +24,9 @@
   font-weight: 700;
 }
 .pagamento-subtitle {
-  color: #0b5c6a;
+  color: #1a1a1a;
   font-size: 32px;
+  margin-bottom: 15px;
 }
 .hero-wave {
   width: 100%;
@@ -44,11 +46,14 @@
 
 .payment-grid {
   display: grid;
+  grid-template-columns: 1fr;
+  width: 90%;
   gap: 18px;
+  margin: 0 auto;
+  margin-bottom: 50px;
 }
 
 .payment-card {
-  padding: 22px 26px;
   border: 1px solid #bcd2d1;
   border-radius: 24px;
   background: white;
@@ -107,7 +112,7 @@
   font-weight: 700;
 }
 .address-actions button:hover {
-  background: #f7fdfc;
+  background: #fffef3;
 }
 
 .payment-header {
@@ -135,9 +140,12 @@
   height: 60px;
 }
 
+.page-pagamentos {
+  width: 100%;
+}
+
 .page-pagamentos .account-hero:first-of-type {
   width: 100%;
-  max-width: 100%;
   margin: 0;
   padding: 34px 0;
   border: none;

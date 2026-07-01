@@ -1,9 +1,11 @@
 import { useState } from "react";
-import "../Login/style.css";
+import { useNavigate } from "react-router-dom";
 import "./cadastro_fisioterapeuta.css";
-import Header from "../../Header";
 import Footer from "../../Footer";
 import Fisioterapeuta from "../../../assets/fisioterapeuta.png";
+import Header from '../../Header';
+import { Link } from "react-router-dom";
+
 
 const IconEmail = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -18,21 +20,6 @@ const IconLock = () => (
 const IconUser = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
-  </svg>
-);
-const IconPhone = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.07 3.4 2 2 0 0 1 3 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-  </svg>
-);
-const IconClinic = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
-  </svg>
-);
-const IconId = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
   </svg>
 );
 const IconEye = () => (
@@ -61,45 +48,39 @@ const AppleIcon = () => (
 );
 
 export default function Cadastro_fisioterapeuta() {
+  const navigate = useNavigate();
   const [tab, setTab] = useState("cadastro");
   const [showSenha, setShowSenha] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
-  const [termos, setTermos] = useState(false);
 
   const [cadastroData, setCadastroData] = useState({
     nome: "", sobrenome: "", email: "", senha: "", confirma: "",
-    crefito: "", especialidade: "", clinica: "", telefone: "",
   });
 
-  function handleSubmit(e) {
+  function handleNext(e) {
     e.preventDefault();
     if (cadastroData.senha !== cadastroData.confirma) {
       alert("As senhas não coincidem!");
       return;
     }
-    console.log("Dados:", cadastroData);
+    navigate("/cadastro-fisioterapeuta/dados-profissionais", { state: cadastroData });
   }
 
   return (
     <main>
       <Header />
-      <section className="cf-page">
-        <div className="cf-left">
+      <section className="lc-page">
+        <div className="lc-left">
 
-          <h1 className="cf-title">Cadastro profissional</h1>
-          <p className="cf-subtitle">Cadastro exclusivo para fisioterapeutas parceiros.</p>
+          <h1 className="lc-title">Crie sua conta</h1>
+          <p className="lc-subtitle">Cadastre-se e comece sua jornada com a DexMove</p>
 
-          <div className="lc-toggle cf-toggle">
-            <button type="button" className={`lc-tab ${tab === "entrar" ? "active" : ""}`} onClick={() => setTab("entrar")}>
-              <a href="/entrar">Entrar</a>
-            </button>
-            <button type="button" className={`lc-tab ${tab === "cadastro" ? "active" : ""}`} onClick={() => setTab("cadastro")}>
-              Cadastre-se
-            </button>
-          </div>
+          <div className="lc-toggle">
+              <a href="/entrar" className="lc-tab">Entrar</a>
+              <button className="lc-tab active">Cadastre-se</button>
+            </div>
 
-          <form onSubmit={handleSubmit}>
-            {/* Nome + Sobrenome */}
+          <form onSubmit={handleNext}>
             <div className="cf-row">
               <div className="lc-field">
                 <label className="lc-label">Nome</label>
@@ -123,7 +104,6 @@ export default function Cadastro_fisioterapeuta() {
               </div>
             </div>
 
-            {/* E-mail */}
             <div className="lc-field">
               <label className="lc-label">E-mail</label>
               <div className="lc-input-wrap">
@@ -135,7 +115,6 @@ export default function Cadastro_fisioterapeuta() {
               </div>
             </div>
 
-            {/* Senha */}
             <div className="lc-field">
               <label className="lc-label">Senha</label>
               <div className="lc-input-wrap">
@@ -144,13 +123,12 @@ export default function Cadastro_fisioterapeuta() {
                   value={cadastroData.senha}
                   onChange={(e) => setCadastroData({ ...cadastroData, senha: e.target.value })}
                   minLength={8} required />
-                <button type="button" className="lc-eye-btn" onClick={() => setShowSenha(!showSenha)}>
+                <button type="button" className="cf-eye-btn" onClick={() => setShowSenha(!showSenha)}>
                   {showSenha ? <IconEyeOff /> : <IconEye />}
                 </button>
               </div>
             </div>
 
-            {/* Confirmar senha */}
             <div className="lc-field">
               <label className="lc-label">Confirme sua senha</label>
               <div className="lc-input-wrap">
@@ -159,78 +137,16 @@ export default function Cadastro_fisioterapeuta() {
                   value={cadastroData.confirma}
                   onChange={(e) => setCadastroData({ ...cadastroData, confirma: e.target.value })}
                   required />
-                <button type="button" className="lc-eye-btn" onClick={() => setShowConfirm(!showConfirm)}>
+                <button type="button" className="cf-eye-btn" onClick={() => setShowConfirm(!showConfirm)}>
                   {showConfirm ? <IconEyeOff /> : <IconEye />}
                 </button>
               </div>
             </div>
 
-            {/* Dados profissionais */}
-            <p className="cf-section-title">Dados profissionais</p>
+            <Link to="/dados-profissionais" className="lc-submit">
+                Próximo
+              </Link>
 
-            {/* CREFITO + Especialidade */}
-            <div className="cf-row">
-              <div className="lc-field">
-                <label className="lc-label">Número CREFITO</label>
-                <div className="lc-input-wrap">
-                  <IconId />
-                  <input type="text" placeholder="Ex:123456-4"
-                    value={cadastroData.crefito}
-                    onChange={(e) => setCadastroData({ ...cadastroData, crefito: e.target.value })} />
-                </div>
-              </div>
-              <div className="lc-field">
-                <label className="lc-label">Especialidade</label>
-                <div className="lc-input-wrap lc-input-wrap--select">
-                  <select
-                    value={cadastroData.especialidade}
-                    onChange={(e) => setCadastroData({ ...cadastroData, especialidade: e.target.value })}>
-                    <option value="">Selecione</option>
-                    <option>Ortopedia e traumatologia</option>
-                    <option>Neurologia</option>
-                    <option>Cardiorrespiratória</option>
-                    <option>Geriatria</option>
-                    <option>Pediatria</option>
-                    <option>Esportiva</option>
-                    <option>Dermatofuncional</option>
-                    <option>Saúde da mulher</option>
-                    <option>Outra</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-
-            {/* Clínica */}
-            <div className="lc-field">
-              <label className="lc-label">Clínica ou local de atendimento</label>
-              <div className="lc-input-wrap">
-                <IconClinic />
-                <input type="text" placeholder="Nome da clínica ou local"
-                  value={cadastroData.clinica}
-                  onChange={(e) => setCadastroData({ ...cadastroData, clinica: e.target.value })} />
-              </div>
-            </div>
-
-            {/* Telefone */}
-            <div className="lc-field">
-              <label className="lc-label">Telefone</label>
-              <div className="lc-input-wrap">
-                <IconPhone />
-                <input type="tel" placeholder="(00) 00000-0000"
-                  value={cadastroData.telefone}
-                  onChange={(e) => setCadastroData({ ...cadastroData, telefone: e.target.value })} />
-              </div>
-            </div>
-
-            {/* Termos */}
-            <label className="cf-checkbox">
-              <input type="checkbox" checked={termos} onChange={() => setTermos(!termos)} required />
-              <span>
-                Li e concordo com os <a href="/termos" className="cf-link">Termos de Consentimento e Tratamento de Dados</a> conforme a LGPD.
-              </span>
-            </label>
-
-            <button type="submit" className="lc-submit cf-submit">Criar minha conta</button>
 
             <div className="lc-divider">Ou continue com</div>
 
@@ -245,7 +161,6 @@ export default function Cadastro_fisioterapeuta() {
           </form>
         </div>
 
-        {/* Imagem lateral */}
         <div className="cf-img">
           <img src={Fisioterapeuta} alt="Fisioterapeutas" />
         </div>

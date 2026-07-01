@@ -11,13 +11,14 @@
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --sans: 'Inter', sans-serif;
+  --heading: 'Roboto', sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
-  color-scheme: light dark;
+  color-scheme: lightq
+  ;
   color: var(--text);
   background: var(--bg);
   font-synthesis: none;
@@ -64,35 +65,113 @@ body {
   box-sizing: border-box;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+/* Títulos e Cabeçalhos - Roboto */
+h1, h2, h3, h4, h5, h6, 
+[class*="titulo"], [class*="Titulo"], 
+[class*="title"], [class*="Title"] {
+  font-family: 'Roboto', sans-serif !important;
+  color: #0B5C6A !important;
 }
 
+/* Preserve white headings on dark backgrounds and footers */
+.texto-hero h1, .texto-hero h2,
+[class*="texto-hero"] h1, [class*="texto-hero"] h2,
+[class*="videoConteudo"] h1,
+[class*="textoOndasCentralizado"] h2,
+[class*="conteudoPrincipal"] h1,
+.banner h1, .banner h2, .banner h3,
+.bannerTexto h1, .bannerTexto h2,
+[class*="bannerTexto"] h1, [class*="bannerTexto"] h2,
+[class*="overlayEquipe"] h3, [class*="overlayEquipe"] h4,
+[class*="recomendado"],
+footer h1, footer h2, footer h3, footer h4, footer h5, footer h6,
+.footer h1, .footer h2, .footer h3, .footer h4,
+[class*="footer"] h1, [class*="footer"] h2, [class*="footer"] h3, [class*="footer"] h4,
+[class*="white"] h1, [class*="white"] h2, [class*="white"] h3,
+[class*="white"] h4, [class*="white"] h5, [class*="white"] h6,
+[class*="branco"] h1, [class*="branco"] h2, [class*="branco"] h3 {
+  color: white !important;
+}
+.mh-hero-text h1,
+[class*="mh-hero-text"] h1{
+  font-size: 70px !important;
+  font-weight: 700 !important;
+  margin: 0  !important;
+  color: #FFA663 !important;
+}
+.mh-hero-text h2,
+[class*="mh-hero-text"] h2{
+  font-size: 44px !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+  line-height: 1.2 !important;
+  margin: 0 !important;
+}
 h1 {
-  font-size: 56px;
+  font-size: 3rem !important;
+  font-weight: 700 !important;
   letter-spacing: -1.68px;
   margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
 }
+
 h2 {
-  font-size: 24px;
+  font-size: 2rem !important;
+  font-weight: 700 !important;
   line-height: 118%;
   letter-spacing: -0.24px;
   margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
 }
 
+/* Textos e Parágrafos - Inter */
+p, 
+[class*="paragrafo"], [class*="Paragrafo"], 
+[class*="descricao"], [class*="Descricao"] {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 1.25rem !important;
+}
+
+/* Botões - Inter */
+button, 
+.button, 
+a.button, 
+[class*="btn"], [class*="Btn"], 
+[class*="button"], [class*="Button"], 
+[class*="botao"], [class*="Botao"] {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 1rem !important;
+}
+input{
+  background-color: #fff;
+  color: #08060d;
+}
+.lc-subtitle {
+  font-weight: 400 !important;
+  color: #333 !important;
+  line-height: 1.5 !important;
+  margin-bottom: 1.75rem !important;
+}
+.footer-col h2 {
+    font-size: 28px !important;
+    font-weight: 700 !important;
+}
+
+.footer-col h3{
+    font-size: 22px !important;
+    font-weight: 600 !important;
+}
+.footer-col p,
+.footer-col a{
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    color: white !important;
+    font-weight: normal !important;
+}
+
+.footer-bottom p{
+    font-size: 16px !important; 
+    color: rgba(255,255,255,0.8) !important;
+
+}
 code,
 .counter {
   font-family: var(--mono);
@@ -107,10 +186,11 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
 html, body, #root {
@@ -147,6 +227,14 @@ canvas {
     display: block;
 }
 
+/* Permitir que ondas e vetores de fundo decorativos excedam max-width: 100% */
+img[class*="vector"],
+img[class*="Vector"],
+img[class*="onda"],
+img[class*="Onda"] {
+    max-width: none !important;
+}
+
 button,
 input,
 textarea,
@@ -165,3 +253,370 @@ aside {
     box-sizing: border-box;
 }
 
+/* ==========================================
+   Acessibilidade: Alinhamento de VLibras e UserWay
+   ========================================== */
+div[vw] {
+  top: auto !important;
+  bottom: 20px !important; /* VLibras na parte inferior */
+  right: 20px !important;
+  left: auto !important;
+  transform: none !important;
+}
+
+div[vw] [vw-access-button] {
+  top: auto !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  left: auto !important;
+  transform: none !important;
+}
+
+/* Posiciona o UserWay acima do VLibras */
+body .userway,
+body .userway-widget,
+body [class*="userway"],
+body [id*="userway"],
+#userwayAccessibilityWidget,
+div.uaw,
+.uaw,
+iframe[src*="userway"],
+iframe[id*="userway"] {
+  bottom: 110px !important;
+}
+@media (max-width: 1024px) {
+  .mh-hero-text h1 {
+    font-size: 56px !important;
+  }
+  .mh-hero-text h2 {
+    font-size: 32px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .mh-hero-text h1 {
+    font-size: 40px;
+  }
+  .mh-hero-text h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  .mh-hero-text h1 {
+    font-size: 32px;
+  }
+  .mh-hero-text h2 {
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 480px) {
+  .mh-hero-text h1 {
+    font-size: 28px !important;
+  }
+  .mh-hero-text h2 {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .mh-hero-text h1 {
+    font-size: 28px !important;
+  }
+  .mh-hero-text h2 {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+  }
+}
+
+/* ==========================================
+   Restaurar a estilização original da section mh-hero na página de produtos
+   ========================================== */
+.mh-hero-text h1 {
+  font-size: 70px !important;
+  color: #FFA663 !important;
+  margin: 0 !important;
+}
+
+.mh-hero-text h2 {
+  font-size: 44px !important;
+  color: #FFFFFF !important;
+  line-height: 1.2 !important;
+  margin: 0 !important;
+}
+.conteudo-bloqueado h1{
+  color: white !important;
+}
+  
+/* Responsividade da section mh-hero na página de produtos */
+@media (max-width: 1024px) {
+  .mh-hero-text h1 { font-size: 56px !important; }
+  .mh-hero-text h2 { font-size: 32px !important; }
+}
+
+@media (max-width: 768px) {
+  .mh-hero-text h1 { font-size: 40px !important; }
+  .mh-hero-text h2 { font-size: 28px !important; }
+  .suporte-section h2{
+        font-size: 26px !important;
+    }
+
+    .suporte-section p{
+        font-size: 15px !important;
+    }
+}
+
+@media (max-width: 600px) {
+  .mh-hero-text h1 { font-size: 32px !important; }
+  .mh-hero-text h2 { font-size: 20px !important; }
+}
+
+@media (max-width: 480px), (max-width: 430px) {
+  .mh-hero-text h1 { font-size: 28px !important; }
+  .mh-hero-text h2 { font-size: 16px !important; }
+   .feature-card h3{
+        font-size: 18px !important;
+    }
+
+    .feature-card p{
+        font-size: 14px !important;
+    }
+
+    .suporte-section h2{
+        font-size: 22px !important;
+    }
+
+    .suporte-section p{
+        font-size: 14px !important;
+    }
+}
+
+
+
+@media (max-width: 1200px) {
+    .secaoPrincipal { min-height: 550px !important; }
+    .conteudoPrincipal h1 { font-size: 2.8rem !important; }
+    .containerContato { gap: 40px; padding-top: 150px !important; }
+    .cardContato { padding: 30px 35px !important; }
+}
+
+/* Tablets e iPads (Landscape/Portrait) */
+@media (max-width: 1024px) {
+    .conteudoPrincipal { padding-top: 60px !important; }
+    .conteudoPrincipal h1 { font-size: 2.5rem !important; }
+    .centralAjuda { margin-top: -100px; padding-top: 80px !important; }
+    .containerContato { padding-top: 120px !important; }
+    .imagemContato img { max-width: 500px !important; }
+}
+
+/* Tablets Médios */
+@media (max-width: 900px) {
+    .conteudoPrincipal h1 { font-size: 2.2rem !important; }
+    .centralAjuda h2 { font-size: 30px !important; }
+    .itemFaq { font-size: 18px; padding: 15px 20px !important; }
+    .containerContato { flex-direction: column; text-align: center; padding-top: 100px !important; }
+    .imagemContato { order: 2 !important; } /* Imagem vai para baixo do card no tablet se necessário */
+    .cardContato { order: 1; max-width: 600px; text-align: left !important; }
+}
+
+/* Celulares Grandes e Tablets Pequenos */
+@media (max-width: 768px) {
+    .secaoPrincipal { min-height: 450px !important; }
+    .conteudoPrincipal { padding-top: 50px !important; }
+    .conteudoPrincipal h1 { font-size: 1.8rem !important; }
+    .conteudoPrincipal p { font-size: 1rem; margin-top: 15px !important; }
+    
+    .centralAjuda { margin-top: -80px; padding-top: 60px !important; }
+    .centralAjuda h2 { font-size: 26px !important; }
+    
+    .containerContato { padding: 80px 20px 40px !important; }
+    .imagemContato { display: none !important; } /* Esconde imagem para focar no formulário */
+    .cardContato { width: 100%; padding: 25px !important; }
+
+}
+
+/* Celulares Médios e Pequenos (iPhone, Android) */
+@media (max-width: 600px) {
+    .conteudoPrincipal h1 { font-size: 1.6rem; line-height: 1.2 !important; }
+    .btnSuporte { width: 100%; font-size: 14px !important; }
+    
+    .centralAjuda { margin-top: -60px !important; }
+    .centralAjuda p { font-size: 16px !important; }
+    .itemFaq { font-size: 16px; padding: 15px !important; }
+    .perguntaInterna { font-size: 16px !important; }
+    
+    .cardContato h3 { font-size: 22px !important; }
+    .cardContato p { font-size: 14px !important; }
+    .btnEnviar { font-size: 15px; padding: 12px !important; }
+}
+
+/* Celulares Muito Pequenos (320px) */
+
+@media (max-width: 380px) {
+    .conteudoPrincipal h1 { font-size: 1.4rem !important; }
+    .itemFaq { font-size: 15px !important; }
+    .cardContato { padding: 20px 15px !important; }
+    .campoEntrada input, .campoMensagem textarea { font-size: 13px !important; }
+}
+@media (max-width: 900px) {
+
+  .texto-hero h2 {
+    font-size: 24px !important;
+  }
+
+}
+
+@media (max-width: 1024px) {
+  .texto-hero h2 { font-size: 26px !important; }
+
+}
+
+@media (max-width: 768px) {
+  .texto-hero h1 { font-size: 36px !important; }
+  .texto-hero h2 { font-size: 22px !important; }
+  .pedidos-sub{font-size: 28px !important;}
+  .pagamento-title { font-size: 36px !important; margin-bottom: 10px; }
+  .pagamento-sub { font-size: 26px !important; }
+  .config-title { font-size: 36px !important; margin-bottom: 10px; }
+  .config-sub { font-size: 26px !important; }
+  .s1 h2, .s2 h2, span, .botao{
+      font-size: 24px !important;
+    }
+
+}
+.setting-card h2 {
+    color: #153b3d !important;
+    font-size: 24px !important;
+  }
+@media (max-width: 600px) {
+  .texto-hero h1 { font-size: 32px !important; }
+  .valor-p { font-size: 24px !important; }
+  .pedidos-sub{font-size: 24px !important;}
+  .hero-content-enderecos h1{ font-size: 32px !important; margin-bottom: 10px; }
+  .hero-content-enderecos h2{ font-size: 24px !important; }
+  .pagamento-title { font-size: 32px !important;  }
+  .pagamento-sub { font-size: 24px !important; }
+  .config-title { font-size: 32px !important; margin-bottom: 10px; }
+  .config-sub { font-size: 24px !important; }
+
+
+}
+
+@media (max-width: 430px) {
+  .texto-hero h1 { font-size: 28px !important; }
+  .texto-hero h2 { font-size: 18px !important; }
+  .pedidos-title{font-size: 32px !important;}
+  .pedidos-sub{font-size: 18px !important;}
+  .order-summary h2, p{font-size: 18px !important;}
+  .hero-content-enderecos h1{ font-size: 32px !important; }
+  .hero-content-enderecos h2{ font-size: 18px !important; }
+  .pagamento-sub { font-size: 22px !important; width: 90%; text-align: center !important; margin: 0 auto; }
+
+
+
+
+}
+@media (max-width: 480px){
+  .config-sub { font-size: 18px !important; }
+  .setting-card h2 { font-size: 18px !important; }
+  .s1 h2, .s2 h2, span, button{
+      font-size: 20px !important;
+    }
+
+
+}
+.plano-h3, .valor-p, .valor-p2{
+  color: black !important;
+}
+label{
+  text-align: justify !important;
+}
+.termos-container h2{
+  color: #1a1a1a !important;
+  text-align: justify !important;
+  font-size: 1.5rem !important;
+}
+.termos-container p{
+  text-align: justify !important ;
+}
+.termos-container h1{
+  font-size: 2.5rem !important;
+  color: #1a1a1a !important;
+  ;
+}
+.pedidos-sub, .hero-content-enderecos h2, .pagamento-sub, .config-sub{
+  color: #1a1a1a !important;}
+
+
+  @media (max-width: 480px) {
+
+      .mh-hero-text h1 {
+    font-size: 28px !important;
+  }
+
+  .mh-hero-text h2 {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+  }
+    .produtos{
+        font-size: 32px !important;
+    }
+
+    .ortese,
+    .avaliacao,
+    .preco {
+        font-size: 12px !important;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .mh-hero-text h1 {
+    font-size: 32px !important;
+  }
+
+  .mh-hero-text h2 {
+    font-size: 20px !important;
+    font-weight: 500 !important;
+  }
+    .produtos { font-size: 44px; margin-bottom: 40px; padding: 0 16p !important }
+}
+
+@media (max-width: 430px) {
+      .mh-hero-text h1 {
+    font-size: 28px !important;
+  }
+
+  .mh-hero-text h2 {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+  }
+    .produtos { font-size: 34px; margin-bottom: 32px !important; }
+    .s1 h2, .s2 h2, span{
+      font-size: 18px !important;
+    }
+    @media (max-width: 1024px) {
+  .botao-comprar {
+    font-size: 18px !important;}
+ 
+  .botao-comprar span {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .botao-comprar {
+
+    font-size: 16px !important;
+  }
+  .botao-comprar span {
+    font-size: 14px !important;
+  }
+}
+
+
+
+}

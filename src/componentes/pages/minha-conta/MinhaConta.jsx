@@ -55,10 +55,6 @@ export default function MinhaConta() {
                 <IconMail />
                 <span>camila.souza@gmail.com</span>
               </div>
-              <div className="mc-info-row">
-                <IconPhone />
-                <span>(11) 91234-5678</span>
-              </div>
             </div>
           </div>
 
@@ -82,15 +78,23 @@ export default function MinhaConta() {
                     <span className="mc-patient-val">35 anos</span>
                   </div>
                   <div className="mc-patient-item">
-                    <span className="mc-patient-key">Mão afetada</span>
-                    <span className="mc-patient-val">Direita</span>
+                    <span className="mc-patient-key">Peso (kg)</span>
+                    <span className="mc-patient-val">70 kg</span>
                   </div>
                   <div className="mc-patient-item">
                     <span className="mc-patient-key">Diagnóstico</span>
                     <span className="mc-patient-val">Paralisia Cerebral</span>
                   </div>
                   <div className="mc-patient-item">
-                    <span className="mc-patient-key">Objetivo</span>
+                    <span className="mc-patient-key">Mão afetada</span>
+                    <span className="mc-patient-val">Direita</span>
+                  </div>
+                  <div className="mc-patient-item">
+                    <span className="mc-patient-key">Grau de dificuldade motora</span>
+                    <span className="mc-patient-val">Moderada</span>
+                  </div>
+                  <div className="mc-patient-item">
+                    <span className="mc-patient-key">Principal objetivo da reabilitação</span>
                     <span className="mc-patient-val">Recuperar movimentos finos da mão</span>
                   </div>
                 </div>

@@ -3,11 +3,10 @@ import "./pedidos.css";
 import Header2 from "../../Header2";
 import Footer from "../../Footer";
 import AccountMenu from "../../AccountMenu";
-import Onda from "../../../assets/onda fina.png";
 import Direita from "../../../assets/direita1.png";
 import Esquerda from "../../../assets/esquerda.png";
 
-const filters = ["Todos", "Em andamento", "Enviados", "Concluídos", "Cancelados"];
+
 
 const orders = [
   {
@@ -17,7 +16,7 @@ const orders = [
     product: "MoveHand mão direita",
     details: "Tam: M · Quantidade: 1",
     date: "20/06/2026",
-    total: "R$ 2.497,00",
+    total: "R$ 700,00",
     progress: "18%",
     steps: [
       { label: "Pedido confirmado", date: "20/06/2026", state: "active" },
@@ -33,7 +32,7 @@ const orders = [
     product: "MoveHand mão direita",
     details: "Tam: M · Quantidade: 1",
     date: "18/06/2026",
-    total: "R$ 2.497,00",
+    total: "R$ 700,00",
     progress: "52%",
     steps: [
       { label: "Pedido confirmado", date: "18/06/2026", state: "done" },
@@ -50,32 +49,28 @@ export default function MeusPedidos() {
   return (
     <main className="pedidos-page">
       <Header2 />
-      <img src={Onda} alt="Onda fina" />
+      <div className="onda_topo">
+          <svg
+            viewBox="0 0 1440 450"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path fill="#0b5c6a" d="M0,250 C300,-150 1100,700 1440,250 V450 H0 Z" />
+            <path fill="#ffb366" d="M0,280 C300,-120 1100,730 1440,280 V450 H0 Z" />
+            <path fill="#efe39b" d="M0,310 C300,-90 1100,760 1440,310 V450 H0 Z" />
+            <path fill="#fff" d="M0,340 C300,-60 1100,790 1440,340 V450 H0 Z" />
+          </svg>
+        </div>
       <div className="pedidos-container">
 
         <section className="pedidos-hero">
-          <div className="hero-copy">
+          <div className="hero-pedidos">
             
-            <h1 className="hero-badge">Meus pedidos</h1>
-            <h2>Acompanhe o status de seus pedidos</h2>
+            <h1 className="pedidos-title">Meus pedidos</h1>
+            <h2 className="pedidos-sub">Acompanhe o status de seus pedidos</h2>
             
           </div>
 
-          <div className="hero-tabs">
-            {["Todos", "Em andamento", "Enviados", "Concluídos", "Cancelados"].map(
-              (filter) => (
-                <button
-                  key={filter}
-                  className={
-                    activeFilter === filter ? "tab-button active" : "tab-button"
-                  }
-                  onClick={() => setActiveFilter(filter)}
-                >
-                  {filter}
-                </button>
-              )
-            )}
-          </div>
         </section>
 
         <section className="order-grid">

@@ -1,9 +1,10 @@
 import './style.css';
 import { useState } from "react";
-import Header from "../../Header";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "../../Footer";
-import CadastroImg from "../../../assets/cadastro.png"
-import { Link } from "react-router-dom";
+import CadastroImg from "../../../assets/cadastro.png";
+import Header from '../../Header';
+import api from '../../../services/api';
 
 const IconEmail = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -56,18 +57,66 @@ const AppleIcon = () => (
 );
 
 export default function Cadastro() {
+  const navigate = useNavigate();
+  const [termos, setTermos] = useState(false);
   const [showSenha, setShowSenha] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
-  const [cadastroData, setCadastroData] = useState({ nome: "", email: "", senha: "", confirma: "" });
+  const [cadastroData, setCadastroData] = useState({
+    nome: "",
+    sobrenome: "",
+    email: "",
+    senha: "",
+    confirma: "",
+  });
 
-  const handleCadastroSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (cadastroData.senha !== cadastroData.confirma) {
-      alert("As senhas não coincidem!");
+      alert('As senhas não coincidem.');
       return;
     }
-    console.log("Dados de cadastro:", cadastroData);
-    // TODO: conectar com sua API aqui
+
+    if (!termos) {
+      alert('Você precisa aceitar os termos para continuar.');
+      return;
+    }
+
+    const dadosCadastro = {
+      nome: cadastroData.nome,
+      sobrenome: cadastroData.sobrenome,
+      email: cadastroData.email,
+      senha: cadastroData.senha,
+    };
+
+    console.log('Payload enviado:', dadosCadastro);
+
+    try {
+      const response = await api.post('/usuarios/cadastro/paciente', dadosCadastro);
+      console.log('Resposta do cadastro:', response.data);
+
+      const { token, idUser } = response.data;
+
+      if (token) {
+        localStorage.setItem('token', token);
+        api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+      }
+
+      if (idUser) {
+        localStorage.setItem('idUser', idUser);
+      }
+
+      navigate('/complete-perfil');
+    } catch (error) {
+      console.error('Erro no cadastro:', error);
+      console.error('Erro response:', error.response?.data);
+      const responseMessage = error.response?.data?.message || error.response?.data?.erro || error.response?.data?.mensagem;
+      if (responseMessage?.toString().toLowerCase().includes('email')) {
+        alert(responseMessage);
+      } else {
+        alert(responseMessage || 'Não foi possível finalizar o cadastro. Tente novamente.');
+      }
+    }
   };
 
   return (
@@ -75,7 +124,6 @@ export default function Cadastro() {
       <Header />
       <div className="lc-page">
         <div className="lc-card">
-
           <div className="lc-form-side">
             <h1 className="lc-title">Crie sua conta</h1>
             <p className="lc-subtitle">
@@ -83,22 +131,37 @@ export default function Cadastro() {
             </p>
 
             <div className="lc-toggle">
-              <a href="/entrar" className="lc-tab">Entrar</a>
-              <button className="lc-tab active">Cadastre-se</button>
+              <Link to="/entrar" className="lc-tab">Entrar</Link>
+              <button className="lc-tab active" type="button">Cadastre-se</button>
             </div>
 
-            <form onSubmit={handleCadastroSubmit}>
-              <div className="lc-field">
-                <label className="lc-label">Nome completo</label>
-                <div className="lc-input-wrap">
-                  <IconUser />
-                  <input
-                    type="text"
-                    placeholder="Seu nome completo"
-                    value={cadastroData.nome}
-                    onChange={(e) => setCadastroData({ ...cadastroData, nome: e.target.value })}
-                    required
-                  />
+            <form onSubmit={handleSubmit}>
+              <div className="cf-row">
+                <div className="lc-field">
+                  <label className="lc-label">Nome</label>
+                  <div className="lc-input-wrap">
+                    <IconUser />
+                    <input
+                      type="text"
+                      placeholder="Insira seu nome"
+                      value={cadastroData.nome}
+                      onChange={(e) => setCadastroData({ ...cadastroData, nome: e.target.value })}
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="lc-field">
+                  <label className="lc-label">Sobrenome</label>
+                  <div className="lc-input-wrap">
+                    <IconUser />
+                    <input
+                      type="text"
+                      placeholder="Insira seu sobrenome"
+                      value={cadastroData.sobrenome}
+                      onChange={(e) => setCadastroData({ ...cadastroData, sobrenome: e.target.value })}
+                      required
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -151,31 +214,26 @@ export default function Cadastro() {
                 </div>
               </div>
 
-             
-                <Link to="/completar-perfil" className="lc-submit">
-                  Criar conta</Link>
-              <div className="lc-alt-link">
-                Já tem uma conta?{" "}
-                <a href="/entrar">Entrar</a>
-              </div>
+              <label className="cf-checkbox">
+                <input type="checkbox" checked={termos} onChange={() => setTermos(!termos)} required />
+                <span>
+                  Li e concordo com os <Link to="/termos" className="cf-link">Termos de Consentimento e Tratamento de Dados</Link> conforme a LGPD.
+                </span>
+              </label>
 
-              <div className="lc-divider">Ou continue com</div>
-
-              <div className="lc-social-row">
-                <button type="button" className="lc-social-btn">
-                  <GoogleIcon /> Continuar com Google
-                </button>
-                <button type="button" className="lc-social-btn">
-                  <AppleIcon /> Continuar com Apple
-                </button>
-              </div>
+              <button type="submit" className="lc-submit">
+                Cadastrar
+              </button>
             </form>
+
+            <div className="lc-alt-link">
+              Já tem uma conta? <Link to="/entrar">Entrar</Link>
+            </div>
           </div>
 
           <div className="lc-img-side">
-            <img className="lc-cadastro-img" src={CadastroImg} alt="DexMove" />
+            <img src={CadastroImg} alt="DexMove" />
           </div>
-
         </div>
       </div>
       <Footer />

@@ -1,7 +1,6 @@
 .ep-page {
   width: 100%;
   min-height: calc(100vh - 80px);
-  background: #F5F0E8;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -16,21 +15,22 @@
   background: #fff;
   border-radius: 20px;
   padding: 36px 40px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  box-shadow: 0 4px 24px #f0e8d3;
+  border: 1px solid #fcf1e0
 }
 
 .ep-header { margin-bottom: 28px; }
 
 .ep-title {
-  font-size: 1.45rem;
+  font-size: 1.7rem;
   font-weight: 700;
   color: #1a6e6e;
   margin-bottom: 4px;
 }
 
 .ep-subtitle {
-  font-size: 0.83rem;
-  color: #888;
+  font-size: 1.3rem;
+  color: #1a1a1a;
 }
 
 /* Grid */
@@ -51,9 +51,9 @@
 .ep-field--full { width: 100%; }
 
 .ep-label {
-  font-size: 0.78rem;
+  font-size: 1rem;
   font-weight: 600;
-  color: #444;
+  color: #1a1a1a;
 }
 
 .ep-input {
@@ -62,7 +62,7 @@
   border: 1.5px solid #E0D9CC;
   border-radius: 10px;
   font-family: 'Roboto', sans-serif;
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: #1a1a1a;
   background: #F5F0E8;
   box-sizing: border-box;
@@ -81,7 +81,7 @@
   border: 1.5px solid #E0D9CC;
   border-radius: 10px;
   font-family: 'Roboto', sans-serif;
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: #1a1a1a;
   background: #F5F0E8;
   box-sizing: border-box;

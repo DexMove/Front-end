@@ -1,19 +1,21 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./CompletarPerfil.css";
-import Header from "../../Header";
 import Footer from "../../Footer";
-import {Link} from "react-router-dom";
+import Header from '../../Header';
+import api from "../../../services/api";
 
 export default function CompletarPerfil() {
-  const [quemUsa, setQuemUsa] = useState("eu");
+  const navigate = useNavigate();
+  const [quemUtilizara, setQuemUtilizara] = useState("eu_mesmo");
   const [form, setForm] = useState({
     idade: "",
     peso: "",
     diagnostico: "",
     maoAfetada: "",
     grauDificuldade: "",
-    objetivoReabilitacao: "",
-    nomeResponsavel: "",
+    objetivo: "",
+    nomePaciente: "",
     parentesco: "",
     telefone: "",
     email: "",
@@ -23,9 +25,55 @@ export default function CompletarPerfil() {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    console.log({ ...form, quemUsa });
+
+    const payload = {
+      idade: Number(form.idade),
+      peso: Number(form.peso),
+      diagnostico: form.diagnostico,
+      maoAfetada: form.maoAfetada,
+      grauDificuldade: form.grauDificuldade,
+      objetivo: form.objetivo,
+      quemUtilizara: quemUtilizara,
+    };
+
+    if (quemUtilizara === "outro") {
+      payload.nomePaciente = form.nomePaciente;
+      payload.parentesco = form.parentesco.toUpperCase();
+      payload.email = form.email;
+    }
+
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+      alert("Sessão expirada. Faça login novamente.");
+      navigate("/entrar");
+      return;
+    }
+
+    try {
+      await api.put("/usuarios/perfil/clinico", payload, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (quemUtilizara === "eu_mesmo") {
+        navigate("/minha-conta2");
+      } else {
+        navigate("/minha-conta");
+      }
+    } catch (error) {
+      console.error("Erro ao salvar perfil clínico:", error);
+      if (error.response?.status === 401 || error.response?.status === 403) {
+        alert("Sessão expirada. Faça login novamente.");
+        localStorage.removeItem('token');
+        navigate("/entrar");
+      } else {
+        alert("Erro ao salvar perfil. Tente novamente.");
+      }
+    }
   }
 
   return (
@@ -63,11 +111,10 @@ export default function CompletarPerfil() {
                 <div className="cp-select-wrap">
                   <select className="cp-select" name="diagnostico" value={form.diagnostico} onChange={handleChange} required>
                     <option value="">Selecione</option>
-                    <option>AVC</option>
-                    <option>Lesão medular</option>
-                    <option>Paralisia cerebral</option>
-                    <option>Trauma ortopédico</option>
-                    <option>Outro</option>
+                    <option value="avc">AVC</option>
+                    <option value="lesao_medular">Lesão medular</option>
+                    <option value="paralisia_cerebral">Paralisia cerebral</option>
+                    <option value="trauma_ortopedico">Trauma ortopédico</option>
                   </select>
                 </div>
               </div>
@@ -76,9 +123,9 @@ export default function CompletarPerfil() {
                 <div className="cp-select-wrap">
                   <select className="cp-select" name="maoAfetada" value={form.maoAfetada} onChange={handleChange} required>
                     <option value="">Selecione</option>
-                    <option>Direita</option>
-                    <option>Esquerda</option>
-                    <option>Ambas</option>
+                    <option value="Direita">Direita</option>
+                    <option value="Esquerda">Esquerda</option>
+                    <option value="Ambas">Ambas</option>
                   </select>
                 </div>
               </div>
@@ -91,21 +138,22 @@ export default function CompletarPerfil() {
                 <div className="cp-select-wrap">
                   <select className="cp-select" name="grauDificuldade" value={form.grauDificuldade} onChange={handleChange} required>
                     <option value="">Selecione</option>
-                    <option>Leve</option>
-                    <option>Moderado</option>
-                    <option>Grave</option>
+                    <option value="leve">Leve</option>
+                    <option value="moderada">Moderado</option>
+                    <option value="grave">Grave</option>
                   </select>
                 </div>
               </div>
               <div className="cp-field">
                 <label className="cp-label">Principal objetivo da reabilitação</label>
                 <div className="cp-select-wrap">
-                  <select className="cp-select" name="objetivoReabilitacao" value={form.objetivoReabilitacao} onChange={handleChange} required>
+                  <select className="cp-select" name="objetivo" value={form.objetivo} onChange={handleChange} required>
                     <option value="">Selecione</option>
-                    <option>Recuperar força</option>
-                    <option>Melhorar coordenação</option>
-                    <option>Reduzir dor</option>
-                    <option>Independência funcional</option>
+                    <option value="recuperar_forca">Recuperar força</option>
+                    <option value="melhorar_coordenacao">Melhorar coordenação</option>
+                    <option value="reduzir_dor">Reduzir dor</option>
+                    <option value="independencia_funcional">Independência funcional</option>
+                    <option value="outro">Outro</option>
                   </select>
                 </div>
               </div>
@@ -115,40 +163,45 @@ export default function CompletarPerfil() {
             <div className="cp-field cp-field--full">
               <label className="cp-label">Quem utilizará a órtese?</label>
               <label className="cp-radio">
-                <input type="radio" name="quemUsa" value="eu" checked={quemUsa === "eu"} onChange={() => setQuemUsa("eu")} />
+                <input type="radio" name="quemUtilizara" value="eu_mesmo" checked={quemUtilizara === "eu_mesmo"} onChange={() => setQuemUtilizara("eu_mesmo")} />
                 <span className="cp-radio-dot" />
                 Eu mesmo
               </label>
               <label className="cp-radio">
-                <input type="radio" name="quemUsa" value="outro" checked={quemUsa === "outro"} onChange={() => setQuemUsa("outro")} />
+                <input type="radio" name="quemUtilizara" value="outro" checked={quemUtilizara === "outro"} onChange={() => setQuemUtilizara("outro")} />
                 <span className="cp-radio-dot" />
                 Outra pessoa sob minha responsabilidade
               </label>
             </div>
 
             {/* Dados do responsável — aparece se "outro" */}
-            {quemUsa === "outro" && (
+            {quemUtilizara === "outro" && (
               <div className="cp-responsavel">
                 <p className="cp-responsavel-title">Dados do responsável</p>
-                <div className="cp-row">
+               
                   <div className="cp-field">
-                    <label className="cp-label">Nome da responsável</label>
-                    <input className="cp-input cp-input--dark" name="nomeResponsavel" type="text"
-                      value={form.nomeResponsavel} onChange={handleChange} required />
+                    <label className="cp-label">Nome da pessoa que utilizará a órtese</label>
+                    <input className="cp-input cp-input--dark" name="nomePaciente" type="text"
+                      value={form.nomePaciente} onChange={handleChange} required />
                   </div>
                   <div className="cp-field">
                     <label className="cp-label">Parentesco</label>
-                    <input className="cp-input cp-input--dark" name="parentesco" type="text"
-                      value={form.parentesco} onChange={handleChange} required />
+                    <div className="cp-select-wrap">
+                      <select className="cp-select cp-select--dark" name="parentesco" value={form.parentesco} onChange={handleChange} required>
+                        <option value="">Selecione</option>
+                        <option value="PAI">Pai</option>
+                        <option value="MAE">Mãe</option>
+                        <option value="CONJUGE">Cônjuge</option>
+                        <option value="IRMAO_IRMA">Irmão/Irmã</option>
+                        <option value="FILHO_FILHA">Filho/Filha</option>
+                        <option value="TUTOR_LEGAL">Tutor Legal</option>
+                        <option value="OUTRO">Outro</option>
+                      </select>
+                    </div>
                   </div>
-                </div>
+            
                 <div className="cp-row">
-                  <div className="cp-field">
-                    <label className="cp-label">Telefone</label>
-                    <input className="cp-input cp-input--dark" name="telefone" type="tel"
-                      placeholder="(00) 00000-0000"
-                      value={form.telefone} onChange={handleChange} required />
-                  </div>
+                  
                   <div className="cp-field">
                     <label className="cp-label">E-mail</label>
                     <input className="cp-input cp-input--dark" name="email" type="email"
@@ -158,7 +211,7 @@ export default function CompletarPerfil() {
               </div>
             )}
 
-            <Link to="/minha-conta" className="cp-submit">Salva perfil</Link>
+            <button type="submit" className="cp-submit">Salvar perfil</button>
           </form>
         </div>
       </div>

@@ -1,0 +1,36 @@
+.termos-container {
+  margin: 120px auto 60px;
+  padding: 0 20px;
+  font-family: "Inter", sans-serif;
+  line-height: 1.8;
+}
+
+.termos-container h1 {
+  font-size: 3rem;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.termos-container h2 {
+  font-size: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.termos-container p {
+  font-size: 1rem;
+}
+@media (max-width: 780px){
+  
+.termos-container h1 {
+  font-size: 28px;
+}
+.termos-container h2{
+  font-size: 24px;
+}
+.termos-container p {
+  font-size: 16px;
+}
+}

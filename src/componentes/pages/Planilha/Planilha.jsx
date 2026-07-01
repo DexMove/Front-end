@@ -1,18 +1,19 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './Planilha.css';
 import {
-  FiUploadCloud,
-  FiCheckCircle,
-  FiUpload,
-  FiBarChart2,
-  FiShield,
-  FiHeadphones
-} from 'react-icons/fi';
-import { MdOutlineBackHand } from 'react-icons/md';
-import { AiOutlineRobot } from 'react-icons/ai';
+  UploadCloud,
+  CheckCircle,
+  Upload,
+  BarChart2,
+  Shield,
+  Headphones,
+  Hand,
+  Bot
+} from 'lucide-react';
 import Header2 from '../../Header2';
 import Footer from '../../Footer';
 import api from '../../../services/api';
+import { Link } from "react-router-dom";
 const Planilha = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [statusAnalise, setStatusAnalise] = useState({ text: 'Documentos aguardando análise.', type: 'idle' });
@@ -100,7 +101,7 @@ const Planilha = () => {
       </section>
 
       {/* Ondas Decorativas */}
-        <div className="top-wave">
+        <div className="onda_topo">
           <svg
             viewBox="0 0 1440 450"
             preserveAspectRatio="none"
@@ -126,7 +127,7 @@ const Planilha = () => {
 
             {/* Camada 4: Fundo (Cinza claro) */}
             <path
-              fill="#f9f9f9"
+              fill="#ffffff"
               d="M0,340 C300,-60 1100,790 1440,340 V450 H0 Z"
             />
           </svg>
@@ -134,7 +135,7 @@ const Planilha = () => {
 
       {/* Identificação */}
       <div className="planilha-id">
-        <MdOutlineBackHand className="hand-icon" />
+        <Hand className="hand-icon" />
 
         <div className="id-text">
           <strong>MoveHand</strong>
@@ -157,7 +158,7 @@ const Planilha = () => {
             onDragOver={handleDragOver}
             onDrop={handleDrop}
           >
-            <FiUploadCloud className="cloud-icon" />
+            <UploadCloud className="cloud-icon" />
 
             <p>
               Clique para selecionar formatos aceitos: .xlsx e .csv.
@@ -183,7 +184,6 @@ const Planilha = () => {
         {/* Status da Análise */}
         <div className={`status-card ${statusAnalise.type === 'error' ? 'status-error' : ''}`}>
           <div className="status-header">
-            <FiCheckCircle className="check-icon" />
             <h3>Status de análise</h3>
           </div>
 
@@ -207,19 +207,25 @@ const Planilha = () => {
         </div>
 
         {/* Botão Principal */}
-        <button
-          className="btn-submit"
-          onClick={handleSubmit}
-        >
-          <FiUpload className="btn-icon" />
-          Enviar planilha para análise.
-        </button>
+        <Link to="/controle" className="btn-link-submit">
+          <button
+            className="btn-submit"
+            onClick={handleSubmit}
+          >
+            <Upload className="submit-icon" />
+            <span className="btn-submit-text">
+              Enviar planilha
+              <br />
+              para análise
+            </span>
+          </button>
+        </Link>
       </div>
 
       {/* Cards Informativos */}
       <div className="info-cards-grid">
         <div className="info-card">
-          <FiBarChart2 className="card-icon" />
+          <BarChart2 className="card-icon" />
 
           <h4>Acompanhamento</h4>
 
@@ -229,7 +235,7 @@ const Planilha = () => {
         </div>
 
         <div className="info-card">
-          <AiOutlineRobot className="card-icon" />
+          <Bot className="card-icon" />
 
           <h4>Inteligência Artificial</h4>
 
@@ -239,7 +245,7 @@ const Planilha = () => {
         </div>
 
         <div className="info-card">
-          <FiShield className="card-icon" />
+          <Shield className="card-icon" />
 
           <h4>Segurança</h4>
 
@@ -259,10 +265,10 @@ const Planilha = () => {
           </p>
         </div>
 
-        <button className="btn-support">
+        <Link to="/suporte" className="btn-support" style={{ textDecoration: 'none' }}>
           Falar com suporte
-          <FiHeadphones className="support-icon" />
-        </button>
+          <Headphones className="support-icon" />
+        </Link>
       </div>
       <Footer />
     </main>

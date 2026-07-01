@@ -1,14 +1,19 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 /* Configurações Gerais */
 .planilha-container {
   width: 100%;
   margin: 0 auto;
-  padding: 20px 0;
-  background-color: #F5F5F5;
+  padding: 0px;
+  background-color: #ffffff;
   font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 35px; /* Espaçamento entre seções ligeiramente maior */
+  gap: 35px;
 }
 
 /* Centralizador de conteúdo */
@@ -25,29 +30,34 @@
 /* Seção Superior */
 .header-content {
   text-align: center;
-  max-width: 800px;
+  max-width: 1100px;
+  padding-top: 100px;
+  position: relative;
+  z-index: 2;
 }
 
 .header-content h1 {
-  font-size: clamp(26px, 4vw, 36px);
+  font-size: clamp(30px, 5vw, 42px);
   font-weight: 700;
   color: #1E1E1E;
-  margin-bottom: 10px;
+  margin: 0 0 8px 0;
+  display: block;
+  line-height: 1.2;
 }
 
 .header-content p {
-  font-size: 18px;
+  font-size: 22px;
   color: #333;
 }
 
-.top-wave {
+.onda_topo {
   width: 100%;
   height: 120px; /* Altura reduzida - ajuste conforme desejar */
   overflow: hidden;
-  margin-top: -20px; /* Remove espaçamento superior */
+  margin-top: 0px; /* Remove espaçamento superior */
 }
 
-.top-wave svg {
+.onda_topo svg {
   width: 100%;
   height: 100%;
   display: block;
@@ -58,7 +68,7 @@
   display: flex;
   align-items: center;
   gap: 15px;
-  max-width: 900px; /* Alinhado com a largura do card principal */
+  max-width: 1100px; /* Alinhado com a largura do card principal */
 }
 
 .hand-icon {
@@ -74,32 +84,42 @@
 }
 
 .id-text strong {
-  font-size: 16px;
+  font-size: 25px;
   color: #1E1E1E;
   font-weight: 700;
 }
 
 .id-text span {
-  font-size: 13px;
+  font-size: 25px;
   color: #666;
 }
 
 /* Card Principal - Expandido para preencher mais a tela */
 .main-card {
-  background-color: #F7F1EC;
+  background-color: #ffffff;
   border-radius: 28px;
   padding: clamp(25px, 5vw, 50px);
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   display: flex;
   flex-direction: column;
   gap: 30px;
-  max-width: 900px; /* Aumentado de 700px para 900px */
+  max-width: 1100px; 
+}
+
+.upload-section p {
+  margin-top: 0;
+  margin-bottom: 15px; 
+  color: #666;
+  font-size: 19px;
+  text-align: left; 
 }
 
 .upload-section h2 {
-  font-size: 22px;
+  font-size: 26px;
   color: #1E1E1E;
   text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
 }
 
 /* Área de Upload - Borda Sólida Corrigida */
@@ -115,6 +135,7 @@
   cursor: pointer;
   padding: 30px;
   transition: all 0.3s ease;
+  margin-top: 15px;
 }
 
 .upload-area:hover {
@@ -142,25 +163,37 @@
 
 .status-header {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 0;
 }
 
+
 .status-header h3 {
-  font-size: 18px;
+  font-size: 22px;
   color: #0B5C6A;
   margin: 0;
+  min-width: 120px;    /* Garante um espaço fixo para o rótulo */
+  line-height: 1.3;
 }
 
 /* Botão Principal */
+.btn-link-submit {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
 .btn-submit {
-  background-color: #0B5C6A;
-  color: #FFFFFF;
+  background-color: #F7E38B;
+  color: #1E1E1E;
   border: none;
   border-radius: 14px;
-  height: 64px;
-  font-size: 18px;
+  min-height: 70px;
+  padding: 15px 20px;
+  font-size: 22px;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -169,13 +202,24 @@
   cursor: pointer;
   transition: all 0.2s ease;
   width: 100%;
-  max-width: 450px; /* Botão centralizado e com largura controlada */
+  max-width: 450px;
   margin: 0 auto;
+  white-space: nowrap;
+}
+
+.btn-submit-text {
+  display: inline-block;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.submit-icon {
+  flex-shrink: 0;
 }
 
 .btn-submit:hover {
-  background-color: #084a55;
-  box-shadow: 0 5px 15px rgba(11, 92, 106, 0.3);
+  background-color: #f5d961;
+  transform: scale(1.05);
 }
 
 /* Cards Informativos - Grid mais larga */
@@ -192,6 +236,7 @@
   padding: 30px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.03);
   transition: transform 0.3s ease;
+  font-size: 25px;
 }
 
 .info-card:hover {
@@ -218,23 +263,23 @@
 }
 
 .support-text h5 {
-  color: #FFFFFF;
-  font-size: 22px;
+  color: #FFFFFF !important;
+  font-size: 26px;
   margin: 0 0 8px 0;
 }
 
 .support-text p {
   color: rgba(255,255,255,0.9);
-  font-size: 16px;
+  font-size: 19px;
 }
 
 .btn-support {
-  background-color: #F7E38B;
+  background-color: #F3E396;
   color: #1E1E1E;
   border: none;
   border-radius: 12px;
   padding: 15px 30px;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -244,29 +289,98 @@
 }
 
 .btn-support:hover {
-  background-color: #f5d961;
+  background-color: #e8d472;
   transform: scale(1.05);
 }
+
+
 
 /* --- AJUSTES DE RESPONSIVIDADE --- */
 
 @media (max-width: 850px) {
+  /* Força o banner de suporte a ficar sempre em linha */
   .support-banner {
-    flex-direction: column;
-    text-align: center;
-    padding: 30px;
+    flex-direction: row !important; 
+    justify-content: space-between !important;
+    padding: 20px !important;
+    gap: 15px !important;
+    display: flex !important;
+  }
+
+  .support-text h5 { font-size: 18px !important; }
+  .support-text p { font-size: 14px !important; }
+
+  .btn-support {
+    padding: 10px 15px !important;
+    font-size: 14px !important;
+    white-space: nowrap !important;
+    display: flex !important;
   }
   
+  /* Força os 3 cards informativos a ficarem lado a lado ignorando o minmax(300px) */
   .info-cards-grid {
-    grid-template-columns: 1fr;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important; 
+    gap: 10px !important;
   }
+
+  .info-card {
+    padding: 15px !important;
+    min-width: 0 !important; /* Impede o card de empurrar o vizinho */
+  }
+
+  .info-card h4 { font-size: 15px !important; }
+  .info-card p { font-size: 13px !important; }
+  .card-icon { font-size: 25px !important; }
 }
 
 @media (max-width: 480px) {
-  .main-card {
-    padding: 20px;
+  .main-card { padding: 20px !important; }
+  .header-content h1 { font-size: 22px !important; }
+
+  /* Força 3 colunas em celulares muito pequenos */
+  .info-cards-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important; 
+    gap: 5px !important;
   }
-  .header-content h1 {
-    font-size: 24px;
+
+  .info-card {
+    padding: 10px 4px !important;
   }
+
+  /* Diminuição agressiva de fonte para não quebrar o layout lado a lado */
+  .info-card h4 { 
+    font-size: 10px !important; 
+    line-height: 1.1 !important;
+  }
+
+  .info-card p { 
+    font-size: 9px !important; 
+    line-height: 1.2 !important;
+  }
+
+  .card-icon { font-size: 18px !important; }
+
+  /* Suporte lado a lado no celular */
+  .support-banner {
+    flex-direction: row !important;
+    padding: 12px 8px !important;
+    gap: 5px !important;
+    display: flex !important;
+  }
+
+  .support-text h5 { font-size: 13px !important; }
+  .support-text p { font-size: 10px !important; }
+
+  .btn-support {
+    font-size: 10px !important;
+    padding: 6px 8px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Ajuste da identificação MoveHand */
+  .id-text strong { font-size: 15px !important; }
+  .id-text span { font-size: 13px !important; }
+  .hand-icon { font-size: 20px !important; }
 }

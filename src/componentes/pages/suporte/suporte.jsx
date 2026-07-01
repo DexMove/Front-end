@@ -3,11 +3,19 @@ import styles from "./suporte.module.css";
 import iconeNavegar from "../../../assets/icons8-navegar-60.png";
 import iconeSeta from "../../../assets/weui_arrow-filled.png";
 import imagemContato from "../../../assets/image_62.png";
-import Header from "../../Header";
 import Footer from "../../Footer";
+import Header from '../../Header';
 
 function Suporte() { 
     const [faqAberto, setFaqAberto] = useState(null);
+    const [enviado, setEnviado] = useState(false);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setEnviado(true);
+        setTimeout(() => setEnviado(false), 5000);
+        e.target.reset();
+    };
 
     // 1. Lista organizada com "conteudo" sendo um array para os mini-cards
     const perguntas = [
@@ -35,15 +43,15 @@ function Suporte() {
             conteudo: [
                 {
                     q: "Passo a passo inicial",
-                    r: "Basta ligar o dispositivo, ativar o Bluetooth do seu celular e seguir o guia no app oficial."
+                    r: "Basta ligar o dispositivo, ativar o Bluetooth do seu celular e seguir o guia no site."
                 },
                 {
                     q: "Problemas de conexão?",
-                    r: "Verifique se o Bluetooth do seu celular está ativo para sincronizar os dados com o aplicativo. Se falhar, segure o botão reset por 5 segundos."
+                    r: "Verifique se o Bluetooth do seu celular está ativo para sincronizar os dados. Se falhar, segure o botão reset por 5 segundos."
                 },
                 {
                     q: "Como calibrar?",
-                    r: "No primeiro uso, o app pedirá para você realizar o movimento máximo de abertura e fechamento. Isso define seus limites anatômicos e garante que a órtese respeite sua amplitude de movimento."
+                    r: "No primeiro uso, realize o exercício de abertura e fechamento. Isso define seus limites anatômicos e garante que a órtese respeite sua amplitude de movimento."
                 }
             ]
         },
@@ -53,7 +61,7 @@ function Suporte() {
             conteudo: [
                 {
                     q: "Posso usar diariamente?",
-                    r: "A MoviHand é um dispositivo de suporte à reabilitação motora. No modo assistido, ela auxilia na execução de movimentos passivos e repetitivos para preservar a mobilidade das articulações, devendo ser utilizada estritamente sob orientação profissional."
+                    r: "Esse parâmetro é definido por seu fisioterapeuta. A MoveHand é utilizada estritamente sob orientação profissional."
                 },
                 {
                     q: "Quais são os modos?",
@@ -188,21 +196,27 @@ function Suporte() {
                             <div className={styles.cardContato}>
                                 <h3>Entre em contato com o suporte técnico</h3>
                                 <p>Nossa equipe está pronta para ajudar você com qualquer dúvida sobre a MoviHand.</p>
-                                <form className={styles.formularioSuporte}>
-                                    <div className={styles.campoEntrada}>
-                                        <label htmlFor="email">E-mail</label>
-                                        <input type="email" id="email" placeholder="exemplo@email.com" />
+                                {enviado ? (
+                                    <div className={styles.sucessoMsg}>
+                                        Mensagem enviada com sucesso! Nossa equipe entrará em contato em breve.
                                     </div>
-                                    <div className={styles.campoEntrada}>
-                                        <label htmlFor="tel">Telefone de contato</label>
-                                        <input type="tel" id="tel" placeholder="(00) 00000-0000" />
-                                    </div>
-                                    <div className={styles.campoMensagem}>
-                                        <label htmlFor="msg">Como podemos ajudar?</label>
-                                        <textarea id="msg" rows="4" placeholder="Descreva sua dúvida ou problema..."></textarea>
-                                    </div>
-                                    <button type="submit" className={styles.btnEnviar}>Enviar Mensagem</button>
-                                </form>
+                                ) : (
+                                    <form onSubmit={handleSubmit} className={styles.formularioSuporte}>
+                                        <div className={styles.campoEntrada}>
+                                            <label htmlFor="email">E-mail</label>
+                                            <input type="email" id="email" placeholder="exemplo@email.com" required />
+                                        </div>
+                                        <div className={styles.campoEntrada}>
+                                            <label htmlFor="tel">Telefone de contato</label>
+                                            <input type="tel" id="tel" placeholder="(00) 00000-0000" required />
+                                        </div>
+                                        <div className={styles.campoMensagem}>
+                                            <label htmlFor="msg">Como podemos ajudar?</label>
+                                            <textarea id="msg" rows="4" placeholder="Descreva sua dúvida ou problema..." required></textarea>
+                                        </div>
+                                        <button type="submit" className={styles.btnEnviar}>Enviar Mensagem</button>
+                                    </form>
+                                )}
                             </div>
                         </div>
                     </div>

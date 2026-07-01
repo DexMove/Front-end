@@ -1,8 +1,10 @@
 import './style.css';
 import { useState } from "react";
-import Header from "../../Header";
+import { Link, useNavigate } from 'react-router-dom';
 import Footer from "../../Footer";
-import Cadastro from "../../../assets/cadastro.png"
+import Cadastro from "../../../assets/cadastro.png";
+import Header from '../../Header';
+import api from '../../../services/api';
 
 const IconEmail = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -48,13 +50,58 @@ const AppleIcon = () => (
 );
 
 export default function Login() {
+  const navigate = useNavigate();
   const [showSenha, setShowSenha] = useState(false);
   const [loginData, setLoginData] = useState({ email: "", senha: "" });
 
-  const handleLoginSubmit = (e) => {
+  const handleLoginSubmit = async (e) => {
     e.preventDefault();
-    console.log("Dados de login:", loginData);
-    // TODO: conectar com sua API aqui
+
+    if (!loginData.email || !loginData.senha) {
+      alert('Preencha email e senha para continuar.');
+      return;
+    }
+
+    try {
+      console.log('Tentando login com:', loginData);
+      const response = await api.post('/api/auth/login', loginData);
+      console.log('Resposta do login:', response.data);
+      const { token, tipoUsuario, idUser } = response.data;
+
+      if (!token) {
+        throw new Error('Token não foi retornado pelo servidor.');
+      }
+
+      localStorage.setItem('token', token);
+      if (idUser) localStorage.setItem('idUser', idUser);
+      if (tipoUsuario) localStorage.setItem('tipoUsuario', tipoUsuario);
+      api.defaults.headers.common.Authorization = `Bearer ${token}`;
+
+      console.log('Login bem-sucedido. tipoUsuario:', tipoUsuario, 'idUser:', idUser);
+
+      if (tipoUsuario?.toString().toLowerCase().includes('fisio')) {
+        navigate('/conta-fisio');
+      } else {
+        navigate('/area-controle');
+      }
+    } catch (error) {
+      console.error('Erro no login:', error);
+      console.error('Erro response:', error.response?.data);
+      console.error('Status:', error.response?.status);
+      
+      const responseMessage = error.response?.data?.message || error.response?.data?.erro || error.response?.data?.mensagem;
+      const lowerMessage = responseMessage?.toString().toLowerCase() || '';
+
+      if (error.response?.status === 401) {
+        alert('Email ou senha incorretos. Verifique e tente novamente.');
+      } else if (lowerMessage.includes('senha')) {
+        alert('Senha incorreta. Verifique e tente novamente.');
+      } else if (lowerMessage.includes('email')) {
+        alert('Email não encontrado. Verifique ou crie uma conta.');
+      } else {
+        alert(responseMessage || 'Não foi possível efetuar login. Verifique os dados e tente novamente.');
+      }
+    }
   };
 
   return (
@@ -68,8 +115,10 @@ export default function Login() {
               Entre para continuar acompanhando sua jornada com a <strong>DexMove</strong>
             </p>
             <div className="lc-toggle">
-              <button className="lc-tab active">Entrar</button>
-              <a href="/bem-vindo" className="lc-tab">Cadastre-se</a>
+              <button className="lc-tab active" type="button">Entrar</button>
+              <Link to="/bem-vindo" className="lc-tab">
+                Cadastre-se
+              </Link>
             </div>
             <form onSubmit={handleLoginSubmit}>
               <div className="lc-field">
@@ -106,27 +155,28 @@ export default function Login() {
               <button type="submit" className="lc-submit">Entrar</button>
 
               <div className="lc-alt-link">
-                Não tem uma conta?{" "}
-                <a href="/bem-vindo">Cadastre-se</a>
+                Não tem uma conta?{' '}
+                <Link to="/bem-vindo" className="lc-tab">
+                  Cadastre-se
+                </Link>
               </div>
 
-              <div className="lc-divider">Ou continue com</div>
+              <div className="lc-divider">ou continue com</div>
 
               <div className="lc-social-row">
                 <button type="button" className="lc-social-btn">
-                  <GoogleIcon /> Continuar com Google
+                  <GoogleIcon /> Google
                 </button>
                 <button type="button" className="lc-social-btn">
-                  <AppleIcon /> Continuar com Apple
+                  <AppleIcon /> Apple
                 </button>
               </div>
             </form>
           </div>
 
           <div className="lc-img-side">
-            <img className="lc-cadastro-img" src={Cadastro} alt="DexMove" />
+            <img src={Cadastro} alt="DexMove" />
           </div>
-
         </div>
       </div>
       <Footer />

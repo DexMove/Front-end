@@ -1,7 +1,12 @@
+/* ========== CONFIGURAÇÕES GERAIS ========== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  background-color: #ffffff; /* Garante o fundo branco em todo o site */
 }
 
 .container {
@@ -9,7 +14,7 @@
   overflow-x: hidden;
 }
 
-/* ========== SEÇÃO 1: VÍDEO ========== */
+/* ========== SEÇÃO 1: VÍDEO (HERO) ========== */
 .secaoVideo {
   width: 100%;
   height: 100vh;
@@ -64,13 +69,16 @@
   opacity: 0.95;
 }
 
-/* ========== SEÇÃO 2: ONDAS ========== */
+/* ========== SEÇÃO 2: ONDAS (DEXMOVE) ========== */
 .secaoOndas {
   position: relative;
   width: 100%;
-  min-height: 750px;
+  min-height: 650px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  padding: 50px 0; 
+  background-color: #ffffff;
 }
 
 .containerOndas {
@@ -86,77 +94,49 @@
   width: 100%;
   height: 100%;
   display: block;
-}
-
-.conteudoOndas {
-  position: relative;
-  z-index: 2;
-  max-width: 1300px;
-  width: 90%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 60px;
-  padding: 80px 0;
-}
-
-.textoOndas {
-  flex: 1;
-  color: white;
-  margin-left: 85px;
-  margin-top: -200px;
-}
-
-.textoOndas h2 {
-  font-size: 42px;
-  margin-bottom: 20px;
-}
-
-.textoOndas p {
-  font-size: 30px;
-  line-height: 1.6;
-}
-
-.imagemOndas {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: -200px;
-}
-
-.imagemEquipe {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  border-radius: 30px;
   object-fit: cover;
 }
 
-.ondaDexy {
-  position: absolute;
-  bottom: -100px;
-  left: 0;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  line-height: 0;
-  right: 0;
+.containerTextoDestaque {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  padding: 0 5%;
+  transform: translateY(-100px); 
 }
 
-.ondaDexy svg {
+.textoOndasCentralizado {
+  color: white;
+  text-align: center;
+  max-width: 1000px;
   width: 100%;
-  height: 250px;
-  display: block;
+}
+
+.textoOndasCentralizado h2 {
+  font-size: 52px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.textoOndasCentralizado p {
+  font-size: 26px;
+  line-height: 1.8;
+  margin: 0 auto;
 }
 
 /* ========== SEÇÃO 3: CHATBOT DEXY ========== */
 .secaoDexy {
-  margin-top: -100px;
-  padding: 80px 5%;
+  padding: 80px 5% 180px 5%; 
   color: #000;
   position: relative;
   overflow: hidden;
+  transform: translateY(-120px); 
+  background-color: #ffffff; 
+  z-index: 2;
+  margin-bottom: -120px; 
 }
 
 .dexyContainer {
@@ -166,6 +146,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 60px;
+  position: relative;
+  z-index: 3;
 }
 
 .dexyTexto {
@@ -184,7 +166,7 @@
 }
 
 .dexyTexto p {
-  font-size: 30px;
+  font-size: 24px;
   line-height: 1.6;
   margin-bottom: 35px;
   opacity: 0.95;
@@ -201,7 +183,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px 24px;
+  padding: 10px 0;
 }
 
 .featureIcon {
@@ -209,7 +191,7 @@
 }
 
 .feature span:last-child {
-  font-size: 25px;
+  font-size: 22px;
   font-weight: 500;
 }
 
@@ -218,25 +200,44 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: translateY(-40px); 
 }
 
-.imagemDex {
-  max-width: 450px;
+.videoDexy {
+  max-width: 550px;
   width: 100%;
-  height: auto;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
-/* ========== SEÇÃO 4: MVV ========== */
+.ondaDexy {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+  z-index: 10;
+}
+
+.ondaDexy svg {
+  width: 100%;
+  height: 200px;
+  display: block;
+}
+
+/* ========== SEÇÃO 4: MISSÃO, VISÃO E VALORES ========== */
 .secaoMVV {
-  background-color: #f9f9f9;
-  padding: 80px 5%;
+  background-color: #ffffff;
+  padding: 50px 5%;
   text-align: center;
 }
 
 .secaoMVV h2 {
   font-size: 36px;
   color: #0b5c6a;
-  margin-bottom: 50px;
+  margin-bottom: 40px; 
 }
 
 .mvvGrid {
@@ -260,11 +261,6 @@
 
 .mvvCard:hover {
   transform: translateY(-8px);
-}
-
-.mvvIcon {
-  font-size: 48px;
-  margin-bottom: 20px;
 }
 
 .mvvCard h3 {
@@ -291,9 +287,44 @@
 
 /* ========== SEÇÃO 5: EQUIPE ========== */
 .secaoEquipe {
-  padding: 80px 5%;
+  position: relative;
+  overflow: hidden;
+  padding-top: 50px;
+  padding-bottom: 0px;
   text-align: center;
-  background-color: #fff;
+  background-color: #ffffff;
+  transform: translateY(-20px);
+}
+
+.secaoEquipe::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #ffffff;
+  z-index: 0;
+}
+
+.ondaFundoEquipe {
+  position: absolute;
+  top: 277px;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.ondaFundoEquipe svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.secaoEquipe h2, 
+.secaoEquipe > p, 
+.equipeGrid {
+  position: relative;
+  z-index: 1;
 }
 
 .secaoEquipe h2 {
@@ -315,30 +346,31 @@
   max-width: 1200px;
   margin: 0 auto;
   justify-items: center;
-  align-items: center;
 }
 
 .cardEquipe {
-  min-width: 250px;
-  max-width: 300px;
+  width: 100%;
+  max-width: 320px;
   text-align: center;
   cursor: pointer;
 }
 
 .fotoContainer {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   margin: 0 auto 15px;
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: 24px;
+  background-color: #fff;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .fotoEquipe {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .overlayEquipe {
@@ -356,44 +388,26 @@
   transition: all 0.3s ease;
   padding: 20px;
   text-align: center;
-}
-
-.overlayEquipe p {
-  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-
-.bioEquipe {
-  color: #f3e396;
-  font-size: 14px;
-  font-weight: normal;
+  color: white;
 }
 
 .cardEquipe:hover .overlayEquipe {
   opacity: 1;
 }
 
-.cardEquipe:hover .fotoEquipe {
-  transform: scale(1.05);
-}
-
 .nomeEquipe {
-  font-size: 20px;
+  font-size: 22px;
   color: #0b5c6a;
   margin-top: 10px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .ondaEquipe {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
+  width: 100%;
   line-height: 0;
-  margin-top: 80px;
+  margin-top: 0;
   position: relative;
-  left: 0;
-  right: 0;
+  z-index: 1;
 }
 
 .ondaEquipe svg {
@@ -404,311 +418,139 @@
 
 /* ========== SEÇÃO 6: APOIADORES ========== */
 .secaoApoiadores {
-  background-color: #f9f9f9;
-  padding: 60px 5%;
-  position: relative;
-  overflow-x: hidden;
+  background-color: #ffffff;
+  padding: 80px 5%;
+  text-align: center;
 }
 
 .secaoApoiadores h2 {
   font-size: 36px;
   color: #0b5c6a;
-  margin-bottom: 40px;
-  text-align: center;
+  margin-bottom: 50px;
 }
 
 .carrosselApoiadores {
   width: 100%;
-  max-width: 1600px;
+  max-width: 1500px;
   margin: 0 auto;
-  padding-bottom: 50px;
+  padding-bottom: 60px; 
 }
 
-.cardApoiador img {
-  width: 450px;
-  height: auto;
-  object-fit: contain;
-}
-
-/* Swiper Styles */
-:global(.swiper-wrapper) {
-  align-items: center;
-}
-
-:global(.swiper-slide) {
+.carrosselApoiadores :global(.swiper-slide) {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: auto;
 }
 
-:global(.swiper-button-next),
-:global(.swiper-button-prev) {
-  color: #0b5c6a;
+.cardApoiador {
+  width: 100%;
+  height: 250px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  padding: 10px;
+  transition: transform 0.3s ease;
 }
 
-:global(.swiper-button-next:hover),
-:global(.swiper-button-prev:hover) {
-  color: #ffb366;
+.cardApoiador img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+  display: block;
 }
 
-:global(.swiper-pagination-bullet) {
-  background-color: #ccc;
-  opacity: 1;
-}
+/* ========== RESPONSIVIDADE (MEDIA QUERIES) ========== */
 
-:global(.swiper-pagination-bullet-active) {
-  background-color: #0b5c6a;
-}
-
-/* ========== RESPONSIVIDADE ========== */
-
-/* Tablet (768px - 1024px) */
 @media (max-width: 1024px) {
-  .conteudoOndas {
-    flex-direction: column;
-    text-align: center;
-    gap: 40px;
-  }
-
-  .textoOndas {
-    margin-left: 0;
-    margin-top: 0;
-  }
-
-  .imagemOndas {
-    margin-top: 0;
-  }
-
-  .textoOndas h2 {
-    font-size: 32px;
-  }
-
-  .textoOndas p {
-    font-size: 20px;
-  }
-
-  .imagemEquipe {
-    max-width: 400px;
-  }
-
-  .dexyContainer {
-    flex-direction: column;
-    text-align: center;
-    gap: 40px;
-  }
-
-  .dexyTexto h2 {
-    font-size: 32px;
-  }
-
-  .dexyTexto p {
-    font-size: 22px;
-  }
-
-  .dexyFeatures {
-    align-items: center;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .feature span:last-child {
-    font-size: 20px;
-  }
-
-  .imagemDex {
-    max-width: 350px;
-  }
-
-  .equipeGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-  }
-
-  .cardApoiador img {
-    width: 300px;
-  }
+  .textoOndasCentralizado h2 { font-size: 42px; }
+  .textoOndasCentralizado p { font-size: 22px; }
+  .dexyTexto h2 { font-size: 34px; }
+  .dexyTexto p { font-size: 24px; }
+  .videoDexy { height: 350px; }
+  .ondaFundoEquipe { display: none; }
+  .equipeGrid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
 }
 
-/* Mobile (até 768px) */
 @media (max-width: 768px) {
-  .secaoVideo {
-    height: 70vh;
-    min-height: 500px;
-  }
+  .secaoVideo { height: 60vh; min-height: 450px; }
+  .videoConteudo h1 { font-size: 36px; }
+  .videoConteudo p { font-size: 18px; }
 
-  .videoConteudo h1 {
-    font-size: 36px;
-  }
-
-  .videoConteudo p {
-    font-size: 18px;
-  }
-
-  .textoOndas h2 {
-    font-size: 28px;
-  }
-
-  .textoOndas p {
-    font-size: 16px;
-    line-height: 1.4;
-  }
-
-  .imagemEquipe {
-    max-width: 280px;
-  }
+  .secaoOndas { min-height: auto; padding: 60px 0; }
+  .containerTextoDestaque { transform: translateY(-35px); padding: 0 8% 20px; }
+  .textoOndasCentralizado h2 { font-size: 30px; }
+  .textoOndasCentralizado p { font-size: 18px; line-height: 1.6; }
 
   .secaoDexy {
-    margin-top: -50px;
-    padding: 60px 5%;
+    padding: 60px 5% 80px 5%;
+    transform: translateY(0);
+    margin-bottom: 0;
   }
-
-  .dexyTexto h2 {
-    font-size: 24px;
-  }
-
-  .dexyTexto p {
-    font-size: 16px;
-    line-height: 1.4;
-    margin-bottom: 25px;
-  }
-
-  .feature {
-    padding: 8px 16px;
-  }
-
-  .featureIcon {
-    font-size: 20px;
-  }
-
-  .feature span:last-child {
-    font-size: 16px;
-  }
-
-  .imagemDex {
-    max-width: 250px;
-  }
-
-  .secaoMVV h2,
-  .secaoEquipe h2,
-  .secaoApoiadores h2 {
-    font-size: 28px;
-  }
-
-  .mvvGrid {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .mvvImage {
-    width: 120px;
-    height: 120px;
-  }
-
-  .equipeGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  .fotoContainer {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    aspect-ratio: 1 / 1;
-  }
-
-  .cardEquipe {
-    min-width: auto;
-    max-width: 100%;
-  }
-
-  .nomeEquipe {
-    font-size: 18px;
-  }
-
-  .cardApoiador img {
-    width: 200px;
-  }
-
-  :global(.swiper-button-next),
-  :global(.swiper-button-prev) {
-    display: none;
-  }
-}
-
-/* Mobile pequeno (até 480px) */
-@media (max-width: 480px) {
-  .videoConteudo h1 {
-    font-size: 28px;
-  }
-
-  .equipeGrid {
-    grid-template-columns: 1fr; /* 1 coluna apenas em telas muito pequenas */
-    gap: 30px;
-  }
+  .dexyContainer { flex-direction: column; text-align: center; gap: 40px; }
+  .dexyTexto h2 { font-size: 28px; }
+  .dexyTexto p { font-size: 18px; }
+  .dexyFeatures { align-items: center; }
+  .feature span:last-child { font-size: 18px; }
   
-  .fotoContainer {
-    max-width: 250px;
+  .dexyImagem { transform: translateY(0); width: 100%; }
+  .videoDexy {
+    width: 100%;
+    max-width: 420px;
+    height: 280px;
+    object-fit: cover;
+    display: block;
     margin: 0 auto;
   }
+  .ondaDexy svg { height: 140px; }
 
-  .videoConteudo p {
-    font-size: 14px;
+  .secaoMVV {
+    padding-top: 90px;
+    position: relative;
+    z-index: 3;
   }
 
-  .textoOndas h2 {
-    font-size: 24px;
+  .secaoMVV h2 {
+    display: block;
+    margin-bottom: 24px;
   }
 
-  .textoOndas p {
-    font-size: 14px;
+  /* Mantém 2 colunas em tablets */
+  .equipeGrid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+}
+
+@media (max-width: 480px) {
+  .videoConteudo h1 { font-size: 28px; }
+  .containerTextoDestaque { transform: translateY(-60px); padding: 0 6% 16px !important; }
+  .textoOndasCentralizado h2 { font-size: 24px; }
+  .textoOndasCentralizado p { font-size: 16px; }
+  .dexyTexto h2 { font-size: 24px; }
+  .dexyTexto p { font-size: 17px; }
+  
+  .videoDexy {
+    max-width: 100%;
+    height: 220px;
+    border-radius: 18px;
+  }
+  .secaoMVV {
+    padding-top: 70px;
   }
 
-  .dexyTexto h2 {
-    font-size: 20px;
-  }
-
-  .dexyTexto p {
-    font-size: 14px;
-  }
-
-  .feature span:last-child {
-    font-size: 14px;
-  }
-
-  .imagemDex {
-    max-width: 200px;
-  }
-
-  .secaoMVV h2,
-  .secaoEquipe h2,
-  .secaoApoiadores h2 {
-    font-size: 24px;
-  }
-
-  .mvvImage {
-    width: 100px;
-    height: 100px;
-  }
-
-  .mvvCard h3 {
-    font-size: 20px;
-  }
-
-  .mvvCard p {
-    font-size: 14px;
-  }
-
-  .fotoContainer {
-    width: 200px;
-    height: 200px;
+  /* AJUSTE PARA FOTOS LADO A LADO EM CELULARES PEQUENOS */
+  .equipeGrid { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px; 
+    padding: 0 10px;
   }
 
   .nomeEquipe {
-    font-size: 18px;
+    font-size: 16px; /* Ajuste para o nome caber no card menor */
   }
 
-  .cardApoiador img {
-    width: 150px;
+  .fotoContainer {
+    border-radius: 16px;
   }
+
+  .secaoMVV h2 { font-size: 28px; margin-bottom: 20px; }
 }

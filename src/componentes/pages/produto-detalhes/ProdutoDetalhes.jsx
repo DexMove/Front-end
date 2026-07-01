@@ -1,0 +1,430 @@
+import { useNavigate } from "react-router-dom";
+import { Ruler } from "lucide-react";
+import { useState, useEffect } from "react";
+import Header from "../../Header";
+import Footer from "../../Footer";
+
+import styles from "./ProdutoDetalhes.module.css";
+
+// Assets imports
+import ortesem1 from "../../../assets/ortesen11.svg";
+import ortesem2 from "../../../assets/ortesen21.svg";
+import ortesem3 from "../../../assets/ortesen31.svg";
+import ortesem4 from "../../../assets/2ortese.png";
+import celular from "../../../assets/celular.png";
+import bateria from "../../../assets/bateria.png";
+import bluet from "../../../assets/bluet.png";
+import mao from "../../../assets/mao.png";
+import guiaTamanhos from "../../../assets/guia.png";
+
+import vector16 from "../../../assets/Vector16.svg";
+import vector17 from "../../../assets/Vector17.svg";
+import vector18 from "../../../assets/Vector18.svg";
+import iconedt from "../../../assets/iconedt.png";
+import iconedt1 from "../../../assets/iconedt1.png";
+import iconedt2 from "../../../assets/iconedt2.png";
+import iconedt3 from "../../../assets/iconedt3.png";
+
+import vector19 from "../../../assets/Vector19.svg";
+import ajuste from "../../../assets/ajuste.png";
+import pena from "../../../assets/pena.png";
+import coracao from "../../../assets/coracao.png";
+
+import vector20 from "../../../assets/Vector20.svg";
+import vector21 from "../../../assets/Vector21.svg";
+import carregador from "../../../assets/acessorio.png";
+import orteseDireita from "../../../assets/2ortese.png";
+import orteseEsquerda from "../../../assets/3ortese.png";
+import ortesePar from "../../../assets/2par.png";
+
+const imagensThumbnails = [ortesem1, ortesem2, ortesem3, ortesem4];
+
+const cardsData = [
+  {
+    icone: iconedt,
+    titulo: "Estrutura reforçada",
+    descricao: "Material resistente que garante durabilidade e segurança no uso diário.",
+  },
+  {
+    icone: iconedt1,
+    titulo: "Articulações ajustáveis.",
+    descricao: "Ajuste preciso para cada paciente, permitindo maior mobilidade e conforto.",
+  },
+  {
+    icone: iconedt2,
+    titulo: "Fácil de vestir.",
+    descricao: "Design pensado para colocar e retirar com facilidade, sem ajuda.",
+  },
+  {
+    icone: iconedt3,
+    titulo: "Conforto prolongado",
+    descricao: "Pode ser usado por longas horas sem causar desconforto ou pressão.",
+  },
+];
+
+function ProdutoDetalhes({ lado = "direita" }) {
+  const navigate = useNavigate();
+  const [showRulerImage, setShowRulerImage] = useState(false);
+  const [rulerLoading, setRulerLoading] = useState(true);
+  const [tamanhoSelecionado, setTamanhoSelecionado] = useState("M");
+
+  // Determine main image based on side
+  const getMainImage = () => {
+    if (lado === "par") return ortesePar;
+    if (lado === "esquerda") return orteseEsquerda;
+    if (lado === "acessorio") return carregador;
+    if (lado === "kit") return ortesePar;
+    return orteseDireita;
+  };
+
+  const [imagemSelecionada, setImagemSelecionada] = useState(getMainImage());
+
+  // Reset main image when 'lado' changes
+  useEffect(() => {
+    setImagemSelecionada(getMainImage());
+  }, [lado]);
+
+  // Determine thumbnails dynamically
+  const getThumbnails = () => {
+    if (lado === "acessorio") return [carregador];
+    if (lado === "kit") return [ortesePar, carregador, ortesem1, ortesem2];
+    return [ortesem1, ortesem2, ortesem3, ortesem4];
+  };
+
+  // Determine product features
+  const getProductFeatures = () => {
+    if (lado === "acessorio") {
+      return [
+        { icone: mao, texto: "Design Ergonômico" },
+        { icone: ajuste, texto: "Ajuste Anatômico" },
+        { icone: pena, texto: "Material Leve" },
+        { icone: coracao, texto: "Alta Durabilidade" },
+      ];
+    }
+    return [
+      { icone: mao, texto: "Design Ergonômico" },
+      { icone: bluet, texto: "Conexão Bluetooth" },
+      { icone: celular, texto: "Controle via APP" },
+      { icone: bateria, texto: "Longa Duração" },
+    ];
+  };
+
+  // Determine dynamic cardsData for Section 9
+  const getCardsData = () => {
+    if (lado === "acessorio") {
+      return [
+        {
+          icone: iconedt,
+          titulo: "Silicone Premium",
+          descricao: "Material macio, hipoalergênico e extremamente confortável para uso diário.",
+        },
+        {
+          icone: iconedt1,
+          titulo: "Posicionamento Correto",
+          descricao: "Mantém os dedos suavemente separados, reduzindo a espasticidade e rigidez.",
+        },
+        {
+          icone: iconedt2,
+          titulo: "Fácil de Higienizar",
+          descricao: "Pode ser lavado facilmente com água e sabão neutro para uso contínuo.",
+        },
+        {
+          icone: iconedt3,
+          titulo: "Compatibilidade Total",
+          descricao: "Desenvolvido especificamente para ser usado junto com a órtese MoveHand.",
+        },
+      ];
+    }
+    return cardsData;
+  };
+
+  // Determine texts and prices
+  const getProductData = () => {
+    const produtosCatalogo = {
+      direita: {
+        categoria: "Órtese Robótica",
+        titulo: "MoveHand Mão direita",
+        preco: "R$700,00",
+        parcela: "ou 12x de R$60,00",
+        descricao: "A versão padrão da MoveHand, desenvolvida para a mão direita. Tecnologia robótica completa para reabilitação contínua em casa.",
+        img: orteseDireita,
+        path: "/mao-direita"
+      },
+      esquerda: {
+        categoria: "Órtese Robótica",
+        titulo: "MoveHand Mão esquerda",
+        preco: "R$700,00",
+        parcela: "ou 12x de R$60,00",
+        descricao: "A versão padrão da MoveHand, desenvolvida para a mão esquerda. Tecnologia robótica completa para reabilitação contínua em casa.",
+        img: orteseEsquerda,
+        path: "/mao-esquerda"
+      },
+      par: {
+        categoria: "Órtese Robótica",
+        titulo: "MoveHand Par",
+        preco: "R$ 1.400,00",
+        parcela: "ou 12x de R$ 120,00",
+        descricao: "Nossa órtese mais completa. Estimulação elétrica funcional integrada, 5 níveis de intensidade, bateria de 6h e controle total pelo aplicativo. Indicada para paralisia cerebral.",
+        img: ortesePar,
+        path: "/par"
+      },
+      kit: {
+        categoria: "Kit",
+        titulo: "MoveHand + acessório",
+        preco: "R$1.430,00",
+        parcela: "ou 12x de R$ 120,00",
+        descricao: "MoveHand Par + Separador funcional para posicionamento dos dedos. Facilita a colocação da órtese, mantendo os dedos suavemente separados de forma confortável e segura.",
+        img: ortesePar,
+        path: "/kit"
+      },
+      acessorio: {
+        categoria: "Acessório",
+        titulo: "Separador de dedos",
+        preco: "R$ 30,00",
+        parcela: "ou 2x de R$ 15,00",
+        descricao: "Separador funcional para posicionamento dos dedos. Facilita a colocação da órtese, mantendo os dedos suavemente separados de forma confortável e segura.",
+        img: carregador,
+        path: "/acessorio"
+      }
+    };
+
+    switch (lado) {
+      case "esquerda":
+        return {
+          titulo: "Órtese da mão Esquerda",
+          preco: "R$700,00",
+          parcelas: "6x de R$116,67 sem juros",
+          similares: [
+            produtosCatalogo.acessorio,
+            produtosCatalogo.par,
+            produtosCatalogo.direita
+          ],
+        };
+      case "par":
+        return {
+          titulo: "par da Órtese",
+          preco: "R$1.400,00",
+          parcelas: "6x de R$233,33 sem juros",
+          similares: [
+            produtosCatalogo.acessorio,
+            produtosCatalogo.esquerda,
+            produtosCatalogo.direita
+          ],
+        };
+      case "acessorio":
+        return {
+          titulo: "Separador de dedos (Acessório)",
+          preco: "R$30,00",
+          parcelas: "2x de R$15,00 sem juros",
+          similares: [
+            produtosCatalogo.direita,
+            produtosCatalogo.esquerda,
+            produtosCatalogo.kit
+          ],
+        };
+      case "kit":
+        return {
+          titulo: "Kit MoveHand + Acessório",
+          preco: "R$1.430,00",
+          parcelas: "12x de R$120,00 sem juros",
+          similares: [
+            produtosCatalogo.acessorio,
+            produtosCatalogo.esquerda,
+            produtosCatalogo.direita
+          ],
+        };
+      case "direita":
+      default:
+        return {
+          titulo: "Órtese da mão direita",
+          preco: "R$700,00",
+          parcelas: "6x de R$116,67 sem juros",
+          similares: [
+            produtosCatalogo.acessorio,
+            produtosCatalogo.esquerda,
+            produtosCatalogo.par
+          ],
+        };
+    }
+  };
+
+  const productData = getProductData();
+
+  return (
+    <>
+      <Header />
+
+      {/* Section 8 (Hero do Produto) */}
+      <section className={styles.section8}>
+        <div className={styles.esquerda}>
+          <div className={styles.orteses}>
+            {getThumbnails().map((img, index) => (
+              <div
+                key={index}
+                className={`${styles.caixa} ${imagemSelecionada === img ? styles.ativa : ""}`}
+                onClick={() => setImagemSelecionada(img)}
+              >
+                <img src={img} alt={`Thumb ${index + 1}`} />
+              </div>
+            ))}
+          </div>
+
+          <div className={styles.imagemPrincipal}>
+            <img src={imagemSelecionada} alt="Órtese principal" />
+          </div>
+        </div>
+
+        <div className={styles.info}>
+          <h2 className={styles.prodTitulo}>{productData.titulo}</h2>
+
+          <div className={styles.icones}>
+            {getProductFeatures().map((feat, index) => (
+              <div key={index} className={styles.icone}>
+                <img src={feat.icone} alt={feat.texto} className={feat.icone === bateria ? styles.bateria : ""} />
+                <p>{feat.texto}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className={styles.prodPreco}>
+            <h3>{productData.preco}</h3>
+            <p>{productData.parcelas}</p>
+          </div>
+
+          <div className={styles.tamanhos}>
+            <p>Tamanho:</p>
+            <div className={styles.botoesTomanho}>
+              {["PP", "P", "M", "G", "GG"].map((t) => (
+                <button
+                  key={t}
+                  className={`${styles.tamanho} ${tamanhoSelecionado === t ? styles.tamanhoAtivo : ""}`}
+                  type="button"
+                  onClick={() => setTamanhoSelecionado(t)}
+                >
+                  {t}
+                </button>
+              ))}
+              <button
+                className={styles.rulerBtn}
+                type="button"
+                title="Guia de tamanhos"
+                onClick={() => { setShowRulerImage(!showRulerImage); setRulerLoading(true); }}
+              >
+                <Ruler size={20} />
+              </button>
+            </div>
+
+            {showRulerImage && (
+              <div className={styles.rulerImageOverlay} onClick={() => setShowRulerImage(false)}>
+                <div className={styles.rulerImageBox} onClick={(e) => e.stopPropagation()}>
+                  <button
+                    className={styles.closeRulerImage}
+                    type="button"
+                    onClick={() => setShowRulerImage(false)}
+                    aria-label="Fechar guia de tamanhos"
+                  >
+                    ×
+                  </button>
+                  {rulerLoading && <div className={styles.rulerLoader}>Carregando guia de tamanhos...</div>}
+                  <img 
+                    src={guiaTamanhos} 
+                    alt="Guia de tamanhos" 
+                    onLoad={() => setRulerLoading(false)}
+                    style={rulerLoading ? { display: 'none' } : {}}
+                  />
+                </div>
+              </div>
+            )}
+          </div>
+
+          <button className={styles.Comprar} onClick={() => navigate("/comprar", { state: { produto: lado } })}>
+            Comprar
+          </button>
+          <p className={styles.seguro}>COMPRA 100% SEGURA E PROTEGIDA</p>
+        </div>
+      </section>
+
+      {/* Section 9 (Flip Cards) */}
+      <section className={styles.section9}>
+        <img src={vector16} alt="vector16" className={styles.vector16} />
+        <img src={vector17} alt="vector17" className={styles.vector17} />
+        <img src={vector18} alt="vector18" className={styles.vector18} />
+
+        <div className={styles.cards2}>
+          {getCardsData().map((card, index) => (
+            <div key={index} className={styles.cardFlip}>
+              <div className={styles.cardInner}>
+                <div className={styles.cardFrente}>
+                  <img src={card.icone} alt={card.titulo} />
+                  <h3>{card.titulo}</h3>
+                </div>
+                <div className={styles.cardVerso}>
+                  <p>{card.descricao}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Section 10 (Tecnologia que cuida) */}
+      <section className={styles.section10}>
+        <img src={vector19} alt="vector19" className={styles.vector19} />
+        <h2 className={styles.techTitulo}>
+          Tecnologia que cuida hoje para transformar o amanhã.
+        </h2>
+        <div className={styles.meio}>
+          <h3>Benefícios que você percebe</h3>
+        </div>
+        <div className={styles.beneficios}>
+          <div className={styles.beneficio}>
+            <img src={ajuste} alt="ajuste" />
+            <h3>Ajuste anatômico. É confortável.</h3>
+          </div>
+          <div className={styles.beneficio}>
+            <img src={pena} alt="pena" />
+            <h3>Materiais leves e resistentes.</h3>
+          </div>
+          <div className={styles.beneficio}>
+            <img src={coracao} alt="coração" />
+            <h3>Mais qualidade de vida</h3>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 11 (Opções similares) */}
+      <section className={styles.section11}>
+        <img src={vector20} alt="vector20" className={styles.vector20} />
+        <img src={vector21} alt="vector21" className={styles.vector21} />
+        <h2>Opções similares:</h2>
+
+        <div className={styles.similarGrid}>
+          {productData.similares.map((similar, index) => (
+            <div key={index} className={styles.card3}>
+              <div className={styles.cardImg}>
+                <img src={similar.img} alt={similar.titulo} />
+              </div>
+              <div className={styles.cardBody}>
+                <p className={styles.ortese}>{similar.categoria}</p>
+                <h3>{similar.titulo}</h3>
+                <p className={styles.avaliacao}><span>★★★★★</span> 4.9 (128 avaliações)</p>
+                <p className={styles.cardTexto}>{similar.descricao}</p>
+                <p className={styles.preco}>A partir de <br />
+                  <span>{similar.preco}</span> <br />
+                  {similar.parcela}
+                </p>
+                <button className={styles.btnComprar} onClick={() => navigate(similar.path)}>
+                  COMPRAR
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <Footer />
+    </>
+  );
+}
+
+export default ProdutoDetalhes;

@@ -9,7 +9,9 @@
 .secaoPrincipal {
     position: relative;
     width: 100%;
-    height: 600px; 
+    min-height: 600px;
+    height: auto;
+    padding-bottom: 40px;
 }
 
 .containerOndas {
@@ -31,16 +33,28 @@
     position: relative;
     z-index: 2;
     text-align: center;
-    padding-top: 50px;
+    padding: 70px 20px 20px;
     color: white;
-    font-size: 30px;
-    line-height: .9;
+    font-size: 28px;
+    line-height: 1.1;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.conteudoPrincipal h1 {
+    font-size: 3rem;
+    line-height: 1.05;
+    margin: 0 auto;
+    max-width: 860px;
 }
 
 .conteudoPrincipal p {
-    font-size: 30px;
+    font-size: 1.2rem;
     margin-top: 25px;
     color: white;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .btnSuporte {
@@ -48,7 +62,7 @@
     align-items: center;
     justify-content: center;
     margin: 30px auto 0;
-    background-color: #f3e396;
+    background-color: #F3E396;
     color: #333;
     border: 1px solid #000;
     padding: 10px 20px;
@@ -56,6 +70,11 @@
     cursor: pointer;
     font-weight: bold;
     font-size: 15px;
+    transition: background-color 0.2s;
+}
+
+.btnSuporte:hover {
+    background-color: #e8d472;
 }
 
 .btnIcne {
@@ -88,7 +107,6 @@
     margin-bottom: 10px;
     font-size: 35px;
     color: #000;
-
 }
 
 .itemFaq {
@@ -175,88 +193,74 @@
 }
 
 /* Seção de contato */
-
 .secaoContato {
-    position: relative;   /* Importante: cria o contexto para as ondas */
+    position: relative;
     width: 100%;
-    min-height: 700px;
-    padding: 100px 40px;
-    background-color: #fff;
-    overflow: hidden;     /* Garante que a onda não escape do limite */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
+    background-color: transparent;
+    padding: 0; 
 }
 
-/* ONDAS DE FUNDO */
 .containerOndasInferior {
     position: absolute;
-    top: -80px;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;           /* Camada de baixo */
+    z-index: 1;
 }
 
 .containerOndasInferior svg {
     width: 100%;
     height: 100%;
     display: block;
+    object-fit: cover;
 }
 
-/* CONTEÚDO (IMAGEM + CARD) */
 .containerContato {
     position: relative;
-    z-index: 2;           /* Camada de cima (sobre as ondas) */
-    display: flex;
-    gap: 80px;
+    z-index: 2;
     max-width: 1300px;
     margin: 0 auto;
+    padding: 190px 20px 80px; 
+    display: flex;
+    gap: 60px;
     align-items: center;
     justify-content: center;
-    width: 100%;
 }
 
-.imagemContato {
-    flex: 1.4;
-    display: flex;
-    justify-content: center;
+.conteudoContato {
+    flex: 1.2;
+    max-width: 550px;
 }
 
-.imagemContato img {
-    width: 100%;
-    max-width: 700px;
-    border-radius: 15px;
-}
-
-/* CARD DO FORMULÁRIO */
 .cardContato {
-    flex: 0 0 auto;
-    width: 500px;
-    background-color: #ffffff; /* Fundo sólido para leitura */
-    border-radius: 15px;
-    padding: 35px;
-    border: 1px solid #f0f0f0;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.12);
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 35px 45px; 
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
 }
 
 .cardContato h3 {
-    font-size: 30px;
+    font-size: 28px;
     color: #0b5c6a;
     margin-bottom: 8px;
     letter-spacing: -0.5px;
+    font-weight: 800;
+    line-height: 1.2;
 }
 
 .cardContato p {
-    font-size: 20px;
-    color: #6c757d;
-    margin-bottom: 20px;
-    line-height: 1.5;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.4;
 }
 
-/* FORMULÁRIO */
 .formularioSuporte {
     display: flex;
     flex-direction: column;
@@ -266,111 +270,141 @@
 .campoEntrada, .campoMensagem {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
 }
 
 .campoEntrada label, .campoMensagem label {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
-    color: #1e1e1e;
+    color: #333;
     text-transform: uppercase;
-    margin-left: 4px;
-    font-family: verdana, sans-serif;
 }
 
 .campoEntrada input, .campoMensagem textarea {
     padding: 12px 16px;
-    border: 2px solid #f3f3f3;
-    border-radius: 12px;
+    border: 1px solid #eee;
+    border-radius: 10px;
     font-size: 14px;
     background-color: #f9f9f9;
-    transition: all 0.3s ease;
+    width: 100%;
 }
 
-.campoEntrada input:focus, .campoMensagem textarea:focus {
-    outline: none;
-    background-color: #fff;
-    border-color: #ffb366;
-    box-shadow: 0 0 0 4px rgba(255, 179, 102, 0.1);
+.campoEntrada input:focus, 
+.campoMensagem textarea:focus {
+    outline: none;           
+    border-color: #F3E396;    
+    background-color: #fff;  
+}
+
+.campoMensagem textarea {
+    min-height: 90px; 
+    resize: none;
 }
 
 .btnEnviar {
     background-color: #F3E396;
-    color: #111111;
-    padding: 16px 20px;
+    color: #111;
+    padding: 15px;
     border: none;
-    border-radius: 18px;
+    border-radius: 14px;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 16px;
     cursor: pointer;
     margin-top: 10px;
     transition: all 0.3s ease;
 }
 
 .btnEnviar:hover {
-    background-color: #ffb366;
+    background-color: #e8d472;
     transform: translateY(-2px);
 }
 
-/* RESPONSIVIDADE */
+.imagemContato img {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+/* ==========================================
+   RESPONSIVIDADE MELHORADA (100% ADAPTÁVEL)
+========================================== */
+
+/* Telas Grandes e Notebooks */
+@media (max-width: 1200px) {
+    .secaoPrincipal { min-height: 550px !important; }
+    .conteudoPrincipal h1 { font-size: 2.8rem !important; }
+    .containerContato { gap: 40px; padding-top: 150px !important; }
+    .cardContato { padding: 30px 35px !important; }
+}
+
+/* Tablets e iPads (Landscape/Portrait) */
 @media (max-width: 1024px) {
-    .containerContato { gap: 30px; }
-    .cardContato { width: 450px; }
+    .conteudoPrincipal { padding-top: 60px !important; }
+    .conteudoPrincipal h1 { font-size: 2.5rem !important; }
+    .centralAjuda { margin-top: -100px; padding-top: 80px !important; }
+    .containerContato { padding-top: 120px !important; }
+    .imagemContato img { max-width: 500px !important; }
 }
 
+/* Tablets Médios */
+@media (max-width: 900px) {
+    .conteudoPrincipal h1 { font-size: 2.2rem !important; }
+    .centralAjuda h2 { font-size: 30px !important; }
+    .itemFaq { font-size: 18px; padding: 15px 20px !important; }
+    .containerContato { flex-direction: column; text-align: center; padding-top: 100px !important; }
+    .imagemContato { order: 2 !important; } /* Imagem vai para baixo do card no tablet se necessário */
+    .cardContato { order: 1; max-width: 600px; text-align: left !important; }
+}
+
+/* Celulares Grandes e Tablets Pequenos */
 @media (max-width: 768px) {
-    .containerContato {
-        flex-direction: column;
-        gap: 40px;
-    }
-    .imagemContato img {
-        max-width: 90%;
-    }
-    .cardContato {
-        width: 100%;
-        max-width: 500px;
-    }
-    .secaoPrincipal, .secaoContato {
-        height: auto;
-        padding: 60px 20px;
-    }
+    .secaoPrincipal { min-height: 450px !important; }
+    .conteudoPrincipal { padding-top: 50px !important; }
+    .conteudoPrincipal h1 { font-size: 1.8rem !important; }
+    .conteudoPrincipal p { font-size: 1rem; margin-top: 15px !important; }
+    
+    .centralAjuda { margin-top: -80px; padding-top: 60px !important; }
+    .centralAjuda h2 { font-size: 26px !important; }
+    
+    .containerContato { padding: 80px 20px 40px !important; }
+    .imagemContato { display: none !important; } /* Esconde imagem para focar no formulário */
+    .cardContato { width: 100%; padding: 25px !important; }
 }
 
+/* Celulares Médios e Pequenos (iPhone, Android) */
 @media (max-width: 600px) {
-    .secaoPrincipal {
-        padding: 50px 16px;
-    }
-    .centralAjuda {
-        padding: 40px 14px 20px;
-        margin-top: -80px;
-    }
-    .conteudoPrincipal {
-        font-size: 20px;
-        padding-top: 28px;
-    }
-    .conteudoPrincipal p {
-        font-size: 18px;
-    }
-    .containerContato {
-        padding: 0 12px;
-        gap: 30px;
-    }
-    .cardContato {
-        padding: 22px 16px;
-    }
-    .btnSuporte {
-        width: 100%;
-    }
-    .itemFaq {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 18px 20px;
-    }
-    .itemFaq .setaPng {
-        margin: 0;
-    }
-    .imagemContato img {
-        max-width: 100%;
-        height: auto;
-    }
+    .conteudoPrincipal h1 { font-size: 1.6rem; line-height: 1.2 !important; }
+    .btnSuporte { width: 100%; font-size: 14px !important; }
+    
+    .centralAjuda { margin-top: -60px !important; }
+    .centralAjuda p { font-size: 16px !important; }
+    .itemFaq { font-size: 16px; padding: 15px !important; }
+    .perguntaInterna { font-size: 16px !important; }
+    
+    .cardContato h3 { font-size: 22px !important; }
+    .cardContato p { font-size: 14px !important; }
+    .btnEnviar { font-size: 15px; padding: 12px !important; }
+}
+
+/* Celulares Muito Pequenos (320px) */
+@media (max-width: 380px) {
+    .conteudoPrincipal h1 { font-size: 1.4rem !important; }
+    .itemFaq { font-size: 15px !important; }
+    .cardContato { padding: 20px 15px !important; }
+    .campoEntrada input, .campoMensagem textarea { font-size: 13px !important; }
+}
+
+.sucessoMsg {
+  background-color: rgba(11, 92, 106, 0.08);
+  color: #0b5c6a;
+  border: 1px solid rgba(11, 92, 106, 0.2);
+  border-radius: 12px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
 }
