@@ -38,7 +38,7 @@ function Bloqueada(){
                                 <span>Comprar a órtese</span>
                             </button>
                             </Link>
-                            <Link to= "/planilha" className="botao-tenho">Já tenho o dispositivo</Link>
+                            <Link to= "/conecte" className="botao-tenho">Já tenho o dispositivo</Link>
                         </div>
                     </div>
                 </div>
@@ -50,7 +50,7 @@ function Bloqueada(){
                 </div>
                 <div className="feature-card">
                     <h3><Bot /> Inteligência Artificial</h3>
-                    <p>A IA adapta os exercícios para melhores resultados.</p>
+                    <p>A IA atua como assistente inteligente durante o uso da órtese.</p>
                 </div>
                 <div className="feature-card">
                     <h3><LockKeyhole /> Segurança</h3>
@@ -58,20 +58,15 @@ function Bloqueada(){
                 </div>
             </section>
             <div className="support-banner">
-                    <div className="support-text">
-                      <h5>Ainda tem dúvidas?</h5>
-
-                      <p>
-                        Nossa equipe de suporte está pronta para ajudar você.
-                      </p>
-                    </div>
-
-                    <Link to="/suporte" className="botao-suporte" style={{ textDecoration: 'none' }}>
-                      Falar com suporte
-                      <Headphones className="support-icon" />
-                    </Link>
-                  </div>
-
+                <div className="support-text">
+                    <h5>Ainda tem dúvidas?</h5>
+                    <p>Nossa equipe de suporte está pronta para ajudar você.</p>
+                </div>
+                <Link to="/suporte" className="btn-support" style={{ textDecoration: 'none' }}>
+                    Falar com suporte
+                    <Headphones className="support-icon" />
+                </Link>
+            </div>
             <Footer />
         </main>
     )

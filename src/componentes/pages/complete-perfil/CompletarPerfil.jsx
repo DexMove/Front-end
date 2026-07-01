@@ -139,7 +139,8 @@ export default function CompletarPerfil() {
                 <p className="cp-responsavel-title">Dados do responsável</p>
                
                   <div className="cp-field">
-                    <label className="cp-label">Nome da responsável</label>
+                    <label className="cp-label">Nome do paciente
+                    </label>
                     <input className="cp-input cp-input--dark" name="nomeResponsavel" type="text"
                       value={form.nomeResponsavel} onChange={handleChange} required />
                   </div>
@@ -160,12 +161,6 @@ export default function CompletarPerfil() {
                   </div>
             
                 <div className="cp-row">
-                  
-                  <div className="cp-field">
-                    <label className="cp-label">E-mail</label>
-                    <input className="cp-input cp-input--dark" name="email" type="email"
-                      value={form.email} onChange={handleChange} required />
-                  </div>
                 </div>
               </div>
             )}

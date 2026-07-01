@@ -41,9 +41,9 @@ export default function EditarPaciente2() {
 
             <div className="ep-row">
               <div className="ep-field">
-                <label className="ep-label">Nome paciente</label>
-                <input className="ep-input" type="text" name="nomePaciente"
-                  value={form.nomePaciente} onChange={handleChange} required />
+                <label className="ep-label">Idade</label>
+                <input className="ep-input" type="number" name="idade"
+                  value={form.idade} onChange={handleChange} required />
               </div>
               <div className="ep-field">
                 <label className="ep-label">Mão afetada</label>
@@ -58,19 +58,7 @@ export default function EditarPaciente2() {
             </div>
 
             <div className="ep-row">
-              <div className="ep-field">
-                <label className="ep-label">Idade</label>
-                <input className="ep-input" type="number" name="idade"
-                  value={form.idade} onChange={handleChange} required />
-              </div>
-              <div className="ep-field">
-                <label className="ep-label">Peso (kg)</label>
-                <input className="ep-input" type="number" name="peso"
-                  value={form.peso} onChange={handleChange} />
-              </div>
-            </div>
-
-            <div className="ep-field ep-field--full">
+              <div className="ep-field ep-field--full">
               <label className="ep-label">Diagnóstico</label>
               <div className="ep-select-wrap">
                 <select className="ep-select" name="diagnostico" value={form.diagnostico} onChange={handleChange}>
@@ -82,6 +70,14 @@ export default function EditarPaciente2() {
                 </select>
               </div>
             </div>
+              <div className="ep-field">
+                <label className="ep-label">Peso (kg)</label>
+                <input className="ep-input" type="number" name="peso"
+                  value={form.peso} onChange={handleChange} />
+              </div>
+            </div>
+
+            
 
             <div className="ep-field ep-field--full">
               <label className="ep-label">Grau de dificuldade motora</label>
@@ -93,7 +89,6 @@ export default function EditarPaciente2() {
                 </select>
               </div>
             </div>
-
             <div className="ep-field ep-field--full">
               <label className="ep-label">Principal objetivo da reabilitação</label>
               <div className="ep-select-wrap">

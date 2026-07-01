@@ -33,7 +33,7 @@ export default function EditarPaciente() {
         <div className="ep-card">
 
           <div className="ep-header">
-            <h1 className="ep-title">Editar dados clínicos</h1>
+            <h1 className="ep-title">Editar dados do paciente</h1>
             <p className="ep-subtitle">Altere as informações clínicas do paciente</p>
           </div>
 

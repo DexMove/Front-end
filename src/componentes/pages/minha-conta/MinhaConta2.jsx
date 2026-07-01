@@ -77,7 +77,6 @@ export default function MinhaConta2() {
                 <IconUser />
               </div>
               <div className="mc-patient-info">
-                <p className="mc-patient-name">{user.nome}</p>
                 <div className="mc-patient-grid">
                   <div className="mc-patient-item">
                     <span className="mc-patient-key">Idade</span>

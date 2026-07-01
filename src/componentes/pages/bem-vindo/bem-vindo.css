@@ -62,14 +62,13 @@
 }
 
 .option-card:hover {
-  border-color: #0b5c6a;
-  background: #f0f7f8;
+  background-color: #f9f4d9;
   transform: translateX(4px);
 }
 
 .option-card.selected {
-  border: 2px solid #0b5c6a;
-  background: #e8f3f6;
+  border: 2px solid #e8d472;
+  background-color: #f9f4d9;
 }
 
 .option-icon {
