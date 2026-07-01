@@ -2,6 +2,8 @@
   height: 40px;
   display: flex;
   align-items: center;
+  gap: 8px;
+  padding: 0 20px;
   background-color: #F3E396;
   border: none;
   border-radius: 14px;
