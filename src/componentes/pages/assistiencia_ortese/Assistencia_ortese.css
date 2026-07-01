@@ -4,6 +4,12 @@
   min-height: 100vh;
   font-family: sans-serif;
   padding-top: 80px; 
+  box-sizing: border-box; /* Adicionado para garantir que o padding não quebre a largura */
+}
+
+/* Adicionado globalmente para evitar quebras em qualquer elemento */
+.ao-page-wrapper * {
+  box-sizing: border-box;
 }
 
 .ao-container {
@@ -82,15 +88,14 @@
   padding: 30px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0,0,0,0.02);
-  /* Transição suave para o efeito de subir e sombra */
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 /* === EFEITO DE SUBIR APENAS PARA ORIENTAÇÃO E CHAT === */
 .ao-accordion:hover,
 .ao-chat:hover {
-  transform: translateY(-10px); /* Faz o card subir */
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12); /* Aumenta a sombra ao subir */
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
   cursor: pointer;
 }
 
@@ -184,8 +189,6 @@
 .ao-chat-input input { flex: 1; border: none; background: transparent; outline: none; }
 .ao-chat-input button { background: transparent; border: none; color: #27ae60; cursor: pointer; padding: 8px; }
 
-
-
 .ao-share-layout { display: flex; justify-content: space-between; align-items: center; }
 .ao-share-btns { display: flex; flex-direction: column; gap: 10px; }
 
@@ -203,9 +206,8 @@
 /* Card Importante */
 .ao-important { background: #FFFBF7; }
 
-/* Responsividade */
+/* Responsividade Ajustada */
 @media (max-width: 768px) {
-  /* Mantém métricas lado a lado */
   .ao-metrics {
     flex-direction: row !important;
     justify-content: space-around !important;
@@ -222,11 +224,12 @@
     font-size: 22px !important;
   }
 
-  /* Mantém botões de compartilhar lado a lado */
+  /* CORREÇÃO DA IMAGEM: Mudamos para column para o texto ter espaço */
   .ao-share-layout {
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 20px !important;
   }
 
   .ao-share-btns {
@@ -240,21 +243,20 @@
     flex: 1 !important;
     padding: 10px 8px !important;
     font-size: 12px !important;
-    white-space: nowrap !important;
+    white-space: normal !important; /* CORREÇÃO: Permite que o texto do botão quebre se necessário */
     justify-content: center !important;
   }
 }
 
 @media (max-width: 480px) {
   .ao-card {
-    padding: 15px !important;
+    padding: 20px 15px !important;
   }
 
   .ao-header-content h1 {
     font-size: 22px !important;
   }
 
-  /* Métricas em celulares pequenos */
   .ao-metric-item strong {
     font-size: 18px !important;
   }
@@ -263,22 +265,18 @@
     font-size: 10px !important;
   }
 
-  /* Botões em celulares pequenos */
+  /* CORREÇÃO PARA CELULARES PEQUENOS: Botões um abaixo do outro */
   .ao-share-btns {
-    gap: 5px !important;
+    flex-direction: column !important;
+    gap: 10px !important;
   }
 
   .ao-btn-primary, .ao-btn-outline {
-    font-size: 10px !important;
-    padding: 8px 4px !important;
-    border-radius: 8px !important;
+    font-size: 14px !important;
+    padding: 12px 10px !important;
+    width: 100% !important;
   }
 
-  .ao-btn-outline svg {
-    font-size: 12px !important;
-  }
-
-  /* Ajuste do ícone e texto MoveHand */
   .ao-id-box strong {
     font-size: 16px !important;
   }

@@ -57,7 +57,7 @@ function SobreNos() {
           <div className={styles.videoOverlay}></div>
           <div className={styles.videoConteudo}>
             <h1>DexMove</h1>
-            <p>Movimento que transforma vidas</p>
+            <p>Tecnologia que move vidas</p>
           </div>
         </div>
       </section>
@@ -75,13 +75,13 @@ function SobreNos() {
           <div className={styles.textoOndasCentralizado}>
             <h2>Sobre a DexMove:</h2>
             <p>
-              A Dexmovee nasce da inquietação de não aceitar que o movimento seja
+              A DexMove nasce da inquietação de não aceitar que o movimento seja
               limitado quando a tecnologia pode ampliar possibilidades. Criamos
-              soluções que unem inovação e cuidado para devolver autonomia,
+              soluções que unem inovação e cuidado para auxiliar na autonomia,
               independência e novos começos a quem mais precisa.
             </p>
           </div>
-        </div>
+        </div> 
       </section>
 
       {/* ========== SEÇÃO 3: CHATBOT DEXY ========== */}
@@ -135,17 +135,23 @@ function SobreNos() {
           <div className={styles.mvvCard}>
             <img src={iconeMissao} alt="Missão" className={styles.mvvImage} />
             <h3>O que fazemos hoje</h3>
-            <p>Proporcionar reabilitação física e mental aos usuários, contribuindo para sua saúde e qualidade de vida através de tecnologia acessível e eficaz.</p>
+            <p>A nossa missão é proporcionar reabilitação 
+              eficaz através da tecnologia robótica, 
+              contribuindo para a autonomia e qualidade de 
+              vida</p>
           </div>
           <div className={styles.mvvCard}>
             <img src={iconeVisao} alt="Visão" className={styles.mvvImage} />
             <h3>O futuro que buscamos</h3>
-            <p>Trazer uma solução inovadora e tecnológica para melhorar o desempenho e a qualidade de vida, tornando a reabilitação robótica acessível para todos.</p>
+            <p>Nossa visão é trazer uma solução inovadora e 
+              tecnológica, priorizando sempre a 
+              acessibilidade e a praticidade.</p>
           </div>
           <div className={styles.mvvCard}>
             <img src={iconeValores} alt="Valores" className={styles.mvvImage} />
             <h3>Nossos valores</h3>
-            <p>Acessibilidade, inclusão, eficácia, inovação, transparência e cuidado com o paciente são os pilares que guiam cada decisão na DexMove.</p>
+            <p>Acessibilidade, inclusão, ética, inovação, 
+              transparência e cuidado com o paciente.</p>
           </div>
         </div>
       </section>

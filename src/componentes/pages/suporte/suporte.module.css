@@ -43,7 +43,7 @@
 
 .conteudoPrincipal h1 {
     font-size: 3rem;
-    line-height: 1.05;
+    line-height: 1.02;
     margin: 0 auto;
     max-width: 860px;
 }
@@ -374,7 +374,7 @@
 
 /* Celulares Médios e Pequenos (iPhone, Android) */
 @media (max-width: 600px) {
-    .conteudoPrincipal h1 { font-size: 1.6rem; line-height: 1.2 !important; }
+    .conteudoPrincipal h1 { font-size: 1.6rem; line-height: 1.3 !important; }
     .btnSuporte { width: 100%; font-size: 14px !important; }
     
     .centralAjuda { margin-top: -60px !important; }

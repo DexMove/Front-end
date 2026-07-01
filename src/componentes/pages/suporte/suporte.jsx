@@ -25,15 +25,15 @@ function Suporte() {
             conteudo: [
                 {
                     q: "Como a IA ajuda?",
-                    r: "Monitora seus movimentos em tempo real, ajustando a força da órtese para evitar fadiga e garantir exercícios seguros."
+                    r: "Atua como um assistente inteligente durante o uso da órtese, orientando o cuidador com base nas instruções definidas pelo fisioterapeuta e acompanhando a execução dos exercícios."
                 },
                 {
-                    q: "A IA substitui o médico?",
-                    r: "Não. Ela serve como uma ferramenta assistiva que coleta dados precisos para o seu fisioterapeuta analisar sua evolução."
+                    q: "A IA substitui o fisioterapeuta?",
+                    r: "Não. A IA é apenas uma ferramenta de apoio. Ela não realiza diagnósticos, não define tratamentos e utiliza exclusivamente as orientações previamente fornecidas pelo fisioterapeuta."
                 },
                 {
                     q: "Preciso de internet? ",
-                    r: "Não. Todo o processamento da IA e o controle dos movimentos ocorrem localmente no hardware da órtese, garantindo pleno funcionamento em qualquer lugar, sem dependência de Wi-Fi ou dados móveis."
+                    r: "Não. A IA opera apenas com as orientações cadastradas pelo fisioterapeuta para aquele paciente, sem utilizar informações genéricas ou fontes externas."
                 }
             ]
         },
@@ -43,15 +43,15 @@ function Suporte() {
             conteudo: [
                 {
                     q: "Passo a passo inicial",
-                    r: "Basta ligar o dispositivo, ativar o Bluetooth do seu celular e seguir o guia no site."
+                    r: "Basta ligar o dispositivo, ativar o Bluetooth ou Wi-fi do seu celular e seguir o guia no site."
                 },
                 {
                     q: "Problemas de conexão?",
-                    r: "Verifique se o Bluetooth do seu celular está ativo para sincronizar os dados. Se falhar, segure o botão reset por 5 segundos."
+                    r: "Verifique se o Bluetooth ou a rede Wi-Fi estão ativos e se a órtese está ligada. Caso a conexão não seja estabelecida, reinicie o dispositivo e tente conectar novamente."
                 },
                 {
-                    q: "Como calibrar?",
-                    r: "No primeiro uso, realize o exercício de abertura e fechamento. Isso define seus limites anatômicos e garante que a órtese respeite sua amplitude de movimento."
+                    q: "Como configurar a órtese?",
+                    r: "A órtese é configurada por meio de uma planilha disponibilizada pela plataforma e preenchida pelo fisioterapeuta. Nela são definidos todos os parâmetros de uso, como intensidade, tempo e frequência dos exercícios. Ao adquirir a órtese, basta enviar essa planilha para que as configurações sejam aplicadas."
                 }
             ]
         },
@@ -79,7 +79,7 @@ function Suporte() {
             conteudo: [
                 {
                     q: "Quanto tempo dura a bateria?",
-                    r: "Suporta até 8 horas de uso. O carregamento total via USB-C leva aproximadamente 2 horas."
+                    r: "Suporta até 8 horas de uso. O carregamento total leva aproximadamente 2 horas."
                 },
                 {
                     q: "Posso usar carregando?",
@@ -142,7 +142,7 @@ function Suporte() {
                 {/* CENTRAL DE AJUDA */}
                 <section className={styles.centralAjuda}>
                     <h2>Central de Ajuda</h2>
-                    <p>Aqui você conhece as principais perguntas sobre as funcionalidades da MoviHand</p>
+                    <p>Aqui você conhece as principais perguntas sobre as funcionalidades da MoveHand</p>
                     
                     <div className={styles.listaFaq}>
                         {perguntas.map((item) => ( // AQUI o 'item' é criado
@@ -195,7 +195,7 @@ function Suporte() {
                         <div className={styles.conteudoContato}>
                             <div className={styles.cardContato}>
                                 <h3>Entre em contato com o suporte técnico</h3>
-                                <p>Nossa equipe está pronta para ajudar você com qualquer dúvida sobre a MoviHand.</p>
+                                <p>Nossa equipe está pronta para ajudar você com qualquer dúvida sobre a MoveHand.</p>
                                 {enviado ? (
                                     <div className={styles.sucessoMsg}>
                                         Mensagem enviada com sucesso! Nossa equipe entrará em contato em breve.
