@@ -59,10 +59,11 @@ function Conecte() {
               <strong>Nao encontrou o dispositivo?</strong>
               <span>Verifique se a ortese esta ligada e proxima do seu dispositivo.</span>
             </div>
-
+            <Link to="/planilha">
             <button className="conecte-primary" type="button">
               Conectar dispositivo
             </button>
+            </Link>
           </div>
         </div>
 

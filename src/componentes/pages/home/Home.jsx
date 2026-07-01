@@ -135,7 +135,7 @@ function Home({ useHeader2 = false }) {
       {/* Section 1 */}
       <section className={styles.section1}>
         <div className={`${styles.div1} ${styles.reveal}`}>
-          <h1>Recupere a autonomia e o bem-estar no conforto de casa.</h1>
+          <h1>Auxilia a autonomia e o bem-estar no conforto de casa.</h1>
           <p><span className={styles.verdeDexmove}>MOVEHAND</span>: Um aliado contínuo para reduzir a rigidez muscular.</p>
           <div className={styles.botoins}>
             <button className={styles.button} onClick={() => navigate("/bem-vindo")}>
@@ -164,17 +164,17 @@ function Home({ useHeader2 = false }) {
           <div className={`${styles.s2Card} ${styles.reveal} ${styles.revealDelay1}`}>
             <img src={menina2} alt="Menina 2" />
             <h3>1. Falta de acesso</h3>
-            <p>Hospital, clínica fisioterapêutica e ONGs.</p>
+            <p>Dificuldade para encontrar tratamento especializado em hospitais, clínicas e ONGs.</p>
           </div>
           <div className={`${styles.s2Card} ${styles.reveal} ${styles.revealDelay2}`}>
-            <img src={OrteseSec2} alt="Ortese" />
-            <h3>2. Acolhimento</h3>
-            <p>Uma órtese robótica que estimula a abertura da mão, diminuindo a espasticidade.</p>
+            <img src={menina1} alt="Menina 1" />
+            <h3>2. Falta de recursos</h3>
+            <p>Alto custo e escassez de tecnologias modernas e acessíveis para a terapia diária.</p>
           </div>
           <div className={`${styles.s2Card} ${styles.reveal} ${styles.revealDelay3}`}>
-            <img src={menina1} alt="Menina 1" />
-            <h3>3. Falta de recursos</h3>
-            <p>Acesso limitado a tecnologias e equipamentos necessários para o tratamento.</p>
+            <img src={OrteseSec2} alt="Ortese" />
+            <h3>3. Tecnologia Assistiva</h3>
+            <p>Uma órtese robótica inovadora que auxilia na abertura dos dedos e reduz a rigidez muscular diretamente em casa.</p>
           </div>
         </div>
       </section>
@@ -265,7 +265,9 @@ function Home({ useHeader2 = false }) {
             <p className={styles.bannerDesc}>
               Da avaliação inicial ao acompanhamento diário, a MoveHand simplifica o seu tratamento e conecta você diretamente ao seu fisioterapeuta.
             </p>
-            <button className={styles.bannerBtn} onClick={() => navigate("/bloqueada")}>SAIBA MAIS</button>
+            <Link to="/produtos" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
+              <BotaoComprar />
+            </Link>
           </div>
         </div>
       </section>

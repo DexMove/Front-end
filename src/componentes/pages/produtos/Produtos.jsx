@@ -55,7 +55,7 @@ function Produtos(){
                         <p className="ortese">Órtese Robótica</p>
                         <h2>MoveHand Par</h2>
                         <p className="avaliacao"><span>★★★★★</span>4.9 (128 avaliações)</p>
-                        <p className="texto_dupla">Nossa órtese mais completa. Estimulação elétrica funcional integrada, 5 níveis de intensidade, bateria de 6h e controle total pelo aplicativo. Indicada para paralisia cerebral.</p>
+                        <p className="texto_dupla">A versão mais completa da MoveHand, desenvolvida para as duas mãos. Tecnologia robótica completa com estimulação elétrica funcional integrada para reabilitação contínua em casa.</p>
                         
                         <p className="preco">A partir de <br />
                         <span>R$ 1400,00</span> <br />
@@ -66,21 +66,7 @@ function Produtos(){
                     </div>
             </div>
             <div className='s1'>
-            <div id="direita" className="reveal">
-                <div className="direita_imagem">
-                     <img src={Direita}  />
-                </div>
-                <div className="direita_textos">
-                        <p className="ortese">Órtese Robótica</p>
-                        <h2>MoveHand <br />Mão direita</h2>
-                        <p className="avaliacao"><span>★★★★★</span>4.9 (128 avaliações)</p>
-                        <p className="texto_direita">A versão padrão da MoveHand, desenvolvida para a mão direita. Tecnologia robótica completa para reabilitação contínua em casa.</p>
-                        <p className="preco">A partir de <br />
-                        <span>R$700,00</span> <br />
-                        ou 12x de R$60,00</p>
-                        <Link to="/mao-direita"><span className="botao"> <BotaoComprar /> </span></Link>
-                        </div>
-            </div>
+           
             <div id="esquerda" className="reveal">
                 <div className="esquerda_imagem">
                     <img src={Esquerda}  />
@@ -94,6 +80,22 @@ function Produtos(){
                         <span>R$700,00</span> <br />
                         ou 12x de R$60,00</p>
                         <Link to="/mao-esquerda"><span className="botao"> <BotaoComprar /> </span></Link>
+                        </div>
+                        
+            </div>
+             <div id="direita" className="reveal">
+                <div className="direita_imagem">
+                     <img src={Direita}  />
+                </div>
+                <div className="direita_textos">
+                        <p className="ortese">Órtese Robótica</p>
+                        <h2>MoveHand <br />Mão direita</h2>
+                        <p className="avaliacao"><span>★★★★★</span>4.9 (128 avaliações)</p>
+                        <p className="texto_direita">A versão padrão da MoveHand, desenvolvida para a mão direita. Tecnologia robótica completa para reabilitação contínua em casa.</p>
+                        <p className="preco">A partir de <br />
+                        <span>R$700,00</span> <br />
+                        ou 12x de R$60,00</p>
+                        <Link to="/mao-direita"><span className="botao"> <BotaoComprar /> </span></Link>
                         </div>
             </div>
             </div>

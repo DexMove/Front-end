@@ -43,7 +43,7 @@
 
 .conteudoPrincipal h1 {
     font-size: 3rem;
-    line-height: 1.05;
+    line-height: 1.02 !important;
     margin: 0 auto;
     max-width: 860px;
 }

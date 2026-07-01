@@ -94,6 +94,8 @@ main{
     justify-content:flex-start;
     align-items: center;
     background-color: white;
+    margin-left: 2%;
+
 }
 #esquerda{
     width: 24%;
@@ -104,7 +106,6 @@ main{
     display: flex;
     justify-content:flex-start;
     align-items: center;
-    margin-left: 2%;
     background-color: white;
 }
 .dupla_imagem{
