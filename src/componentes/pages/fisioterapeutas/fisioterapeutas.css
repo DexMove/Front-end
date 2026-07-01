@@ -213,11 +213,18 @@
   border: none;
   border-radius: 12px;
   background: #efe39b;
-  color: #0b5c6a;
+  color: #000;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.3s;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btnPerfil:hover,
+.btnPerfil:focus-visible {
+  background: #e8d472;
+  color: #000;
+  transform: translateY(-2px);
 }
 
 /* ======================
@@ -310,8 +317,8 @@
 .btnAgendar {
   width: 100%;
   height: 55px;
-  background: linear-gradient(135deg, #efe39b 0%, #f4a261 100%);
-  color: #0b5c6a;
+  background:#efe39b;
+  color: #000;
   border: none;
   border-radius: 12px;
   font-size: 16px;
