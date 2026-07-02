@@ -26,33 +26,45 @@ export default function EditarPaciente() {
   useEffect(() => {
     const fetchPacienteData = async () => {
       try {
+        console.log('[EditarPaciente] Iniciando carregamento de dados');
         setLoading(true);
-        const response = await api.get(`/pacientes/responsavel/${idUser}`);
-        if (response.data && response.data.length > 0) {
-          const paciente = response.data[0];
-          setPacienteId(paciente.id || paciente.idPaciente);
-          setForm({
-            nomePaciente: paciente.nome || "",
-            maoAfetada: paciente.maoAfetada || "Direita",
-            idade: paciente.idade?.toString() || "",
-            peso: paciente.peso?.toString() || "",
-            diagnostico: paciente.diagnostico || "AVC",
-            grauDificuldade: paciente.grauDificuldadeMotora || "Moderado",
-            objetivo: paciente.objetivoReabilitacao || "Recuperar movimentos finos da mão",
-          });
+        setError(null);
+
+        const token = localStorage.getItem('token');
+        if (!token) {
+          setError('Não autenticado');
+          setLoading(false);
+          return;
         }
+
+        // Usar o mesmo endpoint que MinhaConta2
+        const response = await api.get('/usuarios/perfil/completo', {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+        console.log('[EditarPaciente] Resposta completa:', response.data);
+
+        const perfil = response.data;
+        const clinico = perfil?.dadosEspecificos || {};
+
+        setForm({
+          nomePaciente: perfil?.nome || "",
+          maoAfetada: clinico?.maoAfetada || "Direita",
+          idade: clinico?.idade?.toString() || "",
+          peso: clinico?.pesoKg?.toString() || "",
+          diagnostico: clinico?.diagnosticoBase || "AVC",
+          grauDificuldade: clinico?.grauDificuldade || "Moderado",
+          objetivo: clinico?.objetivoReabilitacao || "Recuperar movimentos finos da mão",
+        });
       } catch (err) {
-        console.error('Erro ao buscar dados do paciente:', err);
-        setError('Não foi possível carregar os dados do paciente.');
+        console.error('[EditarPaciente] Erro ao buscar dados:', err);
+        setError('Não foi possível carregar os dados. Tente novamente.');
       } finally {
         setLoading(false);
       }
     };
 
-    if (idUser) {
-      fetchPacienteData();
-    }
-  }, [idUser]);
+    fetchPacienteData();
+  }, []);
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -70,27 +82,38 @@ export default function EditarPaciente() {
       setSaving(true);
       setError(null);
 
+      const token = localStorage.getItem('token');
+      if (!token) {
+        setError('Não autenticado');
+        setSaving(false);
+        return;
+      }
+
+      // Estrutura dos dados clínicos a serem salvos
       const updateData = {
         nome: form.nomePaciente,
-        maoAfetada: form.maoAfetada,
-        idade: parseInt(form.idade) || 0,
-        peso: parseFloat(form.peso) || 0,
-        diagnostico: form.diagnostico,
-        grauDificuldadeMotora: form.grauDificuldade,
-        objetivoReabilitacao: form.objetivo,
+        dadosEspecificos: {
+          maoAfetada: form.maoAfetada,
+          idade: parseInt(form.idade) || 0,
+          pesoKg: parseFloat(form.peso) || 0,
+          diagnosticoBase: form.diagnostico,
+          grauDificuldade: form.grauDificuldade,
+          objetivoReabilitacao: form.objetivo,
+        }
       };
 
-      if (pacienteId) {
-        await api.put(`/pacientes/${pacienteId}`, updateData);
-      } else {
-        updateData.responsavelId = idUser;
-        await api.post('/pacientes', updateData);
-      }
+      console.log('[EditarPaciente] Enviando dados:', updateData);
+
+      // Fazer PUT no endpoint de perfil completo
+      await api.put('/usuarios/perfil/completo', updateData, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
       
-      alert("Dados do paciente atualizados com sucesso!");
+      console.log('[EditarPaciente] Dados salvos com sucesso!');
+      alert("Dados atualizados com sucesso!");
       navigate("/minha-conta");
     } catch (err) {
-      console.error('Erro ao salvar:', err);
+      console.error('[EditarPaciente] Erro ao salvar:', err);
       const mensagemErro = err.response?.data?.message || "Erro ao salvar as alterações.";
       setError(mensagemErro);
       alert(mensagemErro);

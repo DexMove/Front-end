@@ -16,24 +16,35 @@ export default function ContaFisio() {
       const token = localStorage.getItem('token');
       const tipo = localStorage.getItem('tipoUsuario')?.toLowerCase();
 
+      console.log('[ContaFisio] Verificando tipo de usuário:', tipo);
+
       // 1. Proteção de Rota: Se não tiver token ou não for fisio, expulsa
-      if (!token || !tipo?.includes('fisio')) {
+      if (!token) {
+        console.log('[ContaFisio] Sem token - redirecionando para login');
+        navigate('/entrar');
+        return;
+      }
+
+      if (tipo && !tipo.includes('fisio')) {
+        console.log('[ContaFisio] Usuário não é fisioterapeuta:', tipo);
         alert("Acesso restrito a fisioterapeutas.");
         navigate('/entrar');
         return;
       }
 
       try {
-        // 2. Busca os dados reais do Back-end
-        const response = await api.get('/api/perfil/me', {
+        // 2. Busca os dados reais do Back-end usando endpoint consistente
+        console.log('[ContaFisio] Buscando perfil em /usuarios/perfil/completo');
+        const response = await api.get('/usuarios/perfil/completo', {
           headers: { Authorization: `Bearer ${token}` }
         });
         
-        // O Back-end retorna um PerfilDTO que contém os dados do Usuario + Fisioterapeuta
+        console.log('[ContaFisio] Dados do perfil recebidos:', response.data);
         setDadosFisio(response.data);
       } catch (error) {
-        console.error("Erro ao carregar perfil:", error);
+        console.error("[ContaFisio] Erro ao carregar perfil:", error);
         if (error.response?.status === 401 || error.response?.status === 403) {
+          console.log('[ContaFisio] Acesso negado (401/403) - limpando localStorage');
           localStorage.clear();
           navigate('/entrar');
         }

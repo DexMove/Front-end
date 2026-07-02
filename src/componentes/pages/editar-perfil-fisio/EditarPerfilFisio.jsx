@@ -1,22 +1,70 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header2 from '../../Header2';
 import Footer from '../../Footer';
 import styles from './EditarPerfilFisio.module.css';
 import onda1 from '../../../assets/Group274.svg';
+import api from '../../../services/api';
 
 function EditarPerfilFisio() {
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
+  const [error, setError] = useState(null);
   const [dados, setDados] = useState({
-    nome: 'Lucas Pereira',
-    email: 'lucas.pereira@email.com',
-    telefone: '(11) 98765-4321',
-    crefito: '123456-F',
-    especialidade: 'Fisioterapia Neurológica',
-    atendimento: 'Presencial e Domiciliar',
-    clinica: 'Clínica Movimento - SP',
-    cidade: 'São Paulo',
-    estado: 'SP',
-    biografia: 'Fisioterapeuta com 10 anos de experiência em reabilitação neurológica.'
+    nome: '',
+    email: '',
+    telefone: '',
+    crefito: '',
+    especialidade: '',
+    atendimento: '',
+    clinica: '',
+    cidade: '',
+    estado: '',
+    biografia: ''
   });
+
+  useEffect(() => {
+    const carregarDados = async () => {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        navigate('/entrar');
+        return;
+      }
+
+      try {
+        console.log('[EditarPerfilFisio] Buscando perfil em /usuarios/perfil/completo');
+        const response = await api.get('/usuarios/perfil/completo', {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+        
+        console.log('[EditarPerfilFisio] Dados recebidos:', response.data);
+        
+        const perfil = response.data;
+        const especificos = perfil?.dadosEspecificos || {};
+
+        setDados({
+          nome: perfil?.nome || '',
+          email: perfil?.email || '',
+          telefone: especificos?.telefone || '',
+          crefito: especificos?.crefito || '',
+          especialidade: especificos?.especialidade || '',
+          atendimento: especificos?.tipoAtendimento || '',
+          clinica: especificos?.clinica || '',
+          cidade: especificos?.cidade || '',
+          estado: especificos?.estado || '',
+          biografia: especificos?.biografia || ''
+        });
+      } catch (err) {
+        console.error('[EditarPerfilFisio] Erro ao carregar:', err);
+        setError('Não foi possível carregar os dados.');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    carregarDados();
+  }, [navigate]);
 
   const handleChange = (e) => {
     setDados({
@@ -25,8 +73,47 @@ function EditarPerfilFisio() {
     });
   };
 
-  const handleSalvar = () => {
-    alert('Informações salvas com sucesso!');
+  const handleSalvar = async () => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      navigate('/entrar');
+      return;
+    }
+
+    try {
+      setSaving(true);
+      setError(null);
+
+      const updateData = {
+        nome: dados.nome,
+        email: dados.email,
+        dadosEspecificos: {
+          telefone: dados.telefone,
+          crefito: dados.crefito,
+          especialidade: dados.especialidade,
+          tipoAtendimento: dados.atendimento,
+          clinica: dados.clinica,
+          cidade: dados.cidade,
+          estado: dados.estado,
+          biografia: dados.biografia
+        }
+      };
+
+      console.log('[EditarPerfilFisio] Enviando dados:', updateData);
+      
+      await api.put('/usuarios/perfil/completo', updateData, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+
+      alert('Informações salvas com sucesso!');
+      navigate('/conta-fisio');
+    } catch (err) {
+      console.error('[EditarPerfilFisio] Erro ao salvar:', err);
+      setError('Erro ao salvar as alterações.');
+      alert('Erro ao salvar as alterações.');
+    } finally {
+      setSaving(false);
+    }
   };
 
   return (
@@ -43,6 +130,10 @@ function EditarPerfilFisio() {
             </p>
           </div>
 
+          {loading && <p style={{ textAlign: 'center', padding: '20px' }}>Carregando dados...</p>}
+          {error && <p style={{ textAlign: 'center', padding: '20px', color: 'red' }}>{error}</p>}
+
+          {!loading && (
           <div className={styles.formulario}>
             <label className={styles["form-label"]}>
               Nome
@@ -159,10 +250,11 @@ function EditarPerfilFisio() {
               />
             </label>
 
-            <button onClick={handleSalvar}>
-              Salvar Alterações
+            <button onClick={handleSalvar} disabled={saving}>
+              {saving ? 'Salvando...' : 'Salvar Alterações'}
             </button>
           </div>
+          )}
         </div>
       </div>
       <Footer />
