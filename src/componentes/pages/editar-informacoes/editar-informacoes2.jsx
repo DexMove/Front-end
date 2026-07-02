@@ -1,10 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./editar-informacoes.css";
 import Header2 from "../../Header2";
 import Footer from "../../Footer";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../../context/AuthContext";
-import api from "../../../services/api";
 
 const IconLock = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -35,102 +33,28 @@ const IconEyeOff = () => (
 
 export default function EditarInformacoes() {
   const navigate = useNavigate();
-  const { idUser } = useAuth();
   const [showSenha, setShowSenha] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [saving, setSaving] = useState(false);
-  const [error, setError] = useState(null);
   const [form, setForm] = useState({
-    nome: "",
-    email: "",
-    telefone: "",
+    nome: "Camila Souza",
+    email: "camila.souza@gmail.com",
+    telefone: "(11) 91234-5678",
     senha: "",
     confirmarSenha: "",
   });
-
-  useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        setLoading(true);
-        const response = await api.get(`/usuarios/${idUser}`);
-        setForm({
-          nome: response.data.nome || response.data.nomeCompleto || "",
-          email: response.data.email || "",
-          telefone: response.data.telefone || "",
-          senha: "",
-          confirmarSenha: "",
-        });
-      } catch (err) {
-        console.error('Erro ao buscar dados:', err);
-        setError('Não foi possível carregar seus dados.');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    if (idUser) {
-      fetchUserData();
-    }
-  }, [idUser]);
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  async function handleSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
-    
-    if (!form.nome || !form.email) {
-      alert("Nome e email são obrigatórios!");
-      return;
-    }
-
     if (form.senha && form.senha !== form.confirmarSenha) {
       alert("As senhas não coincidem!");
       return;
     }
-
-    try {
-      setSaving(true);
-      setError(null);
-
-      const updateData = {
-        nome: form.nome,
-        email: form.email,
-        telefone: form.telefone,
-      };
-
-      if (form.senha) {
-        updateData.senha = form.senha;
-      }
-
-      await api.put(`/usuarios/${idUser}`, updateData);
-      
-      alert("Informações atualizadas com sucesso!");
-      navigate("/minha-conta");
-    } catch (err) {
-      console.error('Erro ao salvar:', err);
-      const mensagemErro = err.response?.data?.message || "Erro ao salvar as alterações.";
-      setError(mensagemErro);
-      alert(mensagemErro);
-    } finally {
-      setSaving(false);
-    }
-  }
-
-  if (loading) {
-    return (
-      <main>
-        <Header2 />
-        <div className="ei-page">
-          <div className="ei-card">
-            <p style={{ textAlign: 'center', padding: '2rem' }}>Carregando...</p>
-          </div>
-        </div>
-        <Footer />
-      </main>
-    );
+    console.log("Dados atualizados:", form);
+    navigate("/minha-conta2");
   }
 
   return (
@@ -143,8 +67,6 @@ export default function EditarInformacoes() {
             <h1 className="ei-title">Editar minhas informações</h1>
             <p className="ei-subtitle">Altere seus dados cadastrais</p>
           </div>
-
-          {error && <div style={{ color: 'red', marginBottom: '1rem' }}>{error}</div>}
 
           <form onSubmit={handleSubmit}>
 
@@ -165,28 +87,18 @@ export default function EditarInformacoes() {
               </div>
             </div>
 
-            <div className="ei-row">
-              <div className="ei-field">
-                <label className="ei-label">Telefone</label>
-                <div className="ei-input-wrap">
-                  <IconPhone />
-                  <input type="tel" name="telefone" value={form.telefone} onChange={handleChange} />
-                </div>
-              </div>
-            </div>
-
             <div className="ei-divider">
-              <span>Alterar senha (opcional)</span>
+              <span>Alterar senha</span>
             </div>
 
             <div className="ei-field">
-              <label className="ei-label">Nova senha</label>
+              <label className="ei-label">Confirmar senha</label>
               <div className="ei-input-wrap">
                 <IconLock />
                 <input
                   type={showSenha ? "text" : "password"}
                   name="senha"
-                  placeholder="Deixe em branco para não alterar"
+                  placeholder="Nova senha"
                   value={form.senha}
                   onChange={handleChange}
                 />
@@ -197,7 +109,7 @@ export default function EditarInformacoes() {
             </div>
 
             <div className="ei-field">
-              <label className="ei-label">Confirme a senha</label>
+              <label className="ei-label">Senha</label>
               <div className="ei-input-wrap">
                 <IconLock />
                 <input
@@ -214,11 +126,11 @@ export default function EditarInformacoes() {
             </div>
 
             <div className="ei-actions">
-              <button type="button" className="ei-btn-cancel" onClick={() => navigate("/minha-conta")} disabled={saving}>
+              <button type="button" className="ei-btn-cancel" onClick={() => navigate("/minha-conta2")}> 
                 Cancelar
               </button>
-              <button type="submit" className="ei-btn-save" disabled={saving}>
-                {saving ? "Salvando..." : "Salvar as alterações"}
+              <button type="submit" className="ei-btn-save">
+                Salvar as alterações
               </button>
             </div>
 

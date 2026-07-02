@@ -55,7 +55,6 @@ export default function Cadastro_fisioterapeuta() {
     nome: "", sobrenome: "", email: "", senha: "", confirma: "",
   });
 
-  // CORREÇÃO: Esta função agora é disparada pelo onSubmit do formulário
   function handleNext(e) {
     e.preventDefault(); // Impede o recarregamento da página
     
@@ -64,9 +63,14 @@ export default function Cadastro_fisioterapeuta() {
       return;
     }
 
-    // Navega passando os dados no state para a próxima tela
-    // Certifique-se que a rota abaixo é a mesma definida no seu App.js
-    navigate("/cadastro-fisioterapeuta/dados-profissionais", { state: cadastroData });
+    if (!cadastroData.nome || !cadastroData.email) {
+      alert("Preencha os campos obrigatórios!");
+      return;
+    }
+
+    // Navega para a rota EXATA que está no seu App.js
+    console.log("Navegando para /dados-profissionais com os dados:", cadastroData);
+    navigate("/dados-profissionais", { state: cadastroData });
   }
 
   return (

@@ -2,6 +2,9 @@ import "./MinhaConta.css";
 import Header2 from "../../Header2";
 import Footer from "../../Footer";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useAuth } from "../../../context/AuthContext";
+import api from "../../../services/api";
 
 const IconEdit = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -29,6 +32,84 @@ const IconUser = () => (
 );
 
 export default function MinhaConta() {
+  const { idUser } = useAuth();
+  const [usuario, setUsuario] = useState(null);
+  const [paciente, setPaciente] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        console.log('[MinhaConta] Iniciando fetch com idUser:', idUser);
+        setLoading(true);
+        setError(null);
+
+        if (!idUser) {
+          console.log('[MinhaConta] idUser não definido!');
+          setError('Usuário não autenticado.');
+          setLoading(false);
+          return;
+        }
+
+        // Buscar dados do usuário responsável
+        console.log('[MinhaConta] Buscando usuário em /usuarios/' + idUser);
+        const usuarioResponse = await api.get(`/usuarios/${idUser}`);
+        console.log('[MinhaConta] Resposta do usuário:', usuarioResponse.data);
+        setUsuario(usuarioResponse.data);
+
+        // Buscar dados do paciente associado
+        console.log('[MinhaConta] Buscando paciente em /pacientes/responsavel/' + idUser);
+        const pacienteResponse = await api.get(`/pacientes/responsavel/${idUser}`);
+        console.log('[MinhaConta] Resposta do paciente:', pacienteResponse.data);
+        if (pacienteResponse.data && pacienteResponse.data.length > 0) {
+          setPaciente(pacienteResponse.data[0]);
+        }
+      } catch (err) {
+        console.error('[MinhaConta] Erro ao buscar dados:', err);
+        setError('Não foi possível carregar os dados. Tente novamente.');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (idUser) {
+      fetchUserData();
+    } else {
+      console.log('[MinhaConta] idUser não existe - pulando fetch');
+      setError('Usuário não autenticado.');
+      setLoading(false);
+    }
+  }, [idUser]);
+
+  if (loading) {
+    return (
+      <main>
+        <Header2 />
+        <div className="mc-page">
+          <div className="mc-container">
+            <p style={{ textAlign: 'center', padding: '2rem' }}>Carregando...</p>
+          </div>
+        </div>
+        <Footer />
+      </main>
+    );
+  }
+
+  if (error) {
+    return (
+      <main>
+        <Header2 />
+        <div className="mc-page">
+          <div className="mc-container">
+            <p style={{ textAlign: 'center', padding: '2rem', color: 'red' }}>{error}</p>
+          </div>
+        </div>
+        <Footer />
+      </main>
+    );
+  }
+
   return (
     <main>
       <Header2 />
@@ -39,68 +120,72 @@ export default function MinhaConta() {
           <p className="mc-page-sub">Aqui estão suas informações</p>
 
           {/* Card responsável */}
-          <div className="mc-card">
-            <div className="mc-card-header">
-              <span className="mc-card-label">Dados do responsável</span>
-              <Link to="/editar-informacoes" className="mc-edit-btn">
-                <IconEdit /> Editar minhas informações
-              </Link>
-            </div>
-            <div className="mc-card-body">
-              <div className="mc-info-row">
-                <IconMail />
-                <span>Camila Souza</span>
+          {usuario && (
+            <div className="mc-card">
+              <div className="mc-card-header">
+                <span className="mc-card-label">Dados do responsável</span>
+                <Link to="/editar-informacoes" className="mc-edit-btn">
+                  <IconEdit /> Editar minhas informações
+                </Link>
               </div>
-              <div className="mc-info-row">
-                <IconMail />
-                <span>camila.souza@gmail.com</span>
+              <div className="mc-card-body">
+                <div className="mc-info-row">
+                  <IconMail />
+                  <span>{usuario.nome || usuario.nomeCompleto || 'N/A'}</span>
+                </div>
+                <div className="mc-info-row">
+                  <IconMail />
+                  <span>{usuario.email || 'N/A'}</span>
+                </div>
               </div>
             </div>
-          </div>
+          )}
 
           {/* Card paciente */}
-          <div className="mc-card mc-card--patient">
-            <div className="mc-card-header">
-              <span className="mc-card-label">Paciente sob sua responsabilidade</span>
-              <Link to="/editar-paciente" className="mc-edit-btn">
-                <IconEdit /> Editar dados do paciente
-              </Link>
-            </div>
-            <div className="mc-patient-body">
-              <div className="mc-avatar">
-                <IconUser />
+          {paciente && (
+            <div className="mc-card mc-card--patient">
+              <div className="mc-card-header">
+                <span className="mc-card-label">Paciente sob sua responsabilidade</span>
+                <Link to="/editar-paciente" className="mc-edit-btn">
+                  <IconEdit /> Editar dados do paciente
+                </Link>
               </div>
-              <div className="mc-patient-info">
-                <p className="mc-patient-name">Gabriel Souza</p>
-                <div className="mc-patient-grid">
-                  <div className="mc-patient-item">
-                    <span className="mc-patient-key">Idade</span>
-                    <span className="mc-patient-val">35 anos</span>
-                  </div>
-                  <div className="mc-patient-item">
-                    <span className="mc-patient-key">Peso (kg)</span>
-                    <span className="mc-patient-val">70 kg</span>
-                  </div>
-                  <div className="mc-patient-item">
-                    <span className="mc-patient-key">Diagnóstico</span>
-                    <span className="mc-patient-val">Paralisia Cerebral</span>
-                  </div>
-                  <div className="mc-patient-item">
-                    <span className="mc-patient-key">Mão afetada</span>
-                    <span className="mc-patient-val">Direita</span>
-                  </div>
-                  <div className="mc-patient-item">
-                    <span className="mc-patient-key">Grau de dificuldade motora</span>
-                    <span className="mc-patient-val">Moderada</span>
-                  </div>
-                  <div className="mc-patient-item">
-                    <span className="mc-patient-key">Principal objetivo da reabilitação</span>
-                    <span className="mc-patient-val">Recuperar movimentos finos da mão</span>
+              <div className="mc-patient-body">
+                <div className="mc-avatar">
+                  <IconUser />
+                </div>
+                <div className="mc-patient-info">
+                  <p className="mc-patient-name">{paciente.nome || 'N/A'}</p>
+                  <div className="mc-patient-grid">
+                    <div className="mc-patient-item">
+                      <span className="mc-patient-key">Idade</span>
+                      <span className="mc-patient-val">{paciente.idade ? `${paciente.idade} anos` : 'N/A'}</span>
+                    </div>
+                    <div className="mc-patient-item">
+                      <span className="mc-patient-key">Peso (kg)</span>
+                      <span className="mc-patient-val">{paciente.peso ? `${paciente.peso} kg` : 'N/A'}</span>
+                    </div>
+                    <div className="mc-patient-item">
+                      <span className="mc-patient-key">Diagnóstico</span>
+                      <span className="mc-patient-val">{paciente.diagnostico || 'N/A'}</span>
+                    </div>
+                    <div className="mc-patient-item">
+                      <span className="mc-patient-key">Mão afetada</span>
+                      <span className="mc-patient-val">{paciente.maoAfetada || 'N/A'}</span>
+                    </div>
+                    <div className="mc-patient-item">
+                      <span className="mc-patient-key">Grau de dificuldade motora</span>
+                      <span className="mc-patient-val">{paciente.grauDificuldadeMotora || 'N/A'}</span>
+                    </div>
+                    <div className="mc-patient-item">
+                      <span className="mc-patient-key">Principal objetivo da reabilitação</span>
+                      <span className="mc-patient-val">{paciente.objetivoReabilitacao || 'N/A'}</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          )}
 
         </div>
       </div>

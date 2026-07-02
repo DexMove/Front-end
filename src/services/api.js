@@ -4,14 +4,14 @@ const api = axios.create({
   baseURL: 'http://localhost:8081',
 });
 
-const token = localStorage.getItem('token');
+const token = typeof window !== 'undefined' ? window.localStorage.getItem('token') : null;
 if (token) {
   api.defaults.headers.common.Authorization = `Bearer ${token}`;
 }
 
 api.interceptors.request.use(
   (config) => {
-    const authToken = localStorage.getItem('token');
+    const authToken = typeof window !== 'undefined' ? window.localStorage.getItem('token') : null;
     if (authToken && config.headers) {
       config.headers.Authorization = `Bearer ${authToken}`;
     }

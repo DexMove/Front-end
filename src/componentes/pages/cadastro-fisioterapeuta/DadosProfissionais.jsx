@@ -7,6 +7,7 @@ import Fisioterapeuta from "../../../assets/fisioterapeuta.png";
 import Header from '../../Header';
 import api from '../../../services/api';
 
+// Ícones
 const IconId = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
@@ -47,6 +48,7 @@ export default function DadosProfissionais() {
     sobre: "",
   });
 
+  // Verifica se os dados da primeira tela existem
   useEffect(() => {
     if (!location.state) {
       navigate('/cadastro-fisioterapeuta');
@@ -56,16 +58,17 @@ export default function DadosProfissionais() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    if (!location.state) {
-      return;
-    }
+    if (!location.state) return;
+
     if (!termos) {
       alert('Você precisa aceitar os termos para continuar.');
       return;
     }
 
+    // CORREÇÃO: Payload ajustado para enviar nome e sobrenome separados (evita NULL no banco)
     const payload = {
-      nomeCompletoFisioterapeuta: `${location.state.nome} ${location.state.sobrenome}`,
+      nome: location.state.nome,
+      sobrenome: location.state.sobrenome,
       email: location.state.email,
       senha: location.state.senha,
       crefito: dados.crefito,
@@ -82,11 +85,14 @@ export default function DadosProfissionais() {
       navigate('/entrar');
     } catch (error) {
       console.error('Erro no cadastro de fisioterapeuta:', error);
-      const responseMessage = error.response?.data?.message || error.response?.data?.erro || error.response?.data?.mensagem;
-      if (responseMessage?.toString().toLowerCase().includes('email')) {
-        alert(responseMessage);
+      
+      // CORREÇÃO: Captura a mensagem de erro específica do Back-end (ex: CREFITO inválido)
+      const mensagemServidor = error.response?.data;
+
+      if (mensagemServidor && typeof mensagemServidor === 'string') {
+        alert("❌ Erro: " + mensagemServidor);
       } else {
-        alert(responseMessage || 'Não foi possível finalizar o cadastro. Tente novamente.');
+        alert('Não foi possível finalizar o cadastro. Verifique se o CREFITO está no formato 123456-F');
       }
     }
   }
@@ -106,9 +112,10 @@ export default function DadosProfissionais() {
                 <label className="lc-label">Número CREFITO</label>
                 <div className="lc-input-wrap">
                   <IconId />
-                  <input type="text" placeholder="Ex:123456-4"
+                  <input type="text" placeholder="Ex: 123456-F"
                     value={dados.crefito}
-                    onChange={(e) => setDados({ ...dados, crefito: e.target.value })} />
+                    onChange={(e) => setDados({ ...dados, crefito: e.target.value })} 
+                    required />
                 </div>
               </div>
               <div className="lc-field">
@@ -117,17 +124,18 @@ export default function DadosProfissionais() {
                   <IconSpecialty />
                   <select
                     value={dados.especialidade}
-                    onChange={(e) => setDados({ ...dados, especialidade: e.target.value })}>
+                    onChange={(e) => setDados({ ...dados, especialidade: e.target.value })}
+                    required>
                     <option value="">Selecione</option>
-                    <option>Ortopedia e traumatologia</option>
-                    <option>Neurologia</option>
-                    <option>Cardiorrespiratória</option>
-                    <option>Geriatria</option>
-                    <option>Pediatria</option>
-                    <option>Esportiva</option>
-                    <option>Dermatofuncional</option>
-                    <option>Saúde da mulher</option>
-                    <option>Outra</option>
+                    <option value="Ortopedia e traumatologia">Ortopedia e traumatologia</option>
+                    <option value="Neurologia">Neurologia</option>
+                    <option value="Cardiorrespiratória">Cardiorrespiratória</option>
+                    <option value="Geriatria">Geriatria</option>
+                    <option value="Pediatria">Pediatria</option>
+                    <option value="Esportiva">Esportiva</option>
+                    <option value="Dermatofuncional">Dermatofuncional</option>
+                    <option value="Saúde da mulher">Saúde da mulher</option>
+                    <option value="Outra">Outra</option>
                   </select>
                 </div>
               </div>

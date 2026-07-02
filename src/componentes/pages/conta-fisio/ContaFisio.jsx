@@ -1,22 +1,65 @@
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Header2 from '../../Header2';
 import Footer from '../../Footer';
 import styles from "./ContaFisio.module.css";
-import avatar from "../../../assets/ofisio.png";
-
-const IconEdit = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
-    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
-  </svg>
-);
+import avatarPadrao from "../../../assets/ofisio.png";
+import api from "../../../services/api";
 
 export default function ContaFisio() {
   const navigate = useNavigate();
+  const [dadosFisio, setDadosFisio] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const carregarPerfil = async () => {
+      const token = localStorage.getItem('token');
+      const tipo = localStorage.getItem('tipoUsuario')?.toLowerCase();
+
+      // 1. Proteção de Rota: Se não tiver token ou não for fisio, expulsa
+      if (!token || !tipo?.includes('fisio')) {
+        alert("Acesso restrito a fisioterapeutas.");
+        navigate('/entrar');
+        return;
+      }
+
+      try {
+        // 2. Busca os dados reais do Back-end
+        const response = await api.get('/api/perfil/me', {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+        
+        // O Back-end retorna um PerfilDTO que contém os dados do Usuario + Fisioterapeuta
+        setDadosFisio(response.data);
+      } catch (error) {
+        console.error("Erro ao carregar perfil:", error);
+        if (error.response?.status === 401 || error.response?.status === 403) {
+          localStorage.clear();
+          navigate('/entrar');
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    carregarPerfil();
+  }, [navigate]);
 
   const handleEditInfo = () => navigate("/editar-perfil");
   const handleGoToAgenda = () => navigate("/agenda");
   const handleGoToDetails = () => navigate("/detalhes-agendamento");
+
+  if (loading) {
+    return (
+      <div className={styles.loadingContainer}>
+        <p>Carregando informações profissionais...</p>
+      </div>
+    );
+  }
+
+  // Extrai os dados para facilitar o uso (ajuste conforme a estrutura do seu DTO)
+  const { nome, sobrenome, email, dadosEspecificos } = dadosFisio || {};
+  const infoFisica = dadosEspecificos || {};
 
   return (
     <>
@@ -31,9 +74,13 @@ export default function ContaFisio() {
 
           {/* Profile Card */}
           <div className={styles.perfilBox}>
-            <img src={avatar} alt="Avatar Lucas Pereira" className={styles.avatar} />
+            <img 
+              src={infoFisica.urlAvatar || avatarPadrao} 
+              alt={`Avatar ${nome}`} 
+              className={styles.avatar} 
+            />
             <div className={styles.perfilInfo}>
-              <h2 className={styles.nome}>Lucas Pereira</h2>
+              <h2 className={styles.nome}>{nome} {sobrenome}</h2>
               <p className={styles.cargo}>Fisioterapeuta</p>
             </div>
             <button className={styles.btnEditar} onClick={handleEditInfo}>
@@ -45,47 +92,49 @@ export default function ContaFisio() {
           <div className={styles.infoBox}>
             <div className={styles.infoLinha}>
               <span className={styles.label}>Nome</span>
-              <span className={styles.valor}>Lucas Pereira</span>
+              <span className={styles.valor}>{nome} {sobrenome}</span>
             </div>
             <div className={styles.infoLinha}>
               <span className={styles.label}>E-mail</span>
-              <span className={styles.valor}>lucas.pereira@email.com</span>
+              <span className={styles.valor}>{email}</span>
             </div>
             <div className={styles.infoLinha}>
               <span className={styles.label}>Telefone</span>
-              <span className={styles.valor}>(11) 98765-4321</span>
+              <span className={styles.valor}>{infoFisica.telefone || "Não informado"}</span>
             </div>
             <div className={styles.infoLinha}>
               <span className={styles.label}>CREFITO</span>
-              <span className={styles.valor}>123456-F</span>
+              <span className={styles.valor}>{infoFisica.crefito}</span>
             </div>
             <div className={styles.infoLinha}>
               <span className={styles.label}>Especialidade</span>
-              <span className={styles.valor}>Fisioterapia Neurológica</span>
+              <span className={styles.valor}>{infoFisica.especialidade || "Não informada"}</span>
             </div>
             <div className={styles.infoLinha}>
               <span className={styles.label}>Atendimento</span>
-              <span className={styles.valor}>Presencial e Domiciliar</span>
+              <span className={styles.valor}>{infoFisica.tipoAtendimento || "Não informado"}</span>
             </div>
             <div className={styles.infoLinha}>
               <span className={styles.label}>Clínica/local</span>
-              <span className={styles.valor}>Clínica Movimento</span>
+              <span className={styles.valor}>{infoFisica.clinica || "Não informado"}</span>
             </div>
             <div className={styles.infoLinha}>
               <span className={styles.label}>Cidade</span>
-              <span className={styles.valor}>São Paulo</span>
+              <span className={styles.valor}>{infoFisica.cidade || "Não informado"}</span>
             </div>
             <div className={styles.infoLinha}>
               <span className={styles.label}>Estado</span>
-              <span className={styles.valor}>SP</span>
+              <span className={styles.valor}>{infoFisica.estado || "--"}</span>
             </div>
             <div className={`${styles.infoLinha} ${styles.fullWidth}`}>
               <span className={styles.label}>Biografia</span>
-              <span className={styles.valor}>Fisioterapeuta especialista em reabilitação neurológica com mais de 8 anos de experiência ajudando pacientes a recuperarem sua mobilidade e qualidade de vida.</span>
+              <span className={styles.valor}>
+                {infoFisica.biografia || "Nenhuma biografia cadastrada."}
+              </span>
             </div>
           </div>
 
-          {/* Upcoming Appointments Box */}
+          {/* Upcoming Appointments Box (Estático por enquanto) */}
           <div className={styles.agendaBox}>
             <div className={styles.agendaHeader}>
               <span className={styles.agendaTitulo}>Próximos agendamentos</span>
@@ -95,7 +144,6 @@ export default function ContaFisio() {
             </div>
 
             <div className={styles.agendaLista}>
-              {/* Appointment 1 */}
               <div className={styles.agendaItem} onClick={handleGoToDetails}>
                 <div className={styles.itemMeta}>
                   <span className={styles.agendaNome}>Gabriel Souza</span>
@@ -104,7 +152,6 @@ export default function ContaFisio() {
                 <div className={styles.agendaDesc}>Avaliação inicial - Dexmove</div>
               </div>
 
-              {/* Appointment 2 */}
               <div className={styles.agendaItem} onClick={handleGoToAgenda}>
                 <div className={styles.itemMeta}>
                   <span className={styles.agendaNome}>Mariana Silva</span>

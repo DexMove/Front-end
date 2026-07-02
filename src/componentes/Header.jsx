@@ -2,8 +2,11 @@ import './Header.css';
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
+import { useAuth } from '../context/AuthContext';
+import Menu from './AccountMenu';
 
 function Header() {
+  const { isAuthenticated, logout } = useAuth();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [headerHeight, setHeaderHeight] = useState(0);
   const headerRef = useRef(null);
@@ -34,11 +37,21 @@ function Header() {
             <Link to="/fisioterapeutas">FISIOTERAPEUTAS</Link>
             <Link to="/produtos">PRODUTOS</Link>
             <Link to="/planos">VER PLANOS</Link>
-            <Link to="/entrar">ENTRAR</Link>
-            <Link className="cadastro" to="/bem-vindo">CADASTRE-SE</Link>
+            {isAuthenticated ? (
+              <>
+                <Link to="/bloqueada">MOVEHAND</Link>
+              </>
+            ) : (
+              <>
+                <Link to="/entrar">ENTRAR</Link>
+                <Link className="cadastro" to="/bem-vindo">CADASTRE-SE</Link>
+              </>
+            )}
           </nav>
 
           <div className="header-actions">
+            {isAuthenticated && <Menu />}
+
             <button
               className="menu-button"
               type="button"
@@ -81,12 +94,22 @@ function Header() {
           <Link className="sidebar-mobile-only" onClick={() => setSidebarOpen(false)} to="/planos">
             VER PLANOS
           </Link>
-          <Link className="sidebar-mobile-only" onClick={() => setSidebarOpen(false)} to="/entrar">
-            ENTRAR
-          </Link>
-          <Link className="sidebar-mobile-only" onClick={() => setSidebarOpen(false)} to="/bem-vindo">
-            CADASTRE-SE
-          </Link>
+          {isAuthenticated ? (
+            <>
+              <Link className="sidebar-mobile-only" onClick={() => setSidebarOpen(false)} to="/bloqueada">
+                MOVEHAND
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link className="sidebar-mobile-only" onClick={() => setSidebarOpen(false)} to="/entrar">
+                ENTRAR
+              </Link>
+              <Link className="sidebar-mobile-only" onClick={() => setSidebarOpen(false)} to="/bem-vindo">
+                CADASTRE-SE
+              </Link>
+            </>
+          )}
           <Link onClick={() => setSidebarOpen(false)} to="/suporte">
             SUPORTE
           </Link>

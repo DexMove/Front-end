@@ -5,35 +5,29 @@ import Footer from "../../Footer";
 import Cadastro from "../../../assets/cadastro.png";
 import Header from '../../Header';
 import api from '../../../services/api';
+import { useAuth } from '../../../context/AuthContext';
 
+// Ícones (SVG)
 const IconEmail = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="2" y="4" width="20" height="16" rx="2"/>
-    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+    <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
   </svg>
 );
-
 const IconLock = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
   </svg>
 );
-
 const IconEye = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-    <circle cx="12" cy="12" r="3"/>
+    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
   </svg>
 );
-
 const IconEyeOff = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
-    <line x1="1" y1="1" x2="23" y2="23"/>
+    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>
   </svg>
 );
-
 const GoogleIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24">
     <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -42,7 +36,6 @@ const GoogleIcon = () => (
     <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
   </svg>
 );
-
 const AppleIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
     <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
@@ -51,6 +44,7 @@ const AppleIcon = () => (
 
 export default function Login() {
   const navigate = useNavigate();
+  const { login } = useAuth();
   const [showSenha, setShowSenha] = useState(false);
   const [loginData, setLoginData] = useState({ email: "", senha: "" });
 
@@ -64,42 +58,51 @@ export default function Login() {
 
     try {
       console.log('Tentando login com:', loginData);
-      const response = await api.post('/api/auth/login', loginData);
+      
+      // Rota correta configurada no SecurityConfig do Back-end
+      const response = await api.post('/usuarios/login', loginData);
+      
       console.log('Resposta do login:', response.data);
-      const { token, tipoUsuario, idUser } = response.data;
+
+      // Extrair campos de forma resiliente caso o backend retorne nomes diferentes
+      const token = response.data.token || response.data.accessToken || response.data.jwt || null;
+      const tipoUsuario = response.data.tipoUsuario || response.data.tipo || response.data.role || null;
+      const idUser = response.data.idUser ?? response.data.id ?? response.data.userId ?? response.data.idUsuario ?? null;
+      const nome = response.data.nome || response.data.name || response.data.username || null;
+
+      console.log('Derivado do login -> token, tipoUsuario, idUser, nome:', { token, tipoUsuario, idUser, nome });
 
       if (!token) {
-        throw new Error('Token não foi retornado pelo servidor.');
+        throw new Error('Token não retornado pelo servidor.');
       }
 
-      localStorage.setItem('token', token);
-      if (idUser) localStorage.setItem('idUser', idUser);
-      if (tipoUsuario) localStorage.setItem('tipoUsuario', tipoUsuario);
-      api.defaults.headers.common.Authorization = `Bearer ${token}`;
+      login({ token, tipoUsuario, idUser, nomeUsuario: nome || 'Usuário' });
 
-      console.log('Login bem-sucedido. tipoUsuario:', tipoUsuario, 'idUser:', idUser);
+      console.log('Login bem-sucedido. Redirecionando...');
 
-      if (tipoUsuario?.toString().toLowerCase().includes('fisio')) {
+      const tipo = (tipoUsuario || '').toLowerCase();
+      if (tipo.includes('fisioterapeuta')) {
         navigate('/conta-fisio');
+      } else if (tipo.includes('responsavel')) {
+        navigate('/minha-conta');
       } else {
-        navigate('/area-controle');
+        navigate('/home2');
       }
+
     } catch (error) {
       console.error('Erro no login:', error);
-      console.error('Erro response:', error.response?.data);
-      console.error('Status:', error.response?.status);
       
-      const responseMessage = error.response?.data?.message || error.response?.data?.erro || error.response?.data?.mensagem;
-      const lowerMessage = responseMessage?.toString().toLowerCase() || '';
+      const status = error.response?.status;
+      const mensagemErro = error.response?.data;
 
-      if (error.response?.status === 401) {
-        alert('Email ou senha incorretos. Verifique e tente novamente.');
-      } else if (lowerMessage.includes('senha')) {
-        alert('Senha incorreta. Verifique e tente novamente.');
-      } else if (lowerMessage.includes('email')) {
-        alert('Email não encontrado. Verifique ou crie uma conta.');
+      if (status === 403) {
+        alert("Erro de permissão (403). A rota de login pode estar bloqueada no servidor.");
+      } else if (status === 401) {
+        alert("E-mail ou senha incorretos. Tente novamente.");
+      } else if (typeof mensagemErro === 'string') {
+        alert(mensagemErro);
       } else {
-        alert(responseMessage || 'Não foi possível efetuar login. Verifique os dados e tente novamente.');
+        alert("Não foi possível realizar o login. Verifique sua conexão.");
       }
     }
   };
@@ -114,12 +117,12 @@ export default function Login() {
             <p className="lc-subtitle">
               Entre para continuar acompanhando sua jornada com a <strong>DexMove</strong>
             </p>
+            
             <div className="lc-toggle">
               <button className="lc-tab active" type="button">Entrar</button>
-              <Link to="/bem-vindo" className="lc-tab">
-                Cadastre-se
-              </Link>
+              <Link to="/bem-vindo" className="lc-tab">Cadastre-se</Link>
             </div>
+
             <form onSubmit={handleLoginSubmit}>
               <div className="lc-field">
                 <label className="lc-label">E-mail</label>
@@ -156,20 +159,14 @@ export default function Login() {
 
               <div className="lc-alt-link">
                 Não tem uma conta?{' '}
-                <Link to="/bem-vindo" className="lc-tab">
-                  Cadastre-se
-                </Link>
+                <Link to="/bem-vindo" className="lc-tab">Cadastre-se</Link>
               </div>
 
               <div className="lc-divider">ou continue com</div>
 
               <div className="lc-social-row">
-                <button type="button" className="lc-social-btn">
-                  <GoogleIcon /> Google
-                </button>
-                <button type="button" className="lc-social-btn">
-                  <AppleIcon /> Apple
-                </button>
+                <button type="button" className="lc-social-btn"><GoogleIcon /> Google</button>
+                <button type="button" className="lc-social-btn"><AppleIcon /> Apple</button>
               </div>
             </form>
           </div>

@@ -1,6 +1,7 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ScrollToTop from './componentes/ScrollToTop';
 import Header from "./componentes/Header";
+import { useAuth } from './context/AuthContext';
 
 import Planos from "./componentes/pages/planos/Planos";
 import Produtos from "./componentes/pages/produtos/Produtos";
@@ -36,10 +37,25 @@ import ContaFisio from "./componentes/pages/conta-fisio/ContaFisio";
 import Bloqueada from "./componentes/pages/bloqueada/bloqueada";
 import Wave from "./componentes/Wave";
 import DadosProfissionais from "./componentes/pages/cadastro-fisioterapeuta/DadosProfissionais";
-import EditarInformacoes2 from "./componentes/pages/editar-informacoes/editar-informações2";
+import EditarInformacoes2 from "./componentes/pages/editar-informacoes/editar-informacoes2";
 import EditarPaciente2 from "./componentes/pages/editar-paciente/Editar-paciente2";
 import Termos from "./componentes/pages/termos/Termos";
 import AreaControle from "./componentes/pages/AreaControle";
+
+function AccountRoute() {
+  const { tipoUsuario } = useAuth();
+  const normalizedType = (tipoUsuario || '').toLowerCase();
+
+  if (normalizedType.includes('fisioterapeuta')) {
+    return <ContaFisio />;
+  }
+
+  if (normalizedType.includes('responsavel')) {
+    return <MinhaConta />;
+  }
+
+  return <MinhaConta2 />;
+}
 
 function App() {
   return (
@@ -67,7 +83,7 @@ function App() {
           <Route path="/enderecos" element={<Enderecos />} />
           <Route path="/fisioterapeutas" element={<Fisioterapeutas />} />
           <Route path="/pagamento" element={<MetodosPagamento />} />
-          <Route path="/minha-conta" element={<MinhaConta />} />
+          <Route path="/minha-conta" element={<AccountRoute />} />
           <Route path="/minha-conta2" element={<MinhaConta2 />} />
           <Route path="/pedidos" element={<Pedidos />} />
           <Route path="/planilha" element={<Planilha />} />
