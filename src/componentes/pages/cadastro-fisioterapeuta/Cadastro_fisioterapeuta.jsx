@@ -4,9 +4,8 @@ import "./cadastro_fisioterapeuta.css";
 import Footer from "../../Footer";
 import Fisioterapeuta from "../../../assets/fisioterapeuta.png";
 import Header from '../../Header';
-import { Link } from "react-router-dom";
 
-
+// Ícones mantidos conforme seu código original
 const IconEmail = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
@@ -49,7 +48,6 @@ const AppleIcon = () => (
 
 export default function Cadastro_fisioterapeuta() {
   const navigate = useNavigate();
-  const [tab, setTab] = useState("cadastro");
   const [showSenha, setShowSenha] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
 
@@ -57,12 +55,17 @@ export default function Cadastro_fisioterapeuta() {
     nome: "", sobrenome: "", email: "", senha: "", confirma: "",
   });
 
+  // CORREÇÃO: Esta função agora é disparada pelo onSubmit do formulário
   function handleNext(e) {
-    e.preventDefault();
+    e.preventDefault(); // Impede o recarregamento da página
+    
     if (cadastroData.senha !== cadastroData.confirma) {
       alert("As senhas não coincidem!");
       return;
     }
+
+    // Navega passando os dados no state para a próxima tela
+    // Certifique-se que a rota abaixo é a mesma definida no seu App.js
     navigate("/cadastro-fisioterapeuta/dados-profissionais", { state: cadastroData });
   }
 
@@ -77,9 +80,10 @@ export default function Cadastro_fisioterapeuta() {
 
           <div className="lc-toggle">
               <a href="/entrar" className="lc-tab">Entrar</a>
-              <button className="lc-tab active">Cadastre-se</button>
+              <button type="button" className="lc-tab active">Cadastre-se</button>
             </div>
 
+          {/* CORREÇÃO: Adicionado onSubmit para capturar o clique no botão Próximo */}
           <form onSubmit={handleNext}>
             <div className="cf-row">
               <div className="lc-field">
@@ -143,10 +147,10 @@ export default function Cadastro_fisioterapeuta() {
               </div>
             </div>
 
-            <Link to="/dados-profissionais" className="lc-submit">
+            {/* CORREÇÃO: Alterado de <Link> para <button type="submit"> */}
+            <button type="submit" className="lc-submit">
                 Próximo
-              </Link>
-
+            </button>
 
             <div className="lc-divider">Ou continue com</div>
 

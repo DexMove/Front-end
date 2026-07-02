@@ -28,21 +28,22 @@ export default function CompletarPerfil() {
   async function handleSubmit(e) {
     e.preventDefault();
 
+    // CORREÇÃO: Converte para número apenas se houver valor, evitando NaN (Erro 400)
+    const idadeNum = form.idade ? parseInt(form.idade) : null;
+    const pesoNum = form.peso ? parseFloat(form.peso) : null;
+
+    // Montagem do Payload conforme o DTO do Back-end
     const payload = {
-      idade: Number(form.idade),
-      peso: Number(form.peso),
+      idade: idadeNum,
+      peso: pesoNum,
       diagnostico: form.diagnostico,
       maoAfetada: form.maoAfetada,
       grauDificuldade: form.grauDificuldade,
       objetivo: form.objetivo,
-      quemUtilizara: quemUtilizara,
+      quemUtilizara: quemUtilizara, // "eu_mesmo" ou "outro"
+      nomePaciente: quemUtilizara === "outro" ? form.nomePaciente : "",
+      parentesco: quemUtilizara === "outro" ? form.parentesco : null,
     };
-
-    if (quemUtilizara === "outro") {
-      payload.nomePaciente = form.nomePaciente;
-      payload.parentesco = form.parentesco.toUpperCase();
-      payload.email = form.email;
-    }
 
     const token = localStorage.getItem('token');
 
@@ -53,11 +54,14 @@ export default function CompletarPerfil() {
     }
 
     try {
+      // Chamada PUT para atualizar os dados clínicos e criar o vínculo
       await api.put("/usuarios/perfil/clinico", payload, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
+
+      alert("Perfil atualizado com sucesso!");
 
       if (quemUtilizara === "eu_mesmo") {
         navigate("/minha-conta2");
@@ -66,7 +70,10 @@ export default function CompletarPerfil() {
       }
     } catch (error) {
       console.error("Erro ao salvar perfil clínico:", error);
-      if (error.response?.status === 401 || error.response?.status === 403) {
+      
+      if (error.response?.status === 400) {
+        alert("Erro nos dados enviados. Verifique se todos os campos estão preenchidos corretamente.");
+      } else if (error.response?.status === 401 || error.response?.status === 403) {
         alert("Sessão expirada. Faça login novamente.");
         localStorage.removeItem('token');
         navigate("/entrar");
@@ -99,7 +106,7 @@ export default function CompletarPerfil() {
               </div>
               <div className="cp-field">
                 <label className="cp-label">Peso (kg)</label>
-                <input className="cp-input" name="peso" type="number" placeholder="Ex: 70"
+                <input className="cp-input" name="peso" type="number" step="0.1" placeholder="Ex: 70.5"
                   value={form.peso} onChange={handleChange} required />
               </div>
             </div>
@@ -111,10 +118,10 @@ export default function CompletarPerfil() {
                 <div className="cp-select-wrap">
                   <select className="cp-select" name="diagnostico" value={form.diagnostico} onChange={handleChange} required>
                     <option value="">Selecione</option>
-                    <option value="avc">AVC</option>
-                    <option value="lesao_medular">Lesão medular</option>
-                    <option value="paralisia_cerebral">Paralisia cerebral</option>
-                    <option value="trauma_ortopedico">Trauma ortopédico</option>
+                    <option value="AVC">AVC</option>
+                    <option value="LESAO_MEDULAR">Lesão medular</option>
+                    <option value="PARALISIA_CEREBRAL">Paralisia cerebral</option>
+                    <option value="TRAUMA_ORTOPEDICO">Trauma ortopédico</option>
                   </select>
                 </div>
               </div>
@@ -123,9 +130,9 @@ export default function CompletarPerfil() {
                 <div className="cp-select-wrap">
                   <select className="cp-select" name="maoAfetada" value={form.maoAfetada} onChange={handleChange} required>
                     <option value="">Selecione</option>
-                    <option value="Direita">Direita</option>
-                    <option value="Esquerda">Esquerda</option>
-                    <option value="Ambas">Ambas</option>
+                    <option value="DIREITA">Direita</option>
+                    <option value="ESQUERDA">Esquerda</option>
+                    <option value="AMBAS">Ambas</option>
                   </select>
                 </div>
               </div>
@@ -138,9 +145,9 @@ export default function CompletarPerfil() {
                 <div className="cp-select-wrap">
                   <select className="cp-select" name="grauDificuldade" value={form.grauDificuldade} onChange={handleChange} required>
                     <option value="">Selecione</option>
-                    <option value="leve">Leve</option>
-                    <option value="moderada">Moderado</option>
-                    <option value="grave">Grave</option>
+                    <option value="LEVE">Leve</option>
+                    <option value="MODERADA">Moderado</option>
+                    <option value="GRAVE">Grave</option>
                   </select>
                 </div>
               </div>
@@ -149,11 +156,11 @@ export default function CompletarPerfil() {
                 <div className="cp-select-wrap">
                   <select className="cp-select" name="objetivo" value={form.objetivo} onChange={handleChange} required>
                     <option value="">Selecione</option>
-                    <option value="recuperar_forca">Recuperar força</option>
-                    <option value="melhorar_coordenacao">Melhorar coordenação</option>
-                    <option value="reduzir_dor">Reduzir dor</option>
-                    <option value="independencia_funcional">Independência funcional</option>
-                    <option value="outro">Outro</option>
+                    <option value="RECUPERAR_FORCA">Recuperar força</option>
+                    <option value="MELHORAR_COORDENACAO">Melhorar coordenação</option>
+                    <option value="REDUZIR_DOR">Reduzir dor</option>
+                    <option value="INDEPENDENCIA_FUNCIONAL">Independência funcional</option>
+                    <option value="OUTRO">Outro</option>
                   </select>
                 </div>
               </div>
@@ -177,7 +184,7 @@ export default function CompletarPerfil() {
             {/* Dados do responsável — aparece se "outro" */}
             {quemUtilizara === "outro" && (
               <div className="cp-responsavel">
-                <p className="cp-responsavel-title">Dados do responsável</p>
+                <p className="cp-responsavel-title">Dados do dependente</p>
                
                   <div className="cp-field">
                     <label className="cp-label">Nome da pessoa que utilizará a órtese</label>
@@ -199,9 +206,6 @@ export default function CompletarPerfil() {
                       </select>
                     </div>
                   </div>
-            
-                <div className="cp-row">
-                </div>
               </div>
             )}
 
